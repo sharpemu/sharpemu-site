@@ -76,6 +76,7 @@ const fmt = (d: string | Date) =>
           <div class="mt-5 rounded-2xl border border-line bg-surface p-7">
             <p class="font-mono text-xs text-muted">
               Tested on SharpEmu <span class="font-semibold text-ink">{report.data.testedVersion}</span> ·{' '}
+              {report.data.gameVersion && `game ${report.data.gameVersion} · `}
               {report.data.os} · {fmt(report.data.testedDate)}
               {report.data.hardware && ` · ${report.data.hardware}`}
             </p>

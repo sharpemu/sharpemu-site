@@ -9,6 +9,7 @@ export const compatSchema = z.object({
   status: z.enum(STATUSES),
   testedVersion: z.string().min(1),
   testedDate: z.coerce.date(),
+  gameVersion: z.string().min(1).optional(),
   os: z.enum(['windows', 'linux', 'macos']),
   hardware: z.string().optional(),
   score: z.number().int().min(1).max(5).optional(),

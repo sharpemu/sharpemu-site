@@ -50,6 +50,34 @@ it to the game's primary entry automatically. The build fails on reports whose
 title ID isn't in the database or whose filename doesn't match the front
 matter.
 
+### Maintainer report conversion
+
+Compatibility issues are intake records; Markdown in `src/content/compat` is
+the published source of truth. Review the submitted build, test date, status,
+ownership confirmation, notes, and evidence. When it is ready, add the
+`compat-approved` label. The `Convert compatibility report` workflow then:
+
+1. Parses and sanitizes the issue form without evaluating issue content.
+2. Validates the title ID against `src/data/games.json`.
+3. Creates a new report or updates the existing regional report for that game.
+4. Runs `npm test` and the full Astro build.
+5. Opens `compat/issue-<number>` as a draft PR with `Closes #<number>`.
+
+The workflow never merges its PR. It can also be run manually from Actions with
+an issue number.
+
+The SharpEmu organization currently prevents the built-in `GITHUB_TOKEN` from
+creating pull requests. To activate conversion, either:
+
+- Have an organization owner enable **Allow GitHub Actions to create and approve
+  pull requests**; or
+- Add a fine-grained token as the `COMPAT_BOT_TOKEN` Actions secret, limited to
+  this repository with read/write access to Contents, Issues, and Pull requests.
+
+The workflow prefers `COMPAT_BOT_TOKEN` when present and otherwise uses
+`GITHUB_TOKEN`, so no workflow change is needed if the organization policy is
+enabled later.
+
 ## Downloads page
 
 `/downloads` renders GitHub releases from `sharpemu/sharpemu` **at build time**

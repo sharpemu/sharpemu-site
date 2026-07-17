@@ -1,0 +1,144 @@
+name: Convert compatibility report
+
+on:
+  issues:
+    types: [labeled]
+  workflow_dispatch:
+    inputs:
+      issue_number:
+        description: Open compatibility report issue number
+        required: true
+        type: number
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+concurrency:
+  group: compat-report-${{ github.event.issue.number || inputs.issue_number }}
+  cancel-in-progress: false
+
+jobs:
+  convert:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (
+        github.event.action == 'labeled' &&
+        github.event.label.name == 'compat-approved' &&
+        github.event.issue.pull_request == null
+      )
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.COMPAT_BOT_TOKEN || github.token }}
+      ISSUE_NUMBER: ${{ github.event.issue.number || inputs.issue_number }}
+      BRANCH: compat/issue-${{ github.event.issue.number || inputs.issue_number }}
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          token: ${{ secrets.COMPAT_BOT_TOKEN || github.token }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Check request and existing PR
+        id: preflight
+        shell: bash
+        run: |
+          if [[ ! "$ISSUE_NUMBER" =~ ^[1-9][0-9]*$ ]]; then
+            echo "Invalid issue number: $ISSUE_NUMBER" >&2
+            exit 1
+          fi
+
+          existing_url="$(
+            gh pr list \
+              --repo "$GITHUB_REPOSITORY" \
+              --head "$BRANCH" \
+              --state open \
+              --json url \
+              --jq '.[0].url // empty'
+          )"
+          echo "existing_url=$existing_url" >> "$GITHUB_OUTPUT"
+          if [[ -n "$existing_url" ]]; then
+            echo "A conversion PR already exists: $existing_url"
+          elif [[ -n "$(git ls-remote --heads origin "refs/heads/$BRANCH")" ]]; then
+            echo "::error::Branch $BRANCH already exists without an open pull request. Delete the stale branch or reopen its pull request before retrying."
+            exit 1
+          fi
+
+      - name: Install dependencies
+        if: steps.preflight.outputs.existing_url == ''
+        run: npm ci
+
+      - name: Generate compatibility report
+        if: steps.preflight.outputs.existing_url == ''
+        id: convert
+        run: >-
+          node scripts/issue-to-compat.mjs
+          --issue "$ISSUE_NUMBER"
+          --repo "$GITHUB_REPOSITORY"
+
+      - name: Validate generated report
+        if: steps.preflight.outputs.existing_url == ''
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          npm test
+          npm run build
+
+      - name: Open report pull request
+        if: steps.preflight.outputs.existing_url == ''
+        shell: bash
+        env:
+          REPORT_PATH: ${{ steps.convert.outputs.report_path }}
+        run: |
+          git config user.name "sharpemu-compat-bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git switch -c "$BRANCH"
+          git add -- "$REPORT_PATH"
+
+          if git diff --cached --quiet; then
+            gh issue comment "$ISSUE_NUMBER" \
+              --repo "$GITHUB_REPOSITORY" \
+              --body "The report already matches the published compatibility entry; no PR was needed."
+            exit 0
+          fi
+
+          git commit -m "compat: import report #$ISSUE_NUMBER"
+          git push --set-upstream origin "$BRANCH"
+
+          pr_body="$(
+            printf 'Generated from compatibility report #%s after maintainer approval.\n\nPlease review the inferred metadata and submitted evidence before merging.\n\nCloses #%s' \
+              "$ISSUE_NUMBER" \
+              "$ISSUE_NUMBER"
+          )"
+          pr_url="$(
+            gh pr create \
+              --repo "$GITHUB_REPOSITORY" \
+              --base main \
+              --head "$BRANCH" \
+              --draft \
+              --title "compat: import report #$ISSUE_NUMBER" \
+              --body "$pr_body"
+          )"
+
+          gh issue comment "$ISSUE_NUMBER" \
+            --repo "$GITHUB_REPOSITORY" \
+            --body "Automated compatibility report PR opened: $pr_url"
+          gh issue edit "$ISSUE_NUMBER" \
+            --repo "$GITHUB_REPOSITORY" \
+            --add-label compat-pr-opened
+
+      - name: Report conversion failure
+        if: failure() && steps.preflight.outputs.existing_url == ''
+        run: >-
+          gh issue comment "$ISSUE_NUMBER"
+          --repo "$GITHUB_REPOSITORY"
+          --body "Automatic conversion failed validation.
+          A maintainer can inspect the
+          [workflow run]($GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID)."

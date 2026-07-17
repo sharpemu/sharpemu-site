@@ -20,9 +20,25 @@ body:
   - type: input
     id: version
     attributes:
-      label: SharpEmu version (commit or release)
+      label: SharpEmu build (commit or release, not the game version)
+      description: Use the SharpEmu commit SHA or release shown in the emulator.
+      placeholder: 24b82a7 or v0.1.0
     validations:
       required: true
+  - type: input
+    id: tested_date
+    attributes:
+      label: Test date
+      description: The date you ran this test.
+      placeholder: YYYY-MM-DD
+    validations:
+      required: true
+  - type: input
+    id: game_version
+    attributes:
+      label: Game version
+      description: Optional game update/version, if known.
+      placeholder: '1.004'
   - type: dropdown
     id: os
     attributes:
@@ -41,3 +57,10 @@ body:
       description: Include screenshots if possible. Use dumps of games you own.
     validations:
       required: true
+  - type: checkboxes
+    id: ownership
+    attributes:
+      label: Testing confirmation
+      options:
+        - label: I tested a dump of a game I own.
+          required: true

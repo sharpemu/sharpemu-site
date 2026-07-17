@@ -6,6 +6,7 @@ const valid = {
   status: 'ingame',
   testedVersion: 'dev',
   testedDate: '2026-07-17',
+  gameVersion: '1.004',
   os: 'macos',
 };
 

@@ -7,7 +7,7 @@ export const SITE = {
   siteRepoUrl: 'https://github.com/sharpemu/sharpemu-site', // TODO: adjust once the site repo exists in the org
   // Bump when a new SharpEmu build is released; reports tested on other
   // versions get an "older build" note.
-  currentVersion: '0.0.2',
+  currentVersion: '0.0.2-beta.2',
 };
 
 // IDs from the repo's GitHub Discussions (same values giscus.app generates).

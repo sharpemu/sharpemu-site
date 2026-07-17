@@ -27,7 +27,9 @@ try {
   if (res.ok)
     releases = ((await res.json()) as Release[])
       .filter((r) => !r.draft && /^v\d/.test(r.tag_name))
-      .slice(0, 3);
+      .slice(0, 3)
+      // Tags like v0.0.2-beta.2 aren't flagged prerelease upstream; label them anyway.
+      .map((r) => ({ ...r, prerelease: r.prerelease || /-(beta|alpha|rc)/i.test(r.tag_name) }));
 } catch {
   // offline or rate-limited build — page still renders
 }
@@ -41,8 +43,9 @@ const fmtDate = (d: string) =>
   <section class="mx-auto max-w-3xl px-5 pt-12" data-pagefind-body>
     <h1 class="font-display text-4xl font-extrabold tracking-tight">Downloads</h1>
     <p class="mt-3 text-muted">
-      SharpEmu is experimental — expect crashes and broken games.{' '}
-      <a href="/compatibility" class="text-psblue underline">Check compatibility</a> before playing.
+      Every archive contains the full desktop app — extract it and run SharpEmu to open your game
+      library. It's experimental, so expect crashes and broken games:{' '}
+      <a href="/compatibility" class="text-psblue underline">check compatibility</a> first.
     </p>
 
     {
@@ -120,12 +123,40 @@ dotnet publish</code></pre>
     }
 
     <div class="prose prose-slate mt-12 max-w-none">
-      <h2 class="font-display tracking-tight">Running SharpEmu</h2>
-      <p>From a terminal (PowerShell on Windows), point it at a game's <code>eboot.bin</code> and keep a log:</p>
-      <pre><code>.\SharpEmu "eboot.bin" 2&gt;&amp;1 | Tee-Object -FilePath "log.txt"</code></pre>
+      <h2 class="font-display tracking-tight">Getting started</h2>
+      <ol>
+        <li>Extract the archive for your platform.</li>
+        <li>
+          Run <code>SharpEmu</code> with no arguments — the desktop app opens. (On Linux and macOS,
+          <code>chmod +x ./SharpEmu</code> first.)
+        </li>
+        <li>
+          In <strong>Library</strong>, choose <strong>Add folder</strong> and point it at your dumped
+          games, then hit <strong>Launch</strong>.
+        </li>
+      </ol>
+      <p>
+        The app also carries settings (CPU engine, log level), a log console, Discord Rich Presence,
+        a built-in updater, and 15 languages.
+      </p>
+
+      <h2 class="font-display tracking-tight">Command line</h2>
+      <p>
+        The same binary runs headless when you pass it a game's <code>eboot.bin</code> — useful for
+        capturing a log to attach to a compatibility report.
+      </p>
+      <p>Windows PowerShell:</p>
+      <pre><code>.\SharpEmu.exe "C:\path\to\game\eboot.bin" 2&gt;&amp;1 |
+  Tee-Object -FilePath "SharpEmu.log"</code></pre>
+      <p>Linux and macOS:</p>
+      <pre><code>./SharpEmu "/path/to/game/eboot.bin" 2&gt;&amp;1 | tee SharpEmu.log</code></pre>
+
       <h2 class="font-display tracking-tight">What you need</h2>
       <ul>
         <li>A 64-bit machine running Windows, Linux or macOS (Windows is the primary target).</li>
+        <li>
+          A Vulkan-capable GPU and an up-to-date graphics driver. The macOS build includes MoltenVK.
+        </li>
         <li>Dumps of games you own. SharpEmu does not include or link to any game content.</li>
         <li>Patience — this is a research project in early development.</li>
       </ul>

@@ -71,7 +71,7 @@ const reachGameplay = stats.counts.ingame + stats.counts.playable;
     </div>
     <div
       class="sled mt-8 flex snap-x gap-6 overflow-x-auto pb-4"
-      style="padding-inline: max(1.25rem, calc((100vw - 72rem) / 2 + 1.25rem));"
+      style="padding-inline: max(1.25rem, calc((100vw - 72rem) / 2 + 1.25rem)); scroll-padding-inline: max(1.25rem, calc((100vw - 72rem) / 2 + 1.25rem));"
     >
       {sled.map((g) => <GameTile game={g} status={statusByConcept.get(g.conceptId) ?? 'untested'} />)}
       <a
@@ -137,7 +137,7 @@ const reachGameplay = stats.counts.ingame + stats.counts.playable;
         <li class="flex items-center gap-4">
           <span class="w-24 shrink-0"><StatusBadge status="untested" /></span>
           <span class="text-sm text-muted">
-            {STATUS_META.untested.description}
+            {STATUS_META.untested.description}{' '}
             <a href="/compatibility/report" class="text-psblue underline">Submit the first report.</a>
           </span>
         </li>

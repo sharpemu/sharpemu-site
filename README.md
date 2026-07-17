@@ -50,6 +50,18 @@ it to the game's primary entry automatically. The build fails on reports whose
 title ID isn't in the database or whose filename doesn't match the front
 matter.
 
+## Downloads page
+
+`/downloads` renders GitHub releases from `sharpemu/sharpemu` **at build time**
+(`src/lib/releases.ts`) — no client-side API calls, so visitors never hit
+GitHub's per-IP rate limit. Freshness is push-based: publishing a release fires
+`notify-site.yml` in the emulator repo, which sends a `repository_dispatch` to
+this repo and redeploys within ~a minute. `deploy.yml` also rebuilds daily as a
+safety net, and can be run by hand from the Actions tab.
+
+Requires the `SITE_DISPATCH_TOKEN` secret on `sharpemu/sharpemu` (fine-grained
+PAT scoped to this repo, Contents: read and write).
+
 ## Deploying (Cloudflare Pages)
 
 1. Push this repo to GitHub (public, so giscus + issue templates work).

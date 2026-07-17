@@ -1,0 +1,114 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import { games } from '../lib/games';
+import { computeStats, STATUS_META, STATUSES } from '../lib/compat';
+
+const compat = await getCollection('compat');
+const stats = computeStats(compat.map((e) => e.data.status));
+const clientMeta = Object.fromEntries(
+  Object.entries(STATUS_META).map(([k, v]) => [k, { label: v.label, cls: v.badgeClass }]),
+);
+---
+
+<Base title="Game compatibility — SharpEmu">
+  <section class="mx-auto max-w-6xl px-5 pt-12">
+    <h1 class="font-display text-4xl font-extrabold tracking-tight">Game compatibility</h1>
+    <p class="mt-3 text-muted">
+      {games.length.toLocaleString('en-US')} PS5 games tracked · {stats.tested} tested ·
+      <a href="/compatibility/report" class="text-psblue underline">submit a report</a>
+    </p>
+
+    <div class="mt-6 flex flex-wrap gap-2">
+      {
+        STATUSES.map((s) => (
+          <span class={`rounded-full px-3.5 py-1 text-xs font-semibold ${STATUS_META[s].badgeClass}`}>
+            {STATUS_META[s].label}: {stats.counts[s]}
+          </span>
+        ))
+      }
+    </div>
+
+    <div class="mt-10 flex flex-col gap-3 sm:flex-row">
+      <input
+        id="q"
+        type="search"
+        placeholder={`Search ${games.length.toLocaleString('en-US')} games by title or PPSA id…`}
+        class="w-full rounded-full border border-ink/10 bg-white px-6 py-3 text-sm shadow-[0_2px_12px_rgba(14,30,60,0.06)] placeholder:text-muted/70 focus:border-psblue focus:ring-2 focus:ring-psblue/20 focus:outline-none"
+      />
+      <select
+        id="status"
+        class="rounded-full border border-ink/10 bg-white px-5 py-3 text-sm font-medium focus:border-psblue focus:outline-none"
+      >
+        <option value="">All statuses</option>
+        <option value="tested">Any tested</option>
+        {STATUSES.map((s) => <option value={s}>{STATUS_META[s].label}</option>)}
+        <option value="untested">Not tested</option>
+      </select>
+    </div>
+
+    <p id="count" class="mt-6 text-sm text-muted">Loading the game list…</p>
+    <div class="mt-3 overflow-x-auto rounded-2xl border border-ink/8 bg-white/70">
+      <table class="w-full text-left text-sm">
+        <thead class="border-b border-ink/8 text-xs text-muted uppercase tracking-wide">
+          <tr>
+            <th class="px-6 py-3.5 font-semibold">Title</th>
+            <th class="px-6 py-3.5 font-semibold">Title ID</th>
+            <th class="px-6 py-3.5 font-semibold">Status</th>
+          </tr>
+        </thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <script is:inline define:vars={{ clientMeta }}>
+    const MAX_ROWS = 300;
+    const esc = (s) => s.replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
+    const $q = document.getElementById('q');
+    const $status = document.getElementById('status');
+    const $rows = document.getElementById('rows');
+    const $count = document.getElementById('count');
+    let all = [];
+
+    function renderList() {
+      const q = $q.value.trim().toLowerCase();
+      const st = $status.value;
+      const hits = all.filter((g) => {
+        if (st === 'tested' ? g.s === 'untested' : st && g.s !== st) return false;
+        return (
+          !q ||
+          g.n.toLowerCase().includes(q) ||
+          g.t.toLowerCase().includes(q) ||
+          g.a.toLowerCase().includes(q)
+        );
+      });
+      $count.textContent =
+        `${hits.length.toLocaleString('en-US')} games` +
+        (hits.length > MAX_ROWS ? ` — showing the first ${MAX_ROWS}; keep typing to narrow down` : '');
+      $rows.innerHTML = hits
+        .slice(0, MAX_ROWS)
+        .map((g) => {
+          const m = clientMeta[g.s] ?? clientMeta.untested;
+          return `<tr class="border-b border-ink/5 last:border-0 hover:bg-psblue/[0.04]">
+            <td class="px-6 py-3"><a class="font-medium hover:text-psblue" href="/game/${g.t}/">${esc(g.n)}</a></td>
+            <td class="px-6 py-3 font-mono text-xs text-muted">${g.t}</td>
+            <td class="px-6 py-3"><span class="inline-block rounded-full px-2.5 py-0.5 text-[11px] font-semibold ${m.cls}">${m.label}</span></td>
+          </tr>`;
+        })
+        .join('');
+    }
+
+    fetch('/games-index.json')
+      .then((r) => r.json())
+      .then((data) => {
+        all = data;
+        renderList();
+      })
+      .catch(() => {
+        $count.textContent = 'The game list failed to load — refresh to try again.';
+      });
+    $q.addEventListener('input', renderList);
+    $status.addEventListener('change', renderList);
+  </script>
+</Base>

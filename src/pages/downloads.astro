@@ -22,12 +22,12 @@ const downloadsHtml = renderDownloads(releases);
     <p class="mt-3 text-muted">
       Every archive contains the full desktop app — extract it and run SharpEmu to open your game
       library. It's experimental, so expect crashes and broken games:{' '}
-      <a href="/compatibility" class="text-psblue underline">check compatibility</a> first.
+      <a href="/compatibility" class="text-accent underline">check compatibility</a> first.
     </p>
 
     <div class="mt-10" set:html={downloadsHtml} />
 
-    <div class="prose prose-slate mt-12 max-w-none">
+    <div class="prose prose-slate dark:prose-invert mt-12 max-w-none">
       <h2 class="font-display tracking-tight">Getting started</h2>
       <ol>
         <li>Extract the archive for your platform.</li>

@@ -4,7 +4,7 @@ import logo from '../assets/logo.png';
 import { SITE } from '../config';
 ---
 
-<header class="sticky top-0 z-40 border-b border-ink/5 bg-white/60 backdrop-blur-xl">
+<header class="sticky top-0 z-40 border-b border-line bg-surface backdrop-blur-xl">
   <nav class="mx-auto flex h-14 max-w-6xl items-center gap-7 px-5">
     <a href="/" class="flex items-center gap-2.5 font-display text-[15px] font-bold tracking-tight">
       <Image src={logo} alt={SITE.name} width={28} height={28} class="rounded-lg" />
@@ -16,11 +16,39 @@ import { SITE } from '../config';
       <a href="/news" class="hidden transition-colors hover:text-ink sm:inline">News</a>
       <a href="/faq" class="hidden transition-colors hover:text-ink sm:inline">FAQ</a>
       <a href="/search" class="hidden transition-colors hover:text-ink sm:inline">Search</a>
+      <button
+        id="theme-toggle"
+        type="button"
+        aria-label="Switch theme"
+        class="grid h-8 w-8 place-items-center rounded-full transition-colors hover:bg-line hover:text-ink"
+      >
+        <svg class="icon-moon h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+        <svg class="icon-sun h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+        </svg>
+      </button>
       <a
         href={SITE.repoUrl}
-        class="rounded-full bg-psblue px-4 py-1.5 text-white transition-opacity hover:opacity-85"
+        class="rounded-full bg-accent px-4 py-1.5 text-accent-fg transition-opacity hover:opacity-85"
         >GitHub</a
       >
     </div>
   </nav>
 </header>
+
+<script is:inline>
+  document.getElementById('theme-toggle')?.addEventListener('click', () => {
+    const dark = document.documentElement.classList.toggle('dark');
+    localStorage.setItem('theme', dark ? 'dark' : 'light');
+    // Comments live in an iframe, so they need telling separately.
+    document
+      .querySelector('iframe.giscus-frame')
+      ?.contentWindow?.postMessage(
+        { giscus: { setConfig: { theme: dark ? 'dark' : 'light' } } },
+        'https://giscus.app',
+      );
+  });
+</script>

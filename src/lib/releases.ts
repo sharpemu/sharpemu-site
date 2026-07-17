@@ -43,25 +43,25 @@ export const fmtDate = (d: string) =>
 
 function assetHtml(a: Asset): string {
   return `<li>
-    <a href="${esc(a.browser_download_url)}" class="group flex items-center gap-3 rounded-xl border border-ink/8 px-5 py-3 transition-colors hover:border-psblue/40 hover:bg-psblue/[0.03]">
-      <span class="min-w-0 flex-1 truncate font-mono text-[13px] font-medium group-hover:text-psblue">${esc(a.name)}</span>
+    <a href="${esc(a.browser_download_url)}" class="group flex items-center gap-3 rounded-xl border border-line px-5 py-3 transition-colors hover:border-accent/40 hover:bg-accent/[0.06]">
+      <span class="min-w-0 flex-1 truncate font-mono text-[13px] font-medium group-hover:text-accent">${esc(a.name)}</span>
       <span class="shrink-0 text-xs text-muted">${esc(fmtSize(a.size))}</span>
-      <span class="shrink-0 rounded-full bg-psblue px-4 py-1.5 text-xs font-semibold text-white">Download</span>
+      <span class="shrink-0 rounded-full bg-accent px-4 py-1.5 text-xs font-semibold text-accent-fg">Download</span>
     </a>
   </li>`;
 }
 
 function releaseHtml(r: Release, isFirst: boolean): string {
   const badge = r.prerelease
-    ? '<span class="rounded-full bg-amber-100 px-3 py-0.5 text-xs font-semibold text-amber-800">Pre-release</span>'
+    ? '<span class="rounded-full badge badge-menus px-3 py-0.5 text-xs">Pre-release</span>'
     : isFirst
-      ? '<span class="rounded-full bg-green-100 px-3 py-0.5 text-xs font-semibold text-green-700">Latest</span>'
+      ? '<span class="rounded-full badge badge-playable px-3 py-0.5 text-xs">Latest</span>'
       : '';
   const body =
     r.assets.length > 0
       ? `<ul class="mt-5 space-y-2.5">${r.assets.map(assetHtml).join('')}</ul>`
-      : `<p class="mt-4 text-sm text-muted">No binaries attached — <a href="${esc(r.html_url)}" class="text-psblue underline">view the release on GitHub</a>.</p>`;
-  return `<div class="rounded-2xl border border-ink/8 bg-white/70 p-7">
+      : `<p class="mt-4 text-sm text-muted">No binaries attached — <a href="${esc(r.html_url)}" class="text-accent underline">view the release on GitHub</a>.</p>`;
+  return `<div class="rounded-2xl border border-line bg-surface p-7">
     <div class="flex flex-wrap items-center gap-3">
       <h2 class="font-display text-xl font-bold tracking-tight">${esc(r.name || r.tag_name)}</h2>
       ${badge}
@@ -73,10 +73,10 @@ function releaseHtml(r: Release, isFirst: boolean): string {
 
 /** Build-from-source card, shown when no release is available to list. */
 function fallbackHtml(): string {
-  return `<div class="rounded-2xl border border-ink/8 bg-white/70 p-7">
+  return `<div class="rounded-2xl border border-line bg-surface p-7">
     <h2 class="font-display text-xl font-bold tracking-tight">No packaged builds right now</h2>
-    <p class="mt-3 text-sm leading-relaxed text-muted">Check the <a href="${REPO_URL}/releases" class="text-psblue underline">releases page on GitHub</a> — or build from source with the .NET SDK:</p>
-    <pre class="mt-5 overflow-x-auto rounded-xl bg-ink p-5 font-mono text-[13px] leading-relaxed text-slate-200"><code>git clone ${REPO_URL}.git
+    <p class="mt-3 text-sm leading-relaxed text-muted">Check the <a href="${REPO_URL}/releases" class="text-accent underline">releases page on GitHub</a> — or build from source with the .NET SDK:</p>
+    <pre class="mt-5 overflow-x-auto rounded-xl bg-code p-5 font-mono text-[13px] leading-relaxed text-code-fg"><code>git clone ${REPO_URL}.git
 cd sharpemu
 dotnet publish</code></pre>
     <p class="mt-3 text-sm text-muted">Build artifacts land in the <code>artifacts</code> directory.</p>
@@ -87,6 +87,6 @@ export function renderDownloads(releases: Release[]): string {
   if (releases.length === 0) return fallbackHtml();
   return `<div class="space-y-6">
     ${releases.map((r, i) => releaseHtml(r, i === 0)).join('')}
-    <p class="text-sm text-muted">Want the newest changes? Rolling development builds are published for every commit — <a href="${REPO_URL}/releases" class="text-psblue underline">all releases on GitHub →</a></p>
+    <p class="text-sm text-muted">Want the newest changes? Rolling development builds are published for every commit — <a href="${REPO_URL}/releases" class="text-accent underline">all releases on GitHub →</a></p>
   </div>`;
 }

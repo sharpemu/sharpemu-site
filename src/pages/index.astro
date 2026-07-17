@@ -1,8 +1,10 @@
 ---
 import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 import ReportCard from '../components/ReportCard.astro';
 import StatusBadge from '../components/StatusBadge.astro';
+import logo from '../assets/logo.png';
 import { SITE } from '../config';
 import { games, gameByAnyTitleId } from '../lib/games';
 import { computeStats, STATUS_META, STATUSES } from '../lib/compat';
@@ -24,59 +26,83 @@ const barSegments = STATUSES.filter((s) => stats.counts[s] > 0);
   <!-- Hero -->
   <section class="relative overflow-hidden">
     <div
-      class="pointer-events-none absolute -top-40 left-1/4 h-[34rem] w-[54rem] -translate-x-1/2 rounded-full opacity-50 blur-3xl"
-      style="background: radial-gradient(closest-side, #7db4ff 0%, transparent 70%);"
+      class="pointer-events-none absolute -top-40 left-1/4 h-[34rem] w-[54rem] -translate-x-1/2 rounded-full opacity-50 blur-3xl dark:opacity-25"
+      style="background: radial-gradient(closest-side, var(--color-glow) 0%, transparent 70%);"
     >
     </div>
-    <div class="mx-auto max-w-6xl px-5 pt-20 pb-4 md:pt-28">
-      <p class="rise rise-1 font-mono text-[11px] font-medium tracking-[0.22em] text-muted uppercase">
-        Open source · Written in C# · GPL-2.0
-      </p>
-      <h1
-        class="rise rise-2 mt-5 max-w-2xl font-display text-5xl font-extrabold tracking-tight md:text-6xl"
-      >
-        The open <em class="text-psblue not-italic">PS5 emulator</em> project.
-      </h1>
-      <p class="rise rise-3 mt-6 max-w-xl text-lg leading-relaxed text-muted">
-        SharpEmu is an experimental PlayStation 5 emulator written from scratch in C# — built in
-        the open, for research and education, on Windows, Linux and macOS.
-      </p>
-      <div class="rise rise-4 mt-8 flex flex-wrap items-center gap-4">
+    <div
+      class="mx-auto grid max-w-6xl gap-10 px-5 pt-20 pb-4 md:pt-28 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center lg:gap-16"
+    >
+      <div>
+        <p class="rise rise-1 font-mono text-[11px] font-medium tracking-[0.22em] text-muted uppercase">
+          Open source · Written in C# · GPL-2.0
+        </p>
+        <h1
+          class="rise rise-2 mt-5 max-w-2xl font-display text-5xl font-extrabold tracking-tight md:text-6xl"
+        >
+          The open <em class="text-accent not-italic">PS5 emulator</em> project.
+        </h1>
+        <p class="rise rise-3 mt-6 max-w-xl text-lg leading-relaxed text-muted">
+          SharpEmu is an experimental PlayStation 5 emulator written from scratch in C# — built in
+          the open, for research and education, on Windows, Linux and macOS.
+        </p>
+        <div class="rise rise-4 mt-8 flex flex-wrap items-center gap-4">
         <a
           href={SITE.repoUrl}
-          class="rounded-full bg-psblue px-7 py-3 text-sm font-semibold text-white shadow-[0_8px_24px_rgba(0,112,209,0.35)] transition-opacity hover:opacity-90"
+          class="rounded-full bg-accent px-7 py-3 text-sm font-semibold text-accent-fg shadow-[0_8px_24px_color-mix(in_oklab,var(--color-accent)_38%,transparent)] transition-opacity hover:opacity-90"
           >View on GitHub</a
         >
         <a
           href="/downloads"
-          class="rounded-full border border-ink/15 bg-white/60 px-7 py-3 text-sm font-semibold transition-colors hover:border-ink/30"
+          class="rounded-full border border-line bg-surface px-7 py-3 text-sm font-semibold transition-colors hover:border-ink/40"
           >Download</a
         >
-        <span class="rounded-full bg-amber-100 px-4 py-1.5 text-xs font-semibold text-amber-800">
-          Early development — most games don't run yet
-        </span>
+          <span class="rounded-full badge badge-menus px-4 py-1.5 text-xs">
+            Early development — most games don't run yet
+          </span>
+        </div>
+
+        <!-- Find your game -->
+        <form action="/compatibility" method="get" class="rise rise-4 mt-12 max-w-xl">
+          <label
+            for="home-q"
+            class="font-mono text-[11px] font-medium tracking-[0.22em] text-muted uppercase"
+          >
+            Does your game run?
+          </label>
+          <div class="relative mt-3">
+            <input
+              id="home-q"
+              name="q"
+              type="search"
+              placeholder={`Search ${games.length.toLocaleString('en-US')} PS5 titles…`}
+              class="w-full rounded-full border border-line bg-field py-3.5 pr-32 pl-6 text-sm shadow-[0_10px_30px_rgba(14,30,60,0.08)] placeholder:text-muted/70 focus:border-accent focus:ring-2 focus:ring-accent/30 focus:outline-none"
+            />
+            <button
+              type="submit"
+              class="absolute top-1.5 right-1.5 rounded-full bg-contrast px-5 py-2 text-sm font-semibold text-contrast-fg transition-opacity hover:opacity-85"
+              >Search</button
+            >
+          </div>
+        </form>
       </div>
 
-      <!-- Find your game -->
-      <form action="/compatibility" method="get" class="rise rise-4 mt-12 max-w-xl">
-        <label for="home-q" class="font-mono text-[11px] font-medium tracking-[0.22em] text-muted uppercase">
-          Does your game run?
-        </label>
-        <div class="relative mt-3">
-          <input
-            id="home-q"
-            name="q"
-            type="search"
-            placeholder={`Search ${games.length.toLocaleString('en-US')} PS5 titles…`}
-            class="w-full rounded-full border border-ink/10 bg-white py-3.5 pr-32 pl-6 text-sm shadow-[0_10px_30px_rgba(14,30,60,0.08)] placeholder:text-muted/70 focus:border-psblue focus:ring-2 focus:ring-psblue/20 focus:outline-none"
-          />
-          <button
-            type="submit"
-            class="absolute top-1.5 right-1.5 rounded-full bg-ink px-5 py-2 text-sm font-semibold text-white transition-opacity hover:opacity-85"
-            >Search</button
-          >
+      <!-- Logo: the mark already carries its own glow, so it just needs room -->
+      <div class="rise rise-3 relative hidden justify-self-center lg:block">
+        <div
+          class="pointer-events-none absolute inset-0 -z-10 scale-125 rounded-full opacity-60 blur-3xl"
+          style="background: radial-gradient(closest-side, var(--color-glow) 0%, transparent 70%);"
+        >
         </div>
-      </form>
+        <Image
+          src={logo}
+          alt=""
+          width={560}
+          height={560}
+          class="h-56 w-56 rounded-[2rem] xl:h-64 xl:w-64"
+          loading="eager"
+        />
+      </div>
     </div>
   </section>
 
@@ -97,7 +123,7 @@ const barSegments = STATUSES.filter((s) => stats.counts[s] > 0);
           )
         }
       </div>
-      <a href="/compatibility" class="text-sm font-semibold text-psblue hover:underline"
+      <a href="/compatibility" class="text-sm font-semibold text-accent hover:underline"
         >Browse all games →</a
       >
     </div>
@@ -135,14 +161,14 @@ const barSegments = STATUSES.filter((s) => stats.counts[s] > 0);
           </div>
           <p class="mt-6 text-sm text-muted">
             Tested something yourself?{' '}
-            <a href="/compatibility/report" class="text-psblue underline">
+            <a href="/compatibility/report" class="text-accent underline">
               Submit a report
             </a>{' '}
             — it takes five minutes.
           </p>
         </>
       ) : (
-        <div class="mt-8 rounded-2xl border border-dashed border-ink/15 bg-white/50 p-10 text-center">
+        <div class="mt-8 rounded-2xl border border-dashed border-line bg-surface p-10 text-center">
           <p class="font-display text-lg font-bold">No reports yet — be the first</p>
           <p class="mx-auto mt-2 max-w-md text-sm text-muted">
             Every game page is ready to hold a report with the exact build, OS and hardware used.
@@ -150,7 +176,7 @@ const barSegments = STATUSES.filter((s) => stats.counts[s] > 0);
           </p>
           <a
             href="/compatibility/report"
-            class="mt-6 inline-block rounded-full bg-psblue px-6 py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+            class="mt-6 inline-block rounded-full bg-accent px-6 py-2.5 text-sm font-semibold text-accent-fg transition-opacity hover:opacity-90"
           >
             Submit the first report
           </a>
@@ -161,7 +187,7 @@ const barSegments = STATUSES.filter((s) => stats.counts[s] > 0);
 
   <!-- About + status ladder -->
   <section class="mx-auto mt-24 grid max-w-6xl gap-14 px-5 md:grid-cols-2">
-    <div class="prose prose-slate max-w-none">
+    <div class="prose prose-slate dark:prose-invert max-w-none">
       <h2 class="font-display tracking-tight">About the project</h2>
       <p>
         SharpEmu is developed purely for research and educational purposes — we enjoy learning
@@ -199,7 +225,7 @@ const barSegments = STATUSES.filter((s) => stats.counts[s] > 0);
           <span class="w-24 shrink-0"><StatusBadge status="untested" /></span>
           <span class="text-sm text-muted">
             {STATUS_META.untested.description}{' '}
-            <a href="/compatibility/report" class="text-psblue underline">Submit the first report.</a>
+            <a href="/compatibility/report" class="text-accent underline">Submit the first report.</a>
           </span>
         </li>
       </ul>

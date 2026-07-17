@@ -12,7 +12,8 @@ const { title, description = SITE.description } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<!-- Dark is the default: it ships on the element so it holds even without JS. -->
+<html lang="en" class="dark">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -21,6 +22,12 @@ const { title, description = SITE.description } = Astro.props;
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <title>{title}</title>
+    {/* Runs before first paint so the page never flashes the wrong theme.
+        Only an explicit choice of light overrides the dark default. */}
+    <script is:inline>
+      if (localStorage.getItem('theme') === 'light')
+        document.documentElement.classList.remove('dark');
+    </script>
   </head>
   <body class="flex min-h-screen flex-col">
     <Header />

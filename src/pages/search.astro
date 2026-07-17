@@ -18,14 +18,21 @@ import Base from '../layouts/Base.astro';
   </script>
 
   <style is:global>
+    /* Pagefind's own tokens, wired to the site's so search follows the theme. */
     #search {
-      --pagefind-ui-primary: #0070d1;
-      --pagefind-ui-text: #0e1116;
-      --pagefind-ui-background: #ffffff;
-      --pagefind-ui-border: rgba(14, 17, 22, 0.1);
-      --pagefind-ui-tag: rgba(14, 17, 22, 0.06);
+      --pagefind-ui-primary: var(--color-accent);
+      --pagefind-ui-text: var(--color-ink);
+      --pagefind-ui-background: var(--color-field);
+      --pagefind-ui-border: var(--color-line);
+      --pagefind-ui-tag: var(--color-line);
       --pagefind-ui-border-radius: 16px;
       --pagefind-ui-font: 'Inter Variable', system-ui, sans-serif;
+    }
+    :root.dark #search .pagefind-ui__result-link {
+      color: var(--color-ink);
+    }
+    :root.dark #search .pagefind-ui__result-excerpt {
+      color: var(--color-muted);
     }
   </style>
 </Base>

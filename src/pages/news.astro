@@ -18,10 +18,10 @@ const fmt = (d: Date) =>
         posts.map((post) => (
           <a
             href={`/news/${post.id}/`}
-            class="group block rounded-2xl border border-ink/8 bg-white/70 p-7 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_14px_36px_rgba(14,30,60,0.13)]"
+            class="group block rounded-2xl border border-line bg-surface p-7 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_14px_36px_rgba(14,30,60,0.13)]"
           >
             <p class="font-mono text-xs text-muted">{fmt(post.data.date)}</p>
-            <h2 class="mt-2 font-display text-xl font-bold tracking-tight transition-colors group-hover:text-psblue">
+            <h2 class="mt-2 font-display text-xl font-bold tracking-tight transition-colors group-hover:text-accent">
               {post.data.title}
             </h2>
             {post.data.description && <p class="mt-2 text-sm text-muted">{post.data.description}</p>}

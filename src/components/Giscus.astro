@@ -5,30 +5,41 @@ interface Props {
   term: string;
 }
 const { term } = Astro.props;
+const config = { ...GISCUS, term };
 ---
 
 {
   GISCUS.repoId ? (
-    <script
-      is:inline
-      src="https://giscus.app/client.js"
-      data-repo={GISCUS.repo}
-      data-repo-id={GISCUS.repoId}
-      data-category={GISCUS.category}
-      data-category-id={GISCUS.categoryId}
-      data-mapping="specific"
-      data-term={term}
-      data-strict="1"
-      data-reactions-enabled="1"
-      data-emit-metadata="0"
-      data-input-position="top"
-      data-theme="light"
-      data-lang="en"
-      crossorigin="anonymous"
-      async
-    />
+    <div id="giscus-mount">
+      {/* Injected client-side so the widget can start in the current theme —
+          giscus reads data-theme once, at load. */}
+      <script is:inline define:vars={{ config }}>
+        (() => {
+          const s = document.createElement('script');
+          s.src = 'https://giscus.app/client.js';
+          s.async = true;
+          s.crossOrigin = 'anonymous';
+          const attrs = {
+            'data-repo': config.repo,
+            'data-repo-id': config.repoId,
+            'data-category': config.category,
+            'data-category-id': config.categoryId,
+            'data-mapping': 'specific',
+            'data-term': config.term,
+            'data-strict': '1',
+            'data-reactions-enabled': '1',
+            'data-emit-metadata': '0',
+            'data-input-position': 'top',
+            'data-theme': document.documentElement.classList.contains('dark') ? 'dark' : 'light',
+            'data-lang': 'en',
+          };
+          for (const [k, v] of Object.entries(attrs)) s.setAttribute(k, v);
+          document.getElementById('giscus-mount').appendChild(s);
+        })();
+      </script>
+    </div>
   ) : (
-    <p class="rounded-2xl border border-ink/8 bg-white/70 p-5 text-sm text-muted">
+    <p class="rounded-2xl border border-line bg-surface p-5 text-sm text-muted">
       Comments are not enabled yet. They will appear here once giscus is configured.
     </p>
   )

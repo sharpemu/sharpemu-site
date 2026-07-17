@@ -4,21 +4,132 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
 
+/* Theme is a class on <html>, set before paint by the inline script in Base.astro. */
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
   --font-display: 'Sora Variable', ui-sans-serif, system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', monospace;
 
-  /* Console Shell palette — PS5 porcelain, ink core, PlayStation blue */
+  /* Semantic tokens — light (Console Shell) values are the defaults. Utilities
+     compile to var(--color-*), so overriding these under :root.dark re-themes
+     every bg-paper / text-ink / border-line / bg-accent in one place. */
   --color-paper: #f3f5fa;
   --color-ink: #0e1116;
-  --color-psblue: #0070d1;
-  --color-glow: #7db4ff;
   --color-muted: #5b6270;
+  --color-line: rgba(14, 17, 22, 0.1);
+  --color-surface: rgba(255, 255, 255, 0.7);
+  --color-field: #ffffff;
+  --color-accent: #0070d1;
+  --color-accent-fg: #ffffff;
+  --color-contrast: #0e1116;
+  --color-contrast-fg: #f3f5fa;
+  --color-code: #0e1116;
+  --color-code-fg: #e2e8f0;
+  --color-glow: #7db4ff;
+}
+
+:root {
+  color-scheme: light;
+
+  /* Status hues, shared by badges and the distribution bar. */
+  --status-critical: #d03b3b;
+  --status-serious: #ec835a;
+  --status-warning: #fab219;
+  --status-info: #0070d1;
+  --status-good: #0ca30c;
+  --status-neutral: #5b6270;
+
+  --badge-bg-amount: 12%;
+  --badge-fg-amount: 70%;
+  --badge-fg-into: #000;
+
+  /* Bar segments sit next to each other, so they need more separation than the
+     status hues alone give: validated for adjacent-pair CVD separation and
+     contrast against the light surface. Keep as a set. */
+  --bar-nothing: #991b1b;
+  --bar-boots: #fb923c;
+  --bar-menus: #a16207;
+  --bar-ingame: #2563eb;
+  --bar-playable: #16a34a;
+}
+
+/* Dark theme — palette taken from the SharpEmu desktop app. */
+:root.dark {
+  color-scheme: dark;
+
+  --color-paper: #05070f;
+  --color-ink: #f5f6fa;
+  --color-muted: #b9bdcc;
+  --color-line: rgba(255, 255, 255, 0.1);
+  --color-surface: rgba(255, 255, 255, 0.045);
+  --color-field: rgba(255, 255, 255, 0.05);
+  --color-accent: #7d9bff;
+  --color-accent-fg: #0b0e18;
+  --color-contrast: rgba(255, 255, 255, 0.92);
+  --color-contrast-fg: #0b0e18;
+  --color-code: rgba(255, 255, 255, 0.05);
+  --color-code-fg: #e2e8f0;
+  --color-glow: #7d9bff;
+
+  --status-info: #7d9bff;
+
+  --badge-bg-amount: 20%;
+  --badge-fg-amount: 72%;
+  --badge-fg-into: #fff;
+
+  /* Re-validated against the dark surface — the deep light-mode red fails
+     contrast on near-black. */
+  --bar-nothing: #d03b3b;
+  --bar-ingame: #7d9bff;
+  --bar-playable: #0ca30c;
 }
 
 body {
   @apply bg-paper font-sans text-ink antialiased;
+}
+
+/* Ambient nebula, matching the emulator's own dashboard: a navy base lit by a
+   broad blue-violet pool with cooler pockets off to the sides. The reference
+   paints this with a WebGL shader; these layers reproduce the look for free,
+   which matters when it ships on every one of ~8,700 game pages. */
+:root.dark body {
+  background-color: #05070f;
+  background-image:
+    radial-gradient(58% 42% at 50% 44%, rgba(39, 47, 86, 0.9) 0%, transparent 72%),
+    radial-gradient(85% 55% at 50% 0%, rgba(30, 34, 90, 0.75) 0%, transparent 68%),
+    radial-gradient(46% 42% at 10% 26%, rgba(24, 78, 130, 0.2) 0%, transparent 72%),
+    radial-gradient(44% 40% at 88% 62%, rgba(90, 60, 160, 0.18) 0%, transparent 72%),
+    radial-gradient(60% 50% at 50% 100%, rgba(64, 46, 140, 0.14) 0%, transparent 70%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+/* Status badges: one tinted style driven by --badge-color, so light and dark
+   derive from the same hue instead of hard-coding a palette per theme. */
+.badge {
+  --badge-color: var(--status-neutral);
+  display: inline-block;
+  border-radius: 9999px;
+  font-weight: 600;
+  background: color-mix(in oklab, var(--badge-color) var(--badge-bg-amount), transparent);
+  color: color-mix(in oklab, var(--badge-color) var(--badge-fg-amount), var(--badge-fg-into));
+}
+.badge-nothing { --badge-color: var(--status-critical); }
+.badge-boots { --badge-color: var(--status-serious); }
+.badge-menus { --badge-color: var(--status-warning); }
+.badge-ingame { --badge-color: var(--status-info); }
+.badge-playable { --badge-color: var(--status-good); }
+.badge-untested { --badge-color: var(--status-neutral); }
+
+/* Theme toggle shows the mode it switches to. */
+:root .icon-sun,
+:root.dark .icon-moon {
+  display: none;
+}
+:root.dark .icon-sun {
+  display: block;
 }
 
 /* Orchestrated hero entrance — one moment, staggered, reduced-motion safe */
@@ -44,12 +155,4 @@ body {
   .rise {
     animation: none;
   }
-}
-
-/* Hide scrollbars on the game sled while keeping it scrollable */
-.sled::-webkit-scrollbar {
-  display: none;
-}
-.sled {
-  scrollbar-width: none;
 }

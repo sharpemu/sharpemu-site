@@ -1,42 +1,19 @@
 ---
 import Base from '../layouts/Base.astro';
-import { SITE } from '../config';
+import { fetchReleases, renderDownloads, type Release } from '../lib/releases';
 
-type Asset = { name: string; size: number; browser_download_url: string; download_count: number };
-type Release = {
-  name: string;
-  tag_name: string;
-  html_url: string;
-  published_at: string;
-  prerelease: boolean;
-  draft: boolean;
-  assets: Asset[];
-};
-
-// Fetched at build time; a failed fetch falls back to build-from-source below.
-// Versioned releases (v*) get cards; rolling win64-main-* CI builds are linked.
+// Rendered at build time — no client-side GitHub calls, so visitors never hit
+// the API's per-IP rate limit. A release in sharpemu/sharpemu dispatches to
+// this repo (notify-site.yml → deploy.yml), which redeploys within a minute.
 let releases: Release[] = [];
 try {
-  const headers: Record<string, string> = { accept: 'application/vnd.github+json' };
-  // Optional: avoids anonymous rate limits (locally: GITHUB_TOKEN=$(gh auth token) npm run build)
-  if (import.meta.env.GITHUB_TOKEN) headers.authorization = `Bearer ${import.meta.env.GITHUB_TOKEN}`;
-  const res = await fetch(
-    'https://api.github.com/repos/sharpemu/sharpemu/releases?per_page=30',
-    { headers },
-  );
-  if (res.ok)
-    releases = ((await res.json()) as Release[])
-      .filter((r) => !r.draft && /^v\d/.test(r.tag_name))
-      .slice(0, 3)
-      // Tags like v0.0.2-beta.2 aren't flagged prerelease upstream; label them anyway.
-      .map((r) => ({ ...r, prerelease: r.prerelease || /-(beta|alpha|rc)/i.test(r.tag_name) }));
-} catch {
-  // offline or rate-limited build — page still renders
+  // GITHUB_TOKEN avoids anonymous rate limits; CI always sets it.
+  releases = await fetchReleases(import.meta.env.GITHUB_TOKEN);
+} catch (err) {
+  // Offline or rate-limited build: fall back to build-from-source instructions.
+  console.warn(`[downloads] ${err instanceof Error ? err.message : err}`);
 }
-
-const fmtSize = (b: number) => (b > 1e9 ? `${(b / 1e9).toFixed(1)} GB` : `${(b / 1e6).toFixed(1)} MB`);
-const fmtDate = (d: string) =>
-  new Date(d).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+const downloadsHtml = renderDownloads(releases);
 ---
 
 <Base title="Downloads — SharpEmu" description="Download SharpEmu builds or compile from source.">
@@ -48,79 +25,7 @@ const fmtDate = (d: string) =>
       <a href="/compatibility" class="text-psblue underline">check compatibility</a> first.
     </p>
 
-    {
-      releases.length > 0 ? (
-        <div class="mt-10 space-y-6">
-          {releases.map((r, i) => (
-            <div class="rounded-2xl border border-ink/8 bg-white/70 p-7">
-              <div class="flex flex-wrap items-center gap-3">
-                <h2 class="font-display text-xl font-bold tracking-tight">{r.name || r.tag_name}</h2>
-                {i === 0 && !r.prerelease && (
-                  <span class="rounded-full bg-green-100 px-3 py-0.5 text-xs font-semibold text-green-700">
-                    Latest
-                  </span>
-                )}
-                {r.prerelease && (
-                  <span class="rounded-full bg-amber-100 px-3 py-0.5 text-xs font-semibold text-amber-800">
-                    Pre-release
-                  </span>
-                )}
-                <span class="ml-auto font-mono text-xs text-muted">{fmtDate(r.published_at)}</span>
-              </div>
-              {r.assets.length > 0 ? (
-                <ul class="mt-5 space-y-2.5">
-                  {r.assets.map((a) => (
-                    <li>
-                      <a
-                        href={a.browser_download_url}
-                        class="group flex items-center gap-3 rounded-xl border border-ink/8 px-5 py-3 transition-colors hover:border-psblue/40 hover:bg-psblue/[0.03]"
-                      >
-                        <span class="min-w-0 flex-1 truncate font-mono text-[13px] font-medium group-hover:text-psblue">
-                          {a.name}
-                        </span>
-                        <span class="shrink-0 text-xs text-muted">{fmtSize(a.size)}</span>
-                        <span class="shrink-0 rounded-full bg-psblue px-4 py-1.5 text-xs font-semibold text-white">
-                          Download
-                        </span>
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              ) : (
-                <p class="mt-4 text-sm text-muted">
-                  No binaries attached —{' '}
-                  <a href={r.html_url} class="text-psblue underline">
-                    view the release on GitHub
-                  </a>
-                  .
-                </p>
-              )}
-            </div>
-          ))}
-          <p class="text-sm text-muted">
-            Want the newest changes? Rolling development builds are published for every commit —{' '}
-            <a href={`${SITE.repoUrl}/releases`} class="text-psblue underline">
-              all releases on GitHub →
-            </a>
-          </p>
-        </div>
-      ) : (
-        <div class="mt-10 rounded-2xl border border-ink/8 bg-white/70 p-7">
-          <h2 class="font-display text-xl font-bold tracking-tight">No packaged builds right now</h2>
-          <p class="mt-3 text-sm leading-relaxed text-muted">
-            Check the{' '}
-            <a href={`${SITE.repoUrl}/releases`} class="text-psblue underline">
-              releases page on GitHub
-            </a>{' '}
-            — or build from source with the .NET SDK:
-          </p>
-          <pre class="mt-5 overflow-x-auto rounded-xl bg-ink p-5 font-mono text-[13px] leading-relaxed text-slate-200"><code>git clone https://github.com/sharpemu/sharpemu.git
-cd sharpemu
-dotnet publish</code></pre>
-          <p class="mt-3 text-sm text-muted">Build artifacts land in the <code>artifacts</code> directory.</p>
-        </div>
-      )
-    }
+    <div class="mt-10" set:html={downloadsHtml} />
 
     <div class="prose prose-slate mt-12 max-w-none">
       <h2 class="font-display tracking-tight">Getting started</h2>

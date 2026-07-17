@@ -2,7 +2,18 @@ name: Deploy
 on:
   push:
     branches: [main]
+  # Fired by sharpemu/sharpemu when a release is published, so the downloads
+  # page picks it up without waiting for the next commit here.
+  repository_dispatch:
+    types: [release-published]
+  # Safety net: rebuild daily in case a dispatch is ever missed.
+  schedule:
+    - cron: '30 4 * * *'
   workflow_dispatch:
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false
 
 jobs:
   deploy:
@@ -25,4 +36,4 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy dist --project-name=sharpemu
+          command: pages deploy dist --project-name=sharpemu --branch=main

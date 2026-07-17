@@ -1,0 +1,50 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import StatusBadge from './StatusBadge.astro';
+import type { Game } from '../lib/games';
+import { excerpt } from '../lib/text';
+
+interface Props {
+  game: Game;
+  entry: CollectionEntry<'compat'>;
+}
+const { game, entry } = Astro.props;
+const d = entry.data;
+const summary = excerpt(entry.body ?? '');
+const date = d.testedDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+---
+
+<a
+  href={`/game/${game.titleId}/`}
+  class="group flex gap-5 rounded-2xl border border-ink/8 bg-white/70 p-5 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_14px_36px_rgba(14,30,60,0.13)]"
+>
+  {
+    game.cover ? (
+      <img
+        src={game.cover}
+        alt=""
+        width="176"
+        height="176"
+        loading="lazy"
+        referrerpolicy="no-referrer"
+        class="h-22 w-22 shrink-0 rounded-xl object-cover shadow-[0_6px_18px_rgba(14,30,60,0.16)]"
+      />
+    ) : (
+      <div class="flex h-22 w-22 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-slate-200 to-slate-300 p-2 text-center font-display text-[10px] font-semibold text-slate-500">
+        {game.name}
+      </div>
+    )
+  }
+  <div class="min-w-0 flex-1">
+    <div class="flex items-start justify-between gap-3">
+      <p class="truncate font-display text-[15px] font-bold transition-colors group-hover:text-psblue">
+        {game.name}
+      </p>
+      <StatusBadge status={d.status} />
+    </div>
+    <p class="mt-1 font-mono text-[11px] text-muted">
+      {d.testedVersion} · {d.os} · {date}
+    </p>
+    {summary && <p class="mt-2 line-clamp-2 text-[13px] leading-relaxed text-muted">{summary}</p>}
+  </div>
+</a>

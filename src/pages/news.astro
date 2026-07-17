@@ -1,0 +1,33 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+
+const posts = (await getCollection('news')).sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime(),
+);
+const fmt = (d: Date) =>
+  d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+---
+
+<Base title="News — SharpEmu" description="Development updates from the SharpEmu project.">
+  <section class="mx-auto max-w-3xl px-5 pt-12">
+    <h1 class="font-display text-4xl font-extrabold tracking-tight">News</h1>
+    <p class="mt-3 text-muted">Development updates and progress reports.</p>
+    <div class="mt-10 space-y-6">
+      {
+        posts.map((post) => (
+          <a
+            href={`/news/${post.id}/`}
+            class="group block rounded-2xl border border-ink/8 bg-white/70 p-7 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_14px_36px_rgba(14,30,60,0.13)]"
+          >
+            <p class="font-mono text-xs text-muted">{fmt(post.data.date)}</p>
+            <h2 class="mt-2 font-display text-xl font-bold tracking-tight transition-colors group-hover:text-psblue">
+              {post.data.title}
+            </h2>
+            {post.data.description && <p class="mt-2 text-sm text-muted">{post.data.description}</p>}
+          </a>
+        ))
+      }
+    </div>
+  </section>
+</Base>

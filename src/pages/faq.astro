@@ -1,0 +1,70 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../config';
+---
+
+<Base title="FAQ — SharpEmu" description="Frequently asked questions about the SharpEmu PS5 emulator.">
+  <section class="prose prose-slate mx-auto max-w-3xl px-5 pt-12">
+    <h1 class="font-display tracking-tight">Frequently asked questions</h1>
+
+    <h2>What is SharpEmu?</h2>
+    <p>
+      An experimental PlayStation 5 emulator written from scratch in C#, developed purely for
+      research and educational purposes. We enjoy learning about system architecture and reverse
+      engineering; there are no commercial goals.
+    </p>
+
+    <h2>Can it play my games?</h2>
+    <p>
+      Probably not yet. SharpEmu is in early development — the current focus is accuracy and
+      infrastructure, not game-specific fixes. Some titles boot to menus or in-game; check the
+      <a href="/compatibility">compatibility database</a> for the honest per-game picture, and the
+      exact build each report was made on.
+    </p>
+
+    <h2>Is emulation legal?</h2>
+    <p>
+      Emulators themselves are legal software. What is <em>not</em> legal is downloading games,
+      firmware or system files you don't own. SharpEmu contains no code from Sony, ships no game
+      content, and only runs dumps you make from your own console and your own discs or purchases.
+      Piracy is not supported and compatibility reports based on pirated dumps are removed.
+    </p>
+
+    <h2>Where do I get games?</h2>
+    <p>
+      From your own PlayStation 5 — you dump the games you legally own. We do not provide games,
+      firmware, keys, or instructions for obtaining copyrighted content, and we won't help with
+      pirated copies.
+    </p>
+
+    <h2>Which platforms are supported?</h2>
+    <p>
+      Windows is the primary development target. Linux and macOS support is in progress and already
+      used for testing — several compatibility reports come from macOS.
+    </p>
+
+    <h2>Why C#?</h2>
+    <p>
+      Because we like it, and it makes iteration fast. The project exists to learn — the language
+      choice is part of the experiment: how far can a managed runtime take console emulation?
+    </p>
+
+    <h2>Isn't there already shadPS4?</h2>
+    <p>
+      <a href="https://shadps4.net">shadPS4</a> is an excellent PS4 emulator — that's exactly why
+      SharpEmu focuses exclusively on the PlayStation 5 and will not add PS4 support.
+    </p>
+
+    <h2>How can I help?</h2>
+    <ul>
+      <li>
+        <a href="/compatibility/report">Test games and submit compatibility reports</a> — the most
+        useful contribution right now.
+      </li>
+      <li>
+        Contribute code or documentation on <a href={SITE.repoUrl}>GitHub</a>.
+      </li>
+      <li>Spread honest expectations: it's a research project, not a product.</li>
+    </ul>
+  </section>
+</Base>

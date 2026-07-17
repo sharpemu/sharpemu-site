@@ -1,7 +1,8 @@
 ---
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
-import { games } from '../lib/games';
+import ReportCard from '../components/ReportCard.astro';
+import { games, gameByAnyTitleId } from '../lib/games';
 import { computeStats, STATUS_META, STATUSES } from '../lib/compat';
 
 const compat = await getCollection('compat');
@@ -9,6 +10,11 @@ const stats = computeStats(compat.map((e) => e.data.status));
 const clientMeta = Object.fromEntries(
   Object.entries(STATUS_META).map(([k, v]) => [k, { label: v.label, cls: v.badgeClass }]),
 );
+
+const tested = compat
+  .map((entry) => ({ entry, game: gameByAnyTitleId.get(entry.data.titleId)! }))
+  .filter((r) => r.game)
+  .sort((a, b) => b.entry.data.testedDate.getTime() - a.entry.data.testedDate.getTime());
 ---
 
 <Base title="Game compatibility — SharpEmu">
@@ -29,47 +35,111 @@ const clientMeta = Object.fromEntries(
       }
     </div>
 
-    <div class="mt-10 flex flex-col gap-3 sm:flex-row">
-      <input
-        id="q"
-        type="search"
-        placeholder={`Search ${games.length.toLocaleString('en-US')} games by title or PPSA id…`}
-        class="w-full rounded-full border border-ink/10 bg-white px-6 py-3 text-sm shadow-[0_2px_12px_rgba(14,30,60,0.06)] placeholder:text-muted/70 focus:border-psblue focus:ring-2 focus:ring-psblue/20 focus:outline-none"
-      />
-      <select
-        id="status"
-        class="rounded-full border border-ink/10 bg-white px-5 py-3 text-sm font-medium focus:border-psblue focus:outline-none"
+    <!-- Tabs -->
+    <div
+      class="mt-10 inline-flex gap-1 rounded-full border border-ink/10 bg-white p-1 text-sm font-semibold"
+      role="tablist"
+    >
+      <button
+        id="tab-tested"
+        role="tab"
+        aria-selected="true"
+        aria-controls="panel-tested"
+        class="rounded-full px-5 py-2 transition-colors aria-selected:bg-ink aria-selected:text-white"
+        >Tested ({stats.tested})</button
       >
-        <option value="">All statuses</option>
-        <option value="tested">Any tested</option>
-        {STATUSES.map((s) => <option value={s}>{STATUS_META[s].label}</option>)}
-        <option value="untested">Not tested</option>
-      </select>
+      <button
+        id="tab-all"
+        role="tab"
+        aria-selected="false"
+        aria-controls="panel-all"
+        class="rounded-full px-5 py-2 text-muted transition-colors aria-selected:bg-ink aria-selected:text-white"
+        >All games ({games.length.toLocaleString('en-US')})</button
+      >
     </div>
 
-    <p id="count" class="mt-6 text-sm text-muted">Loading the game list…</p>
-    <div class="mt-3 overflow-x-auto rounded-2xl border border-ink/8 bg-white/70">
-      <table class="w-full text-left text-sm">
-        <thead class="border-b border-ink/8 text-xs text-muted uppercase tracking-wide">
-          <tr>
-            <th class="px-6 py-3.5 font-semibold">Title</th>
-            <th class="px-6 py-3.5 font-semibold">Title ID</th>
-            <th class="px-6 py-3.5 font-semibold">Status</th>
-          </tr>
-        </thead>
-        <tbody id="rows"></tbody>
-      </table>
+    <!-- Tested panel -->
+    <div id="panel-tested" role="tabpanel" class="mt-8">
+      {
+        tested.length > 0 ? (
+          <div class="grid gap-5 md:grid-cols-2">
+            {tested.map(({ game, entry }) => (
+              <ReportCard game={game} entry={entry} />
+            ))}
+          </div>
+        ) : (
+          <p class="text-muted">
+            No reports yet.{' '}
+            <a href="/compatibility/report" class="text-psblue underline">
+              Be the first
+            </a>
+            .
+          </p>
+        )
+      }
+    </div>
+
+    <!-- All games panel -->
+    <div id="panel-all" role="tabpanel" class="mt-8" hidden>
+      <div class="flex flex-col gap-3 sm:flex-row">
+        <input
+          id="q"
+          type="search"
+          placeholder={`Search ${games.length.toLocaleString('en-US')} games by title or PPSA id…`}
+          class="w-full rounded-full border border-ink/10 bg-white px-6 py-3 text-sm shadow-[0_2px_12px_rgba(14,30,60,0.06)] placeholder:text-muted/70 focus:border-psblue focus:ring-2 focus:ring-psblue/20 focus:outline-none"
+        />
+        <select
+          id="status"
+          class="rounded-full border border-ink/10 bg-white px-5 py-3 text-sm font-medium focus:border-psblue focus:outline-none"
+        >
+          <option value="">All statuses</option>
+          <option value="tested">Any tested</option>
+          {STATUSES.map((s) => <option value={s}>{STATUS_META[s].label}</option>)}
+          <option value="untested">Not tested</option>
+        </select>
+      </div>
+
+      <p id="count" class="mt-6 text-sm text-muted">Loading the game list…</p>
+      <div class="mt-3 overflow-x-auto rounded-2xl border border-ink/8 bg-white/70">
+        <table class="w-full text-left text-sm">
+          <thead class="border-b border-ink/8 text-xs text-muted uppercase tracking-wide">
+            <tr>
+              <th class="px-6 py-3.5 font-semibold">Title</th>
+              <th class="px-6 py-3.5 font-semibold">Title ID</th>
+              <th class="px-6 py-3.5 font-semibold">Status</th>
+            </tr>
+          </thead>
+          <tbody id="rows"></tbody>
+        </table>
+      </div>
     </div>
   </section>
 
   <script is:inline define:vars={{ clientMeta }}>
-    const MAX_ROWS = 300;
+    const MAX_ROWS = 200;
+    const STATUS_ORDER = { playable: 0, ingame: 1, menus: 2, boots: 3, nothing: 4, untested: 5 };
     const esc = (s) => s.replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
     const $q = document.getElementById('q');
     const $status = document.getElementById('status');
     const $rows = document.getElementById('rows');
     const $count = document.getElementById('count');
+    const tabs = {
+      tested: [document.getElementById('tab-tested'), document.getElementById('panel-tested')],
+      all: [document.getElementById('tab-all'), document.getElementById('panel-all')],
+    };
     let all = [];
+
+    function selectTab(name) {
+      for (const [key, [tab, panel]] of Object.entries(tabs)) {
+        tab.setAttribute('aria-selected', String(key === name));
+        tab.classList.toggle('text-muted', key !== name);
+        panel.hidden = key !== name;
+      }
+      if (name === 'all') history.replaceState(null, '', '#all');
+      else history.replaceState(null, '', location.pathname);
+    }
+    tabs.tested[0].addEventListener('click', () => selectTab('tested'));
+    tabs.all[0].addEventListener('click', () => selectTab('all'));
 
     function renderList() {
       const q = $q.value.trim().toLowerCase();
@@ -102,7 +172,9 @@ const clientMeta = Object.fromEntries(
     fetch('/games-index.json')
       .then((r) => r.json())
       .then((data) => {
-        all = data;
+        all = data.sort(
+          (a, b) => STATUS_ORDER[a.s] - STATUS_ORDER[b.s] || a.n.localeCompare(b.n),
+        );
         renderList();
       })
       .catch(() => {
@@ -110,5 +182,10 @@ const clientMeta = Object.fromEntries(
       });
     $q.addEventListener('input', renderList);
     $status.addEventListener('change', renderList);
+
+    // Deep links: /compatibility?q=… (from the landing search) and /compatibility#all
+    const initQ = new URLSearchParams(location.search).get('q');
+    if (initQ) $q.value = initQ;
+    if (initQ || location.hash === '#all') selectTab('all');
   </script>
 </Base>

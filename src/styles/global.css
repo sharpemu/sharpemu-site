@@ -1,1 +1,55 @@
-@import "tailwindcss";
+@import '@fontsource-variable/inter';
+@import '@fontsource-variable/sora';
+@import '@fontsource/jetbrains-mono';
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+@theme {
+  --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Sora Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', monospace;
+
+  /* Console Shell palette — PS5 porcelain, ink core, PlayStation blue */
+  --color-paper: #f3f5fa;
+  --color-ink: #0e1116;
+  --color-psblue: #0070d1;
+  --color-glow: #7db4ff;
+  --color-muted: #5b6270;
+}
+
+body {
+  @apply bg-paper font-sans text-ink antialiased;
+}
+
+/* Orchestrated hero entrance — one moment, staggered, reduced-motion safe */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.rise {
+  animation: rise 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.rise-1 { animation-delay: 0.05s; }
+.rise-2 { animation-delay: 0.14s; }
+.rise-3 { animation-delay: 0.23s; }
+.rise-4 { animation-delay: 0.32s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .rise {
+    animation: none;
+  }
+}
+
+/* Hide scrollbars on the game sled while keeping it scrollable */
+.sled::-webkit-scrollbar {
+  display: none;
+}
+.sled {
+  scrollbar-width: none;
+}

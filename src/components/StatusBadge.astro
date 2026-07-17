@@ -1,0 +1,18 @@
+---
+import { STATUS_META, type DisplayStatus } from '../lib/compat';
+
+interface Props {
+  status: DisplayStatus;
+  size?: 'sm' | 'lg';
+}
+const { status, size = 'sm' } = Astro.props;
+const meta = STATUS_META[status];
+const sizeCls = size === 'lg' ? 'px-4 py-1.5 text-sm' : 'px-2.5 py-0.5 text-[11px]';
+---
+
+<span
+  class={`inline-block rounded-full font-semibold ${meta.badgeClass} ${sizeCls}`}
+  title={meta.description}
+>
+  {meta.label}
+</span>

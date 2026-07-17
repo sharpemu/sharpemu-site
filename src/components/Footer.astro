@@ -1,0 +1,20 @@
+---
+import { SITE } from '../config';
+---
+
+<footer class="mt-28 border-t border-ink/5 py-12 text-center text-xs leading-relaxed text-muted">
+  <div class="mx-auto max-w-3xl space-y-2 px-5">
+    <p>
+      {SITE.name} is an experimental, open-source research project. It is not affiliated with,
+      endorsed by, or associated with Sony Interactive Entertainment. "PlayStation" and "PS5" are
+      trademarks of Sony Interactive Entertainment Inc.
+    </p>
+    <p>
+      Game titles, cover art and trademarks belong to their respective owners. Cover images are
+      served from the PlayStation Store. Takedown requests:
+      <a href={`${SITE.siteRepoUrl}/issues`} class="underline transition-colors hover:text-ink"
+        >open an issue</a
+      >.
+    </p>
+  </div>
+</footer>

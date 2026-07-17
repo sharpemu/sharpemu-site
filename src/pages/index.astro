@@ -1,17 +1,147 @@
 ---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import GameTile from '../components/GameTile.astro';
+import StatusBadge from '../components/StatusBadge.astro';
+import { SITE } from '../config';
+import { games, gameByAnyTitleId } from '../lib/games';
+import { computeStats, STATUS_META, STATUSES, type DisplayStatus } from '../lib/compat';
 
+const compat = await getCollection('compat');
+const stats = computeStats(compat.map((e) => e.data.status));
+
+const statusByConcept = new Map<number, DisplayStatus>();
+for (const e of compat) {
+  const g = gameByAnyTitleId.get(e.data.titleId);
+  if (g) statusByConcept.set(g.conceptId, e.data.status);
+}
+const tested = games.filter((g) => statusByConcept.has(g.conceptId));
+const covered = games.filter((g) => g.cover && !statusByConcept.has(g.conceptId));
+const sled = [...tested, ...covered].slice(0, 12);
+
+const reachGameplay = stats.counts.ingame + stats.counts.playable;
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Base title={`${SITE.name} — experimental PS5 emulator`}>
+  <!-- Hero -->
+  <section class="relative overflow-hidden">
+    <div
+      class="pointer-events-none absolute -top-40 left-1/4 h-[34rem] w-[54rem] -translate-x-1/2 rounded-full opacity-50 blur-3xl"
+      style="background: radial-gradient(closest-side, #7db4ff 0%, transparent 70%);"
+    >
+    </div>
+    <div class="mx-auto max-w-6xl px-5 pt-20 pb-4 md:pt-28">
+      <p class="rise rise-1 font-mono text-[11px] font-medium tracking-[0.22em] text-muted uppercase">
+        Open source · Written in C# · GPL-2.0
+      </p>
+      <h1
+        class="rise rise-2 mt-5 max-w-2xl font-display text-5xl font-extrabold tracking-tight md:text-6xl"
+      >
+        The open <em class="text-psblue not-italic">PS5 emulator</em> project.
+      </h1>
+      <p class="rise rise-3 mt-6 max-w-xl text-lg leading-relaxed text-muted">
+        SharpEmu is an experimental PlayStation 5 emulator written from scratch in C# — built in
+        the open, for research and education, on Windows, Linux and macOS.
+      </p>
+      <div class="rise rise-4 mt-8 flex flex-wrap items-center gap-4">
+        <a
+          href={SITE.repoUrl}
+          class="rounded-full bg-psblue px-7 py-3 text-sm font-semibold text-white shadow-[0_8px_24px_rgba(0,112,209,0.35)] transition-opacity hover:opacity-90"
+          >View on GitHub</a
+        >
+        <a
+          href="/compatibility"
+          class="rounded-full border border-ink/15 bg-white/60 px-7 py-3 text-sm font-semibold transition-colors hover:border-ink/30"
+          >Browse game compatibility</a
+        >
+        <span class="rounded-full bg-amber-100 px-4 py-1.5 text-xs font-semibold text-amber-800">
+          Early development — most games don't run yet
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Game sled -->
+  <section class="mt-16">
+    <div class="mx-auto max-w-6xl px-5">
+      <h2 class="font-display text-2xl font-bold tracking-tight">How far does your game get?</h2>
+      <p class="mt-2 text-sm text-muted">
+        {games.length.toLocaleString('en-US')} PS5 titles tracked — reports name the exact build tested.
+      </p>
+    </div>
+    <div
+      class="sled mt-8 flex snap-x gap-6 overflow-x-auto pb-4"
+      style="padding-inline: max(1.25rem, calc((100vw - 72rem) / 2 + 1.25rem));"
+    >
+      {sled.map((g) => <GameTile game={g} status={statusByConcept.get(g.conceptId) ?? 'untested'} />)}
+      <a
+        href="/compatibility"
+        class="flex h-40 w-40 shrink-0 snap-start items-center justify-center rounded-2xl border-2 border-dashed border-ink/15 p-4 text-center text-sm font-semibold text-muted transition-colors hover:border-psblue hover:text-psblue"
+      >
+        All {games.length.toLocaleString('en-US')} games →
+      </a>
+    </div>
+  </section>
+
+  <!-- Stat strip -->
+  <section class="mx-auto mt-14 max-w-6xl px-5">
+    <div
+      class="flex flex-col divide-y divide-ink/8 rounded-2xl border border-ink/8 bg-white/70 sm:flex-row sm:divide-x sm:divide-y-0"
+    >
+      <div class="flex-1 px-8 py-6">
+        <div class="font-display text-3xl font-extrabold">{games.length.toLocaleString('en-US')}</div>
+        <div class="mt-1 text-sm text-muted">PS5 games in the database</div>
+      </div>
+      <div class="flex-1 px-8 py-6">
+        <div class="font-display text-3xl font-extrabold">{stats.tested}</div>
+        <div class="mt-1 text-sm text-muted">compatibility reports</div>
+      </div>
+      <div class="flex-1 px-8 py-6">
+        <div class="font-display text-3xl font-extrabold">{reachGameplay}</div>
+        <div class="mt-1 text-sm text-muted">games reaching gameplay</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About + status ladder -->
+  <section class="mx-auto mt-24 grid max-w-6xl gap-14 px-5 md:grid-cols-2">
+    <div class="prose prose-slate max-w-none">
+      <h2 class="font-display tracking-tight">About the project</h2>
+      <p>
+        SharpEmu is developed purely for research and educational purposes — we enjoy learning
+        about system architecture and reverse engineering. There are no commercial goals.
+      </p>
+      <p>
+        The emulator loads real game executables, runs native CPU instructions, and partially
+        handles kernel, graphics and multimedia functionality. Some games already boot to menus or
+        in-game.
+      </p>
+      <p>
+        SharpEmu focuses exclusively on the PlayStation 5. For PS4 emulation, check out the
+        excellent <a href="https://shadps4.net">shadPS4</a> project.
+      </p>
+    </div>
+    <div>
+      <h2 class="font-display text-2xl font-bold tracking-tight">How games are rated</h2>
+      <ul class="mt-6 space-y-4">
+        {
+          [...STATUSES].reverse().map((s) => (
+            <li class="flex items-center gap-4">
+              <span class="w-24 shrink-0">
+                <StatusBadge status={s} />
+              </span>
+              <span class="text-sm text-muted">{STATUS_META[s].description}</span>
+            </li>
+          ))
+        }
+        <li class="flex items-center gap-4">
+          <span class="w-24 shrink-0"><StatusBadge status="untested" /></span>
+          <span class="text-sm text-muted">
+            {STATUS_META.untested.description}
+            <a href="/compatibility/report" class="text-psblue underline">Submit the first report.</a>
+          </span>
+        </li>
+      </ul>
+    </div>
+  </section>
+</Base>

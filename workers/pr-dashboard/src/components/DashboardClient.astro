@@ -1,0 +1,671 @@
+<script>
+  import { buildResultHash, parseResultHash } from '../lib/permalinks';
+  import {
+    fetchRunnerState,
+    formatDuration,
+    relativeTime,
+    safeUrl,
+    shortSha,
+    type GameRun,
+    type PullRequestRun,
+    type RunnerGame,
+    type RunnerState,
+  } from '../lib/runner';
+
+  const REFRESH_INTERVAL = 15_000;
+
+  const verdicts: Record<
+    string,
+    { label: string; symbol: string; mark: string; badge: string }
+  > = {
+    mergeable: {
+      label: 'Mergeable',
+      symbol: '✓',
+      mark: 'border-green-400/25 bg-green-400/[0.08] text-green-400',
+      badge: 'border-green-400/30 bg-green-400/[0.08] text-green-300',
+    },
+    regression: {
+      label: 'Regression',
+      symbol: '×',
+      mark: 'border-red-400/25 bg-red-400/[0.08] text-red-400',
+      badge: 'border-red-400/30 bg-red-400/[0.08] text-red-300',
+    },
+    testing: {
+      label: 'Testing',
+      symbol: '⌁',
+      mark: 'border-amber-400/25 bg-amber-400/[0.08] text-amber-300',
+      badge: 'border-amber-400/30 bg-amber-400/[0.08] text-amber-200',
+    },
+    pending: {
+      label: 'Pending',
+      symbol: '○',
+      mark: 'border-amber-400/25 bg-amber-400/[0.08] text-amber-300',
+      badge: 'border-amber-400/30 bg-amber-400/[0.08] text-amber-200',
+    },
+    stale: {
+      label: 'Needs rebase',
+      symbol: '↻',
+      mark: 'border-orange-400/25 bg-orange-400/[0.08] text-orange-300',
+      badge: 'border-orange-400/30 bg-orange-400/[0.08] text-orange-200',
+    },
+    unavailable: {
+      label: 'Unavailable',
+      symbol: '⊘',
+      mark: 'border-orange-400/25 bg-orange-400/[0.08] text-orange-300',
+      badge: 'border-orange-400/30 bg-orange-400/[0.08] text-orange-200',
+    },
+    closed: {
+      label: 'Closed',
+      symbol: '⊘',
+      mark: 'border-white/15 bg-white/[0.05] text-muted',
+      badge: 'border-white/15 bg-white/[0.05] text-muted',
+    },
+  };
+
+  const defaultVerdict = {
+    label: 'Pending',
+    symbol: '○',
+    mark: 'border-white/15 bg-white/[0.05] text-muted',
+    badge: 'border-white/15 bg-white/[0.05] text-muted',
+  };
+
+  const markBase =
+    'grid size-9 place-items-center rounded-xl border text-sm font-bold';
+  const badgeBase =
+    'inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-[11px] font-bold';
+  const statusTone: Record<string, string> = {
+    passed: 'text-green-400',
+    failed: 'text-red-400',
+    running: 'text-amber-300',
+    queued: 'text-amber-300',
+    stale: 'text-orange-300',
+    none: 'text-muted',
+  };
+  const dotTone: Record<string, string> = {
+    passed: 'bg-green-400',
+    failed: 'bg-red-400',
+    running: 'bg-amber-300',
+    queued: 'bg-amber-300',
+    stale: 'bg-orange-300',
+    none: 'bg-muted/40',
+  };
+
+  function required<T extends Element>(selector: string): T {
+    const element = document.querySelector<T>(selector);
+    if (!element) throw new Error(`Missing dashboard element: ${selector}`);
+    return element;
+  }
+
+  const elements = {
+    clock: required<HTMLElement>('#clock'),
+    connection: required<HTMLElement>('#connection'),
+    connectionDot: required<HTMLElement>('#connection-dot'),
+    connectionLabel: required<HTMLElement>('#connection-label'),
+    repoLink: required<HTMLAnchorElement>('#repo-link'),
+    filters: required<HTMLElement>('#filters'),
+    search: required<HTMLInputElement>('#search'),
+    refresh: required<HTMLButtonElement>('#refresh'),
+    refreshIcon: required<SVGElement>('#refresh-icon'),
+    error: required<HTMLElement>('#error'),
+    list: required<HTMLElement>('#pr-list'),
+    detailEmpty: required<HTMLElement>('#detail-empty'),
+    detailEmptyLabel: required<HTMLElement>('#detail-empty-label'),
+    detailContent: required<HTMLElement>('#detail-content'),
+    detailPr: required<HTMLElement>('#detail-pr'),
+    detailVerdict: required<HTMLElement>('#detail-verdict'),
+    detailVerdictSymbol: required<HTMLElement>('#detail-verdict-symbol'),
+    detailVerdictLabel: required<HTMLElement>('#detail-verdict-label'),
+    detailTitle: required<HTMLAnchorElement>('#detail-title'),
+    detailAuthor: required<HTMLElement>('#detail-author'),
+    detailSource: required<HTMLElement>('#detail-source'),
+    detailSha: required<HTMLElement>('#detail-sha'),
+    detailBase: required<HTMLElement>('#detail-base'),
+    detailTested: required<HTMLElement>('#detail-tested'),
+    detailDraft: required<HTMLElement>('#detail-draft'),
+    detailGithub: required<HTMLAnchorElement>('#detail-github'),
+    gameResults: required<HTMLElement>('#game-results'),
+    recordings: required<HTMLElement>('#recordings'),
+    recordingsAction: required<HTMLButtonElement>('#recordings-action'),
+    recordingsActionLabel: required<HTMLElement>('#recordings-action-label'),
+    resultCount: required<HTMLElement>('#result-count'),
+    countOpen: required<HTMLElement>('#count-open'),
+    countMergeable: required<HTMLElement>('#count-mergeable'),
+    countRegression: required<HTMLElement>('#count-regression'),
+    countTesting: required<HTMLElement>('#count-testing'),
+    countRebase: required<HTMLElement>('#count-rebase'),
+    queueLabel: required<HTMLElement>('#queue-label'),
+    updatedLabel: required<HTMLElement>('#updated-label'),
+    queuePulse: required<HTMLElement>('#queue-pulse'),
+    prCardTemplate: required<HTMLTemplateElement>('#pr-card-template'),
+    gameResultTemplate: required<HTMLTemplateElement>('#game-result-template'),
+    recordingTemplate: required<HTMLTemplateElement>('#recording-template'),
+  };
+
+  const dashboard = {
+    data: null as RunnerState | null,
+    filter: 'all',
+    query: '',
+    selected: null as number | null,
+    linkedGameId: null as string | null,
+    loading: false,
+    renderedDetail: '',
+  };
+
+  function verdictFor(value: string) {
+    return verdicts[value] ?? defaultVerdict;
+  }
+
+  function setConnection(state: 'connecting' | 'live' | 'error') {
+    elements.connection.dataset.state = state;
+    elements.connectionLabel.textContent =
+      state === 'live' ? 'Live' : state === 'error' ? 'Retrying' : 'Connecting';
+    elements.connectionDot.className =
+      state === 'live'
+        ? 'size-2 rounded-full bg-green-400 shadow-[0_0_0_5px_rgba(74,222,128,.08)]'
+        : state === 'error'
+          ? 'size-2 rounded-full bg-red-400 shadow-[0_0_0_5px_rgba(248,113,113,.08)]'
+          : 'size-2 rounded-full bg-amber-400 shadow-[0_0_0_5px_rgba(251,191,36,.08)]';
+  }
+
+  function renderSummary() {
+    if (!dashboard.data) return;
+
+    const counts = dashboard.data.prs.reduce<Record<string, number>>(
+      (result, pullRequest) => {
+        result[pullRequest.verdict] = (result[pullRequest.verdict] ?? 0) + 1;
+        return result;
+      },
+      {},
+    );
+
+    elements.countOpen.textContent = String(dashboard.data.prs.length);
+    elements.countMergeable.textContent = String(counts.mergeable ?? 0);
+    elements.countRegression.textContent = String(counts.regression ?? 0);
+    elements.countTesting.textContent = String(
+      (counts.testing ?? 0) + (counts.pending ?? 0),
+    );
+    elements.countRebase.textContent = String(counts.stale ?? 0);
+
+    const running = dashboard.data.queue?.running ?? 0;
+    const waiting = dashboard.data.queue?.waiting ?? 0;
+    const busy = running + waiting > 0;
+    elements.queueLabel.textContent = busy
+      ? `${running} running · ${waiting} queued`
+      : 'Queue idle';
+    elements.queuePulse.className = busy
+      ? 'size-3 shrink-0 animate-pulse rounded-full border-2 border-amber-300 shadow-[0_0_0_6px_rgba(252,211,77,.08)]'
+      : 'size-3 shrink-0 rounded-full border-2 border-green-400 shadow-[0_0_0_6px_rgba(74,222,128,.08)]';
+
+    const generatedAt = new Date(dashboard.data.generatedAt);
+    elements.updatedLabel.textContent = Number.isNaN(generatedAt.getTime())
+      ? 'Updated recently'
+      : `Updated ${generatedAt.toLocaleTimeString([], {
+          hour: '2-digit',
+          minute: '2-digit',
+        })}`;
+    elements.repoLink.href = safeUrl(dashboard.data.repo?.url);
+  }
+
+  function visiblePullRequests(): PullRequestRun[] {
+    if (!dashboard.data) return [];
+
+    return dashboard.data.prs.filter((pullRequest) => {
+      const matchesFilter =
+        dashboard.filter === 'all' || pullRequest.verdict === dashboard.filter;
+      const haystack =
+        `#${pullRequest.number} ${pullRequest.title} ${pullRequest.author}`.toLowerCase();
+      return matchesFilter && haystack.includes(dashboard.query);
+    });
+  }
+
+  function gameDots(pullRequest: PullRequestRun): DocumentFragment {
+    const fragment = document.createDocumentFragment();
+    if (!dashboard.data) return fragment;
+
+    for (const game of dashboard.data.games) {
+      const status = pullRequest.games?.[game.id]?.status ?? 'none';
+      const dot = document.createElement('span');
+      dot.className = `size-1.5 rounded-full ${dotTone[status] ?? dotTone.none}`;
+      dot.title = `${game.name}: ${status}`;
+      fragment.append(dot);
+    }
+    return fragment;
+  }
+
+  function renderPullRequestCard(pullRequest: PullRequestRun): DocumentFragment {
+    const fragment = elements.prCardTemplate.content.cloneNode(true) as DocumentFragment;
+    const card = requiredFrom<HTMLButtonElement>(fragment, '[data-pr-card]');
+    const mark = requiredFrom<HTMLElement>(fragment, '[data-verdict-mark]');
+    const draft = requiredFrom<HTMLElement>(fragment, '[data-pr-draft]');
+    const verdict = verdictFor(pullRequest.verdict);
+
+    card.dataset.pr = String(pullRequest.number);
+    card.dataset.verdict = pullRequest.verdict;
+    card.setAttribute('aria-pressed', String(pullRequest.number === dashboard.selected));
+    card.setAttribute(
+      'aria-label',
+      `PR #${pullRequest.number}: ${pullRequest.title} — ${verdict.label}`,
+    );
+
+    mark.className = `${markBase} ${verdict.mark}`;
+    mark.textContent = verdict.symbol;
+    mark.title = verdict.label;
+    requiredFrom<HTMLElement>(fragment, '[data-pr-number]').textContent =
+      `PR #${pullRequest.number}`;
+    requiredFrom<HTMLElement>(fragment, '[data-pr-title]').textContent = pullRequest.title;
+    requiredFrom<HTMLElement>(fragment, '[data-pr-byline]').textContent =
+      `by ${pullRequest.author} · ${relativeTime(pullRequest.lastTestedAt)}`;
+    requiredFrom<HTMLElement>(fragment, '[data-game-dots]').append(gameDots(pullRequest));
+    draft.hidden = !pullRequest.draft;
+
+    return fragment;
+  }
+
+  function requiredFrom<T extends Element>(root: ParentNode, selector: string): T {
+    const element = root.querySelector<T>(selector);
+    if (!element) throw new Error(`Missing template element: ${selector}`);
+    return element;
+  }
+
+  function renderList(): boolean {
+    const pullRequests = visiblePullRequests();
+    const previousSelection = dashboard.selected;
+    elements.resultCount.textContent = `${pullRequests.length} result${
+      pullRequests.length === 1 ? '' : 's'
+    }`;
+    elements.list.replaceChildren();
+
+    if (!pullRequests.length) {
+      const empty = document.createElement('p');
+      empty.className = 'w-full px-6 py-14 text-center text-sm text-muted';
+      empty.textContent = 'No pull requests match this view.';
+      elements.list.append(empty);
+      dashboard.selected = null;
+      dashboard.linkedGameId = null;
+      return previousSelection !== null;
+    }
+
+    if (!pullRequests.some(({ number }) => number === dashboard.selected)) {
+      dashboard.selected = pullRequests[0].number;
+      dashboard.linkedGameId = null;
+    }
+
+    for (const pullRequest of pullRequests) {
+      elements.list.append(renderPullRequestCard(pullRequest));
+    }
+    return previousSelection !== dashboard.selected;
+  }
+
+  function setOptionalText(element: HTMLElement, value?: string | null) {
+    element.textContent = value ?? '';
+    element.hidden = !value;
+  }
+
+  function renderGameResult(
+    game: RunnerGame,
+    slot: GameRun | undefined,
+    pullRequest: PullRequestRun,
+  ): DocumentFragment {
+    const fragment = elements.gameResultTemplate.content.cloneNode(
+      true,
+    ) as DocumentFragment;
+    const article = requiredFrom<HTMLElement>(fragment, '[data-game-result]');
+    const status = slot?.status ?? 'none';
+    const statusLabel = status === 'none' ? 'Not tested' : status.replace('-', ' ');
+    const statusElement = requiredFrom<HTMLElement>(fragment, '[data-game-status]');
+
+    article.id = `result-pr-${pullRequest.number}-${game.id}`;
+    article.dataset.gameId = game.id;
+    article.dataset.linked = String(dashboard.linkedGameId === game.id);
+    article.dataset.regression = String(status === 'failed');
+    requiredFrom<HTMLElement>(fragment, '[data-game-name]').textContent = game.name;
+    statusElement.textContent = statusLabel;
+    statusElement.className = `shrink-0 text-[10px] font-bold tracking-[0.06em] uppercase ${
+      statusTone[status] ?? statusTone.none
+    }`;
+
+    setOptionalText(
+      requiredFrom<HTMLElement>(fragment, '[data-game-stage]'),
+      slot?.stage,
+    );
+    setOptionalText(
+      requiredFrom<HTMLElement>(fragment, '[data-game-reason]'),
+      slot?.reason,
+    );
+
+    const evidence = requiredFrom<HTMLAnchorElement>(fragment, '[data-game-evidence]');
+    evidence.hidden = !slot?.evidence;
+    if (slot?.evidence) evidence.href = safeUrl(slot.evidence);
+
+    const recording = requiredFrom<HTMLAnchorElement>(
+      fragment,
+      '[data-game-recording]',
+    );
+    recording.hidden = !slot?.video;
+    if (slot?.video) recording.href = safeUrl(slot.video);
+
+    const permalink = requiredFrom<HTMLAnchorElement>(
+      fragment,
+      '[data-game-permalink]',
+    );
+    permalink.href = buildResultHash(pullRequest.number, game.id);
+    permalink.title = `Permalink to ${game.name} result`;
+    permalink.setAttribute(
+      'aria-label',
+      `Permalink to ${game.name} result for pull request #${pullRequest.number}`,
+    );
+
+    return fragment;
+  }
+
+  function renderRecording(
+    game: RunnerGame,
+    slot: GameRun,
+  ): DocumentFragment {
+    const fragment = elements.recordingTemplate.content.cloneNode(
+      true,
+    ) as DocumentFragment;
+    const frame = requiredFrom<HTMLElement>(fragment, '[data-recording-frame]');
+    const video = requiredFrom<HTMLVideoElement>(fragment, '[data-recording-video]');
+    const duration = requiredFrom<HTMLElement>(fragment, '[data-recording-duration]');
+    const status = requiredFrom<HTMLElement>(fragment, '[data-video-status]');
+    const spinner = requiredFrom<HTMLElement>(fragment, '[data-video-spinner]');
+    const statusLabel = requiredFrom<HTMLElement>(
+      fragment,
+      '[data-video-status-label]',
+    );
+
+    requiredFrom<HTMLElement>(fragment, '[data-recording-label]').textContent =
+      `${game.name} · ${slot.status ?? 'recording'}`;
+    video.setAttribute('aria-label', `${game.name} test recording`);
+
+    const showReady = () => {
+      frame.dataset.mediaState = 'ready';
+      duration.textContent = formatDuration(video.duration);
+      status.hidden = true;
+    };
+    const showLoading = () => {
+      if (frame.dataset.mediaState === 'failed') return;
+      frame.dataset.mediaState = 'loading';
+      spinner.hidden = false;
+      statusLabel.textContent = 'Loading recording metadata…';
+      status.hidden = false;
+    };
+    const showError = () => {
+      frame.dataset.mediaState = 'failed';
+      duration.textContent = 'Unavailable';
+      spinner.hidden = true;
+      statusLabel.textContent =
+        'Recording could not be loaded. Use the direct recording link above.';
+      status.hidden = false;
+    };
+
+    video.addEventListener('loadedmetadata', showReady);
+    video.addEventListener('canplay', showReady);
+    video.addEventListener('loadstart', showLoading);
+    video.addEventListener('waiting', showLoading);
+    video.addEventListener('error', showError);
+    video.src = safeUrl(slot.video);
+    if (video.readyState >= 1) showReady();
+
+    return fragment;
+  }
+
+  function selectedPullRequest(): PullRequestRun | null {
+    if (!dashboard.data || dashboard.selected == null) return null;
+    return (
+      dashboard.data.prs.find(({ number }) => number === dashboard.selected) ?? null
+    );
+  }
+
+  function syncLinkedResult() {
+    const results = elements.gameResults.querySelectorAll<HTMLElement>(
+      '[data-game-result]',
+    );
+    for (const result of results) {
+      result.dataset.linked = String(result.dataset.gameId === dashboard.linkedGameId);
+    }
+  }
+
+  function focusLinkedResult() {
+    if (!dashboard.linkedGameId) return;
+    requestAnimationFrame(() => {
+      const target = Array.from(
+        elements.gameResults.querySelectorAll<HTMLElement>('[data-game-result]'),
+      ).find(({ dataset }) => dataset.gameId === dashboard.linkedGameId);
+      if (!target) return;
+
+      target.focus({ preventScroll: true });
+      target.scrollIntoView({
+        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches
+          ? 'auto'
+          : 'smooth',
+        block: 'center',
+      });
+    });
+  }
+
+  function showDetailEmpty(message: string) {
+    elements.detailEmptyLabel.textContent = message;
+    elements.detailEmpty.hidden = false;
+    elements.detailContent.hidden = true;
+    dashboard.renderedDetail = '';
+  }
+
+  function renderDetail(options: { force?: boolean; focusLinked?: boolean } = {}) {
+    const pullRequest = selectedPullRequest();
+    if (!pullRequest || !dashboard.data) {
+      showDetailEmpty('Select a pull request to inspect its test run.');
+      return;
+    }
+
+    const fingerprint = JSON.stringify(pullRequest);
+    if (!options.force && dashboard.renderedDetail === fingerprint) {
+      syncLinkedResult();
+      if (options.focusLinked) focusLinkedResult();
+      return;
+    }
+
+    const verdict = verdictFor(pullRequest.verdict);
+    elements.detailEmpty.hidden = true;
+    elements.detailContent.hidden = false;
+    elements.detailPr.textContent = `Pull request #${pullRequest.number}`;
+    elements.detailVerdict.className = `${badgeBase} ${verdict.badge}`;
+    elements.detailVerdictSymbol.textContent = verdict.symbol;
+    elements.detailVerdictLabel.textContent = verdict.label;
+    elements.detailTitle.textContent = pullRequest.title;
+    elements.detailTitle.href = safeUrl(pullRequest.url);
+    elements.detailAuthor.textContent = pullRequest.author;
+    elements.detailSource.textContent = pullRequest.headRepoFull
+      ? `branch ${pullRequest.headRef ?? '?'} on ${pullRequest.headRepoFull}`
+      : 'source fork unavailable';
+    elements.detailSha.textContent = shortSha(pullRequest.headSha);
+    elements.detailBase.textContent = pullRequest.baseBranch ?? 'unknown';
+    elements.detailTested.textContent = relativeTime(pullRequest.lastTestedAt);
+    elements.detailDraft.hidden = !pullRequest.draft;
+    elements.detailGithub.href = safeUrl(pullRequest.url);
+
+    elements.gameResults.replaceChildren();
+    for (const game of dashboard.data.games) {
+      elements.gameResults.append(
+        renderGameResult(game, pullRequest.games?.[game.id], pullRequest),
+      );
+    }
+
+    elements.recordings.replaceChildren();
+    let recordingCount = 0;
+    for (const game of dashboard.data.games) {
+      const slot = pullRequest.games?.[game.id];
+      if (!slot?.video) continue;
+      elements.recordings.append(renderRecording(game, slot));
+      recordingCount += 1;
+    }
+
+    elements.recordings.hidden = recordingCount === 0;
+    elements.recordingsAction.hidden = recordingCount === 0;
+    elements.recordingsActionLabel.textContent =
+      `${recordingCount} recording${recordingCount === 1 ? '' : 's'}`;
+    dashboard.renderedDetail = fingerprint;
+    syncLinkedResult();
+    if (options.focusLinked) focusLinkedResult();
+  }
+
+  function syncFilters() {
+    for (const filter of elements.filters.querySelectorAll<HTMLButtonElement>(
+      '[data-filter]',
+    )) {
+      filter.setAttribute(
+        'aria-pressed',
+        String(filter.dataset.filter === dashboard.filter),
+      );
+    }
+  }
+
+  function setHashForSelection() {
+    if (dashboard.selected == null) return;
+    history.replaceState(
+      null,
+      '',
+      buildResultHash(dashboard.selected, dashboard.linkedGameId),
+    );
+  }
+
+  function renderAll(options: { focusLinked?: boolean } = {}) {
+    renderSummary();
+    const selectionChanged = renderList();
+    if (selectionChanged) {
+      dashboard.renderedDetail = '';
+      setHashForSelection();
+    }
+    renderDetail({
+      force: selectionChanged,
+      focusLinked: options.focusLinked,
+    });
+  }
+
+  function selectPullRequest(number: number) {
+    const selectionChanged = dashboard.selected !== number;
+    dashboard.selected = number;
+    dashboard.linkedGameId = null;
+    setHashForSelection();
+
+    for (const card of elements.list.querySelectorAll<HTMLButtonElement>(
+      '[data-pr-card]',
+    )) {
+      card.setAttribute('aria-pressed', String(Number(card.dataset.pr) === number));
+    }
+    renderDetail({ force: selectionChanged });
+  }
+
+  function applyLocationHash() {
+    if (!dashboard.data) return;
+    const target = parseResultHash(location.hash);
+    if (!target) return;
+
+    const pullRequest = dashboard.data.prs.find(
+      ({ number }) => number === target.prNumber,
+    );
+    if (!pullRequest) return;
+
+    const gameExists =
+      target.gameId == null ||
+      dashboard.data.games.some(({ id }) => id === target.gameId);
+    const previousSelection = dashboard.selected;
+    dashboard.filter = 'all';
+    dashboard.query = '';
+    dashboard.selected = target.prNumber;
+    dashboard.linkedGameId = gameExists ? target.gameId : null;
+    elements.search.value = '';
+    syncFilters();
+    renderList();
+    renderDetail({
+      force: previousSelection !== dashboard.selected,
+      focusLinked: dashboard.linkedGameId != null,
+    });
+
+    if (!gameExists) setHashForSelection();
+  }
+
+  async function refresh() {
+    if (dashboard.loading) return;
+    dashboard.loading = true;
+    elements.refresh.disabled = true;
+    elements.refreshIcon.classList.add('animate-spin');
+    const firstLoad = dashboard.data == null;
+
+    try {
+      dashboard.data = await fetchRunnerState();
+      elements.error.hidden = true;
+      setConnection('live');
+
+      if (firstLoad) {
+        const target = parseResultHash(location.hash);
+        if (target) {
+          dashboard.selected = target.prNumber;
+          dashboard.linkedGameId = target.gameId;
+        }
+      }
+
+      renderAll({ focusLinked: firstLoad && dashboard.linkedGameId != null });
+    } catch (error) {
+      console.error(error);
+      elements.error.hidden = false;
+      setConnection('error');
+    } finally {
+      dashboard.loading = false;
+      elements.refresh.disabled = false;
+      elements.refreshIcon.classList.remove('animate-spin');
+    }
+  }
+
+  elements.filters.addEventListener('click', (event) => {
+    const button = (event.target as Element).closest<HTMLButtonElement>(
+      '[data-filter]',
+    );
+    if (!button?.dataset.filter) return;
+
+    dashboard.filter = button.dataset.filter;
+    dashboard.linkedGameId = null;
+    syncFilters();
+    const selectionChanged = renderList();
+    if (dashboard.selected != null) setHashForSelection();
+    renderDetail({ force: selectionChanged });
+  });
+
+  elements.search.addEventListener('input', () => {
+    dashboard.query = elements.search.value.trim().toLowerCase();
+    dashboard.linkedGameId = null;
+    const selectionChanged = renderList();
+    if (dashboard.selected != null) setHashForSelection();
+    renderDetail({ force: selectionChanged });
+  });
+
+  elements.list.addEventListener('click', (event) => {
+    const card = (event.target as Element).closest<HTMLElement>('[data-pr-card]');
+    if (card?.dataset.pr) selectPullRequest(Number(card.dataset.pr));
+  });
+
+  elements.refresh.addEventListener('click', refresh);
+  elements.recordingsAction.addEventListener('click', () => {
+    elements.recordings.scrollIntoView({
+      behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches
+        ? 'auto'
+        : 'smooth',
+      block: 'start',
+    });
+  });
+  window.addEventListener('hashchange', applyLocationHash);
+
+  function updateClock() {
+    elements.clock.textContent = new Date().toLocaleTimeString([], {
+      hour: '2-digit',
+      minute: '2-digit',
+    });
+  }
+
+  updateClock();
+  setInterval(updateClock, 5_000);
+  setConnection('connecting');
+  refresh();
+  setInterval(refresh, REFRESH_INTERVAL);
+</script>

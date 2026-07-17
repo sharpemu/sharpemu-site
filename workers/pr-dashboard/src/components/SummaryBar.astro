@@ -1,0 +1,32 @@
+---
+import SummaryMetric from './SummaryMetric.astro';
+---
+
+<section
+  class="grid grid-cols-2 gap-px overflow-hidden rounded-3xl border border-line bg-line shadow-[0_28px_90px_rgba(0,0,0,.32)] backdrop-blur-2xl lg:grid-cols-5 xl:grid-cols-[repeat(5,minmax(110px,1fr))_minmax(220px,1.6fr)]"
+  aria-label="Current pull request summary"
+>
+  <SummaryMetric id="count-open" label="Open PRs" />
+  <SummaryMetric id="count-mergeable" label="Mergeable" tone="good" />
+  <SummaryMetric id="count-regression" label="Regressions" tone="bad" />
+  <SummaryMetric id="count-testing" label="In progress" tone="active" />
+  <div class="max-lg:col-span-2">
+    <SummaryMetric id="count-rebase" label="Need rebase" />
+  </div>
+  <div
+    class="col-span-2 flex min-h-20 items-center gap-4 bg-[#0d111e]/95 px-5 py-4 lg:col-span-5 xl:col-span-1"
+  >
+    <span
+      id="queue-pulse"
+      class="size-3 shrink-0 rounded-full border-2 border-[var(--status-good)] shadow-[0_0_0_6px_rgba(12,163,12,.08)]"
+      aria-hidden="true"
+    >
+    </span>
+    <span>
+      <strong id="queue-label" class="block text-sm font-semibold">Queue idle</strong>
+      <small id="updated-label" class="mt-1 block text-[11px] text-muted">
+        Waiting for the runner
+      </small>
+    </span>
+  </div>
+</section>

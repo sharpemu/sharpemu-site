@@ -1,0 +1,24 @@
+---
+interface Props {
+  id: string;
+  label: string;
+  tone?: 'default' | 'good' | 'bad' | 'active';
+}
+
+const { id, label, tone = 'default' } = Astro.props;
+const valueTone = {
+  default: 'text-ink',
+  good: 'text-[var(--status-good)]',
+  bad: 'text-red-400',
+  active: 'text-amber-400',
+}[tone];
+---
+
+<div class="min-h-24 bg-[#0d111e]/95 px-5 py-5">
+  <span id={id} class:list={['block text-3xl leading-none font-bold tracking-tight tabular-nums', valueTone]}>
+    —
+  </span>
+  <span class="mt-2 block text-[10px] font-bold tracking-[0.1em] text-muted uppercase">
+    {label}
+  </span>
+</div>

@@ -1,0 +1,66 @@
+<header class="flex min-h-12 items-center justify-between gap-6">
+  <a
+    class="inline-flex items-center gap-2.5 font-display text-lg font-bold tracking-tight text-ink no-underline"
+    href="https://sharpemu.app"
+    aria-label="SharpEmu home"
+  >
+    <span
+      class="grid size-9 place-items-center rounded-xl border border-accent/35 bg-accent/10 text-accent shadow-[inset_0_1px_rgba(255,255,255,.08)]"
+      aria-hidden="true"
+    >
+      <svg
+        class="size-5 fill-none stroke-current stroke-[1.8]"
+        viewBox="0 0 24 24"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <circle cx="18" cy="18" r="3"></circle>
+        <circle cx="6" cy="6" r="3"></circle>
+        <path d="M13 6h3a2 2 0 0 1 2 2v7M6 9v12"></path>
+      </svg>
+    </span>
+    <span>SharpEmu</span>
+    <span class="font-normal text-muted max-sm:hidden">PR Validation</span>
+  </a>
+
+  <div class="flex items-center gap-5 text-xs text-muted">
+    <span id="connection" class="group/connection flex items-center gap-2" data-state="connecting">
+      <span
+        id="connection-dot"
+        class="size-2 rounded-full bg-amber-400 shadow-[0_0_0_5px_rgba(251,191,36,.08)]"
+      >
+      </span>
+      <span id="connection-label" class="max-md:hidden">Connecting</span>
+    </span>
+    <a
+      class="text-[11px] font-semibold text-muted transition-colors hover:text-accent max-lg:hidden"
+      href="https://github.com/Spooks4576"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Runner by @Spooks4576
+    </a>
+    <time id="clock" class="min-w-12 font-mono text-[11px] tabular-nums text-ink max-md:hidden">
+      --:--
+    </time>
+    <a
+      id="repo-link"
+      class="inline-flex items-center gap-2 rounded-full border border-line bg-surface px-3 py-2 font-semibold transition hover:border-white/20 hover:bg-white/[0.08] hover:text-ink"
+      href="https://github.com/sharpemu/sharpemu"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      GitHub
+      <svg
+        class="size-3.5 fill-none stroke-current stroke-2"
+        viewBox="0 0 24 24"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M14 5h5v5M19 5l-9 9"></path>
+        <path d="M19 13v6H5V5h6"></path>
+      </svg>
+    </a>
+  </div>
+</header>

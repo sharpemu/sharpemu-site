@@ -1,0 +1,280 @@
+<div
+  class="grid min-h-[580px] overflow-hidden rounded-[28px] border border-line bg-[#0d111e]/80 shadow-[0_28px_90px_rgba(0,0,0,.32)] backdrop-blur-2xl lg:grid-cols-[minmax(300px,.34fr)_minmax(0,1fr)]"
+>
+  <aside
+    class="min-w-0 border-line bg-black/15 max-lg:border-b lg:border-r"
+    aria-labelledby="pr-list-title"
+  >
+    <div class="flex min-h-20 items-end justify-between border-b border-line px-5 py-4">
+      <div>
+        <p class="mb-1 text-[10px] font-bold tracking-[0.2em] text-accent uppercase">
+          Test queue
+        </p>
+        <h2 id="pr-list-title" class="font-display text-lg font-bold tracking-tight">
+          Pull requests
+        </h2>
+      </div>
+      <span id="result-count" class="text-[11px] text-muted">—</span>
+    </div>
+
+    <div
+      id="pr-list"
+      class="flex gap-2 overflow-x-auto p-2 [scrollbar-color:rgba(255,255,255,.16)_transparent] [scrollbar-width:thin] lg:block lg:h-[520px] lg:overflow-y-auto"
+      aria-live="polite"
+    >
+      {
+        [0, 1, 2].map(() => (
+          <div class="w-64 shrink-0 animate-pulse px-4 py-5 lg:w-auto">
+            <span class="mt-2 block h-2 w-[88%] rounded-full bg-white/[0.07]"></span>
+            <span class="mt-3 block h-2 w-[64%] rounded-full bg-white/[0.07]"></span>
+            <span class="mt-3 block h-2 w-[38%] rounded-full bg-white/[0.07]"></span>
+          </div>
+        ))
+      }
+    </div>
+  </aside>
+
+  <section
+    id="detail"
+    class="min-w-0 bg-[radial-gradient(circle_at_80%_10%,rgba(125,155,255,.08),transparent_27rem)] px-10 py-9 max-sm:px-5 max-sm:py-7"
+    aria-live="polite"
+  >
+    <div id="detail-empty" class="grid min-h-[510px] place-content-center place-items-center text-center text-muted">
+      <span
+        class="grid size-14 place-items-center rounded-2xl border border-line bg-surface text-accent"
+        aria-hidden="true"
+      >
+        <svg
+          class="size-6 fill-none stroke-current stroke-[1.8]"
+          viewBox="0 0 24 24"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M9 3v4l-5 9a3 3 0 0 0 3 5h10a3 3 0 0 0 3-5l-5-9V3"></path>
+          <path d="M8 12h8"></path>
+        </svg>
+      </span>
+      <p id="detail-empty-label" class="mt-4 text-sm">Loading live test results…</p>
+    </div>
+
+    <article id="detail-content" hidden>
+      <div class="flex items-center justify-between gap-5 max-sm:flex-col max-sm:items-start">
+        <span
+          id="detail-pr"
+          class="text-[11px] font-bold tracking-[0.12em] text-accent uppercase"
+        >
+        </span>
+        <span
+          id="detail-verdict"
+          class="inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-[11px] font-bold"
+        >
+          <span id="detail-verdict-symbol" aria-hidden="true"></span>
+          <span id="detail-verdict-label"></span>
+        </span>
+      </div>
+
+      <h2
+        class="mt-5 max-w-4xl font-display text-[clamp(1.9rem,3.2vw,3.1rem)] leading-[1.06] font-bold tracking-[-0.045em]"
+      >
+        <a id="detail-title" class="transition hover:text-accent" target="_blank" rel="noopener noreferrer">
+        </a>
+      </h2>
+
+      <p class="mt-4 text-xs leading-7 text-muted">
+        Opened by <strong id="detail-author" class="font-semibold text-ink"></strong>
+        <span aria-hidden="true"> · </span>
+        <span id="detail-source"></span>
+        <span aria-hidden="true"> @ </span>
+        <code
+          id="detail-sha"
+          class="rounded-md border border-line bg-black/20 px-1.5 py-0.5 font-mono text-[10px] text-slate-200"
+        >
+        </code>
+        <span aria-hidden="true"> · targets </span>
+        <code
+          id="detail-base"
+          class="rounded-md border border-line bg-black/20 px-1.5 py-0.5 font-mono text-[10px] text-slate-200"
+        >
+        </code>
+        <span aria-hidden="true"> · tested </span>
+        <span id="detail-tested"></span>
+        <strong id="detail-draft" class="font-semibold text-ink" hidden> · draft</strong>
+      </p>
+
+      <div id="game-results" class="mt-8 grid gap-3 sm:grid-cols-2"></div>
+
+      <div class="mt-6 flex flex-wrap gap-2.5">
+        <a
+          id="detail-github"
+          class="inline-flex items-center gap-2 rounded-full bg-ink px-4 py-2.5 text-[11px] font-bold text-paper transition hover:-translate-y-0.5"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Open on GitHub
+          <svg
+            class="size-3.5 fill-none stroke-current stroke-2"
+            viewBox="0 0 24 24"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M14 5h5v5M19 5l-9 9"></path>
+            <path d="M19 13v6H5V5h6"></path>
+          </svg>
+        </a>
+        <button
+          id="recordings-action"
+          class="inline-flex items-center gap-2 rounded-full border border-line bg-surface px-4 py-2.5 text-[11px] font-bold text-ink transition hover:-translate-y-0.5 hover:bg-white/[0.08]"
+          type="button"
+          hidden
+        >
+          <svg
+            class="size-3.5 fill-none stroke-current stroke-2"
+            viewBox="0 0 24 24"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="m8 5 11 7-11 7z"></path>
+          </svg>
+          <span id="recordings-action-label"></span>
+        </button>
+      </div>
+
+      <div id="recordings" class="mt-8 grid gap-4 xl:grid-cols-2" hidden></div>
+    </article>
+  </section>
+</div>
+
+<template id="pr-card-template">
+  <button
+    class="group relative grid w-64 shrink-0 grid-cols-[auto_minmax(0,1fr)] gap-3 rounded-2xl border border-transparent bg-transparent px-3.5 py-4 text-left text-ink transition hover:translate-x-0.5 hover:bg-white/[0.055] aria-pressed:border-accent/25 aria-pressed:bg-white/[0.085] aria-pressed:shadow-[inset_0_0_28px_rgba(125,155,255,.035)] lg:w-full"
+    type="button"
+    data-pr-card
+    aria-pressed="false"
+  >
+    <span
+      class="absolute top-4 bottom-4 -left-px w-0.5 scale-y-50 rounded-full bg-accent opacity-0 transition group-aria-pressed:scale-y-100 group-aria-pressed:opacity-100"
+      aria-hidden="true"
+    >
+    </span>
+    <span
+      data-verdict-mark
+      class="grid size-9 place-items-center rounded-xl border border-line bg-surface text-sm font-bold text-muted"
+      aria-hidden="true"
+    >
+    </span>
+    <span class="min-w-0">
+      <span class="flex items-center justify-between gap-2">
+        <span data-pr-number class="text-[11px] font-bold tracking-[0.06em] text-muted"></span>
+        <span
+          data-pr-draft
+          class="rounded border border-dashed border-white/20 px-1.5 py-0.5 text-[9px] text-muted uppercase"
+          hidden
+        >
+          Draft
+        </span>
+      </span>
+      <span
+        data-pr-title
+        class="mt-1 line-clamp-2 block text-[13px] leading-5 font-semibold"
+      >
+      </span>
+      <span data-pr-byline class="mt-1.5 block truncate text-[10px] text-muted"></span>
+      <span data-game-dots class="mt-2.5 flex items-center gap-1.5"></span>
+    </span>
+  </button>
+</template>
+
+<template id="game-result-template">
+  <article
+    class="rounded-2xl border border-line bg-white/[0.035] p-4 outline-none transition data-[linked=true]:border-accent data-[linked=true]:bg-accent/[0.08] data-[linked=true]:ring-2 data-[linked=true]:ring-accent/25 data-[regression=true]:bg-red-400/[0.045]"
+    data-game-result
+    data-linked="false"
+    data-regression="false"
+    tabindex="-1"
+  >
+    <div class="flex items-center justify-between gap-4">
+      <span data-game-name class="truncate text-xs font-semibold"></span>
+      <span
+        data-game-status
+        class="shrink-0 text-[10px] font-bold tracking-[0.06em] uppercase"
+      >
+      </span>
+    </div>
+    <p data-game-stage class="mt-2 truncate text-[10px] text-muted" hidden></p>
+    <p data-game-reason class="mt-2 text-[11px] leading-5 text-muted" hidden></p>
+    <div data-game-links class="mt-3 flex flex-wrap items-center gap-x-3 gap-y-2 text-[10px] font-semibold">
+      <a
+        data-game-evidence
+        class="text-accent underline-offset-4 hover:underline"
+        target="_blank"
+        rel="noopener noreferrer"
+        hidden
+      >
+        Evidence archive
+      </a>
+      <a
+        data-game-recording
+        class="text-accent underline-offset-4 hover:underline"
+        target="_blank"
+        rel="noopener noreferrer"
+        hidden
+      >
+        Recording
+      </a>
+      <a
+        data-game-permalink
+        class="inline-flex items-center gap-1.5 text-muted underline-offset-4 transition hover:text-ink hover:underline"
+      >
+        <svg
+          class="size-3 fill-none stroke-current stroke-2"
+          viewBox="0 0 24 24"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M10 13a5 5 0 0 0 7.1.1l2-2a5 5 0 0 0-7.1-7.1l-1.1 1.1"></path>
+          <path d="M14 11a5 5 0 0 0-7.1-.1l-2 2A5 5 0 0 0 12 20l1.1-1.1"></path>
+        </svg>
+        Permalink
+      </a>
+    </div>
+  </article>
+</template>
+
+<template id="recording-template">
+  <figure data-recording class="m-0">
+    <figcaption class="mb-2 flex items-center justify-between gap-3 text-[10px] text-muted">
+      <span data-recording-label></span>
+      <span data-recording-duration class="tabular-nums">Loading metadata</span>
+    </figcaption>
+    <div
+      data-recording-frame
+      data-media-state="loading"
+      class="relative aspect-video overflow-hidden rounded-2xl border border-line bg-[#05070f]"
+    >
+      <video
+        data-recording-video
+        class="block size-full bg-black object-contain"
+        controls
+        preload="metadata"
+        playsinline
+      >
+      </video>
+      <div
+        data-video-status
+        class="pointer-events-none absolute inset-0 flex flex-col items-center justify-center gap-2.5 bg-[#05070f]/85 p-6 text-center text-[10px] text-muted"
+        aria-live="polite"
+      >
+        <span
+          data-video-spinner
+          class="size-6 animate-spin rounded-full border-2 border-white/15 border-t-accent"
+          aria-hidden="true"
+        >
+        </span>
+        <span data-video-status-label>Loading recording metadata…</span>
+      </div>
+    </div>
+  </figure>
+</template>

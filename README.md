@@ -82,6 +82,12 @@ browser-side JavaScript reads the public dashboard API and artifacts from
 source page. The Worker's `custom_domain` route makes Cloudflare create the DNS
 record and TLS certificate, so no A record is needed.
 
+The dashboard follows the same layout/component/Tailwind structure as the main
+Astro site. Live API updates are isolated in a typed Astro client component.
+Pull request hashes remain shareable, and individual game results use
+`#pr-283/game-dead-cells`-style permalinks so regression evidence can be linked
+directly.
+
 The normal deploy workflow publishes this Worker after the Astro site. Its
 Cloudflare API token therefore needs permission to edit Workers and DNS for
 the `sharpemu.app` zone in addition to deploying Pages.

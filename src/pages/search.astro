@@ -1,0 +1,31 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="Search — SharpEmu">
+  <section class="mx-auto max-w-3xl px-5 pt-12">
+    <h1 class="font-display text-4xl font-extrabold tracking-tight">Search</h1>
+    <p class="mt-3 text-muted">Full-text search across game pages and compatibility reports.</p>
+    <div id="search" class="mt-8"></div>
+  </section>
+
+  <link rel="stylesheet" href="/pagefind/pagefind-ui.css" />
+  <script is:inline src="/pagefind/pagefind-ui.js"></script>
+  <script is:inline>
+    window.addEventListener('DOMContentLoaded', () => {
+      new PagefindUI({ element: '#search', showSubResults: true });
+    });
+  </script>
+
+  <style is:global>
+    #search {
+      --pagefind-ui-primary: #0070d1;
+      --pagefind-ui-text: #0e1116;
+      --pagefind-ui-background: #ffffff;
+      --pagefind-ui-border: rgba(14, 17, 22, 0.1);
+      --pagefind-ui-tag: rgba(14, 17, 22, 0.06);
+      --pagefind-ui-border-radius: 16px;
+      --pagefind-ui-font: 'Inter Variable', system-ui, sans-serif;
+    }
+  </style>
+</Base>

@@ -1,0 +1,43 @@
+name: Compatibility report
+description: Report how a game runs on SharpEmu
+title: 'PPSAxxxxx - Game Name'
+labels: [compat-report]
+body:
+  - type: input
+    id: title_id
+    attributes:
+      label: Title ID
+      placeholder: PPSA01284
+    validations:
+      required: true
+  - type: dropdown
+    id: status
+    attributes:
+      label: Compatibility status
+      options: [nothing, boots, menus, ingame, playable]
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: SharpEmu version (commit or release)
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating system
+      options: [windows, linux, macos]
+    validations:
+      required: true
+  - type: input
+    id: hardware
+    attributes:
+      label: Hardware (CPU / GPU)
+  - type: textarea
+    id: notes
+    attributes:
+      label: What works / what breaks
+      description: Include screenshots if possible. Use dumps of games you own.
+    validations:
+      required: true

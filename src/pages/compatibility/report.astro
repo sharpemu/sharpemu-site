@@ -1,0 +1,41 @@
+---
+import Base from '../../layouts/Base.astro';
+import { SITE } from '../../config';
+---
+
+<Base title="Submit a compatibility report — SharpEmu">
+  <section class="prose prose-slate mx-auto max-w-3xl px-5 pt-12">
+    <h1 class="font-display tracking-tight">Submit a compatibility report</h1>
+    <p>Two ways to contribute, easiest first:</p>
+    <h2>1. Open an issue</h2>
+    <p>
+      Use the
+      <a href={`${SITE.siteRepoUrl}/issues/new?template=compatibility_report.yml`}>
+        compatibility report template</a
+      >. A maintainer will convert it into a report page.
+    </p>
+    <h2>2. Open a pull request</h2>
+    <p>
+      Add a markdown file at <code>src/content/compat/&lt;TITLEID&gt;.md</code> (e.g.
+      <code>PPSA01284.md</code>):
+    </p>
+    <pre><code>---
+titleId: PPSA01284
+status: ingame        # nothing | boots | menus | ingame | playable
+testedVersion: dev    # SharpEmu release or commit
+testedDate: 2026-07-17
+os: windows           # windows | linux | macos
+hardware: "RTX 4070, Ryzen 5 7600"
+score: 3              # optional 1-5 experience rating
+---
+
+What works, what breaks, workarounds. Screenshots welcome —
+put images next to the file and reference them relatively.</code></pre>
+    <h2>Ground rules</h2>
+    <ul>
+      <li>Test with dumps of games you own. Piracy reports are removed.</li>
+      <li>One report per game — update the existing file if it's outdated.</li>
+      <li>Note the exact SharpEmu build you tested.</li>
+    </ul>
+  </section>
+</Base>

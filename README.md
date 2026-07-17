@@ -1,43 +1,75 @@
-# Astro Starter Kit: Minimal
+# SharpEmu website
 
-```sh
-npm create astro@latest -- --template minimal
+Static site for [SharpEmu](https://github.com/par274/sharpemu) — landing page
+and PS5 game compatibility database. Built with Astro + Tailwind, deployed on
+Cloudflare Pages.
+
+## Development
+
+```bash
+npm install
+npm run dev        # dev server (Pagefind search 404s in dev — build first)
+npm test           # vitest
+npm run build      # static build into dist/ + Pagefind index
+npm run preview    # serve dist/
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Games database
 
-## 🚀 Project Structure
+`src/data/games.json` is generated — do not edit by hand.
 
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+```bash
+npm run import                          # refresh title list (no enrichment)
+npm run import -- --enrich 300          # + enrich 300 concepts with covers/metadata
+npm run import -- --only PPSA01284      # enrich specific title IDs (comma-separated)
+npm run import -- --force               # accept a >5% shrink of the list
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Sources: [andshrew/PlayStation-Titles](https://github.com/andshrew/PlayStation-Titles)
+(MIT, title IDs/names/regions) + the public PlayStation Store GraphQL endpoint
+(covers, publisher, release date, genres — hotlinked, throttled, incremental).
+A weekly GitHub Action refreshes the list and enriches 300 new concepts per run.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+### Refreshing the PSN query hash
 
-Any static assets, like images, can be placed in the `public/` directory.
+If the import fails with "persisted-query hash rejected (HTTP 400)": open a
+PS5 game page on store.playstation.com with browser devtools → Network, filter
+`metGetConceptById`, copy `extensions.persistedQuery.sha256Hash` from the
+request, and update `PSN_HASH` in `scripts/lib/enrich.mjs`.
 
-## 🧞 Commands
+## Compatibility reports
 
-All commands are run from the root of the project, from a terminal:
+One markdown file per tested game in `src/content/compat/<TITLEID>.md` —
+schema in `src/lib/compat.ts`, guide at `/compatibility/report`.
+Status ladder: `nothing → boots → menus → ingame → playable`.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+A report may use any regional title ID (e.g. `PPSA10112`); the site resolves
+it to the game's primary entry automatically. The build fails on reports whose
+title ID isn't in the database or whose filename doesn't match the front
+matter.
 
-## 👀 Want to learn more?
+## Deploying (Cloudflare Pages)
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+1. Push this repo to GitHub (public, so giscus + issue templates work).
+2. Cloudflare dashboard → Workers & Pages → Create → Pages → connect the repo.
+   Build command `npm run build`, output directory `dist`, Node version 22.
+3. Custom domain: add the domain to Cloudflare (free plan). Cloudflare shows
+   two nameservers. In the Vercel dashboard (where the domain is registered):
+   Domains → your domain → Nameservers → replace with Cloudflare's pair.
+   Registration stays at Vercel; DNS + hosting move to Cloudflare. Then Pages
+   → Custom domains → add the domain. Update `site` in `astro.config.mjs`.
+
+## Enabling comments (giscus)
+
+1. Repo must be public with Discussions enabled; create a "Game compatibility"
+   discussion category (Announcements type recommended).
+2. Install the giscus app (github.com/apps/giscus) on the repo.
+3. On [giscus.app](https://giscus.app), pick the repo/category, copy `repoId`
+   and `categoryId` into `GISCUS` in `src/config.ts`.
+
+## License
+
+Site code is MIT (see LICENSE). Game names/metadata via andshrew (MIT). Cover
+art is served from the PlayStation Store and belongs to its publishers —
+takedown requests: open an issue. Not affiliated with Sony Interactive
+Entertainment.

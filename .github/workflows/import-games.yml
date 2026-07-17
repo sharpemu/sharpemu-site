@@ -1,0 +1,35 @@
+name: Refresh games database
+on:
+  schedule:
+    - cron: '0 4 * * 1' # Mondays 04:00 UTC
+  workflow_dispatch:
+    inputs:
+      enrich:
+        description: 'Number of concepts to enrich'
+        default: '300'
+
+permissions:
+  contents: write
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Import games
+        env:
+          ENRICH: ${{ github.event.inputs.enrich || '300' }}
+        run: |
+          [[ "$ENRICH" =~ ^[0-9]+$ ]] || { echo "enrich must be a number"; exit 1; }
+          node scripts/import-games.mjs --enrich "$ENRICH"
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/data/games.json
+          git diff --cached --quiet || (git commit -m "data: refresh games database" && git push)

@@ -10,11 +10,13 @@ export const SITE = {
   currentVersion: '0.0.2',
 };
 
-// Fill in from https://giscus.app after the site repo is public with
-// Discussions enabled. Empty repoId ⇒ comments UI shows a setup note.
+// IDs from the repo's GitHub Discussions (same values giscus.app generates).
+// Announcements is an announcement-type category: only maintainers and giscus
+// can open discussions, which is what giscus recommends for comment threads.
+// Empty repoId ⇒ comments UI shows a setup note instead.
 export const GISCUS = {
   repo: 'sharpemu/sharpemu-site',
-  repoId: '',
-  category: 'Game compatibility',
-  categoryId: '',
+  repoId: 'R_kgDOTbDwWg',
+  category: 'Announcements',
+  categoryId: 'DIC_kwDOTbDwWs4DBXOX',
 };

@@ -115,7 +115,7 @@ const tested = compat
     </div>
   </section>
 
-  <script is:inline define:vars={{ clientMeta }}>
+  <script is:inline define:vars={{ clientMeta, testedCount: tested.length }}>
     const MAX_ROWS = 200;
     const STATUS_ORDER = { playable: 0, ingame: 1, menus: 2, boots: 3, nothing: 4, untested: 5 };
     const esc = (s) => s.replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
@@ -183,9 +183,10 @@ const tested = compat
     $q.addEventListener('input', renderList);
     $status.addEventListener('change', renderList);
 
-    // Deep links: /compatibility?q=… (from the landing search) and /compatibility#all
+    // Deep links: /compatibility?q=… (from the landing search) and /compatibility#all.
+    // With no reports yet, the All tab is the only useful view.
     const initQ = new URLSearchParams(location.search).get('q');
     if (initQ) $q.value = initQ;
-    if (initQ || location.hash === '#all') selectTab('all');
+    if (initQ || location.hash === '#all' || testedCount === 0) selectTab('all');
   </script>
 </Base>

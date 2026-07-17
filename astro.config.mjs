@@ -5,8 +5,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  // TODO: set the real domain before launch
-  site: 'https://sharpemu.example',
+  site: 'https://sharpemu.app',
   vite: {
     plugins: [tailwindcss()],
   },

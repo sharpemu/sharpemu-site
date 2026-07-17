@@ -85,9 +85,17 @@ const barSegments = STATUSES.filter((s) => stats.counts[s] > 0);
     <div class="flex flex-wrap items-end justify-between gap-4">
       <div>
         <h2 class="font-display text-2xl font-bold tracking-tight">Compatibility right now</h2>
-        <p class="mt-2 text-sm text-muted">
-          <span class="font-semibold text-ink">{stats.tested}</span> of {games.length.toLocaleString('en-US')} tracked titles tested · <span class="font-semibold text-ink">{reachGameplay}</span> reaching gameplay — every report names the exact build.
-        </p>
+        {
+          stats.tested > 0 ? (
+            <p class="mt-2 text-sm text-muted">
+              <span class="font-semibold text-ink">{stats.tested}</span> of {games.length.toLocaleString('en-US')} tracked titles tested · <span class="font-semibold text-ink">{reachGameplay}</span> reaching gameplay — every report names the exact build.
+            </p>
+          ) : (
+            <p class="mt-2 text-sm text-muted">
+              {games.length.toLocaleString('en-US')} PS5 titles tracked, ready for their first reports.
+            </p>
+          )
+        }
       </div>
       <a href="/compatibility" class="text-sm font-semibold text-psblue hover:underline"
         >Browse all games →</a
@@ -117,14 +125,38 @@ const barSegments = STATUSES.filter((s) => stats.counts[s] > 0);
       )
     }
 
-    <div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-      {latest.map(({ game, entry }) => <ReportCard game={game} entry={entry} />)}
-    </div>
-    <p class="mt-6 text-sm text-muted">
-      Tested something yourself?{' '}
-      <a href="/compatibility/report" class="text-psblue underline">Submit a report</a> — it takes five
-      minutes.
-    </p>
+    {
+      latest.length > 0 ? (
+        <>
+          <div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {latest.map(({ game, entry }) => (
+              <ReportCard game={game} entry={entry} />
+            ))}
+          </div>
+          <p class="mt-6 text-sm text-muted">
+            Tested something yourself?{' '}
+            <a href="/compatibility/report" class="text-psblue underline">
+              Submit a report
+            </a>{' '}
+            — it takes five minutes.
+          </p>
+        </>
+      ) : (
+        <div class="mt-8 rounded-2xl border border-dashed border-ink/15 bg-white/50 p-10 text-center">
+          <p class="font-display text-lg font-bold">No reports yet — be the first</p>
+          <p class="mx-auto mt-2 max-w-md text-sm text-muted">
+            Every game page is ready to hold a report with the exact build, OS and hardware used.
+            Run a game you own and tell everyone how far it gets.
+          </p>
+          <a
+            href="/compatibility/report"
+            class="mt-6 inline-block rounded-full bg-psblue px-6 py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+          >
+            Submit the first report
+          </a>
+        </div>
+      )
+    }
   </section>
 
   <!-- About + status ladder -->

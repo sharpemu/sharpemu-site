@@ -23,7 +23,7 @@ const fmt = (d: string | Date) =>
 ---
 
 <Base title={`${game.name} — ${SITE.name} compatibility`}>
-  <article class="mx-auto max-w-6xl px-5 pt-12" data-pagefind-body>
+  <article class="mx-auto max-w-6xl px-5 pt-12" data-pagefind-body={report ? '' : undefined}>
     <p class="font-mono text-xs text-muted">
       <a href="/compatibility" class="transition-colors hover:text-ink">Compatibility</a>
       <span class="mx-1">/</span>

@@ -43730,7 +43730,15 @@
    "PPSA20591"
   ],
   "name": "Poppy Playtime: Chapter 1",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202310/2416/67f5b83f1c7e842f9e27953181ec7bc4f50a81324fbf5147.jpg",
+  "publisher": "Mob Entertainment, Inc.",
+  "releaseDate": "2024-01-15T15:00:00Z",
+  "genres": [
+   "Puzzle",
+   "Horror"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10003666,

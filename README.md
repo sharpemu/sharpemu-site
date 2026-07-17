@@ -1,6 +1,6 @@
 # SharpEmu website
 
-Static site for [SharpEmu](https://github.com/par274/sharpemu) — landing page
+Static site for [SharpEmu](https://github.com/sharpemu/sharpemu) — landing page
 and PS5 game compatibility database. Built with Astro + Tailwind, deployed on
 Cloudflare Pages.
 
@@ -9,6 +9,8 @@ Cloudflare Pages.
 ```bash
 npm install
 npm run dev        # dev server (Pagefind search 404s in dev — build first)
+# /downloads fetches GitHub releases at build time; set GITHUB_TOKEN to avoid
+# anonymous rate limits: GITHUB_TOKEN=$(gh auth token) npm run build
 npm test           # vitest
 npm run build      # static build into dist/ + Pagefind index
 npm run preview    # serve dist/

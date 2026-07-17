@@ -1,0 +1,106 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import StatusBadge from '../../components/StatusBadge.astro';
+import Giscus from '../../components/Giscus.astro';
+import { games, gameByTitleId } from '../../lib/games';
+import { SITE } from '../../config';
+
+export async function getStaticPaths() {
+  return games.map((g) => ({ params: { titleId: g.titleId } }));
+}
+
+const { titleId } = Astro.params;
+const game = gameByTitleId.get(titleId)!;
+// Reports may reference any regional release of this game.
+const reports = await getCollection('compat', (e) => game.allTitleIds.includes(e.data.titleId));
+const report = reports[0];
+const status = report?.data.status ?? 'untested';
+const Content = report ? (await render(report)).Content : null;
+const olderBuild = report && report.data.testedVersion !== SITE.currentVersion;
+const fmt = (d: string | Date) =>
+  new Date(d).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+---
+
+<Base title={`${game.name} — ${SITE.name} compatibility`}>
+  <article class="mx-auto max-w-6xl px-5 pt-12" data-pagefind-body>
+    <p class="font-mono text-xs text-muted">
+      <a href="/compatibility" class="transition-colors hover:text-ink">Compatibility</a>
+      <span class="mx-1">/</span>
+      {game.titleId}
+    </p>
+    <div class="mt-8 flex flex-col gap-10 md:flex-row">
+      {
+        game.cover ? (
+          <img
+            src={game.cover}
+            alt={`${game.name} cover art`}
+            width="256"
+            height="256"
+            loading="eager"
+            referrerpolicy="no-referrer"
+            class="h-64 w-64 shrink-0 rounded-3xl object-cover shadow-[0_18px_44px_rgba(14,30,60,0.22)]"
+          />
+        ) : (
+          <div class="flex h-64 w-64 shrink-0 items-center justify-center rounded-3xl bg-gradient-to-br from-slate-200 to-slate-300 p-6 text-center font-display font-semibold text-slate-500">
+            {game.name}
+          </div>
+        )
+      }
+      <div class="min-w-0 flex-1">
+        <h1 class="font-display text-4xl font-extrabold tracking-tight break-words">{game.name}</h1>
+        <div class="mt-4"><StatusBadge status={status} size="lg" /></div>
+        <dl class="mt-8 grid grid-cols-[auto_1fr] gap-x-8 gap-y-2.5 text-sm">
+          <dt class="text-muted">Title IDs</dt>
+          <dd class="font-mono text-[13px]">{game.allTitleIds.join(' · ')}</dd>
+          {game.publisher && <dt class="text-muted">Publisher</dt>}
+          {game.publisher && <dd>{game.publisher}</dd>}
+          {game.releaseDate && <dt class="text-muted">Released</dt>}
+          {game.releaseDate && <dd>{fmt(game.releaseDate)}</dd>}
+          {
+            game.genres && game.genres.length > 0 && (
+              <>
+                <dt class="text-muted">Genre</dt>
+                <dd>{game.genres.join(', ')}</dd>
+              </>
+            )
+          }
+        </dl>
+      </div>
+    </div>
+
+    <section class="mt-16">
+      <h2 class="font-display text-2xl font-bold tracking-tight">Compatibility report</h2>
+      {
+        report ? (
+          <div class="mt-5 rounded-2xl border border-ink/8 bg-white/70 p-7">
+            <p class="font-mono text-xs text-muted">
+              Tested on SharpEmu <span class="font-semibold text-ink">{report.data.testedVersion}</span> ·{' '}
+              {report.data.os} · {fmt(report.data.testedDate)}
+              {report.data.hardware && ` · ${report.data.hardware}`}
+            </p>
+            {olderBuild && (
+              <p class="mt-3 rounded-xl bg-amber-100 px-4 py-2 text-sm font-medium text-amber-800">
+                This report was made on an older build — behavior may have changed since.
+              </p>
+            )}
+            <div class="prose prose-slate mt-5 max-w-none">{Content && <Content />}</div>
+          </div>
+        ) : (
+          <p class="mt-5 text-muted">
+            No report yet. Tested this game?{' '}
+            <a href="/compatibility/report" class="text-psblue underline">
+              Submit a report
+            </a>
+            .
+          </p>
+        )
+      }
+    </section>
+
+    <section class="mt-16 pb-4" data-pagefind-ignore>
+      <h2 class="font-display text-2xl font-bold tracking-tight">Comments</h2>
+      <div class="mt-5"><Giscus term={game.titleId} /></div>
+    </section>
+  </article>
+</Base>

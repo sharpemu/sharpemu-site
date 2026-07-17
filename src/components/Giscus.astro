@@ -1,0 +1,35 @@
+---
+import { GISCUS } from '../config';
+
+interface Props {
+  term: string;
+}
+const { term } = Astro.props;
+---
+
+{
+  GISCUS.repoId ? (
+    <script
+      is:inline
+      src="https://giscus.app/client.js"
+      data-repo={GISCUS.repo}
+      data-repo-id={GISCUS.repoId}
+      data-category={GISCUS.category}
+      data-category-id={GISCUS.categoryId}
+      data-mapping="specific"
+      data-term={term}
+      data-strict="1"
+      data-reactions-enabled="1"
+      data-emit-metadata="0"
+      data-input-position="top"
+      data-theme="light"
+      data-lang="en"
+      crossorigin="anonymous"
+      async
+    />
+  ) : (
+    <p class="rounded-2xl border border-ink/8 bg-white/70 p-5 text-sm text-muted">
+      Comments are not enabled yet. They will appear here once giscus is configured.
+    </p>
+  )
+}

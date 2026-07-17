@@ -1,0 +1,218 @@
+---
+import '../styles/dashboard.css';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Live compatibility validation results for SharpEmu pull requests."
+    />
+    <meta name="theme-color" content="#05070f" />
+    <title>SharpEmu · PR Tests</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%237d9bff' stroke-width='2'%3E%3Ccircle cx='18' cy='18' r='3'/%3E%3Ccircle cx='6' cy='6' r='3'/%3E%3Cpath d='M13 6h3a2 2 0 0 1 2 2v7M6 9v12'/%3E%3C/svg%3E"
+    />
+  </head>
+  <body>
+    <div class="atmosphere" aria-hidden="true">
+      <div class="orb orb-blue"></div>
+      <div class="orb orb-violet"></div>
+      <div class="grid"></div>
+    </div>
+
+    <main class="shell">
+      <header class="masthead">
+        <a class="brand" href="https://sharpemu.app" aria-label="SharpEmu home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <circle cx="18" cy="18" r="3"></circle>
+              <circle cx="6" cy="6" r="3"></circle>
+              <path d="M13 6h3a2 2 0 0 1 2 2v7M6 9v12"></path>
+            </svg>
+          </span>
+          <span>SharpEmu</span>
+          <span class="brand-section">PR Validation</span>
+        </a>
+
+        <div class="masthead-meta">
+          <span class="connection" id="connection">
+            <span class="connection-dot"></span>
+            <span id="connection-label">Connecting</span>
+          </span>
+          <a
+            class="source-credit"
+            href="https://github.com/Spooks4576"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Runner by @Spooks4576
+          </a>
+          <time id="clock">--:--</time>
+          <a
+            class="repo-link"
+            id="repo-link"
+            href="https://github.com/sharpemu/sharpemu"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M14 5h5v5M19 5l-9 9"></path>
+              <path d="M19 13v6H5V5h6"></path>
+            </svg>
+          </a>
+        </div>
+      </header>
+
+      <section class="intro" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow">Continuous compatibility</p>
+          <h1 id="page-title">Every pull request,<br />played before merge.</h1>
+        </div>
+        <p class="intro-copy">
+          Automated game runs against every active change. Review the verdict,
+          tested commit, evidence, and recordings before merge.
+        </p>
+      </section>
+
+      <section class="summary" aria-label="Current pull request summary">
+        <div class="summary-item">
+          <span class="summary-value" id="count-open">—</span>
+          <span class="summary-label">Open PRs</span>
+        </div>
+        <div class="summary-item summary-good">
+          <span class="summary-value" id="count-mergeable">—</span>
+          <span class="summary-label">Mergeable</span>
+        </div>
+        <div class="summary-item summary-bad">
+          <span class="summary-value" id="count-regression">—</span>
+          <span class="summary-label">Regressions</span>
+        </div>
+        <div class="summary-item summary-active">
+          <span class="summary-value" id="count-testing">—</span>
+          <span class="summary-label">In progress</span>
+        </div>
+        <div class="summary-item">
+          <span class="summary-value" id="count-rebase">—</span>
+          <span class="summary-label">Need rebase</span>
+        </div>
+        <div class="summary-item summary-queue">
+          <span class="queue-pulse" aria-hidden="true"></span>
+          <span>
+            <strong id="queue-label">Queue idle</strong>
+            <small id="updated-label">Waiting for the runner</small>
+          </span>
+        </div>
+      </section>
+
+      <section class="controls" aria-label="Dashboard controls">
+        <div class="filters" id="filters" role="group" aria-label="Filter pull requests">
+          <button class="filter is-active" type="button" data-filter="all">All</button>
+          <button class="filter" type="button" data-filter="mergeable">
+            Mergeable
+          </button>
+          <button class="filter" type="button" data-filter="regression">
+            Regression
+          </button>
+          <button class="filter" type="button" data-filter="testing">
+            Testing
+          </button>
+          <button class="filter" type="button" data-filter="pending">
+            Pending
+          </button>
+          <button class="filter" type="button" data-filter="stale">
+            Needs rebase
+          </button>
+          <button class="filter" type="button" data-filter="unavailable">
+            Unavailable
+          </button>
+        </div>
+
+        <div class="control-actions">
+          <label class="search">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="11" cy="11" r="7"></circle>
+              <path d="m20 20-4-4"></path>
+            </svg>
+            <span class="sr-only">Search pull requests</span>
+            <input
+              id="search"
+              type="search"
+              autocomplete="off"
+              placeholder="Search PRs"
+            />
+          </label>
+          <button class="refresh" id="refresh" type="button">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20 6v5h-5"></path>
+              <path d="M4 18v-5h5"></path>
+              <path d="M18.5 9A7 7 0 0 0 6 7l-2 4M5.5 15A7 7 0 0 0 18 17l2-4"></path>
+            </svg>
+            Refresh
+          </button>
+        </div>
+      </section>
+
+      <p class="error-banner" id="error" role="alert" hidden>
+        The test runner did not respond. Retrying automatically.
+      </p>
+
+      <div class="workspace">
+        <aside class="pr-panel" aria-labelledby="pr-list-title">
+          <div class="panel-heading">
+            <div>
+              <p class="panel-kicker">Test queue</p>
+              <h2 id="pr-list-title">Pull requests</h2>
+            </div>
+            <span id="result-count">—</span>
+          </div>
+          <div class="pr-list" id="pr-list" aria-live="polite">
+            <div class="loading-card">
+              <span class="loading-line loading-wide"></span>
+              <span class="loading-line"></span>
+              <span class="loading-line loading-short"></span>
+            </div>
+            <div class="loading-card">
+              <span class="loading-line loading-wide"></span>
+              <span class="loading-line"></span>
+              <span class="loading-line loading-short"></span>
+            </div>
+          </div>
+        </aside>
+
+        <section class="detail-panel" id="detail" aria-live="polite">
+          <div class="detail-empty">
+            <span class="detail-symbol" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M9 3v4l-5 9a3 3 0 0 0 3 5h10a3 3 0 0 0 3-5l-5-9V3"></path>
+                <path d="M8 12h8"></path>
+              </svg>
+            </span>
+            <p>Loading live test results…</p>
+          </div>
+        </section>
+      </div>
+
+      <footer class="footer">
+        <span>SharpEmu contributor dashboard</span>
+        <span aria-hidden="true">·</span>
+        <span>
+          Test infrastructure and API maintained by
+          <a
+            href="https://github.com/Spooks4576"
+            target="_blank"
+            rel="noopener noreferrer">@Spooks4576</a
+          >
+        </span>
+      </footer>
+    </main>
+    <script>
+      import '../scripts/dashboard.js';
+    </script>
+  </body>
+</html>

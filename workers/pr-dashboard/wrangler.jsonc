@@ -1,0 +1,16 @@
+{
+  "name": "sharpemu-pr-dashboard",
+  "compatibility_date": "2026-07-17",
+  "workers_dev": false,
+  "assets": {
+    "directory": "./dist",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  },
+  "routes": [
+    {
+      "pattern": "pr.sharpemu.app",
+      "custom_domain": true
+    }
+  ]
+}

@@ -31,9 +31,16 @@ jobs:
         env:
           # avoids anonymous rate limits on the /downloads releases fetch
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: npm run build:pr-dashboard
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           command: pages deploy dist --project-name=sharpemu --branch=main
+      - name: Deploy PR dashboard subdomain
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: deploy --config workers/pr-dashboard/wrangler.jsonc

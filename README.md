@@ -73,6 +73,19 @@ PAT scoped to this repo, Contents: read and write).
    Registration stays at Vercel; DNS + hosting move to Cloudflare. Then Pages
    → Custom domains → add the domain. Update `site` in `astro.config.mjs`.
 
+### PR dashboard subdomain
+
+`pr.sharpemu.app` is an independent Astro site in `workers/pr-dashboard`. Its
+browser-side JavaScript reads the public dashboard API and artifacts from
+`https://sharpemu.inferno-tools.com`, maintained by
+[@Spooks4576](https://github.com/Spooks4576); it does not proxy or iframe the
+source page. The Worker's `custom_domain` route makes Cloudflare create the DNS
+record and TLS certificate, so no A record is needed.
+
+The normal deploy workflow publishes this Worker after the Astro site. Its
+Cloudflare API token therefore needs permission to edit Workers and DNS for
+the `sharpemu.app` zone in addition to deploying Pages.
+
 ## Enabling comments (giscus)
 
 1. Repo must be public with Discussions enabled; create a "Game compatibility"

@@ -8,6 +8,7 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "build:pr-dashboard": "astro build --root workers/pr-dashboard",
     "postbuild": "pagefind --site dist",
     "preview": "astro preview",
     "test": "vitest run",

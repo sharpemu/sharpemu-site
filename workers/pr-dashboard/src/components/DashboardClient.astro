@@ -70,9 +70,18 @@
   };
 
   const markBase =
-    'grid size-9 place-items-center rounded-xl border text-sm font-bold';
+    'relative z-[1] grid size-8 place-items-center rounded-lg border text-xs font-bold';
   const badgeBase =
     'inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-[11px] font-bold';
+  const verdictTextTone: Record<string, string> = {
+    mergeable: 'text-green-400',
+    regression: 'text-red-400',
+    testing: 'text-amber-300',
+    pending: 'text-amber-300',
+    stale: 'text-orange-300',
+    unavailable: 'text-orange-300',
+    closed: 'text-muted',
+  };
   const statusTone: Record<string, string> = {
     passed: 'text-green-400',
     failed: 'text-red-400',
@@ -236,6 +245,10 @@
     const fragment = elements.prCardTemplate.content.cloneNode(true) as DocumentFragment;
     const card = requiredFrom<HTMLButtonElement>(fragment, '[data-pr-card]');
     const mark = requiredFrom<HTMLElement>(fragment, '[data-verdict-mark]');
+    const verdictLabel = requiredFrom<HTMLElement>(
+      fragment,
+      '[data-verdict-label]',
+    );
     const draft = requiredFrom<HTMLElement>(fragment, '[data-pr-draft]');
     const verdict = verdictFor(pullRequest.verdict);
 
@@ -250,6 +263,11 @@
     mark.className = `${markBase} ${verdict.mark}`;
     mark.textContent = verdict.symbol;
     mark.title = verdict.label;
+    verdictLabel.className =
+      `text-[9px] font-bold tracking-[0.08em] uppercase ${
+        verdictTextTone[pullRequest.verdict] ?? 'text-muted'
+      }`;
+    verdictLabel.textContent = verdict.label;
     requiredFrom<HTMLElement>(fragment, '[data-pr-number]').textContent =
       `PR #${pullRequest.number}`;
     requiredFrom<HTMLElement>(fragment, '[data-pr-title]').textContent = pullRequest.title;

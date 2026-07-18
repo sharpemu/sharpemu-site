@@ -1,11 +1,11 @@
 <div
-  class="grid min-h-[580px] overflow-hidden rounded-[28px] border border-line bg-[#0d111e]/80 shadow-[0_28px_90px_rgba(0,0,0,.32)] backdrop-blur-2xl lg:grid-cols-[minmax(300px,.34fr)_minmax(0,1fr)]"
+  class="grid min-h-[560px] overflow-hidden rounded-[24px] border border-line bg-[#0d111e]/80 shadow-[0_28px_90px_rgba(0,0,0,.32)] backdrop-blur-2xl lg:h-[calc(100svh-2rem)] lg:max-h-[760px] lg:min-h-[640px] lg:grid-cols-[minmax(300px,.31fr)_minmax(0,1fr)]"
 >
   <aside
-    class="min-w-0 border-line bg-black/15 max-lg:border-b lg:border-r"
+    class="grid min-h-0 min-w-0 grid-rows-[auto_minmax(0,1fr)] border-line bg-black/15 max-lg:border-b lg:border-r"
     aria-labelledby="pr-list-title"
   >
-    <div class="flex min-h-20 items-end justify-between border-b border-line px-5 py-4">
+    <div class="flex min-h-[68px] items-end justify-between border-b border-line px-4 py-3.5">
       <div>
         <p class="mb-1 text-[10px] font-bold tracking-[0.2em] text-accent uppercase">
           Test queue
@@ -14,12 +14,17 @@
           Pull requests
         </h2>
       </div>
-      <span id="result-count" class="text-[11px] text-muted">—</span>
+      <span
+        id="result-count"
+        class="mb-0.5 rounded-full border border-line bg-white/[0.035] px-2.5 py-1 text-[10px] font-semibold text-muted tabular-nums"
+      >
+        —
+      </span>
     </div>
 
     <div
       id="pr-list"
-      class="flex gap-2 overflow-x-auto p-2 [scrollbar-color:rgba(255,255,255,.16)_transparent] [scrollbar-width:thin] lg:block lg:h-[520px] lg:overflow-y-auto"
+      class="flex min-h-0 gap-2 overflow-x-auto p-2 [scrollbar-color:rgba(255,255,255,.16)_transparent] [scrollbar-width:thin] lg:relative lg:block lg:overflow-y-auto lg:overscroll-contain lg:[scrollbar-gutter:stable] lg:before:pointer-events-none lg:before:absolute lg:before:top-6 lg:before:bottom-6 lg:before:left-[1.83rem] lg:before:w-px lg:before:bg-white/[0.06]"
       aria-live="polite"
     >
       {
@@ -36,10 +41,10 @@
 
   <section
     id="detail"
-    class="min-w-0 bg-[radial-gradient(circle_at_80%_10%,rgba(125,155,255,.08),transparent_27rem)] px-10 py-9 max-sm:px-5 max-sm:py-7"
+    class="min-h-0 min-w-0 bg-[radial-gradient(circle_at_80%_10%,rgba(125,155,255,.08),transparent_27rem)] px-8 py-7 max-sm:px-5 max-sm:py-7 lg:overflow-y-auto lg:overscroll-contain lg:[scrollbar-color:rgba(255,255,255,.16)_transparent] lg:[scrollbar-gutter:stable] lg:[scrollbar-width:thin]"
     aria-live="polite"
   >
-    <div id="detail-empty" class="grid min-h-[510px] place-content-center place-items-center text-center text-muted">
+    <div id="detail-empty" class="grid min-h-[440px] place-content-center place-items-center text-center text-muted lg:min-h-full">
       <span
         class="grid size-14 place-items-center rounded-2xl border border-line bg-surface text-accent"
         aria-hidden="true"
@@ -74,9 +79,14 @@
       </div>
 
       <h2
-        class="mt-5 max-w-4xl font-display text-[clamp(1.9rem,3.2vw,3.1rem)] leading-[1.06] font-bold tracking-[-0.045em]"
+        class="mt-5 max-w-4xl font-display text-[clamp(1.75rem,2.8vw,2.65rem)] leading-[1.08] font-bold tracking-[-0.04em]"
       >
-        <a id="detail-title" class="transition hover:text-accent" target="_blank" rel="noopener noreferrer">
+        <a
+          id="detail-title"
+          class="rounded-sm transition hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/70"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
         </a>
       </h2>
 
@@ -148,40 +158,49 @@
 
 <template id="pr-card-template">
   <button
-    class="group relative grid w-64 shrink-0 grid-cols-[auto_minmax(0,1fr)] gap-3 rounded-2xl border border-transparent bg-transparent px-3.5 py-4 text-left text-ink transition hover:translate-x-0.5 hover:bg-white/[0.055] aria-pressed:border-accent/25 aria-pressed:bg-white/[0.085] aria-pressed:shadow-[inset_0_0_28px_rgba(125,155,255,.035)] lg:w-full"
+    class="group relative z-[1] grid w-64 shrink-0 grid-cols-[auto_minmax(0,1fr)] gap-3 rounded-xl border border-transparent bg-[#0d111e] px-3 py-3 text-left text-ink transition hover:translate-x-0.5 hover:bg-[#151a2a] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/70 aria-pressed:border-accent/25 aria-pressed:bg-[#171d2e] aria-pressed:shadow-[inset_0_0_24px_rgba(125,155,255,.035)] lg:w-full"
     type="button"
     data-pr-card
     aria-pressed="false"
   >
     <span
-      class="absolute top-4 bottom-4 -left-px w-0.5 scale-y-50 rounded-full bg-accent opacity-0 transition group-aria-pressed:scale-y-100 group-aria-pressed:opacity-100"
+      class="absolute top-3 bottom-3 -left-px w-0.5 scale-y-50 rounded-full bg-accent opacity-0 transition group-aria-pressed:scale-y-100 group-aria-pressed:opacity-100"
       aria-hidden="true"
     >
     </span>
     <span
       data-verdict-mark
-      class="grid size-9 place-items-center rounded-xl border border-line bg-surface text-sm font-bold text-muted"
+      class="relative z-[1] grid size-8 place-items-center rounded-lg border border-line bg-surface text-xs font-bold text-muted"
       aria-hidden="true"
     >
     </span>
     <span class="min-w-0">
       <span class="flex items-center justify-between gap-2">
         <span data-pr-number class="text-[11px] font-bold tracking-[0.06em] text-muted"></span>
-        <span
-          data-pr-draft
-          class="rounded border border-dashed border-white/20 px-1.5 py-0.5 text-[9px] text-muted uppercase"
-          hidden
-        >
-          Draft
+        <span class="flex shrink-0 items-center gap-1.5">
+          <span
+            data-verdict-label
+            class="text-[9px] font-bold tracking-[0.08em] text-muted uppercase"
+          >
+          </span>
+          <span
+            data-pr-draft
+            class="rounded border border-dashed border-white/20 px-1.5 py-0.5 text-[9px] text-muted uppercase"
+            hidden
+          >
+            Draft
+          </span>
         </span>
       </span>
       <span
         data-pr-title
-        class="mt-1 line-clamp-2 block text-[13px] leading-5 font-semibold"
+        class="mt-1 block overflow-hidden text-[12px] leading-[1.15rem] font-semibold"
       >
       </span>
-      <span data-pr-byline class="mt-1.5 block truncate text-[10px] text-muted"></span>
-      <span data-game-dots class="mt-2.5 flex items-center gap-1.5"></span>
+      <span class="mt-2 flex min-w-0 items-center justify-between gap-2">
+        <span data-pr-byline class="min-w-0 truncate text-[10px] text-muted"></span>
+        <span data-game-dots class="flex shrink-0 items-center gap-1.5"></span>
+      </span>
     </span>
   </button>
 </template>
@@ -207,7 +226,7 @@
     <div data-game-links class="mt-3 flex flex-wrap items-center gap-x-3 gap-y-2 text-[10px] font-semibold">
       <a
         data-game-evidence
-        class="text-accent underline-offset-4 hover:underline"
+        class="rounded-sm text-accent underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/70"
         target="_blank"
         rel="noopener noreferrer"
         hidden
@@ -216,7 +235,7 @@
       </a>
       <a
         data-game-recording
-        class="text-accent underline-offset-4 hover:underline"
+        class="rounded-sm text-accent underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/70"
         target="_blank"
         rel="noopener noreferrer"
         hidden
@@ -225,7 +244,7 @@
       </a>
       <a
         data-game-permalink
-        class="inline-flex items-center gap-1.5 text-muted underline-offset-4 transition hover:text-ink hover:underline"
+        class="inline-flex items-center gap-1.5 rounded-sm text-muted underline-offset-4 transition hover:text-ink hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/70"
       >
         <svg
           class="size-3 fill-none stroke-current stroke-2"
@@ -278,3 +297,11 @@
     </div>
   </figure>
 </template>
+
+<style>
+  [data-pr-title] {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+</style>

@@ -1,5 +1,5 @@
 <section
-  class="flex items-center justify-between gap-6 py-5 max-lg:flex-col max-lg:items-stretch"
+  class="flex items-center justify-between gap-5 py-4 max-lg:flex-col max-lg:items-stretch"
   aria-label="Dashboard controls"
 >
   <div
@@ -19,7 +19,7 @@
         ['unavailable', 'Unavailable'],
       ].map(([value, label], index) => (
         <button
-          class="shrink-0 rounded-full px-3.5 py-2 text-xs font-semibold text-muted transition hover:-translate-y-px hover:bg-white/[0.06] hover:text-ink aria-pressed:bg-ink aria-pressed:text-paper"
+          class="shrink-0 rounded-full px-3.5 py-2 text-xs font-semibold text-muted transition hover:-translate-y-px hover:bg-white/[0.06] hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/70 aria-pressed:bg-ink aria-pressed:text-paper"
           type="button"
           data-filter={value}
           aria-pressed={index === 0 ? 'true' : 'false'}
@@ -45,7 +45,7 @@
       <span class="sr-only">Search pull requests</span>
       <input
         id="search"
-        class="h-10 w-52 rounded-full border border-line bg-surface pr-4 pl-10 text-xs text-ink outline-none transition placeholder:text-muted/70 focus:w-64 focus:border-accent/60 focus:bg-white/[0.07] focus:ring-2 focus:ring-accent/20 max-lg:w-full max-lg:focus:w-full"
+        class="h-10 w-52 rounded-full border border-line bg-surface pr-4 pl-10 text-xs text-ink outline-none transition placeholder:text-muted/70 focus:w-64 focus:border-accent/60 focus:bg-white/[0.07] focus:ring-2 focus:ring-accent/50 max-lg:w-full max-lg:focus:w-full"
         type="search"
         autocomplete="off"
         placeholder="Search PRs"
@@ -53,7 +53,7 @@
     </label>
     <button
       id="refresh"
-      class="inline-flex h-10 shrink-0 items-center gap-2 rounded-full border border-line bg-surface px-4 text-xs font-semibold text-muted transition hover:border-white/20 hover:bg-white/[0.08] hover:text-ink disabled:cursor-wait disabled:opacity-70 max-sm:size-10 max-sm:justify-center max-sm:px-0"
+      class="inline-flex h-10 shrink-0 items-center gap-2 rounded-full border border-line bg-surface px-4 text-xs font-semibold text-muted transition hover:border-white/20 hover:bg-white/[0.08] hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/70 disabled:cursor-wait disabled:opacity-70 max-sm:size-10 max-sm:justify-center max-sm:px-0"
       type="button"
     >
       <svg

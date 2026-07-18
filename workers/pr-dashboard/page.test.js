@@ -41,6 +41,15 @@ describe('Astro PR dashboard', () => {
     expect(workspace).toContain('data-recording-video');
   });
 
+  it('keeps both desktop panes dense and independently scrollable', async () => {
+    const workspace = await readFile(workspaceUrl, 'utf8');
+
+    expect(workspace).toContain('grid-rows-[auto_minmax(0,1fr)]');
+    expect(workspace).toContain('lg:overflow-y-auto');
+    expect(workspace).toContain('data-verdict-label');
+    expect(workspace).not.toContain('lg:h-[520px]');
+  });
+
   it('shares the main Astro Tailwind system without local JS or CSS source files', async () => {
     const config = await readFile(configUrl, 'utf8');
     const sourceFiles = await readdir(sourceUrl, { recursive: true });

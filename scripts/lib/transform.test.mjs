@@ -51,4 +51,8 @@ describe('mergeExisting', () => {
     const merged = mergeExisting(fresh, [{ ...fresh[0] }]);
     expect(merged[0].enriched).toBeUndefined();
   });
+  it('preserves per-game comment overrides independently of enrichment', () => {
+    const merged = mergeExisting(fresh, [{ ...fresh[0], commentsDisabled: true }]);
+    expect(merged[0].commentsDisabled).toBe(true);
+  });
 });

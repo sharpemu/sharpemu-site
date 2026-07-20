@@ -99,9 +99,15 @@ const fmt = (d: string | Date) =>
       }
     </section>
 
-    <section class="mt-16 pb-4" data-pagefind-ignore>
-      <h2 class="font-display text-2xl font-bold tracking-tight">Comments</h2>
-      <div class="mt-5"><Giscus term={game.titleId} /></div>
-    </section>
+    {
+      !game.commentsDisabled && !report?.data.commentsDisabled && (
+        <section class="mt-16 pb-4" data-pagefind-ignore>
+          <h2 class="font-display text-2xl font-bold tracking-tight">Comments</h2>
+          <div class="mt-5">
+            <Giscus term={game.titleId} />
+          </div>
+        </section>
+      )
+    }
   </article>
 </Base>

@@ -13,6 +13,7 @@ export const compatSchema = z.object({
   os: z.enum(['windows', 'linux', 'macos']),
   hardware: z.string().optional(),
   score: z.number().int().min(1).max(5).optional(),
+  commentsDisabled: z.boolean().optional(),
 });
 
 // badgeClass and barColor both resolve through CSS custom properties defined in

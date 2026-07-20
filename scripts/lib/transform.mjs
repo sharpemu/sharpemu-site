@@ -42,8 +42,13 @@ export function mergeExisting(fresh, existing) {
   const prev = new Map(existing.map((g) => [g.conceptId, g]));
   return fresh.map((g) => {
     const old = prev.get(g.conceptId);
-    if (!old?.enriched) return g;
+    if (!old) return g;
+    const withOverrides =
+      old.commentsDisabled === undefined
+        ? g
+        : { ...g, commentsDisabled: old.commentsDisabled };
+    if (!old.enriched) return withOverrides;
     const { name, cover, publisher, releaseDate, genres, enriched, noStore } = old;
-    return { ...g, name, cover, publisher, releaseDate, genres, enriched, noStore };
+    return { ...withOverrides, name, cover, publisher, releaseDate, genres, enriched, noStore };
   });
 }

@@ -12,6 +12,7 @@ export type Game = {
   genres?: string[];
   enriched?: boolean;
   noStore?: boolean;
+  commentsDisabled?: boolean;
 };
 
 export const games = gamesJson as Game[];

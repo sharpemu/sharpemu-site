@@ -18,7 +18,9 @@ npm run preview    # serve dist/
 
 ## Games database
 
-`src/data/games.json` is generated — do not edit by hand.
+`src/data/games.json` is generated — do not edit imported game metadata by hand.
+The supported exception is the optional `"commentsDisabled": true` per-game
+override; imports preserve this setting across database refreshes.
 
 ```bash
 npm run import                          # refresh title list (no enrichment)
@@ -26,6 +28,10 @@ npm run import -- --enrich 300          # + enrich 300 concepts with covers/meta
 npm run import -- --only PPSA01284      # enrich specific title IDs (comma-separated)
 npm run import -- --force               # accept a >5% shrink of the list
 ```
+
+To hide the comments section for a game, add `"commentsDisabled": true` to its
+entry in `src/data/games.json`. Omitting the property (or setting it to `false`)
+keeps comments enabled.
 
 Sources: [andshrew/PlayStation-Titles](https://github.com/andshrew/PlayStation-Titles)
 (MIT, title IDs/names/regions) + the public PlayStation Store GraphQL endpoint
@@ -49,6 +55,11 @@ A report may use any regional title ID (e.g. `PPSA10112`); the site resolves
 it to the game's primary entry automatically. The build fails on reports whose
 title ID isn't in the database or whose filename doesn't match the front
 matter.
+
+To disable comments from an authored compatibility report, add
+`commentsDisabled: true` to its frontmatter. Either this report setting or the
+game database override hides the comments section. Automated issue conversion
+preserves the manual report setting when updating an existing report.
 
 ### Maintainer report conversion
 

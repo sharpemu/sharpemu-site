@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import {
   chooseReportTarget,
+  manualReportOptions,
   normalizeReport,
   parseIssueForm,
   renderReport,
@@ -141,6 +142,18 @@ Reaches the intro and then stops.
     expect(markdown).toContain('testedVersion: "24b82a7"');
     expect(markdown).toContain('testedDate: "2026-07-17"');
     expect(markdown).toContain('GitHub compatibility report #4');
+  });
+
+  it('preserves a manually disabled comments setting when updating a report', () => {
+    const report = normalizeReport(currentIssue, games);
+    const existing = `---
+titleId: "PPSA01342"
+commentsDisabled: true
+---
+`;
+    const markdown = renderReport(report, report.titleId, manualReportOptions(existing));
+
+    expect(markdown).toContain('commentsDisabled: true');
   });
 
   it('rejects title IDs that are not in the catalog', () => {

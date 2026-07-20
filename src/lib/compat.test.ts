@@ -21,6 +21,10 @@ describe('compatSchema', () => {
     expect(() => compatSchema.parse({ ...valid, titleId: 'CUSA00001' })).toThrow());
   it('rejects score out of range', () =>
     expect(() => compatSchema.parse({ ...valid, score: 6 })).toThrow());
+  it('accepts a manual comments override', () => {
+    const r = compatSchema.parse({ ...valid, commentsDisabled: true });
+    expect(r.commentsDisabled).toBe(true);
+  });
 });
 
 describe('computeStats', () => {

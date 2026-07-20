@@ -176,7 +176,14 @@ function yamlString(value) {
   return JSON.stringify(String(value));
 }
 
-export function renderReport(report, targetTitleId = report.titleId) {
+export function manualReportOptions(markdown) {
+  const frontmatter = /^---\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)/.exec(String(markdown))?.[1] ?? '';
+  return {
+    commentsDisabled: /^commentsDisabled:[ \t]*true[ \t]*(?:#.*)?$/m.test(frontmatter),
+  };
+}
+
+export function renderReport(report, targetTitleId = report.titleId, options = {}) {
   const frontmatter = [
     '---',
     `titleId: ${yamlString(targetTitleId)}`,
@@ -186,6 +193,7 @@ export function renderReport(report, targetTitleId = report.titleId) {
     ...(report.gameVersion ? [`gameVersion: ${yamlString(report.gameVersion)}`] : []),
     `os: ${yamlString(report.os)}`,
     ...(report.hardware ? [`hardware: ${yamlString(report.hardware)}`] : []),
+    ...(options.commentsDisabled ? ['commentsDisabled: true'] : []),
     '---',
   ];
 
@@ -236,7 +244,10 @@ async function main() {
   const existingFileNames = await readdir(compatibilityDirectory);
   const target = chooseReportTarget(report, existingFileNames);
   const reportPath = path.join(compatibilityDirectory, target.fileName);
-  await writeFile(reportPath, renderReport(report, target.titleId), 'utf8');
+  const manualOptions = target.updating
+    ? manualReportOptions(await readFile(reportPath, 'utf8'))
+    : {};
+  await writeFile(reportPath, renderReport(report, target.titleId, manualOptions), 'utf8');
 
   const relativePath = path.relative(root, reportPath).split(path.sep).join('/');
   if (process.env.GITHUB_OUTPUT) {

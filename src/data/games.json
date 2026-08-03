@@ -22902,7 +22902,19 @@
    "PPSA06740"
   ],
   "name": "Pretty Girls Breakers!",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202202/0806/kffgrLrIMPFUiKcgwZhLs2IF.png",
+  "publisher": "eastasiasoft",
+  "releaseDate": "2022-03-03T00:00:00Z",
+  "genres": [
+   "Puzzle",
+   "Arcade",
+   "Action",
+   "Platformer",
+   "Platformer",
+   "Platformer"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004630,
@@ -22914,7 +22926,15 @@
    "PPSA06749"
   ],
   "name": "Pretty Girls Rivers",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202203/1210/7LBTGOAnrgzueya5ysqQ04em.png",
+  "publisher": "eastasiasoft",
+  "releaseDate": "2022-04-13T23:00:00Z",
+  "genres": [
+   "Puzzle",
+   "Board Game"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004631,
@@ -22923,8 +22943,15 @@
    "PPSA06751",
    "PPSA06752"
   ],
-  "name": "Milky Way Prince - The Vampire Star",
-  "region": "UP"
+  "name": "Milky Way Prince – The Vampire Star",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202205/3109/IeU6dm7G0sPLmexicZVVUtoM.jpg",
+  "publisher": "FANTASTICO STUDIO SRL",
+  "releaseDate": "2022-06-21T00:00:00Z",
+  "genres": [
+   "Graphic Adventure"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004451,
@@ -22935,7 +22962,15 @@
    "PPSA10814"
   ],
   "name": "No Longer Home",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202207/0404/0p3o1O71vrVv47nSzTa9zQGu.png",
+  "publisher": "SURPRISE ATTACK PTY LTD T/A FELLOW TRAVELLER GAMES",
+  "releaseDate": "2023-03-03T08:00:00Z",
+  "genres": [
+   "Adventure",
+   "Art Experimental"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004632,
@@ -22946,7 +22981,15 @@
    "PPSA06757"
   ],
   "name": "Would you like to run an idol café? 2",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202202/1517/jwxJMPfM76JtfaoOLVqstMrQ.png",
+  "publisher": "Gamuzumi",
+  "releaseDate": "2022-03-03T00:00:00Z",
+  "genres": [
+   "Adult",
+   "Text Adventure"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004625,
@@ -22956,7 +22999,17 @@
    "PPSA06759"
   ],
   "name": "Valentine Candy Break 2 Head to Head",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202201/2022/U35QGAuzfPUmLEFclhyCNeEY.jpg",
+  "publisher": "SMOBILE INC",
+  "releaseDate": "2022-02-11T00:00:00Z",
+  "genres": [
+   "Arcade",
+   "Casual",
+   "Shoot 'Em Up",
+   "Pinball"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10002044,
@@ -22974,7 +23027,14 @@
    "PPSA07761"
   ],
   "name": "DORAEMON STORY OF SEASONS: Friends of the Great Kingdom",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202210/0712/TMNxtZuZU5QBKiQ4Kyak1RGj.jpg",
+  "publisher": "BANDAI NAMCO ENTERTAINMENT EUROPE",
+  "releaseDate": "2022-11-01T23:00:00Z",
+  "genres": [
+   "Simulation"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004637,
@@ -22985,7 +23045,17 @@
    "PPSA12336"
   ],
   "name": "Tortuga - A Pirate's Tale",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202208/1516/u9DyhdHagXMljicdnfnbgSJS.jpg",
+  "publisher": "Kalypso Media GMBH",
+  "releaseDate": "2023-01-19T00:00:00Z",
+  "genres": [
+   "Simulation",
+   "Tactical",
+   "Turn Based Strategy",
+   "Development"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004640,
@@ -22994,8 +23064,18 @@
    "PPSA06767",
    "PPSA06768"
   ],
-  "name": "Saint Patrick's Day Break 2",
-  "region": "UP"
+  "name": "Saint Patricks Day Break 2",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202202/0719/WkGTpJliwZh3Pfm4A1ynNImK.png",
+  "publisher": "SMOBILE INC",
+  "releaseDate": "2022-02-25T07:00:00Z",
+  "genres": [
+   "Arcade",
+   "Casual",
+   "Shoot 'Em Up",
+   "Pinball"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10001815,
@@ -23007,7 +23087,14 @@
    "PPSA06774"
   ],
   "name": "ARMORED CORE™ VI FIRES OF RUBICON™",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202305/1012/fc71f2e5015c015c6cd94d7e41516e5961a9d5c7da7bc5bf.jpg",
+  "publisher": "BANDAI NAMCO ENTERTAINMENT EUROPE",
+  "releaseDate": "2023-08-24T23:00:00Z",
+  "genres": [
+   "Action"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 233251,
@@ -23017,7 +23104,14 @@
    "PPSA06776"
   ],
   "name": "Bus Simulator 21 Next Stop",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202304/1906/4a1e6dc1ad0fb52a025bd31a2fd383ea154fc965542afb95.jpg",
+  "publisher": "astragon Entertainment GmbH",
+  "releaseDate": "2021-09-07T09:00:00Z",
+  "genres": [
+   "Simulation"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004642,
@@ -23026,8 +23120,16 @@
    "PPSA06777",
    "PPSA06778"
   ],
-  "name": "ExoOne",
-  "region": "UP"
+  "name": "Exo One",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202204/2016/mu7iMNNzRgJVWU1BK7FEX5pq.png",
+  "publisher": "All in! Games S.A.",
+  "releaseDate": "2024-06-27T16:00:00Z",
+  "genres": [
+   "Unique",
+   "Adventure"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004650,
@@ -23038,7 +23140,15 @@
    "PPSA12576"
   ],
   "name": "Gunfire Reborn",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202303/1522/c47bb110cdecd72770f8a3a6505f3f059af28ef8bcd4fda4.jpg",
+  "publisher": "505 GAMES S.R.L.",
+  "releaseDate": "2023-06-08T15:00:00Z",
+  "genres": [
+   "Shooter",
+   "Fantasy"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004651,
@@ -23048,7 +23158,14 @@
    "PPSA06783"
   ],
   "name": "Syphon Filter: Logan's Shadow",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202303/1001/f5306f809549a93ff893bee61a1e978795767052d64a20fd.png",
+  "publisher": "Sony Interactive Entertainment",
+  "releaseDate": "2023-05-16T08:00:00Z",
+  "genres": [
+   "Action"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004652,
@@ -23058,7 +23175,13 @@
    "PPSA06786"
   ],
   "name": "Syphon Filter: Dark Mirror",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202302/1621/3083480f720a37eb6f4cce7a613149fc6e2a9c0fd4f91596.png",
+  "publisher": "Sony Interactive Entertainment",
+  "genres": [
+   "Action"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004653,
@@ -23069,7 +23192,13 @@
    "PPSA06790"
   ],
   "name": "Resistance: Retribution",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202401/2422/9d2320fceb63364a93342b5d715a685151914d8295763e73.jpg",
+  "publisher": "Sony Interactive Entertainment",
+  "genres": [
+   "First Person Shooter"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004655,
@@ -23081,7 +23210,15 @@
    "PPSA06794"
   ],
   "name": "LocoRoco Midnight Carnival",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202204/2913/nCkQK3Xt8PdEvWcJEsCxfghK.jpg",
+  "publisher": "Sony Interactive Entertainment",
+  "releaseDate": "2022-07-19T08:00:00Z",
+  "genres": [
+   "Puzzle",
+   "Platformer"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004656,
@@ -23093,7 +23230,14 @@
    "PPSA06798"
   ],
   "name": "echochrome",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202205/2022/92NyLWblmh7yMWi6nz0XTvkN.jpg",
+  "publisher": "Sony Interactive Entertainment",
+  "releaseDate": "2022-06-22T23:00:00Z",
+  "genres": [
+   "Puzzle"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004542,
@@ -23105,7 +23249,17 @@
    "PPSA22521"
   ],
   "name": "ANIMAL WELL",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202403/2716/7ade0cea0b1da6368e20afda0223c92af2f5cbfeba440c6b.png",
+  "publisher": "Bigmode",
+  "releaseDate": "2024-05-09T13:00:00Z",
+  "genres": [
+   "Horror",
+   "Adventure",
+   "Mystery",
+   "Platformer"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004659,
@@ -23116,7 +23270,15 @@
    "PPSA07907"
   ],
   "name": "Touchdown Pinball",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202201/2712/UOfI5kmUNv1R2y4HpeSFiVWz.png",
+  "publisher": "SUPER POWERUP GAMES, SOCIEDAD LIMITADA",
+  "releaseDate": "2023-02-10T00:00:00Z",
+  "genres": [
+   "Arcade",
+   "Pinball"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10002807,
@@ -23126,7 +23288,17 @@
    "PPSA06807"
   ],
   "name": "Wife Quest",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202202/1008/n5rxe9sqtDJtnIgFrHxO9lym.png",
+  "publisher": "eastasiasoft",
+  "releaseDate": "2022-03-16T00:00:00Z",
+  "genres": [
+   "Adventure",
+   "Action",
+   "Platformer",
+   "Platformer"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004661,
@@ -23135,8 +23307,19 @@
    "PPSA06810",
    "PPSA06811"
   ],
-  "name": "Ravenous_Devils",
-  "region": "UP"
+  "name": "Ravenous Devils",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202203/2913/bucqSC1pWUokwRW6YNmeFRw7.png",
+  "publisher": "LUCIANO IURINO T/A TROGLOBYTES GAMES",
+  "releaseDate": "2022-04-29T15:00:00Z",
+  "genres": [
+   "Horror",
+   "Simulation",
+   "Casual",
+   "Mystery",
+   "Development"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 221809,
@@ -23146,8 +23329,17 @@
    "PPSA06813",
    "PPSA28577"
   ],
-  "name": "Ys VIII: Lacrimosa of Dana",
-  "region": "UP"
+  "name": "Ys VIII -Lacrimosa of DANA-",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202210/2518/j6uJTtHSJN0Tk7JQyWv9I2ne.png",
+  "publisher": "NIS America",
+  "releaseDate": "2022-11-18T09:00:00Z",
+  "genres": [
+   "Role Playing Games",
+   "Role Playing Games",
+   "Fantasy"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004664,
@@ -23158,7 +23350,16 @@
    "PPSA06817"
   ],
   "name": "I Love Food",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202203/1403/8kLmvujX1SZaM8ik80CYs501.png",
+  "publisher": "eastasiasoft",
+  "releaseDate": "2022-04-20T23:00:00Z",
+  "genres": [
+   "Puzzle",
+   "Puzzle",
+   "Children's"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004665,
@@ -23170,7 +23371,18 @@
    "PPSA06821"
   ],
   "name": "Z-Warp",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202203/0307/Xx5vFpyNSOzo0LjVhZWPeU6J.png",
+  "publisher": "eastasiasoft",
+  "releaseDate": "2022-04-05T23:00:00Z",
+  "genres": [
+   "Arcade",
+   "Action",
+   "Shoot 'Em Up",
+   "Shoot 'Em Up",
+   "Shoot 'Em Up"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004666,
@@ -23182,7 +23394,17 @@
    "PPSA06825"
   ],
   "name": "Drunken Fist 2: Zombie Hangover",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202205/2507/QKP8zgXDHOpSFPBzoZ7B5Tbi.png",
+  "publisher": "eastasiasoft",
+  "releaseDate": "2022-06-21T23:00:00Z",
+  "genres": [
+   "Fighting",
+   "Action",
+   "Beat 'Em Up",
+   "Beat 'Em Up"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004673,
@@ -23193,7 +23415,14 @@
    "PPSA07908"
   ],
   "name": "Darts Up",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202205/0210/JJTk7w4OT7z6GPNbNa1hN4O9.png",
+  "publisher": "SUPER POWERUP GAMES, SOCIEDAD LIMITADA",
+  "releaseDate": "2026-03-06T00:00:00Z",
+  "genres": [
+   "Sport"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 234750,
@@ -23205,7 +23434,16 @@
    "PPSA08549"
   ],
   "name": "Insomnis",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202401/1620/de323372f892cd7b5cd29157ce2922716d93c609e74e50f7.jpg",
+  "publisher": "Path Games",
+  "releaseDate": "2021-10-28T23:00:00Z",
+  "genres": [
+   "Horror",
+   "Graphic Adventure",
+   "Mystery"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004674,
@@ -23215,7 +23453,17 @@
    "PPSA06832"
   ],
   "name": "Tad the Lost Explorer",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202512/1613/616909be807bf8322dcc31d0d8dd2ac9fb78bd12581426e5.jpg",
+  "publisher": "GAMMERA NEST SL",
+  "releaseDate": "2022-11-16T00:00:00Z",
+  "genres": [
+   "Adventure",
+   "Action",
+   "Platformer",
+   "Platformer"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10003459,
@@ -23225,7 +23473,17 @@
    "PPSA06844"
   ],
   "name": "Enclave HD",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202205/1122/Z8ZxwkXwXZ3KFA1KVM8BLbAr.png",
+  "publisher": "Ziggurat Interactive, Inc.",
+  "releaseDate": "2023-06-28T23:00:00Z",
+  "genres": [
+   "Adventure",
+   "Action",
+   "Combat",
+   "Fantasy"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004681,
@@ -23235,7 +23493,15 @@
    "PPSA06851"
   ],
   "name": "PigShip and the Giant Wolf",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202204/2608/W5BQtean5KlFQWSGn2rQ4Me7.png",
+  "publisher": "SUPER POWERUP GAMES, SOCIEDAD LIMITADA",
+  "releaseDate": "2022-05-19T23:00:00Z",
+  "genres": [
+   "Action",
+   "Shoot 'Em Up"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004684,
@@ -23244,8 +23510,17 @@
    "PPSA06852",
    "PPSA06853"
   ],
-  "name": "Startup Company: Console Edition",
-  "region": "UP"
+  "name": "Startup Company Console Edition",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202209/0511/E3ywmhNk3Jts9DSU2J5jQ4of.jpg",
+  "publisher": "2Awesome Studio  SL",
+  "releaseDate": "2023-01-26T19:00:00Z",
+  "genres": [
+   "Strategy",
+   "Simulator",
+   "Development"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004505,
@@ -23255,7 +23530,14 @@
    "PPSA06862"
   ],
   "name": "Gigantic: Rampage Edition",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202404/0418/cb3c42383a7f7523a5d9e04008bbad1aa1c4473e7fbd8389.jpg",
+  "publisher": "Arc Games",
+  "genres": [
+   "Action",
+   "Team Fighting"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 232084,
@@ -23266,7 +23548,17 @@
    "PPSA33564"
   ],
   "name": "Divinity: Original Sin 2 - Definitive Edition",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202512/0115/1bf47aff181e0bacd58e43a1b2004332dd6aa17dd71252d5.png",
+  "publisher": "Larian Studios Games Ltd",
+  "releaseDate": "2018-08-30T00:00:00Z",
+  "genres": [
+   "Role Playing Games",
+   "Role Playing Games",
+   "Fantasy",
+   "Epic"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 231185,
@@ -23277,7 +23569,19 @@
    "PPSA07153"
   ],
   "name": "Xenon Valkyrie+",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202203/0515/36IkQVrQZAUbzQtyrmg9ouRB.png",
+  "publisher": "COWCAT",
+  "releaseDate": "2022-05-26T23:00:00Z",
+  "genres": [
+   "Action",
+   "Role Playing Games",
+   "Arcade",
+   "Platformer",
+   "Dungeon Crawler",
+   "Dungeon Crawler"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 232198,
@@ -23288,7 +23592,18 @@
    "PPSA07154"
   ],
   "name": "Riddled Corpses EX",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202203/0515/DtnoiPCmSboFqVBk8wu8czFH.jpg",
+  "publisher": "COWCAT",
+  "releaseDate": "2022-05-26T23:00:00Z",
+  "genres": [
+   "Arcade",
+   "Action",
+   "Adventure",
+   "Run And Gun",
+   "Run And Gun"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10000266,
@@ -23299,7 +23614,15 @@
    "PPSA07155"
   ],
   "name": "Demon's Tier+",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202203/0515/hnKf2x1hp2kbEmpA8zarAymD.jpg",
+  "publisher": "COWCAT",
+  "releaseDate": "2022-05-26T23:00:00Z",
+  "genres": [
+   "Action",
+   "Platformer"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004698,
@@ -23312,7 +23635,14 @@
    "PPSA12461"
   ],
   "name": "Thirsty Suitors",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202212/0100/0fz81NJ9OJUuWSMq4LQvTtcP.png",
+  "publisher": "Annapurna Interactive",
+  "releaseDate": "2023-11-02T16:00:00Z",
+  "genres": [
+   "Adventure"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004699,
@@ -23328,7 +23658,14 @@
    "PPSA10234"
   ],
   "name": "Star Wars: Tales from the Galaxy's Edge - Enhanced Edition",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202211/1006/i7FYsAoqObl3kkV882YeeCCJ.png",
+  "publisher": "Disney Interactive",
+  "genres": [
+   "Adventure",
+   "Fantasy"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004658,
@@ -23341,8 +23678,16 @@
    "PPSA17094",
    "PPSA17095"
   ],
-  "name": "SONIC SUPERSTARS",
-  "region": "UP"
+  "name": "Sonic Superstars",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202307/2416/83c12a719e7eaf7403955011d2101669b660124a34f7cef6.png",
+  "publisher": "SEGA EUROPE LTD",
+  "releaseDate": "2023-10-17T04:00:00Z",
+  "genres": [
+   "Action",
+   "Beat 'Em Up"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 232153,
@@ -23352,7 +23697,18 @@
    "PPSA06895"
   ],
   "name": "Tarot Readings Premium",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202201/2815/i9ODwH9jNdCXqwNKyiDCJKhO.jpg",
+  "publisher": "Crazysoft Limited",
+  "releaseDate": "2018-12-14T15:34:15Z",
+  "genres": [
+   "Casual",
+   "Family",
+   "Educational",
+   "Trivia/Quiz",
+   "Trivia/Quiz"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004708,
@@ -23362,7 +23718,14 @@
    "PPSA06899"
   ],
   "name": "TopSpin 2K25",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202403/0618/d5b9de32b8e89f9e17f030aaf54bafe7e490d90d792c51f8.png",
+  "publisher": "2K",
+  "releaseDate": "2024-04-25T23:00:00Z",
+  "genres": [
+   "Sport"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004507,
@@ -23375,7 +23738,12 @@
    "PPSA07506"
   ],
   "name": "PlayStation Plus",
-  "region": null
+  "region": null,
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202204/0810/803Pm8uJoZ2Cl9fJPvTaXHqG.png",
+  "publisher": "Sony Interactive Entertainment Europe",
+  "releaseDate": "2010-12-31T00:00:00Z",
+  "genres": [],
+  "enriched": true
  },
  {
   "conceptId": 10004710,
@@ -23387,7 +23755,17 @@
    "PPSA06909"
   ],
   "name": "Goonya Monster",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202212/0104/hPfrC8lzvxtm7XLTd4dMJB7H.png",
+  "publisher": "MUTAN INC.",
+  "releaseDate": "2022-12-04T10:00:00Z",
+  "genres": [
+   "Action",
+   "Family",
+   "Party",
+   "Third Person Shooter"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 221699,
@@ -23397,8 +23775,17 @@
    "PPSA06912",
    "PPSA07979"
   ],
-  "name": "Grand Prix Rock 'N Racing",
-  "region": "UP"
+  "name": "Grand Prix Rock'N Racing",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202204/0810/gmmyj8pTwrdAKQZhElMs33UB.png",
+  "publisher": "SUPER POWERUP GAMES, SOCIEDAD LIMITADA",
+  "releaseDate": "2022-05-05T23:00:00Z",
+  "genres": [
+   "Family",
+   "Driving/Racing",
+   "Sport"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004719,
@@ -23409,7 +23796,15 @@
    "PPSA07901"
   ],
   "name": "Mummy Pinball",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202202/2512/o3cmbfmLFBvWdBKfV6ySmjGx.png",
+  "publisher": "SUPER POWERUP GAMES, SOCIEDAD LIMITADA",
+  "releaseDate": "2022-10-13T23:00:00Z",
+  "genres": [
+   "Arcade",
+   "Pinball"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004722,
@@ -23419,7 +23814,16 @@
    "PPSA06923"
   ],
   "name": "9 Clues: The Secret of Serpent Creek",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202202/2419/qR3Fo7gJtZChJq9Xjgaikw5L.jpg",
+  "publisher": "ARTIFEX MUNDI SP. Z O.O.",
+  "releaseDate": "2022-04-01T11:00:00Z",
+  "genres": [
+   "Casual",
+   "Puzzle",
+   "Graphic Adventure"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004639,
@@ -23431,7 +23835,14 @@
    "PPSA16403"
   ],
   "name": "Warhammer Age of Sigmar: Realms of Ruin",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202305/2315/be9b15bd741c47bb42ece7270b4bcd86fac3d9eb25c00c09.jpg",
+  "publisher": "FRONTIER DEVELOPMENTS PLC",
+  "releaseDate": "2023-11-17T16:00:00Z",
+  "genres": [
+   "Real Time Strategy"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10003340,
@@ -23448,7 +23859,16 @@
    "PPSA13800"
   ],
   "name": "DEADCRAFT",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202204/0701/0rHejVL4c8Q2MiEv4xwCKvpl.png",
+  "publisher": "Marvelous Europe Limited",
+  "releaseDate": "2022-05-18T23:00:00Z",
+  "genres": [
+   "Simulation",
+   "Action",
+   "Development"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004360,
@@ -23458,7 +23878,15 @@
    "PPSA06933"
   ],
   "name": "Can You Escape?",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202202/0312/MI5JLVeVKqSW9862liZEshfR.png",
+  "publisher": "Warlock Arts",
+  "releaseDate": "2022-04-23T23:00:00Z",
+  "genres": [
+   "Arcade",
+   "Platformer"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10003145,
@@ -23468,7 +23896,14 @@
    "PPSA06935"
   ],
   "name": "APICO",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202205/1318/HWdt8bE74tww4hmdpZptUIlU.png",
+  "publisher": "Whitethorn Games, Inc.",
+  "genres": [
+   "Simulation",
+   "Casual"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004726,
@@ -23477,7 +23912,9 @@
    "PPSA06940"
   ],
   "name": "Music World",
-  "region": "UP"
+  "region": "UP",
+  "enriched": true,
+  "noStore": true
  },
  {
   "conceptId": 10004724,
@@ -23489,7 +23926,15 @@
    "PPSA08686"
   ],
   "name": "Kruger",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202205/0207/ZrSiuHOEDbgtNJRKJygx7urB.png",
+  "publisher": "Zakym s. r. o.",
+  "releaseDate": "2022-05-24T00:00:00Z",
+  "genres": [
+   "Adventure",
+   "Platformer"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004731,
@@ -23498,8 +23943,15 @@
    "PPSA06953",
    "PPSA08158"
   ],
-  "name": "Undernauts: Labyrinth of Yomi",
-  "region": "UP"
+  "name": "Undernauts: Labyrinth of Yomi (PS5)",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202202/0301/BFrLmsU0Qpia15JY1TWVqN2h.jpg",
+  "publisher": "NUMSKULL GAMES LTD",
+  "genres": [
+   "Role Playing Games",
+   "Dungeon Crawler"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 229066,
@@ -23523,7 +23975,16 @@
    "PPSA35116"
   ],
   "name": "Granblue Fantasy: Relink",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202308/0411/1d57aaaac896cd92f6b488ee9c5f1af372a6fc4a4695dfd7.png",
+  "publisher": "Cygames, Inc.",
+  "releaseDate": "2024-02-01T00:00:00Z",
+  "genres": [
+   "Role Playing Games",
+   "Action",
+   "Fantasy"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004721,
@@ -23539,7 +24000,14 @@
    "PPSA14492"
   ],
   "name": "SWORD ART ONLINE Last Recollection",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202301/0606/wb9pndfL6948uS8931Bn4xKQ.jpg",
+  "publisher": "BANDAI NAMCO ENTERTAINMENT EUROPE",
+  "releaseDate": "2023-10-05T23:00:00Z",
+  "genres": [
+   "Role Playing Games"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004736,
@@ -23551,7 +24019,17 @@
    "PPSA29063"
   ],
   "name": "Mandragora: Whispers of the Witch Tree",
-  "region": "EP"
+  "region": "EP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202506/0411/3e87f7558ddfd8aa796d323342f36d5b670f14900dd42e31.png",
+  "publisher": "MY.GAMES HOLDINGS LTD",
+  "releaseDate": "2025-04-17T07:00:00Z",
+  "genres": [
+   "Role Playing Games",
+   "Action",
+   "Fantasy",
+   "Platformer"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10003537,
@@ -23561,7 +24039,13 @@
    "PPSA07078"
   ],
   "name": "Pro Deer Hunting Out West",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202201/2420/nn6KXoW5gYKDzrDe3HHlNMma.jpg",
+  "publisher": "PARTY SPA RENTALS, INC",
+  "genres": [
+   "First Person Shooter"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004743,
@@ -23573,7 +24057,9 @@
    "PPSA08643"
   ],
   "name": "The Cow G",
-  "region": "UP"
+  "region": "UP",
+  "enriched": true,
+  "noStore": true
  },
  {
   "conceptId": 10004744,
@@ -23585,7 +24071,17 @@
    "PPSA06981"
   ],
   "name": "NARUTO X BORUTO Ultimate Ninja STORM CONNECTIONS",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202302/2407/e448b7a610bc5d2e764bcfd865ab60abbbfa2d85e3d9a84d.jpg",
+  "publisher": "BANDAI NAMCO ENTERTAINMENT EUROPE",
+  "releaseDate": "2023-11-17T00:00:00Z",
+  "genres": [
+   "Action",
+   "Adventure",
+   "3D Fighting",
+   "3D Fighting"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004538,
@@ -23596,8 +24092,15 @@
    "PPSA06984",
    "PPSA06985"
   ],
-  "name": "Oxenfree II: Lost Signals",
-  "region": "EP"
+  "name": "OXENFREE II: Lost Signals",
+  "region": "EP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202303/2816/f16498f5abf66c7b0486c5c3376c7dcd0a642bdebdc8adb1.jpg",
+  "publisher": "Netflix Inc.",
+  "releaseDate": "2023-07-11T23:00:00Z",
+  "genres": [
+   "Adventure"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10001020,
@@ -23609,7 +24112,15 @@
    "PPSA06989"
   ],
   "name": "Swordsman VR",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/img/rnd/202101/1311/ndQ2F8idTZlfkdEeXTgLcins.png",
+  "publisher": "Sinn Studio Inc.",
+  "releaseDate": "2023-02-22T00:00:00Z",
+  "genres": [
+   "Fighting",
+   "Fantasy"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004747,
@@ -23620,7 +24131,19 @@
    "PPSA06992"
   ],
   "name": "The Legend of the Dragonflame Highschool Collection",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202205/0110/Lt5eOc32onll7YMIysrdvYFE.png",
+  "publisher": "Ratalaika Games SL",
+  "releaseDate": "2022-05-19T23:00:00Z",
+  "genres": [
+   "Action",
+   "Arcade",
+   "Action",
+   "2D Fighting",
+   "Beat 'Em Up",
+   "Beat 'Em Up"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004746,
@@ -23632,7 +24155,9 @@
    "PPSA08645"
   ],
   "name": "Quick Mafs advanced",
-  "region": "UP"
+  "region": "UP",
+  "enriched": true,
+  "noStore": true
  },
  {
   "conceptId": 10004748,
@@ -23642,7 +24167,19 @@
    "PPSA06998"
   ],
   "name": "HellGunner",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202204/2017/qkKk7YBSErc4yZEimgtfAf1U.png",
+  "publisher": "Ratalaika Games SL",
+  "releaseDate": "2022-05-12T23:00:00Z",
+  "genres": [
+   "Action",
+   "Arcade",
+   "Action",
+   "Shoot 'Em Up",
+   "Third Person Shooter",
+   "Third Person Shooter"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10003346,
@@ -23654,7 +24191,16 @@
    "PPSA10798"
   ],
   "name": "Dungeons Of The Deep",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202210/1518/OW1s5Bpzb6Xi9RvyrpeHXyRz.jpg",
+  "publisher": "Gray Mantis",
+  "genres": [
+   "Action",
+   "Adventure",
+   "Fantasy",
+   "Hack and Slash"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004739,
@@ -23664,7 +24210,14 @@
    "PPSA13402"
   ],
   "name": "Charlie The Roach",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202203/0103/iyMrdi7cCE1uAyZrNmmnic1l.jpg",
+  "publisher": "Gray Mantis",
+  "genres": [
+   "Action",
+   "Platformer"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004745,
@@ -23675,7 +24228,14 @@
    "PPSA15694"
   ],
   "name": "Metal Savior Black",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202403/3117/6d73d2126e7f283d1b9b276af08cd955c5868eb5f5507a77.png",
+  "publisher": "Gray Mantis",
+  "releaseDate": "2024-04-11T23:00:00Z",
+  "genres": [
+   "First Person Shooter"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10001067,
@@ -23686,7 +24246,9 @@
    "PPSA07007"
   ],
   "name": "GUNDAM EVOLUTION",
-  "region": "UP"
+  "region": "UP",
+  "enriched": true,
+  "noStore": true
  },
  {
   "conceptId": 10004752,
@@ -23696,7 +24258,19 @@
    "PPSA07009"
   ],
   "name": "TORINTO",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202304/2506/e9069446ec2747835b38a81ca18a5101a7db4a111a5cf973.png",
+  "publisher": "eastasiasoft",
+  "releaseDate": "2023-05-23T23:00:00Z",
+  "genres": [
+   "Action",
+   "Action",
+   "Action",
+   "Platformer",
+   "Run And Gun",
+   "Run And Gun"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004753,
@@ -23706,7 +24280,16 @@
    "PPSA07012"
   ],
   "name": "Rule No.1",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202210/0508/6mkH2pkVg9obGrpmhPlPNMmG.png",
+  "publisher": "eastasiasoft",
+  "releaseDate": "2022-10-26T23:00:00Z",
+  "genres": [
+   "Action",
+   "First Person Shooter",
+   "First Person Shooter"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004688,
@@ -23716,7 +24299,14 @@
    "PPSA07018"
   ],
   "name": "Source of Madness",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202204/2215/TR6xV95fa7NU5RsXn0tgtw8a.jpg",
+  "publisher": "Thunderful Publishing AB",
+  "genres": [
+   "Action",
+   "Platformer"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004759,
@@ -23726,7 +24316,15 @@
    "PPSA07021"
   ],
   "name": "Serious Sam: Siberian Mayhem",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202209/1916/WFNlwC3ztioNsNtH0sO4BoJu.jpg",
+  "publisher": "Devolver Digital",
+  "releaseDate": "2022-10-06T16:00:00Z",
+  "genres": [
+   "Action",
+   "Shoot 'Em Up"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004707,
@@ -23736,7 +24334,15 @@
    "PPSA07023"
   ],
   "name": "Inscryption",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202206/1700/bzvlJHBWDaECvVGKOT5ziBsU.jpg",
+  "publisher": "Devolver Digital",
+  "genres": [
+   "Adventure",
+   "Strategy",
+   "Mystery"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004634,
@@ -23748,7 +24354,18 @@
    "PPSA14751"
   ],
   "name": "Plunder Panic",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202205/0415/wY7iQH6k4qFfoVpc1xhTEmSm.png",
+  "publisher": "Will Winn Games Inc.",
+  "releaseDate": "2023-03-17T00:00:00Z",
+  "genres": [
+   "Action",
+   "Arcade",
+   "Party",
+   "2D Fighting",
+   "Platformer"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 232148,
@@ -23758,7 +24375,17 @@
    "PPSA07030"
   ],
   "name": "Personality and Psychology Premium",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202202/0810/G98kpXfO2o8iLQoHu3WFcFT2.jpg",
+  "publisher": "Crazysoft Limited",
+  "releaseDate": "2018-03-13T13:39:15Z",
+  "genres": [
+   "Family",
+   "Educational",
+   "Unique",
+   "Trivia/Quiz"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004770,
@@ -23768,7 +24395,18 @@
    "PPSA07032"
   ],
   "name": "Flat Kingdom Paper's Cut Edition",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202203/0912/MTMj3IUMcXn7vONzqoYjZOKV.png",
+  "publisher": "Ratalaika Games SL",
+  "releaseDate": "2022-03-31T23:00:00Z",
+  "genres": [
+   "Casual",
+   "Adventure",
+   "Unique",
+   "Platformer",
+   "Platformer"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004771,
@@ -23777,8 +24415,18 @@
    "PPSA07036",
    "PPSA07037"
   ],
-  "name": "Saint Patrick's Day Run",
-  "region": "UP"
+  "name": "Saint Patricks Day Run",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202202/1522/3qGGL7TL1a9xqWkdzmdwB83X.jpg",
+  "publisher": "SMOBILE INC",
+  "releaseDate": "2022-03-04T00:00:00Z",
+  "genres": [
+   "Casual",
+   "Arcade",
+   "Platformer",
+   "Shoot 'Em Up"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004773,
@@ -23788,7 +24436,15 @@
    "PPSA07039"
   ],
   "name": "Heidelberg 1693",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202211/0809/AUto7QPEMGMIFYQFiKSS2Tuq.jpg",
+  "publisher": "RED ART GAMES",
+  "releaseDate": "2022-11-18T00:00:00Z",
+  "genres": [
+   "Action",
+   "Platformer"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004776,
@@ -23799,7 +24455,15 @@
    "PPSA18113"
   ],
   "name": "Agatha Christie - Murder on the Orient Express",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202307/2614/1e637b22b01e933e5cdb5a2e027b5172920915543d465932.jpg",
+  "publisher": "Microids",
+  "releaseDate": "2023-10-18T23:00:00Z",
+  "genres": [
+   "Adventure",
+   "Mystery"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10003303,
@@ -23808,8 +24472,15 @@
    "PPSA07045",
    "PPSA07046"
   ],
-  "name": "Deathrun TV",
-  "region": "UP"
+  "name": "DEATHRUN TV",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202204/2715/GkplONFSVDlNBxsfVSWUQ89X.jpg",
+  "publisher": "MAX ENT GAMES LIMITED",
+  "genres": [
+   "Action",
+   "Shoot 'Em Up"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004779,
@@ -23819,7 +24490,15 @@
    "PPSA07048"
   ],
   "name": "Naheulbeuk's Dungeon Master",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202311/1514/c0a3b7ab569a44f2eeaaf7056fd0ae9ca2c093a48d9fb793.png",
+  "publisher": "Dear Villagers",
+  "releaseDate": "2024-07-09T13:00:00Z",
+  "genres": [
+   "Strategy",
+   "Fantasy"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004780,
@@ -23830,7 +24509,16 @@
    "PPSA07053"
   ],
   "name": "Coffee Talk Episode 2: Hibiscus & Butterfly",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202303/0119/3fa13499d703edff8083e0408a52900e16ae771e2c73a9f3.png",
+  "publisher": "Chorus Worldwide Games",
+  "releaseDate": "2023-04-20T00:00:00Z",
+  "genres": [
+   "Casual",
+   "Text Adventure",
+   "Text Adventure"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 234471,
@@ -23840,8 +24528,16 @@
    "PPSA07056",
    "PPSA07057"
   ],
-  "name": "CoffeeTalk",
-  "region": "UP"
+  "name": "Coffee Talk",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202105/0417/2dU6F0EuKO9jJtgVu86X4o7l.png",
+  "publisher": "Chorus Worldwide Games",
+  "releaseDate": "2020-01-28T00:00:00Z",
+  "genres": [
+   "Art Experimental",
+   "Text Adventure"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004778,
@@ -23853,7 +24549,15 @@
    "PPSA08271"
   ],
   "name": "Final Vendetta",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202204/0503/r1aB7MUfEwrGcdNXfD7HEOml.jpg",
+  "publisher": "NUMSKULL GAMES LTD",
+  "releaseDate": "2022-06-16T23:00:00Z",
+  "genres": [
+   "Fighting",
+   "Beat 'Em Up"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10002848,
@@ -23863,7 +24567,16 @@
    "PPSA07064"
   ],
   "name": "Lords of the Fallen",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202308/2307/c1e14c520612a5dc5e0b1905c8f4ecbbc23f139462f17acb.jpg",
+  "publisher": "CI GAMES S.A.",
+  "releaseDate": "2023-10-31T00:00:00Z",
+  "genres": [
+   "Role Playing Games",
+   "Action",
+   "Fantasy"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004738,
@@ -23873,7 +24586,17 @@
    "PPSA07068"
   ],
   "name": "Saint Patrick's Day Break 2 Head to Head",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202202/2404/bnUw79qPVtkX3RaKkWXOKxcV.png",
+  "publisher": "SMOBILE INC",
+  "releaseDate": "2022-03-11T00:00:00Z",
+  "genres": [
+   "Arcade",
+   "Casual",
+   "Shoot 'Em Up",
+   "Pinball"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004786,
@@ -23884,7 +24607,14 @@
    "PPSA07071"
   ],
   "name": "Rayland",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202206/2205/JTubJvd6XTwsYL74zvignfCI.png",
+  "publisher": "eastasiasoft",
+  "releaseDate": "2022-07-12T23:00:00Z",
+  "genres": [
+   "Puzzle"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004794,
@@ -23894,7 +24624,15 @@
    "PPSA07074"
   ],
   "name": "Whisker Waters",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202308/3109/debdaae0a88a3c950e70407c080fc3e7380e70fa5b531ffd.jpg",
+  "publisher": "Silver Lining Interactive LTD",
+  "releaseDate": "2024-04-25T14:00:00Z",
+  "genres": [
+   "Adventure",
+   "Fantasy"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004793,
@@ -23904,7 +24642,18 @@
    "PPSA07075"
   ],
   "name": "Taqoban",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202203/0816/loDomMJH4MGM8Y7qgX7FQT4L.png",
+  "publisher": "Ratalaika Games SL",
+  "releaseDate": "2022-03-25T00:00:00Z",
+  "genres": [
+   "Puzzle",
+   "Puzzle",
+   "Puzzle",
+   "Art Experimental",
+   "Maze"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10003532,
@@ -23913,8 +24662,17 @@
    "PPSA07079",
    "PPSA07080"
   ],
-  "name": "DC League of Super Pets: The Adventures of Krypto and Ace",
-  "region": "UP"
+  "name": "DC League of Super-Pets: The Adventures of Krypto and Ace",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202204/1907/vLy16rqiIOmD6VQH3lk4ZIbK.jpg",
+  "publisher": "Outright Games LLC",
+  "genres": [
+   "Family",
+   "Action",
+   "Children's",
+   "Flight Combat"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004801,
@@ -23924,7 +24682,15 @@
    "PPSA07085"
   ],
   "name": "Flower Shop: Summer In Fairbrook",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202203/2318/GiwxWQJqYKRnaTCRhP6X6EP4.png",
+  "publisher": "Ratalaika Games SL",
+  "releaseDate": "2022-04-14T23:00:00Z",
+  "genres": [
+   "Graphic Adventure",
+   "Text Adventure"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004803,
@@ -23935,7 +24701,15 @@
    "PPSA11148"
   ],
   "name": "Titans Pinball",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202203/1110/BRRqxDUabriF2aMBY5tczA8z.png",
+  "publisher": "SUPER POWERUP GAMES, SOCIEDAD LIMITADA",
+  "releaseDate": "2023-01-27T00:00:00Z",
+  "genres": [
+   "Arcade",
+   "Pinball"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004804,
@@ -23945,7 +24719,14 @@
    "PPSA07103"
   ],
   "name": "Formula Bit Racing DX",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202206/0313/rM23vn7pfi9bfgbUKj9pjugy.jpg",
+  "publisher": "2AWESOME STUDIO VOF",
+  "releaseDate": "2022-07-08T18:00:00Z",
+  "genres": [
+   "Driving/Racing"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004807,
@@ -23955,7 +24736,17 @@
    "PPSA07105"
   ],
   "name": "Crazy Chicken Jump 'n' Run Traps and Treasures",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202207/0713/6W7oi1K19jTwA7mKSST4JRHt.jpg",
+  "publisher": "Markt+Technik Verlag GmbH",
+  "releaseDate": "2022-08-05T00:00:00Z",
+  "genres": [
+   "Action",
+   "Casual",
+   "Platformer",
+   "Platformer"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10002571,
@@ -23965,7 +24756,17 @@
    "PPSA08152"
   ],
   "name": "Hidden Treasures in the Forest of Dreams",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202111/0519/HS2uUoN4c7ALP6Hk1J0F9177.png",
+  "publisher": "Paleo Games LLC",
+  "releaseDate": "2021-11-13T05:00:00Z",
+  "genres": [
+   "Adventure",
+   "Casual",
+   "Fantasy",
+   "Art Experimental"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10003084,
@@ -23975,7 +24776,9 @@
    "PPSA14385"
   ],
   "name": "Hot Wheels Rift Rally",
-  "region": "UP"
+  "region": "UP",
+  "enriched": true,
+  "noStore": true
  },
  {
   "conceptId": 10002948,
@@ -23984,8 +24787,18 @@
    "PPSA07111",
    "PPSA07112"
   ],
-  "name": "REDO!",
-  "region": "UP"
+  "name": "Redo!",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202207/0616/wPLpN9XU1CpPUf2lwxVVWGoe.png",
+  "publisher": "TOP HAT STUDIOS, INC.",
+  "releaseDate": "2022-06-22T09:00:00Z",
+  "genres": [
+   "Action",
+   "Role Playing Games",
+   "Platformer",
+   "Tactical"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10001699,
@@ -23995,7 +24808,14 @@
    "PPSA07114"
   ],
   "name": "JoJo Siwa: Worldwide Party",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202208/2215/ECZ36RBjN988TkeDkX6UL4gB.png",
+  "publisher": "Outright Games LLC",
+  "releaseDate": "2022-10-20T23:00:00Z",
+  "genres": [
+   "Music/Rhythm"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10000753,
@@ -24004,8 +24824,15 @@
    "PPSA06846",
    "PPSA07116"
   ],
-  "name": "Shatter Remastered Deluxe",
-  "region": "UP"
+  "name": "Shatter Remastered Deluxe PS4 & PS5",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202207/1301/8CnkOycm4oYRyQsHl3Dd2HWS.png",
+  "publisher": "PRODIGY DESIGN LIMITED",
+  "releaseDate": "2022-11-02T00:00:00Z",
+  "genres": [
+   "Arcade"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004687,
@@ -24015,7 +24842,15 @@
    "PPSA07118"
   ],
   "name": "Unpacking",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202204/1921/eyTQUK6eFiZ60eNgDvhBzDFA.png",
+  "publisher": "Good Games Group, Inc.",
+  "releaseDate": "2022-05-10T07:00:00Z",
+  "genres": [
+   "Simulation",
+   "Puzzle"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004810,
@@ -24026,7 +24861,13 @@
    "PPSA07126"
   ],
   "name": "Ape Academy",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202309/2817/527c0eddfa7b521579db8d0cd1792123e268c122cf15b369.jpg",
+  "publisher": "Sony Interactive Entertainment",
+  "genres": [
+   "Action"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004813,
@@ -24038,7 +24879,14 @@
    "PPSA08184"
   ],
   "name": "Super Stardust Portable",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202205/1117/I77EJmkwiczUe3Gh7RVmupN8.jpg",
+  "publisher": "Sony Interactive Entertainment",
+  "releaseDate": "2022-06-22T23:00:00Z",
+  "genres": [
+   "Shooter"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004816,
@@ -24057,8 +24905,19 @@
    "PPSA24903",
    "PPSA24904"
   ],
-  "name": "SYNDUALITY Echo of Ada",
-  "region": "UP"
+  "name": "SYNDUALITY: Echo of Ada",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202607/0611/194c35b78c2c3f08162015efbeeee393115922c4a28fe78a.jpg",
+  "publisher": "BANDAI NAMCO ENTERTAINMENT EUROPE",
+  "releaseDate": "2025-01-23T00:00:00Z",
+  "genres": [
+   "Adventure",
+   "Action",
+   "Hack and Slash",
+   "Third Person Shooter",
+   "Third Person Shooter"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004820,
@@ -24067,8 +24926,18 @@
    "PPSA07142",
    "PPSA07143"
   ],
-  "name": "Skábma™ - Snowfall",
-  "region": "UP"
+  "name": "Skabma - Snowfall",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202212/2013/fXBMJmzm7Tf0uwFLpbJkniyA.jpg",
+  "publisher": "Plug In Digital",
+  "releaseDate": "2023-08-09T16:00:00Z",
+  "genres": [
+   "Action",
+   "Adventure",
+   "Fantasy",
+   "Mystery"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004822,
@@ -24080,7 +24949,17 @@
    "PPSA08118"
   ],
   "name": "Hourglass",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202206/0717/NNXsQYFZ2ldXMCThtDPCF3G5.jpg",
+  "publisher": "SECRET ITEM GAMES UG",
+  "releaseDate": "2022-06-29T23:00:00Z",
+  "genres": [
+   "Puzzle",
+   "Adventure",
+   "Platformer",
+   "Platformer"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004825,
@@ -24090,7 +24969,15 @@
    "PPSA07149"
   ],
   "name": "The Outer Worlds: Spacer's Choice Edition",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202208/3117/DlXVNQlhFyuWbQnA9zBHrc8r.jpg",
+  "publisher": "Microsoft Corporation",
+  "releaseDate": "2025-02-17T17:00:00Z",
+  "genres": [
+   "Role Playing Games",
+   "Action"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004829,
@@ -24101,7 +24988,15 @@
    "PPSA08251"
   ],
   "name": "Superola Champion Edition",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202205/1907/hoFNzbnZx1x1px3lZhVOezuk.jpg",
+  "publisher": "JANDUSOFT S.L.",
+  "releaseDate": "2022-07-13T00:00:00Z",
+  "genres": [
+   "Action",
+   "Platformer"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 232147,
@@ -24111,7 +25006,18 @@
    "PPSA07161"
   ],
   "name": "Palm Reading Premium",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202202/1609/fzhhEi7WCBWzK1kejxDUExv3.jpg",
+  "publisher": "Crazysoft Limited",
+  "releaseDate": "2018-10-15T00:00:00Z",
+  "genres": [
+   "Brain Training",
+   "Casual",
+   "Educational",
+   "Trivia/Quiz",
+   "Trivia/Quiz"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10001734,
@@ -24122,8 +25028,15 @@
    "PPSA19631",
    "PPSA19632"
   ],
-  "name": "Synergia - NextGen Edition",
-  "region": "UP"
+  "name": "Synergia",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202101/1023/XH1eirU9kOqWcmzwmEMM0pps.png",
+  "publisher": "TOP HAT STUDIOS, INC.",
+  "releaseDate": "2023-10-03T16:00:00Z",
+  "genres": [
+   "Role Playing Games"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004836,
@@ -24134,7 +25047,15 @@
    "PPSA12642"
   ],
   "name": "NBA 2K23",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202209/0118/kXh1kbI0ok6vepgOJXgrnDlq.jpg",
+  "publisher": "2K",
+  "releaseDate": "2022-09-08T23:00:00Z",
+  "genres": [
+   "Sport",
+   "Basketball"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004730,
@@ -24144,7 +25065,15 @@
    "PPSA24115"
   ],
   "name": "Wildgate",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202503/2116/72f24437694a45480e9ef1bfcf2543f5d32755c9135df9b2.png",
+  "publisher": "Dreamhaven, Inc.",
+  "releaseDate": "2025-07-22T15:00:00Z",
+  "genres": [
+   "Adventure",
+   "First Person Shooter"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004837,
@@ -24154,7 +25083,15 @@
    "PPSA07174"
   ],
   "name": "Hammerwatch Anniversary Edition",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202312/0202/47ac996139b8577a464c926f962c45496ab04b1bfdb32280.jpg",
+  "publisher": "Maximum Entertainment",
+  "releaseDate": "2023-12-12T17:00:00Z",
+  "genres": [
+   "Action",
+   "Fantasy"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004828,
@@ -24166,7 +25103,16 @@
    "PPSA07178"
   ],
   "name": "8Doors: Arum's Afterlife Adventure",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202304/1109/e5c9c3392ee3f4367696d81aeae1b8fe83d9d61209afefc3.jpg",
+  "publisher": "NEOWIZ",
+  "releaseDate": "2023-04-28T00:00:00Z",
+  "genres": [
+   "Action",
+   "Adventure",
+   "Platformer"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004838,
@@ -24176,7 +25122,15 @@
    "PPSA07191"
   ],
   "name": "SUPER BOMBERMAN R 2",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202303/2214/d5b614087dc3aad8b539af8ece357aaa335d61919d7c0735.png",
+  "publisher": "KONAMI",
+  "releaseDate": "2023-09-13T15:00:00Z",
+  "genres": [
+   "Party",
+   "Action"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004847,
@@ -24186,7 +25140,19 @@
    "PPSA07193"
   ],
   "name": "Gunman Tales",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202302/1017/f6648981f0512bd12a07eadfc7cd9c2fa02f8aef1c2124b5.png",
+  "publisher": "Ratalaika Games SL",
+  "releaseDate": "2023-03-03T00:00:00Z",
+  "genres": [
+   "Arcade",
+   "Adventure",
+   "Action",
+   "Third Person Shooter",
+   "Third Person Shooter",
+   "Third Person Shooter"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004851,
@@ -24196,7 +25162,19 @@
    "PPSA07201"
   ],
   "name": "Chefy-Chef",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202204/1515/oj1CEbvLjPQBEtWCgwDN5G8K.png",
+  "publisher": "Ratalaika Games SL",
+  "releaseDate": "2022-05-05T23:00:00Z",
+  "genres": [
+   "Arcade",
+   "Adventure",
+   "Action",
+   "Platformer",
+   "Platformer",
+   "Platformer"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004853,
@@ -24208,7 +25186,17 @@
    "PPSA07210"
   ],
   "name": "Blow & Fly",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202204/1309/j8intgILT4UZGGhf6MJxcNNV.png",
+  "publisher": "eastasiasoft",
+  "releaseDate": "2022-05-24T23:00:00Z",
+  "genres": [
+   "Puzzle",
+   "Action",
+   "Platformer",
+   "Platformer"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004854,
@@ -24218,7 +25206,15 @@
    "PPSA07212"
   ],
   "name": "Super Woden GP",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202210/1307/9yV8gRIRLAsElUHLgtrtQELY.png",
+  "publisher": "eastasiasoft",
+  "releaseDate": "2022-11-09T00:00:00Z",
+  "genres": [
+   "Driving/Racing",
+   "Tactical"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004858,
@@ -24229,7 +25225,14 @@
    "PPSA07217"
   ],
   "name": "Azure Striker GUNVOLT 3",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202210/0308/QM4tILhwg9AWEst41VuJ0PZ4.png",
+  "publisher": "INTI CREATES CO., LTD.",
+  "genres": [
+   "Action",
+   "Run And Gun"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 232138,
@@ -24239,7 +25242,18 @@
    "PPSA07222"
   ],
   "name": "Astrology and Horoscope Premium",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202202/2113/mqXz8zCWOgqir5NQh6e2eEx2.jpg",
+  "publisher": "Crazysoft Limited",
+  "releaseDate": "2018-12-06T00:00:00Z",
+  "genres": [
+   "Family",
+   "Party",
+   "Educational",
+   "Trivia/Quiz",
+   "Trivia/Quiz"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004862,
@@ -24248,8 +25262,15 @@
    "PPSA07224",
    "PPSA07225"
   ],
-  "name": "Let's Sing Abba",
-  "region": "UP"
+  "name": "Let's Sing ABBA",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202207/0708/qMpXfit91RlyxEVy9R3R4AuG.png",
+  "publisher": "Ravenscourt",
+  "releaseDate": "2022-10-04T00:00:00Z",
+  "genres": [
+   "Music/Rhythm"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004791,
@@ -24258,8 +25279,17 @@
    "PPSA07226",
    "PPSA07227"
   ],
-  "name": "Catan: Console Edition",
-  "region": "UP"
+  "name": "CATAN® - Console Edition",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202209/2812/ev8VaiyRc42X3QgRwHIJ2b5r.jpg",
+  "publisher": "Dovetail Games",
+  "releaseDate": "2023-02-28T10:00:00Z",
+  "genres": [
+   "Casual",
+   "Board Game",
+   "Turn Based Strategy"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004865,
@@ -24271,7 +25301,15 @@
    "PPSA13960"
   ],
   "name": "Assassin's Creed® Mirage",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202208/1718/1YHRDsi3voapHSwJfDMneZXV.jpg",
+  "publisher": "Ubisoft",
+  "releaseDate": "2023-10-04T23:00:00Z",
+  "genres": [
+   "Adventure",
+   "Action"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004845,
@@ -24282,8 +25320,18 @@
    "PPSA07235",
    "PPSA07236"
   ],
-  "name": "Mathland",
-  "region": "UP"
+  "name": "MathLand",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202305/0814/dd5f4080bfd76306e75f14c22690f5d19540389bef226071.png",
+  "publisher": "ARTAX GAMES SL",
+  "releaseDate": "2023-05-11T00:00:00Z",
+  "genres": [
+   "Educational",
+   "Adventure",
+   "Children's",
+   "Platformer"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10003848,
@@ -24292,8 +25340,18 @@
    "PPSA07239",
    "PPSA07240"
   ],
-  "name": "SPIDERHECK",
-  "region": "UP"
+  "name": "SpiderHeck",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202209/2215/2mTccMRve8PsAadXoY8jNDiO.png",
+  "publisher": "tinyBuild LLC",
+  "releaseDate": "2022-09-22T16:00:00Z",
+  "genres": [
+   "Action",
+   "Fighting",
+   "Combat",
+   "Combat"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004871,
@@ -24303,7 +25361,17 @@
    "PPSA07244"
   ],
   "name": "Book Quest",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202207/1209/cGIWnhCDJlXLuzw85zsw6y0A.png",
+  "publisher": "eastasiasoft",
+  "releaseDate": "2022-08-09T23:00:00Z",
+  "genres": [
+   "Role Playing Games",
+   "Adventure",
+   "Fantasy",
+   "Fantasy"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004833,
@@ -24312,8 +25380,15 @@
    "PPSA07247",
    "PPSA07248"
   ],
-  "name": "Warhammer 40,000: Boltgun",
-  "region": "UP"
+  "name": "Warhammer 40,000: Boltgun (PS4 & PS5)",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202303/2314/e6403a53fb9715009f03ca9c9891bde0e812fe713b8e7131.jpg",
+  "publisher": "Focus Entertainment",
+  "releaseDate": "2023-05-22T23:00:00Z",
+  "genres": [
+   "Shooter"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10003956,
@@ -24324,7 +25399,14 @@
    "PPSA07250"
   ],
   "name": "River City Girls 2",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202211/2405/21cZhKeXgI0miEkOVstN20l4.jpg",
+  "publisher": "WayForward Technologies, Inc.",
+  "genres": [
+   "Action",
+   "Platformer"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004701,
@@ -24334,8 +25416,18 @@
    "PPSA07252",
    "PPSA07253"
   ],
-  "name": "Just Dance®",
-  "region": "UP"
+  "name": "Just Dance 2026 Edition",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202510/1011/1fa5c0117dacf97978710b2c44143249c3f9b3efe7b5e9ad.jpg",
+  "publisher": "Ubisoft",
+  "releaseDate": "2025-10-14T09:00:00Z",
+  "genres": [
+   "Family",
+   "Casual",
+   "Dance",
+   "Dance"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004875,
@@ -24347,7 +25439,14 @@
    "PPSA17968"
   ],
   "name": "Headbangers: Rhythm Royale",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202306/0616/e49486959b82db644cb8daf0c72eb1fb32c5351fce2e8743.jpg",
+  "publisher": "Team 17 Digital LTD",
+  "releaseDate": "2023-10-31T10:00:00Z",
+  "genres": [
+   "Music/Rhythm"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004595,
@@ -24357,8 +25456,20 @@
    "PPSA07271",
    "PPSA07272"
   ],
-  "name": "Ultra Mission",
-  "region": "UP"
+  "name": "Ultra Mission™",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202204/2714/rWtVuwRwrSfAj00rZluZRwEL.png",
+  "publisher": "Gumbo Machine",
+  "releaseDate": "2022-04-30T23:00:00Z",
+  "genres": [
+   "Action",
+   "Arcade",
+   "Shooter",
+   "Run And Gun",
+   "Run And Gun",
+   "Run And Gun"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004878,
@@ -24367,8 +25478,16 @@
    "PPSA07267",
    "PPSA07268"
   ],
-  "name": "Fort Boyard 2022",
-  "region": "UP"
+  "name": "Escape Game - FORT BOYARD 2022",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202206/1509/ikGnJVUM1Kzfs6SPl1r1eysj.png",
+  "publisher": "Microids",
+  "releaseDate": "2022-06-23T07:00:00Z",
+  "genres": [
+   "Party",
+   "Children's"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004428,
@@ -24384,7 +25503,15 @@
    "PPSA07670"
   ],
   "name": "VALKYRIE ELYSIUM",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202203/0406/AiGtpzAtguXcaEjQjpf88s6Q.png",
+  "publisher": "Square Enix LTD",
+  "releaseDate": "2022-09-28T23:00:00Z",
+  "genres": [
+   "Action",
+   "Role Playing Games"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10002139,
@@ -24394,7 +25521,14 @@
    "PPSA07278"
   ],
   "name": "United Assault - Normandy '44",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202403/1507/1f01903b292d1ae68b994bb480958f227c718793a034133f.jpg",
+  "publisher": "DANIEL WENGENROTH",
+  "releaseDate": "2022-07-06T00:00:00Z",
+  "genres": [
+   "First Person Shooter"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004879,
@@ -24404,7 +25538,13 @@
    "PPSA07280"
   ],
   "name": "Cyber Pool",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202212/1922/hAwFDSx2I1ZISxE7B5fD2qYP.png",
+  "publisher": "Revulo Games sp. z o. o.",
+  "genres": [
+   "Arcade"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004887,
@@ -24413,7 +25553,9 @@
    "PPSA07281"
   ],
   "name": "BBC Sounds",
-  "region": "EP"
+  "region": "EP",
+  "enriched": true,
+  "noStore": true
  },
  {
   "conceptId": 10004891,
@@ -24423,7 +25565,19 @@
    "PPSA07287"
   ],
   "name": "Road of Death",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202206/1518/I1yTRS3u4pKs6bU2gBtXwWHH.png",
+  "publisher": "Ratalaika Games SL",
+  "releaseDate": "2022-07-07T23:00:00Z",
+  "genres": [
+   "Action",
+   "Arcade",
+   "Action",
+   "Shoot 'Em Up",
+   "Third Person Shooter",
+   "Third Person Shooter"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 235178,
@@ -24433,7 +25587,19 @@
    "PPSA07290"
   ],
   "name": "Knightin'+",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202203/2518/WuAIWNcTLJzL5xgRO8Fl7Q4V.png",
+  "publisher": "Ratalaika Games SL",
+  "releaseDate": "2020-02-19T00:00:00Z",
+  "genres": [
+   "Adventure",
+   "Action",
+   "Arcade",
+   "Fantasy",
+   "Fantasy",
+   "Dungeon Crawler"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10000166,
@@ -24443,7 +25609,15 @@
    "PPSA07294"
   ],
   "name": "Reed Remastered",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202203/1119/1fGVygYtmYKZmNEAwvZQLdLL.png",
+  "publisher": "Ratalaika Games SL",
+  "releaseDate": "2020-02-12T00:00:00Z",
+  "genres": [
+   "Action",
+   "Platformer"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004876,
@@ -24457,7 +25631,15 @@
    "PPSA24689"
   ],
   "name": "Romancing SaGa -Minstrel Song- Remastered",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202209/1418/TpU6FPQcTSShp0IACiZ4tXoR.png",
+  "publisher": "Square Enix LTD",
+  "releaseDate": "2022-12-01T00:00:00Z",
+  "genres": [
+   "Role Playing Games",
+   "Fantasy"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10001523,
@@ -24467,7 +25649,15 @@
    "PPSA07301"
   ],
   "name": "Hardspace: Shipbreaker",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202207/2915/xBQSOdBhUGxC9Wb3J0q5N08F.jpg",
+  "publisher": "Focus Entertainment",
+  "releaseDate": "2022-09-20T16:00:00Z",
+  "genres": [
+   "Simulation",
+   "Physics Game"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10001409,
@@ -24477,8 +25667,15 @@
    "PPSA07302",
    "PPSA07303"
   ],
-  "name": "Vampire The Masquerade : Swansong",
-  "region": "UP"
+  "name": "Vampire: The Masquerade - Swansong",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/img/rnd/202102/0315/XDnzEWWPDuurhBqfpOdV2uYd.jpg",
+  "publisher": "NACON SA",
+  "releaseDate": "2022-05-19T08:00:00Z",
+  "genres": [
+   "Role Playing Games"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 232049,
@@ -24489,7 +25686,16 @@
    "PPSA07305"
   ],
   "name": "Ice Cream Surfer",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202205/1804/mjS7hGgNHnsp6qJO5JCvWTSW.png",
+  "publisher": "Hidden Trap",
+  "releaseDate": "2018-07-17T00:00:00Z",
+  "genres": [
+   "Arcade",
+   "Action",
+   "Shoot 'Em Up"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004898,
@@ -24498,8 +25704,15 @@
    "PPSA07306",
    "PPSA07307"
   ],
-  "name": "Worms",
-  "region": "UP"
+  "name": "Worms [PS1 Emulation]",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202306/0716/ac85989d4e5e41c8775c35ee11a9a3039827f43d4ff62797.jpg",
+  "publisher": "Team 17 Digital LTD",
+  "releaseDate": "2023-06-19T23:00:00Z",
+  "genres": [
+   "Turn Based Strategy"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004899,
@@ -24508,8 +25721,14 @@
    "PPSA07308",
    "PPSA07309"
   ],
-  "name": "Worms Armageddon",
-  "region": "UP"
+  "name": "Worms Armageddon [PS1 Emulation]",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202204/2813/KtZtWyFFGVWNc5yp43qHMUtr.jpg",
+  "publisher": "Team 17 Digital LTD",
+  "genres": [
+   "Turn Based Strategy"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004900,
@@ -24518,8 +25737,14 @@
    "PPSA07310",
    "PPSA07311"
   ],
-  "name": "Worms World Party",
-  "region": "UP"
+  "name": "Worms World Party [PS1 Emulation]",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202204/2814/KkUa9UkN6vg48Ha8FmyaSZBZ.jpg",
+  "publisher": "Team 17 Digital LTD",
+  "genres": [
+   "Turn Based Strategy"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10003817,
@@ -24529,7 +25754,14 @@
    "PPSA07313"
   ],
   "name": "Absolute Tactics: Daughters of Mercy",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202211/1502/GOTLn1GzdDU0Yn7luasISqkH.png",
+  "publisher": "AKUPARA GAMES",
+  "releaseDate": "2022-11-17T14:00:00Z",
+  "genres": [
+   "Strategy Role Playing Game"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10003452,
@@ -24540,7 +25772,15 @@
    "PPSA07317"
   ],
   "name": "Legend of Ixtona",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202203/1400/hRRvpmxPH6rSNipBMjvaVjSl.png",
+  "publisher": "KEMCO",
+  "releaseDate": "2022-04-27T23:00:00Z",
+  "genres": [
+   "Role Playing Games",
+   "Fantasy"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004908,
@@ -24551,7 +25791,15 @@
    "PPSA11046"
   ],
   "name": "Pirates Pinball",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202204/0612/PO3FgWPqEojoZV4kbtGvNXfO.png",
+  "publisher": "SUPER POWERUP GAMES, SOCIEDAD LIMITADA",
+  "releaseDate": "2023-01-06T00:00:00Z",
+  "genres": [
+   "Arcade",
+   "Pinball"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004758,
@@ -24563,7 +25811,15 @@
    "PPSA07329"
   ],
   "name": "Bloodwash",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202206/1416/lfxxF3JasbD7bOlWTlECfJSP.png",
+  "publisher": "Puppet Combo",
+  "releaseDate": "2022-10-11T23:00:00Z",
+  "genres": [
+   "Horror",
+   "Mystery"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 225517,
@@ -24573,8 +25829,18 @@
    "PPSA07326",
    "PPSA08943"
   ],
-  "name": "Wonderboy : The Dragon's Trap",
-  "region": "UP"
+  "name": "Wonder Boy: The Dragon's Trap",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202210/0408/cpWBv8bErf0m6dfJtWsjw7bc.png",
+  "publisher": "DOTEMU",
+  "releaseDate": "2017-04-17T00:00:00Z",
+  "genres": [
+   "Adventure",
+   "Action",
+   "Platformer",
+   "Platformer"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004901,
@@ -24584,7 +25850,17 @@
    "PPSA07331"
   ],
   "name": "Burger Break",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202203/0820/W79MtrO3p4DXYf1311UoOFGf.png",
+  "publisher": "SMOBILE INC",
+  "releaseDate": "2022-03-18T00:00:00Z",
+  "genres": [
+   "Casual",
+   "Arcade",
+   "Shoot 'Em Up",
+   "Pinball"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004910,
@@ -24594,8 +25870,16 @@
    "PPSA07337",
    "PPSA07524"
   ],
-  "name": "STAR WARS™ Episode I - The Phantom Menace",
-  "region": "UP"
+  "name": "STAR WARS Episode I - The Phantom Menace",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202401/1620/5eeb872a670499655cf59e3a4a3f50a9969b421940740b19.png",
+  "publisher": "Disney Interactive",
+  "releaseDate": "2024-01-16T12:00:00Z",
+  "genres": [
+   "Action",
+   "Third Person Shooter"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004912,
@@ -24607,7 +25891,15 @@
    "PPSA07343"
   ],
   "name": "Tales of the Neon Sea",
-  "region": "EP"
+  "region": "EP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202303/0709/f278e1a3f44671c53ee8c57071cb5d188b930f9053cd0dae.png",
+  "publisher": "Thermite Games Co., Ltd.",
+  "genres": [
+   "Adventure",
+   "Casual",
+   "Puzzle"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004717,
@@ -24618,7 +25910,15 @@
    "PPSA07345"
   ],
   "name": "Infinite Links",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202203/1806/aAbh3qcK32ey2PHVxyY4kiTC.png",
+  "publisher": "KEMCO",
+  "releaseDate": "2022-05-11T23:00:00Z",
+  "genres": [
+   "Role Playing Games",
+   "Fantasy"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004320,
@@ -24629,7 +25929,15 @@
    "PPSA09989"
   ],
   "name": "Souldiers",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202205/3008/lNhI9wiwcCdcIFEOjmO7in8W.jpg",
+  "publisher": "Dear Villagers",
+  "releaseDate": "2022-06-02T15:00:00Z",
+  "genres": [
+   "Action",
+   "Beat 'Em Up"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10001524,
@@ -24638,7 +25946,9 @@
    "PPSA07349"
   ],
   "name": "Joyn",
-  "region": "EP"
+  "region": "EP",
+  "enriched": true,
+  "noStore": true
  },
  {
   "conceptId": 10004917,
@@ -24648,7 +25958,15 @@
    "PPSA07355"
   ],
   "name": "Fashion Police Squad",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202301/0411/1wVBh4Dqmbe0JPvvplDNATvR.png",
+  "publisher": "NO MORE ROBOTS",
+  "releaseDate": "2023-02-28T00:00:00Z",
+  "genres": [
+   "First Person Shooter",
+   "Shoot 'Em Up"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 211798,
@@ -24658,7 +25976,16 @@
    "PPSA07359"
   ],
   "name": "Thumper",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA06296_00/3/i_cac00afc27fcf16bc409a3a28a0ec15b751c643bd4b6e72f92c362c0173cf9e1/i/pic0.png",
+  "publisher": "Drool LLC",
+  "releaseDate": "2016-10-12T00:00:00Z",
+  "genres": [
+   "Music/Rhythm",
+   "Action",
+   "Art Experimental"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004921,
@@ -24666,8 +25993,15 @@
   "allTitleIds": [
    "PPSA07364"
   ],
-  "name": "STAR WARS™ Demolition",
-  "region": "UP"
+  "name": "STAR WARS Demolition",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202210/1414/fV0dxOURLzZpOgbDeEU2UV4t.jpg",
+  "publisher": "Disney Interactive",
+  "genres": [
+   "Driving/Racing",
+   "Vehicular Combat"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004922,
@@ -24677,8 +26011,16 @@
    "PPSA07367",
    "PPSA07526"
   ],
-  "name": "STAR WARS™ Rebel Assault II - The Hidden Empire",
-  "region": "UP"
+  "name": "STAR WARS Rebel Assault II - The Hidden Empire",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202402/2020/addbef9a1faa2d8ec796f39f999d47fd4cecd56153b23479.png",
+  "publisher": "Disney Interactive",
+  "releaseDate": "2024-04-16T08:00:00Z",
+  "genres": [
+   "Action",
+   "Shoot 'Em Up"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004909,
@@ -24690,7 +26032,15 @@
    "PPSA21025"
   ],
   "name": "MADiSON",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202205/2414/DcEsR3e2fQNNET5qti9h2J9i.jpg",
+  "publisher": "PERPETUAL",
+  "releaseDate": "2022-07-07T23:00:00Z",
+  "genres": [
+   "Horror",
+   "Action"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004933,
@@ -24699,8 +26049,15 @@
    "PPSA07371",
    "PPSA07372"
   ],
-  "name": "Disney/Pixar Toy Story 2: Buzz Lightyear to the Rescue!",
-  "region": "UP"
+  "name": "Disney•Pixar Toy Story 2: Buzz Lightyear to the Rescue!",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202205/0416/1zqJZtGM5IfdXIPVir6RWNrs.jpg",
+  "publisher": "Disney Interactive",
+  "genres": [
+   "Adventure",
+   "Platformer"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004937,
@@ -24709,8 +26066,16 @@
    "PPSA07373",
    "PPSA07374"
   ],
-  "name": "Disney/Pixar Toy Story 3",
-  "region": "UP"
+  "name": "Disney•Pixar Toy Story 3",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202209/2119/ImWUY6B6gcOUzhFqDilUk9w2.jpg",
+  "publisher": "Disney Interactive",
+  "releaseDate": "2022-09-20T08:00:00Z",
+  "genres": [
+   "Action",
+   "Platformer"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004702,
@@ -24720,7 +26085,15 @@
    "PPSA07379"
   ],
   "name": "Minigolf Adventure",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202204/2712/kxYWKrRb705oXqWM6GOQAcE5.png",
+  "publisher": "Revulo Games sp. z o. o.",
+  "releaseDate": "2022-06-02T23:00:00Z",
+  "genres": [
+   "Arcade",
+   "Sport"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004425,
@@ -24730,7 +26103,19 @@
    "PPSA07385"
   ],
   "name": "Flintlock: The Siege of Dawn",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202404/2411/3738f861541069de68428972e910286f59c606b76cedbdca.jpg",
+  "publisher": "Kepler Interactive Limited",
+  "releaseDate": "2024-07-17T23:00:00Z",
+  "genres": [
+   "Action",
+   "Role Playing Games",
+   "Adventure",
+   "Combat",
+   "Fantasy",
+   "Fantasy"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10002253,
@@ -24739,8 +26124,15 @@
    "PPSA07388",
    "PPSA07389"
   ],
-  "name": "Hotel Life: A Resort Simulator",
-  "region": "UP"
+  "name": "Hotel: A Resort Simulator",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202304/2509/9379b256dd4fb67bb1cc554f9a25ee823b0842b9111c4b06.jpg",
+  "publisher": "Bigben Interactive",
+  "releaseDate": "2023-12-31T00:00:00Z",
+  "genres": [
+   "Simulation"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10001709,
@@ -24749,8 +26141,15 @@
    "PPSA07390",
    "PPSA07391"
   ],
-  "name": "Chef Life : A Restaurant Simulator",
-  "region": "UP"
+  "name": "Chef Life: A Restaurant Simulator",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202202/1716/SgWmweHsIBcZsEo4TBLMrZuF.jpg",
+  "publisher": "NACON SA",
+  "releaseDate": "2023-02-23T08:00:00Z",
+  "genres": [
+   "Simulation"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004945,
@@ -24762,7 +26161,15 @@
    "PPSA19539"
   ],
   "name": "Gori: Cuddly Carnage",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202305/2615/26b2f62bdbae85fc0398d1c5695f13386a7e1da81a2af662.jpg",
+  "publisher": "WIRED PRODUCTIONS LIMITED",
+  "releaseDate": "2024-08-28T23:00:00Z",
+  "genres": [
+   "Action",
+   "3D Fighting"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10003795,
@@ -24772,7 +26179,13 @@
    "PPSA07396"
   ],
   "name": "Mech Armada",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202210/2023/nsSJQ8TqsgNeARJcw8GW0V57.png",
+  "publisher": "Lioncode Games Inc.",
+  "genres": [
+   "Turn Based Strategy"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004946,
@@ -24781,8 +26194,17 @@
    "PPSA07397",
    "PPSA07638"
   ],
-  "name": "A Boy and his Blob Retro Collection",
-  "region": "UP"
+  "name": "A Boy and His Blob Retro Collection",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202308/2117/50c5e6e5d593a76b8978d10d2f8d4ff1ffef4b65df1076de.png",
+  "publisher": "Ziggurat Interactive, Inc.",
+  "genres": [
+   "Action",
+   "Puzzle",
+   "Platformer",
+   "Platformer"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004947,
@@ -24796,7 +26218,14 @@
    "PPSA21575"
   ],
   "name": "New World: Aeternum",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202409/0705/df6dfb6d5e8297455b09c558a2dd18ec4f3d687dcd67f812.jpg",
+  "publisher": "Amazon Game Studios",
+  "releaseDate": "2024-10-15T07:00:00Z",
+  "genres": [
+   "Massively Multiplayer Online Role Playing Game"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004949,
@@ -24806,7 +26235,15 @@
    "PPSA07406"
   ],
   "name": "Until the Last Plane",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202210/1805/QYYfXdjsGu1OUeepOtHK4AN2.png",
+  "publisher": "eastasiasoft",
+  "releaseDate": "2022-11-30T00:00:00Z",
+  "genres": [
+   "Simulation",
+   "Flight Combat"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004950,
@@ -24816,7 +26253,15 @@
    "PPSA07408"
   ],
   "name": "The Prisoner of the Night",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202403/2804/e5c69b97f3ecc05e9900f5904e4cdf70a38ddc899da0ddb2.png",
+  "publisher": "eastasiasoft",
+  "releaseDate": "2024-05-07T23:00:00Z",
+  "genres": [
+   "Action",
+   "Platformer"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004473,
@@ -24836,7 +26281,16 @@
    "PPSA19002"
   ],
   "name": "Resident Evil 4",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202207/2708/ympJiu4PTXE1CtMHfLoHoK3E.png",
+  "publisher": "CE EUROPE LIMITED",
+  "releaseDate": "2023-03-24T00:00:00Z",
+  "genres": [
+   "Horror",
+   "Adventure",
+   "Action"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004188,
@@ -24847,7 +26301,17 @@
    "PPSA07416"
   ],
   "name": "Dungeon Munchies",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202208/2506/KkcQLO7tAVGrygMDUAFWwrrO.jpg",
+  "publisher": "Chorus Worldwide Games",
+  "releaseDate": "2023-01-13T00:00:00Z",
+  "genres": [
+   "Action",
+   "Role Playing Games",
+   "Hack and Slash",
+   "Dungeon Crawler"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004920,
@@ -24863,7 +26327,16 @@
    "PPSA19825"
   ],
   "name": "Fate/Samurai Remnant",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202307/1001/cfcb95f95e562c86809a6c48c1385b542e1c79b14dd2f406.png",
+  "publisher": "Koei Tecmo Europe Ltd",
+  "releaseDate": "2023-09-28T23:00:00Z",
+  "genres": [
+   "Action",
+   "Role Playing Games",
+   "Fantasy"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004902,
@@ -24873,7 +26346,14 @@
    "PPSA07428"
   ],
   "name": "Zombie Watch",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202204/1115/rkpMFSjDj1wobJdYrG7qfszK.jpg",
+  "publisher": "David Grof",
+  "genres": [
+   "Adventure",
+   "Fantasy"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004925,
@@ -24883,7 +26363,15 @@
    "PPSA07431"
   ],
   "name": "LEGO® Bricktales",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202209/1314/hhsQN8Wy0E8WaglFqZ1HuXOA.jpg",
+  "publisher": "Thunderful Publishing AB",
+  "releaseDate": "2022-10-12T15:00:00Z",
+  "genres": [
+   "Puzzle",
+   "Platformer"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004427,
@@ -24894,8 +26382,15 @@
    "PPSA15336",
    "PPSA15337"
   ],
-  "name": "Mordhau",
-  "region": "UP"
+  "name": "MORDHAU",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202302/1509/5323facd03287bb01e609e7124b61780fc2214b0f0b8adf2.png",
+  "publisher": "Triternion",
+  "genres": [
+   "Fighting",
+   "Hack and Slash"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004957,
@@ -24905,7 +26400,15 @@
    "PPSA07434"
   ],
   "name": "Age of Wonders 4",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202301/2413/gZiS0xwKEW5rskDV8krbLdHy.jpg",
+  "publisher": "PARADOX INTERACTIVE AB",
+  "releaseDate": "2023-05-02T16:00:00Z",
+  "genres": [
+   "Fantasy",
+   "Turn Based Strategy"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004958,
@@ -24915,7 +26418,17 @@
    "PPSA07437"
   ],
   "name": "Burger Break Head to Head",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202203/1003/iZOqrABoAnPcDotLwTMxnmpL.png",
+  "publisher": "SMOBILE INC",
+  "releaseDate": "2022-03-25T00:00:00Z",
+  "genres": [
+   "Casual",
+   "Arcade",
+   "Shoot 'Em Up",
+   "Pinball"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004970,
@@ -24927,7 +26440,16 @@
    "PPSA08727"
   ],
   "name": "FROGUN",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202207/0616/uaNNYpK6nZ14jEmkySAm4PCJ.jpg",
+  "publisher": "TOP HAT STUDIOS, INC.",
+  "genres": [
+   "Action",
+   "Adventure",
+   "Platformer",
+   "Platformer"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004974,
@@ -24937,7 +26459,9 @@
    "PPSA07449"
   ],
   "name": "Disney+",
-  "region": null
+  "region": null,
+  "enriched": true,
+  "noStore": true
  },
  {
   "conceptId": 10004977,
@@ -24948,7 +26472,15 @@
    "PPSA14155"
   ],
   "name": "Clive 'N' Wrench",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202301/0614/ygqrOvTHJOqcNpJPZzcCPBnT.jpg",
+  "publisher": "NUMSKULL GAMES LTD",
+  "releaseDate": "2023-02-24T00:00:00Z",
+  "genres": [
+   "Adventure",
+   "Platformer"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 234305,
@@ -24957,7 +26489,16 @@
    "PPSA07455"
   ],
   "name": "Sports Games Collection",
-  "region": null
+  "region": null,
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202605/1314/b5239cfd00ee73ecc3b7c4c7a90e97d6c64fe2cf34ba80af.png",
+  "publisher": "Joindots GmbH",
+  "releaseDate": "2026-05-28T14:00:00Z",
+  "genres": [
+   "Sport",
+   "Casual",
+   "Arcade"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004980,
@@ -24967,7 +26508,17 @@
    "PPSA09291"
   ],
   "name": "Watcher Chronicles",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202209/2201/VFlkrbGM5bJXO2fmaJcPdXCD.jpg",
+  "publisher": "Third Sphere Game Studios LLC",
+  "releaseDate": "2022-09-26T23:00:00Z",
+  "genres": [
+   "Action",
+   "Role Playing Games",
+   "Fantasy",
+   "Fantasy"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10002268,
@@ -24979,7 +26530,17 @@
    "PPSA24297"
   ],
   "name": "Space Break",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202012/2119/WvgAICysrautzQZdKceYVDRG.png",
+  "publisher": "SMOBILE INC",
+  "releaseDate": "2022-04-08T06:00:00Z",
+  "genres": [
+   "Arcade",
+   "Casual",
+   "Pinball",
+   "Physics Game"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004984,
@@ -24991,7 +26552,15 @@
    "PPSA07472"
   ],
   "name": "Black Wolf",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202206/0907/LTuqrhdyoYEHIbVYocgW0R7m.png",
+  "publisher": "eastasiasoft",
+  "releaseDate": "2022-06-29T23:00:00Z",
+  "genres": [
+   "Action",
+   "Platformer"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004985,
@@ -25003,7 +26572,15 @@
    "PPSA07476"
   ],
   "name": "Pretty Girls Speed",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202205/0510/wnopMnQId7MF1freCWKSkbaK.png",
+  "publisher": "eastasiasoft",
+  "releaseDate": "2022-06-01T23:00:00Z",
+  "genres": [
+   "Casual",
+   "Card Game"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004989,
@@ -25012,8 +26589,16 @@
    "PPSA07478",
    "PPSA07479"
   ],
-  "name": "BunnyPark",
-  "region": "UP"
+  "name": "Bunny Park",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202206/0914/aLmTP9ojS7DaDZLccZGv2KNS.jpg",
+  "publisher": "SOEDESCO PUBLISHING B.V.",
+  "releaseDate": "2022-09-30T00:00:00Z",
+  "genres": [
+   "Simulation",
+   "Unique"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004988,
@@ -25022,8 +26607,16 @@
    "PPSA07480",
    "PPSA07481"
   ],
-  "name": "LemonCake",
-  "region": "UP"
+  "name": "Lemon Cake",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202206/0806/ugNWHPWXQq5Ox6UjT0glLlcP.jpg",
+  "publisher": "SOEDESCO PUBLISHING B.V.",
+  "releaseDate": "2022-09-30T00:00:00Z",
+  "genres": [
+   "Casual",
+   "Simulation"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004971,
@@ -25033,7 +26626,14 @@
    "PPSA07483"
   ],
   "name": "The Jackbox Party Starter",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202206/0218/i18yu2PxOGnW78cJhpBkzMQJ.jpg",
+  "publisher": "Jack Box Games, Inc.",
+  "genres": [
+   "Party",
+   "Trivia/Quiz"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10000702,
@@ -25042,8 +26642,15 @@
    "PPSA07484",
    "PPSA07485"
   ],
-  "name": "Project Wingman",
-  "region": "UP"
+  "name": "Project Wingman: Frontline 59",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202308/1515/e2db873bdc2547515a944a818e8ebe382f0d2f9f2ee16e61.png",
+  "publisher": "Good Games Group, Inc.",
+  "genres": [
+   "Arcade",
+   "Flight Combat"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004992,
@@ -25054,7 +26661,18 @@
    "PPSA07488"
   ],
   "name": "REMOTE LIFE",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202205/0415/Q8tjD9FVX07jZjbBW6RlUBjn.png",
+  "publisher": "Ratalaika Games SL",
+  "releaseDate": "2022-05-26T23:00:00Z",
+  "genres": [
+   "Arcade",
+   "Action",
+   "Shoot 'Em Up",
+   "Shoot 'Em Up",
+   "Shoot 'Em Up"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004996,
@@ -25064,7 +26682,19 @@
    "PPSA07491"
   ],
   "name": "Castle Formers",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202204/0219/VnWrykb3LKY4YztxeDnLGRFY.png",
+  "publisher": "Ratalaika Games SL",
+  "releaseDate": "2022-04-21T23:00:00Z",
+  "genres": [
+   "Action",
+   "Action",
+   "Strategy",
+   "Fantasy",
+   "Platformer",
+   "Tower Defence"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004997,
@@ -25074,7 +26704,16 @@
    "PPSA07494"
   ],
   "name": "Tales of Aravorn: Seasons of the Wolf",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202205/2910/yRhZeOkiNryVBPkETpsAZx7X.png",
+  "publisher": "Ratalaika Games SL",
+  "releaseDate": "2022-06-16T23:00:00Z",
+  "genres": [
+   "Strategy Role Playing Game",
+   "Text Adventure",
+   "Turn Based Strategy"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 234766,
@@ -25083,8 +26722,18 @@
    "PPSA07498",
    "PPSA07499"
   ],
-  "name": "Asterix & Obelix XXL 3",
-  "region": "UP"
+  "name": "Asterix & Obelix XXL3",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA16983_00/3/i_13136380b52b20252483f51e79978558efa09c438d088d8b1e33741b5b3c69e9/i/pic0.png",
+  "publisher": "Microids",
+  "releaseDate": "2019-11-21T00:00:00Z",
+  "genres": [
+   "Adventure",
+   "Adventure",
+   "Unique",
+   "Platformer"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10003646,
@@ -25093,8 +26742,15 @@
    "PPSA07500",
    "PPSA07501"
   ],
-  "name": "Wintergames 2023",
-  "region": "UP"
+  "name": "Winter Games 2023",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202210/0709/2A4j0ZQNh11RiK5WHWpTf9th.png",
+  "publisher": "Wild River Games",
+  "releaseDate": "2022-10-12T23:00:00Z",
+  "genres": [
+   "Sport"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10005003,
@@ -25104,7 +26760,19 @@
    "PPSA07503"
   ],
   "name": "The Wizard and The Slug",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202205/1715/XdilB19Ovom6SMravcHIhXdq.png",
+  "publisher": "Ratalaika Games SL",
+  "releaseDate": "2022-06-09T23:00:00Z",
+  "genres": [
+   "Adventure",
+   "Adventure",
+   "Action",
+   "Fantasy",
+   "Platformer",
+   "Platformer"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10003942,
@@ -25114,7 +26782,16 @@
    "PPSA07507"
   ],
   "name": "The Trap Remake",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202109/3016/nBrHWGFRd3cTw1J55YI1bUVY.jpg",
+  "publisher": "BUL GAMES - TM EOOD",
+  "releaseDate": "2022-03-12T00:00:00Z",
+  "genres": [
+   "Horror",
+   "Adventure",
+   "Action"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10002792,
@@ -25124,7 +26801,19 @@
    "PPSA07511"
   ],
   "name": "Easter Candy Break",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202103/1519/k4biUrbPZaViMldZURXf8Q0j.png",
+  "publisher": "SMOBILE INC",
+  "releaseDate": "2022-04-01T06:00:00Z",
+  "genres": [
+   "Arcade",
+   "Casual",
+   "Casual",
+   "Shoot 'Em Up",
+   "Pinball",
+   "Physics Game"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004873,
@@ -25135,7 +26824,14 @@
    "PPSA12761"
   ],
   "name": "Hell Pie",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202206/2709/NNUR9hEzRclZKShIjJBZ1677.png",
+  "publisher": "HEADUP GAMES GMBH CO. KG",
+  "genres": [
+   "Action",
+   "Platformer"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10005021,
@@ -25144,8 +26840,16 @@
    "PPSA07519",
    "PPSA07520"
   ],
-  "name": "Instant Sports All Stars",
-  "region": "UP"
+  "name": "INSTANT SPORTS All-Stars",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202206/2212/zCPeCIrmG3pEu3TLcu48w7gm.jpg",
+  "publisher": "Maximum Entertainment France SAS",
+  "releaseDate": "2022-07-04T00:00:00Z",
+  "genres": [
+   "Sport",
+   "Children's"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 233994,
@@ -25156,7 +26860,15 @@
    "PPSA28578"
   ],
   "name": "Ys IX: Monstrum Nox",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/img/rnd/202012/2220/85ZAF6T16UkipghjOksR90MY.png",
+  "publisher": "NIS America",
+  "releaseDate": "2023-05-12T08:00:00Z",
+  "genres": [
+   "Unique",
+   "Role Playing Games"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10003214,
@@ -25166,7 +26878,17 @@
    "PPSA07530"
   ],
   "name": "Taco Break",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202106/1423/YQlbLt5hQFHzaX2MFeHm01TO.png",
+  "publisher": "SMOBILE INC",
+  "releaseDate": "2022-04-15T06:00:00Z",
+  "genres": [
+   "Casual",
+   "Casual",
+   "Shoot 'Em Up",
+   "Pinball"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10005025,
@@ -25177,7 +26899,14 @@
    "PPSA13200"
   ],
   "name": "Rogue Spirit",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202209/1404/7bFmgsTPCe02DaeLIHVfw0g6.png",
+  "publisher": "505 GAMES S.R.L.",
+  "releaseDate": "2023-03-07T16:00:00Z",
+  "genres": [
+   "Action"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10005027,
@@ -25188,7 +26917,9 @@
    "PPSA08437"
   ],
   "name": "Coded Soul －受け継がれしイデア－",
-  "region": "JP"
+  "region": "JP",
+  "enriched": true,
+  "noStore": true
  },
  {
   "conceptId": 10005028,
@@ -25200,8 +26931,14 @@
    "PPSA07539",
    "PPSA08704"
   ],
-  "name": "Kingdom of Paradise",
-  "region": "UP"
+  "name": "Key of Heaven",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202207/2220/siHJ663b46odPxwLOadtO7iZ.jpg",
+  "publisher": "Sony Interactive Entertainment",
+  "genres": [
+   "Action"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10005031,
@@ -25212,7 +26949,14 @@
    "PPSA07548"
   ],
   "name": "echoshift",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202206/2818/afXReTT6IeeMSWiuWVKPh9ai.jpg",
+  "publisher": "Sony Interactive Entertainment",
+  "releaseDate": "2022-07-19T08:00:00Z",
+  "genres": [
+   "Puzzle"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10005032,
@@ -25221,8 +26965,14 @@
    "PPSA07550",
    "PPSA07551"
   ],
-  "name": "MediEvil: Resurrection",
-  "region": "UP"
+  "name": "MediEvil Resurrection™",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202307/1415/a32b166948fb1526687214fb11b6aaad079b9997de89c0e5.png",
+  "publisher": "Sony Interactive Entertainment",
+  "genres": [
+   "Action"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10005034,
@@ -25233,7 +26983,14 @@
    "PPSA07558"
   ],
   "name": "No Heroes Allowed!",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202206/0322/deKuEwXDwwN59eJAbryZKTMJ.jpg",
+  "publisher": "Sony Interactive Entertainment",
+  "releaseDate": "2022-07-19T08:00:00Z",
+  "genres": [
+   "Strategy"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004913,
@@ -25243,7 +27000,15 @@
    "PPSA07561"
   ],
   "name": "Titan Isles",
-  "region": "EP"
+  "region": "EP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202512/1013/0c23d492d5f0fe6c4152fb678f4113fde5c3f8a98d17cd42.jpg",
+  "publisher": "PSYTEC GAMES LTD",
+  "releaseDate": "2026-02-24T00:00:00Z",
+  "genres": [
+   "Adventure",
+   "Platformer"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10003266,
@@ -25252,8 +27017,18 @@
    "PPSA07564",
    "PPSA07565"
   ],
-  "name": "Star Trek Prodigy: Supernova",
-  "region": "UP"
+  "name": "Star Trek: Prodigy",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202208/1913/5fW5cphp2xmc2QJ7FluQpohT.JPG",
+  "publisher": "Outright Games LLC",
+  "releaseDate": "2022-10-13T23:00:00Z",
+  "genres": [
+   "Adventure",
+   "Action",
+   "Children's",
+   "Platformer"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004911,
@@ -25266,8 +27041,15 @@
    "PPSA16020",
    "PPSA16021"
   ],
-  "name": "Mortal Kombat™ 1",
-  "region": "UP"
+  "name": "Mortal Kombat 1",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202305/1515/c8388641302e1fd8f8f1044f13b398027f188eb695a0d652.jpg",
+  "publisher": "WARNER BROS. INTERACTIVE",
+  "releaseDate": "2023-09-18T23:00:00Z",
+  "genres": [
+   "2D Fighting"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10003216,
@@ -25277,7 +27059,17 @@
    "PPSA07575"
   ],
   "name": "Pizza Break",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202106/2719/KGZ8QOd6pta4vmUxgvQ4PXyu.png",
+  "publisher": "SMOBILE INC",
+  "releaseDate": "2022-04-22T06:00:00Z",
+  "genres": [
+   "Arcade",
+   "Casual",
+   "Shoot 'Em Up",
+   "Pinball"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004267,
@@ -25291,7 +27083,13 @@
    "PPSA10451"
   ],
   "name": "No More Heroes 3",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202208/0214/y5lLNqQCr9Z5PfxkH97TDf6U.jpg",
+  "publisher": "Marvelous Europe Limited",
+  "genres": [
+   "Action"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004982,
@@ -25301,7 +27099,15 @@
    "PPSA07580"
   ],
   "name": "WRC Generations – The FIA WRC Official Game",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202205/1214/El8RsbOw7dX0OPpDaHG6cbMX.jpg",
+  "publisher": "NACON SA",
+  "releaseDate": "2022-11-03T09:00:00Z",
+  "genres": [
+   "Simulation",
+   "Driving/Racing"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10005039,
@@ -25311,7 +27117,14 @@
    "PPSA07583"
   ],
   "name": "Ship of Fools",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202211/0410/hCdiaJweWGsLMKzTMQ5I1KtU.jpg",
+  "publisher": "Team 17 Digital LTD",
+  "releaseDate": "2022-11-22T00:00:00Z",
+  "genres": [
+   "Strategy"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10005020,
@@ -25321,7 +27134,15 @@
    "PPSA07585"
   ],
   "name": "Road 96: Mile 0",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202303/3015/e75bb04397148d214eadaec463a094fc55b6979aec81b23d.png",
+  "publisher": "Ravenscourt",
+  "releaseDate": "2023-04-03T23:00:00Z",
+  "genres": [
+   "Music/Rhythm",
+   "Adventure"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004226,
@@ -25332,8 +27153,16 @@
    "PPSA15426",
    "PPSA15427"
   ],
-  "name": "Sea of Stars",
-  "region": "UP"
+  "name": "Sea of Stars: Sunset Edition",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202604/2317/4d5942ad849ae529d1e92d4bb9087442840b0b60b87ffd77.png",
+  "publisher": "SABOTAGE STUDIO INC",
+  "releaseDate": "2023-08-28T23:00:00Z",
+  "genres": [
+   "Role Playing Games",
+   "Adventure"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10005043,
@@ -25343,7 +27172,14 @@
    "PPSA07589"
   ],
   "name": "Pinball Heroes",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202211/1123/DLmID9LFue7AHwdLqf8tyCO4.jpg",
+  "publisher": "Sony Interactive Entertainment",
+  "genres": [
+   "Arcade",
+   "Pinball"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10005047,
@@ -25354,7 +27190,17 @@
    "PPSA07599"
   ],
   "name": "Back Again",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202207/1404/MA1LFHbUHbqz3swCrSd3A7aw.png",
+  "publisher": "eastasiasoft",
+  "releaseDate": "2022-08-25T23:00:00Z",
+  "genres": [
+   "Action",
+   "Puzzle",
+   "Platformer",
+   "Maze"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10005048,
@@ -25365,7 +27211,19 @@
    "PPSA07604"
   ],
   "name": "Dandy & Randy DX",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202204/0417/hf695MwtFD9VyiBRM9YlnqX3.png",
+  "publisher": "Ratalaika Games SL",
+  "releaseDate": "2022-04-28T23:00:00Z",
+  "genres": [
+   "Adventure",
+   "Puzzle",
+   "Casual",
+   "Fantasy",
+   "Maze",
+   "Maze"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10005049,
@@ -25375,7 +27233,17 @@
    "PPSA07607"
   ],
   "name": "Haunted House",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202308/3017/3fa927d839af24373e1ca55ec8b7fc240cd23cd0af2d04d8.jpg",
+  "publisher": "ATARI EUROPE S.A.S.U.",
+  "releaseDate": "2023-10-11T23:00:00Z",
+  "genres": [
+   "Horror",
+   "Adventure",
+   "Fantasy",
+   "Stealth"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10005057,
@@ -25385,7 +27253,15 @@
    "PPSA07609"
   ],
   "name": "Teslagrad 2",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202301/1118/qcV5XSeWjYvitvOAdN8diioE.jpg",
+  "publisher": "Maximum Entertainment",
+  "releaseDate": "2023-04-18T23:00:00Z",
+  "genres": [
+   "Adventure",
+   "Platformer"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10003744,
@@ -25394,7 +27270,9 @@
    "PPSA07610"
   ],
   "name": "Fallen Legion Revenants",
-  "region": "HP"
+  "region": "HP",
+  "enriched": true,
+  "noStore": true
  },
  {
   "conceptId": 10003533,
@@ -25405,8 +27283,16 @@
    "PPSA07612",
    "PPSA07613"
   ],
-  "name": "Sword and Fairy : Together Forever",
-  "region": "UP"
+  "name": "Sword & Fairy: Together Forever",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202205/1604/7Av3X8icIsbpSmGvFIVBMgdB.png",
+  "publisher": "eastasiasoft",
+  "releaseDate": "2022-08-03T23:00:00Z",
+  "genres": [
+   "Role Playing Games",
+   "Fantasy"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004889,
@@ -25416,7 +27302,14 @@
    "PPSA07619"
   ],
   "name": "Train Sim World 3",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202207/2812/JurtMnirEHfxJJUAPt4oui0k.jpg",
+  "publisher": "Dovetail Games",
+  "genres": [
+   "Simulation",
+   "Simulator"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10005062,
@@ -25425,8 +27318,18 @@
    "PPSA07622",
    "PPSA07623"
   ],
-  "name": "A Tale of Paper: Refolded",
-  "region": "UP"
+  "name": "A Tale of Paper - Refolded",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202403/1217/851d66e280fb67fd30f0f703d4d419677e87cd56c586c50d.jpg",
+  "publisher": "DIGERATI DISTRIBUTION",
+  "releaseDate": "2024-04-17T23:00:00Z",
+  "genres": [
+   "Puzzle",
+   "Adventure",
+   "Platformer",
+   "Platformer"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10005063,
@@ -25436,7 +27339,15 @@
    "PPSA07625"
   ],
   "name": "Gravitar: Recharged",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202204/2818/8D9FSXHMElQ4mIO9kNELcq7y.jpg",
+  "publisher": "Atari Inc.",
+  "releaseDate": "2022-06-01T23:00:00Z",
+  "genres": [
+   "Arcade",
+   "Shoot 'Em Up"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10005068,
@@ -25448,7 +27359,9 @@
    "PPSA08647"
   ],
   "name": "The Pigeon P",
-  "region": "UP"
+  "region": "UP",
+  "enriched": true,
+  "noStore": true
  },
  {
   "conceptId": 10005069,
@@ -25460,7 +27373,14 @@
    "PPSA07634"
   ],
   "name": "SAROS",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202509/2318/ca19e7b6909c03a0d64a84981109c0cdaa98e7fdb8820e36.png",
+  "publisher": "Sony Interactive Entertainment",
+  "releaseDate": "2026-04-29T23:00:00Z",
+  "genres": [
+   "Third Person Shooter"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004969,
@@ -25470,7 +27390,15 @@
    "PPSA07637"
   ],
   "name": "The Jackbox Party Pack 9",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202209/2619/YDFavjTXmwwoGaAIYT2a8QTq.png",
+  "publisher": "Jack Box Games, Inc.",
+  "releaseDate": "2022-10-20T00:00:00Z",
+  "genres": [
+   "Party",
+   "Trivia/Quiz"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10001571,
@@ -25480,7 +27408,14 @@
    "PPSA12514"
   ],
   "name": "Pistol Whip",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202312/1121/4a0243f100dab75c00484a1599f620bb05d332e423c071c1.jpg",
+  "publisher": "Cloudhead Games LTD",
+  "releaseDate": "2023-02-22T00:00:00Z",
+  "genres": [
+   "First Person Shooter"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10005076,
@@ -25489,7 +27424,9 @@
    "PPSA07645"
   ],
   "name": "Fallen Legion: Rise to Glory",
-  "region": "HP"
+  "region": "HP",
+  "enriched": true,
+  "noStore": true
  },
  {
   "conceptId": 10005077,
@@ -25499,7 +27436,17 @@
    "PPSA07647"
   ],
   "name": "Bot Gaiden",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202211/0101/KLLphPS62NVEWZFave4JHHV3.png",
+  "publisher": "eastasiasoft",
+  "releaseDate": "2022-12-07T00:00:00Z",
+  "genres": [
+   "Action",
+   "Action",
+   "Platformer",
+   "Run And Gun"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10005078,
@@ -25509,7 +27456,15 @@
    "PPSA07650"
   ],
   "name": "Zeus Quest - The Rebirth of Earth",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202203/2912/sVTq14oDbXsDp9awMnqynrxf.jpg",
+  "publisher": "Crazysoft Limited",
+  "genres": [
+   "Children's",
+   "Graphic Adventure",
+   "Art Experimental"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004255,
@@ -25520,7 +27475,18 @@
    "PPSA13505"
   ],
   "name": "Oxide Room 104",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202211/1811/13u0YwF1mUyi5mMICyOmvkRt.jpg",
+  "publisher": "Wild Sphere S.L.",
+  "releaseDate": "2022-06-16T23:00:00Z",
+  "genres": [
+   "Horror",
+   "Action",
+   "Graphic Adventure",
+   "Mystery",
+   "Mystery"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10005079,
@@ -25532,7 +27498,19 @@
    "PPSA31323"
   ],
   "name": "The Grinch: Christmas Adventures",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202306/1909/ac8546954baa9c5bd47bdc342c0c9db9f71742a03f981b11.jpg",
+  "publisher": "Outright Games LLC",
+  "releaseDate": "2025-10-03T08:34:43Z",
+  "genres": [
+   "Family",
+   "Action",
+   "Family",
+   "Children's",
+   "Children's",
+   "Platformer"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10002670,
@@ -25550,7 +27528,14 @@
    "PPSA09762"
   ],
   "name": "Neptunia: Sisters VS Sisters",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202208/1718/1pAiP1jv1t0h5UuKCBvexrBr.jpg",
+  "publisher": "Reef Entertainment",
+  "genres": [
+   "Role Playing Games",
+   "Fantasy"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10005081,
@@ -25560,7 +27545,17 @@
    "PPSA07662"
   ],
   "name": "Easter Candy Run",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202204/0320/9PmMgsNMZkzqsZzVrcQTqJy2.jpg",
+  "publisher": "SMOBILE INC",
+  "releaseDate": "2022-04-15T11:00:00Z",
+  "genres": [
+   "Casual",
+   "Arcade",
+   "Platformer",
+   "Run And Gun"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10003735,
@@ -25570,7 +27565,15 @@
    "PPSA07664"
   ],
   "name": "Forest Grove",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202204/1223/eDyJX72TPzbiIHfRHdph3Tsb.png",
+  "publisher": "Blowfish Studios Pty Ltd",
+  "releaseDate": "2023-11-29T05:00:00Z",
+  "genres": [
+   "Unique",
+   "Mystery"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 233571,
@@ -25582,7 +27585,17 @@
    "PPSA07874"
   ],
   "name": "A Winter's Daydream",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/img/rnd/202108/1820/5kcvipiVMvbAomGZgLV4bX5h.png",
+  "publisher": "Sometimes You",
+  "releaseDate": "2019-10-07T00:00:00Z",
+  "genres": [
+   "Unique",
+   "Graphic Adventure",
+   "Art Experimental",
+   "Art Experimental"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 232509,
@@ -25593,7 +27606,15 @@
    "PPSA08122"
   ],
   "name": "Blood Waves",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA12951_00/1/i_d225027748bfff9ab5c763edd86465fca2026ceecef4583a823ab23997413556/i/pic0.png",
+  "publisher": "Sometimes You",
+  "releaseDate": "2019-03-14T00:00:00Z",
+  "genres": [
+   "Combat",
+   "Third Person Shooter"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10005084,
@@ -25603,7 +27624,9 @@
    "PPSA07676"
   ],
   "name": "HailStröm",
-  "region": "UP"
+  "region": "UP",
+  "enriched": true,
+  "noStore": true
  },
  {
   "conceptId": 10003148,
@@ -25613,7 +27636,14 @@
    "PPSA07678"
   ],
   "name": "Beasts of Maravilla Island",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202206/0615/1lQ35paP2aK3nCVXmklS17iH.png",
+  "publisher": "Whitethorn Games, Inc.",
+  "genres": [
+   "Casual",
+   "Adventure"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10005089,
@@ -25625,7 +27655,19 @@
    "PPSA13252"
   ],
   "name": "The Walking Dead: Saints & Sinners - Chapter 2: Retribution",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202211/0720/mfoa0lIZ2ONOuvpG7I89jFSa.jpg",
+  "publisher": "Skydance Interactive LLC",
+  "releaseDate": "2023-03-21T17:00:00Z",
+  "genres": [
+   "Horror",
+   "Adventure",
+   "Action",
+   "First Person Shooter",
+   "First Person Shooter",
+   "First Person Shooter"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10005095,
@@ -25635,8 +27677,15 @@
    "PPSA07689",
    "PPSA07924"
   ],
-  "name": "SurfaceRush",
-  "region": "UP"
+  "name": "Surface Rush",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202204/0809/Yh6TcRkS6KODuSKaWRw7Ttpa.jpg",
+  "publisher": "JANDUSOFT S.L.",
+  "genres": [
+   "Puzzle",
+   "Maze"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10005096,
@@ -25647,7 +27696,15 @@
    "PPSA16856"
   ],
   "name": "No Umbrellas Allowed",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202307/2615/3ef2d48b0cac6798a96e1d01925872c51470e318c5458d17.jpg",
+  "publisher": "DIGERATI DISTRIBUTION",
+  "releaseDate": "2024-07-11T23:00:00Z",
+  "genres": [
+   "Strategy",
+   "Simulation"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10005097,
@@ -25659,7 +27716,15 @@
    "PPSA07696"
   ],
   "name": "Ridge Racer 2",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202204/2506/kAg53miys32vSwoslk05tmWh.png",
+  "publisher": "BANDAI NAMCO ENTERTAINMENT EUROPE",
+  "releaseDate": "2022-12-20T09:00:00Z",
+  "genres": [
+   "Driving/Racing",
+   "Vehicular Combat"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10005099,
@@ -25670,8 +27735,16 @@
    "PPSA07699",
    "PPSA07700"
   ],
-  "name": "R4: Ridge Racer Type 4",
-  "region": "UP"
+  "name": "R4 RIDGE RACER TYPE 4®",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202303/0909/70566cec72fd0c69b2cf36f23278b6c33c88f3ab499a63a6.jpg",
+  "publisher": "BANDAI NAMCO ENTERTAINMENT EUROPE",
+  "releaseDate": "2023-03-21T09:00:00Z",
+  "genres": [
+   "Driving/Racing",
+   "Vehicular Combat"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10005100,
@@ -25682,8 +27755,14 @@
    "PPSA07703",
    "PPSA07704"
   ],
-  "name": "Tekken 2",
-  "region": "UP"
+  "name": "TEKKEN2",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202204/2603/pLNA8K0f9amwzVm4QpnVBavs.png",
+  "publisher": "BANDAI NAMCO ENTERTAINMENT EUROPE",
+  "genres": [
+   "3D Fighting"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10005101,
@@ -25695,7 +27774,14 @@
    "PPSA07708"
   ],
   "name": "Tekken 6",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202310/0605/29972c2e94e6d37bfae4cf2a3c697443b5cfa3ee11769b5d.jpg",
+  "publisher": "BANDAI NAMCO ENTERTAINMENT EUROPE",
+  "releaseDate": "2023-10-17T08:00:00Z",
+  "genres": [
+   "3D Fighting"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10005102,
@@ -25707,7 +27793,14 @@
    "PPSA07712"
   ],
   "name": "Soulcalibur: Broken Destiny",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202310/0606/e9c3c3546391674c1d93305e51faa5fd72dcd1e19c861a9b.jpg",
+  "publisher": "BANDAI NAMCO ENTERTAINMENT EUROPE",
+  "releaseDate": "2023-10-17T08:00:00Z",
+  "genres": [
+   "3D Fighting"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10005103,
@@ -25719,7 +27812,14 @@
    "PPSA07716"
   ],
   "name": "GODS EATER BURST",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202402/2102/6a0fce84e39929e8c3d4f4a00525483e86c9676d99a8bf7c.jpg",
+  "publisher": "BANDAI NAMCO ENTERTAINMENT EUROPE",
+  "releaseDate": "2024-03-19T09:00:00Z",
+  "genres": [
+   "Action"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10005104,
@@ -25731,7 +27831,14 @@
    "PPSA07720"
   ],
   "name": "Mr. Driller",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202204/2603/uoOfX5gzmwz3gGsPsnrkBWMq.png",
+  "publisher": "BANDAI NAMCO ENTERTAINMENT EUROPE",
+  "genres": [
+   "Puzzle",
+   "Action"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10005117,
@@ -25742,7 +27849,15 @@
    "PPSA09538"
   ],
   "name": "Safari Pinball",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202204/2611/iBjndasWDyxTPUtzJ4RKS8Fr.png",
+  "publisher": "SUPER POWERUP GAMES, SOCIEDAD LIMITADA",
+  "releaseDate": "2023-02-24T00:00:00Z",
+  "genres": [
+   "Arcade",
+   "Pinball"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10005118,
@@ -25752,7 +27867,15 @@
    "PPSA07740"
   ],
   "name": "Shukuchi Ninja",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202302/2311/5b7021c1a1d5c0356f88de53b22e19d6f66b8f0f5d3a79eb.jpg",
+  "publisher": "2Awesome Studio  SL",
+  "releaseDate": "2023-03-31T18:00:00Z",
+  "genres": [
+   "Action",
+   "Combat"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 231262,
@@ -25762,8 +27885,18 @@
    "PPSA07742",
    "PPSA07764"
   ],
-  "name": "Crypt of the Serpent King Remastered 4K Edition",
-  "region": "UP"
+  "name": "Crypt of the Serpent King",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202206/1606/RgBpvbDDs1itSKOAT7UrjFpo.png",
+  "publisher": "eastasiasoft",
+  "releaseDate": "2022-07-07T23:00:00Z",
+  "genres": [
+   "Role Playing Games",
+   "Role Playing Games",
+   "Action",
+   "Dungeon Crawler"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10005119,
@@ -25774,7 +27907,15 @@
    "PPSA07745"
   ],
   "name": "Sakura Succubus 5",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202205/0519/n3qWyHWZPTkZFbZifjyNyJfm.png",
+  "publisher": "Gamuzumi",
+  "releaseDate": "2022-05-25T23:00:00Z",
+  "genres": [
+   "Adult",
+   "Text Adventure"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10005120,
@@ -25786,7 +27927,9 @@
    "PPSA13239"
   ],
   "name": "UFC Fight Pass",
-  "region": null
+  "region": null,
+  "enriched": true,
+  "noStore": true
  },
  {
   "conceptId": 10002974,
@@ -25796,7 +27939,17 @@
    "PPSA07748"
   ],
   "name": "Dragon Break Classic",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202104/1921/ZqVNr0KUqnlKL3HkWKapvaWt.png",
+  "publisher": "SMOBILE INC",
+  "releaseDate": "2022-04-29T06:00:00Z",
+  "genres": [
+   "Arcade",
+   "Arcade",
+   "Fantasy",
+   "Pinball"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10005122,
@@ -25806,7 +27959,14 @@
    "PPSA07751"
   ],
   "name": "Taco Tom 2",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202206/0717/STcXOxYuFhWwQPoWoP9vgf9N.jpg",
+  "publisher": "Penguin Pop Games LLC",
+  "releaseDate": "2022-06-28T23:00:00Z",
+  "genres": [
+   "Action"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10005123,
@@ -25818,7 +27978,9 @@
    "PPSA08649"
   ],
   "name": "The Slovak Run",
-  "region": "UP"
+  "region": "UP",
+  "enriched": true,
+  "noStore": true
  },
  {
   "conceptId": 10005127,
@@ -25830,7 +27992,16 @@
    "PPSA09725"
   ],
   "name": "Neon Blood",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202402/0712/318ea1f3c35afe1232fc4f029ce38da8e06adc4aa727b995.jpg",
+  "publisher": "Meridiem Games S.L",
+  "releaseDate": "2024-11-26T00:00:00Z",
+  "genres": [
+   "Role Playing Games",
+   "Graphic Adventure",
+   "Turn Based Strategy"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10005130,
@@ -25840,7 +28011,16 @@
    "PPSA07772"
   ],
   "name": "The Silent Swan",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202205/2509/UiDtPvyhLitBQZwDI17WZFJ0.jpg",
+  "publisher": "GAMMERA NEST SL",
+  "releaseDate": "2023-11-02T00:00:00Z",
+  "genres": [
+   "Unique",
+   "Graphic Adventure",
+   "Mystery"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 221898,
@@ -25850,7 +28030,9 @@
    "PPSA20719"
   ],
   "name": "HBO MAX",
-  "region": "UP"
+  "region": "UP",
+  "enriched": true,
+  "noStore": true
  },
  {
   "conceptId": 10005133,
@@ -25860,7 +28042,18 @@
    "PPSA07775"
   ],
   "name": "TEN",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202205/1119/1ZY0D5W2TYI4KHQFRSyhQpdu.png",
+  "publisher": "Ratalaika Games SL",
+  "genres": [
+   "Arcade",
+   "Adventure",
+   "Action",
+   "Platformer",
+   "Platformer",
+   "Platformer"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10005114,
@@ -25870,7 +28063,15 @@
    "PPSA07784"
   ],
   "name": "STAR WARS Jedi: Survivor™",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202304/2814/141e0760b91193c7644745a8f6edfdfe885e969ee8f7fe37.png",
+  "publisher": "EA Swiss Sarl",
+  "releaseDate": "2023-04-28T04:00:00Z",
+  "genres": [
+   "Action",
+   "Fantasy"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10005026,
@@ -25881,8 +28082,16 @@
    "PPSA07795",
    "PPSA07796"
   ],
-  "name": "Super Perils of Baking",
-  "region": "UP"
+  "name": "Super Perils of Baking PS4 & PS5",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202205/2501/xOuYP1uVPP2myQ4MEygedO1v.png",
+  "publisher": "LILLYMO GAMES inc.",
+  "releaseDate": "2022-06-03T00:00:00Z",
+  "genres": [
+   "Action",
+   "Platformer"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10003174,
@@ -25892,7 +28101,18 @@
    "PPSA07798"
   ],
   "name": "Tanks vs Tanks: PvP",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202112/0616/bknOq9Aiy88U9ax6Fy92xYG1.png",
+  "publisher": "Warlock Arts",
+  "releaseDate": "2022-05-05T23:00:00Z",
+  "genres": [
+   "Arcade",
+   "Shooter",
+   "Party",
+   "Vehicular Combat",
+   "Vehicular Combat"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10005145,
@@ -25902,7 +28122,17 @@
    "PPSA07804"
   ],
   "name": "Burger Run",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202204/0621/gOoR02gkr9k60801ad4k4rCU.jpg",
+  "publisher": "SMOBILE INC",
+  "releaseDate": "2022-04-22T00:00:00Z",
+  "genres": [
+   "Casual",
+   "Arcade",
+   "Platformer",
+   "Shoot 'Em Up"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 216627,
@@ -25916,8 +28146,17 @@
    "PPSA08258",
    "PPSA08259"
   ],
-  "name": "PS5 Overwatch: Origins Edition Tracker",
-  "region": "UP"
+  "name": "Overwatch®",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202605/2900/c1505999a490407e30a6a4555e6f459e76f64ec5df4a8efc.png",
+  "publisher": "Activision Blizzard Int'l BV",
+  "releaseDate": "2022-10-04T18:00:00Z",
+  "genres": [
+   "Action",
+   "First Person Shooter",
+   "First Person Shooter"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004142,
@@ -25928,8 +28167,18 @@
    "PPSA07809",
    "PPSA07810"
   ],
-  "name": "CRISIS CORE –FINAL FANTASY VII– REUNION",
-  "region": "UP"
+  "name": "CRISIS CORE –FINAL FANTASY VII– REUNION　PS4 & PS5",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202208/2505/Cv2pVnIqJwmosTYRmjsxgQbV.jpg",
+  "publisher": "Square Enix LTD",
+  "releaseDate": "2022-12-13T00:00:00Z",
+  "genres": [
+   "Role Playing Games",
+   "Action",
+   "Fantasy",
+   "Fantasy"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10005142,
@@ -25939,8 +28188,17 @@
    "PPSA07812",
    "PPSA07863"
   ],
-  "name": "Resident Evil: Director's Cut",
-  "region": "UP"
+  "name": "Resident Evil Director’s Cut",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202205/1307/LZvLMJ0XCsYPpYE3cfByUNJx.png",
+  "publisher": "CE EUROPE LIMITED",
+  "releaseDate": "2022-06-22T23:00:00Z",
+  "genres": [
+   "Horror",
+   "Action",
+   "Graphic Adventure"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10005150,
@@ -25950,7 +28208,16 @@
    "PPSA07864"
   ],
   "name": "Resident Evil 2",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202205/1307/4IIl5M5goSyPWNcLZyRsP6ei.png",
+  "publisher": "CE EUROPE LIMITED",
+  "releaseDate": "2025-08-19T08:00:00Z",
+  "genres": [
+   "Horror",
+   "Action",
+   "Graphic Adventure"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10005151,
@@ -25959,8 +28226,17 @@
    "PPSA07815",
    "PPSA07865"
   ],
-  "name": "Resident Evil 3: Nemesis",
-  "region": "UP"
+  "name": "Resident Evil 3 Nemesis",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202205/1307/iMaesQhNhMiarVs7dbR4A3jM.png",
+  "publisher": "CE EUROPE LIMITED",
+  "releaseDate": "2025-08-19T08:00:00Z",
+  "genres": [
+   "Horror",
+   "Action",
+   "Graphic Adventure"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10002224,
@@ -25970,7 +28246,15 @@
    "PPSA07818"
   ],
   "name": "Shadow Warrior 3",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202302/1600/ca4d694a2df011ccb252735669527e1030ded077d7efb7b9.jpg",
+  "publisher": "Devolver Digital",
+  "releaseDate": "2022-03-01T14:00:00Z",
+  "genres": [
+   "Action",
+   "First Person Shooter"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10005153,
@@ -25980,7 +28264,14 @@
    "PPSA07820"
   ],
   "name": "Rhythm Sprout",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202301/1009/eDKAcuLCMExltsjqU8OOfY38.png",
+  "publisher": "tinyBuild LLC",
+  "releaseDate": "2023-02-01T16:00:00Z",
+  "genres": [
+   "Music/Rhythm"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004137,
@@ -25989,7 +28280,9 @@
    "PPSA07824"
   ],
   "name": "HBO Max",
-  "region": null
+  "region": null,
+  "enriched": true,
+  "noStore": true
  },
  {
   "conceptId": 10005156,
@@ -25999,7 +28292,17 @@
    "PPSA07826"
   ],
   "name": "Taco Run",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202204/0723/YMy9mRbBk25ABd9Vq8VCfAQN.jpg",
+  "publisher": "SMOBILE INC",
+  "releaseDate": "2022-04-29T00:00:00Z",
+  "genres": [
+   "Casual",
+   "Arcade",
+   "Platformer",
+   "Shoot 'Em Up"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10005160,
@@ -26010,7 +28313,14 @@
    "PPSA07866"
   ],
   "name": "Dino Crisis",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202205/1307/dDYNE8QNuXQw6s7JA8j2vk8J.png",
+  "publisher": "CE EUROPE LIMITED",
+  "releaseDate": "2024-10-15T09:00:00Z",
+  "genres": [
+   "Action"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10005161,
@@ -26019,8 +28329,15 @@
    "PPSA07836",
    "PPSA07837"
   ],
-  "name": "WILD HEARTS",
-  "region": "UP"
+  "name": "WILD HEARTS™",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202210/2615/IpKwfW9rvJCCIxZs3pdNzl6g.png",
+  "publisher": "EA Swiss Sarl",
+  "releaseDate": "2023-02-17T00:00:00Z",
+  "genres": [
+   "Adventure"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10003823,
@@ -26031,7 +28348,15 @@
    "PPSA07845"
   ],
   "name": "The Legend of Tianding",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202301/1103/3TlmE0GkrryT8EX4Dyau9lyV.png",
+  "publisher": "NEON DOCTRINE",
+  "releaseDate": "2023-01-18T06:00:00Z",
+  "genres": [
+   "Action",
+   "Platformer"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10005173,
@@ -26041,7 +28366,17 @@
    "PPSA07850"
   ],
   "name": "Scorn",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202306/2613/11eb39d35d8c463b96b2bb45c7f213a04d95ec9a82945bec.jpg",
+  "publisher": "Kepler Interactive Limited",
+  "releaseDate": "2023-12-31T00:00:00Z",
+  "genres": [
+   "Horror",
+   "Puzzle",
+   "Graphic Adventure",
+   "Maze"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10004562,
@@ -26051,7 +28386,13 @@
    "PPSA07860"
   ],
   "name": "Eville",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202210/2419/lirItq50a4dsimgdc9LhmefP.jpg",
+  "publisher": "VERSUS EVIL",
+  "genres": [
+   "Party"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10005176,
@@ -26064,7 +28405,14 @@
    "PPSA24306"
   ],
   "name": "Monster Hunter Wilds",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202409/0506/22b81c7c1b280be4d2586529fc086646fd5d3912c95f74f8.png",
+  "publisher": "CE EUROPE LIMITED",
+  "releaseDate": "2025-02-28T00:00:00Z",
+  "genres": [
+   "Action"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10005180,
@@ -26074,7 +28422,17 @@
    "PPSA07876"
   ],
   "name": "Pizza Run",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202204/1321/3S50PPV3eH4wpWaiHeWFCv82.jpg",
+  "publisher": "SMOBILE INC",
+  "releaseDate": "2022-05-06T06:00:00Z",
+  "genres": [
+   "Casual",
+   "Arcade",
+   "Platformer",
+   "Run And Gun"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10005183,
@@ -26084,7 +28442,15 @@
    "PPSA07888"
   ],
   "name": "Dungeonoid",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202209/1908/J0JaslFegQxv7KdRDyWj88Wy.png",
+  "publisher": "SUPER POWERUP GAMES, SOCIEDAD LIMITADA",
+  "releaseDate": "2022-10-27T23:00:00Z",
+  "genres": [
+   "Arcade",
+   "Fantasy"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10005190,
@@ -26095,7 +28461,15 @@
    "PPSA08180"
   ],
   "name": "Square Keeper",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202205/0509/9rurFNPgoapQf9PW4XZV9DEF.jpg",
+  "publisher": "JANDUSOFT S.L.",
+  "releaseDate": "2022-06-09T00:00:00Z",
+  "genres": [
+   "Puzzle",
+   "Card Game"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10005191,
@@ -26105,8 +28479,15 @@
    "PPSA07897",
    "PPSA08942"
   ],
-  "name": "Loot Lite",
-  "region": "UP"
+  "name": "LootLite",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202206/2709/eL4ToWiMDCWX1dFnpghjBuQo.jpg",
+  "publisher": "JANDUSOFT S.L.",
+  "releaseDate": "2022-07-28T15:00:00Z",
+  "genres": [
+   "Adventure"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10005115,
@@ -26116,7 +28497,19 @@
    "PPSA07900"
   ],
   "name": "My Life: Riding Stables 3",
-  "region": "UP"
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202210/0613/6vs5dWHLlgHgf5XPyUsTEl11.png",
+  "publisher": "Markt+Technik Verlag GmbH",
+  "releaseDate": "2022-11-30T00:00:00Z",
+  "genres": [
+   "Casual",
+   "Family",
+   "Simulation",
+   "Children's",
+   "Children's",
+   "Children's"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10005163,
@@ -26125,8 +28518,20 @@
    "PPSA07905",
    "PPSA07906"
   ],
-  "name": "Still Wakes The Deep",
-  "region": "UP"
+  "name": "Still Wakes the Deep",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202405/3016/bf1df3d942cf8443bcdae953546384048fb966097c55df32.jpg",
+  "publisher": "Secret Mode Limited",
+  "releaseDate": "2024-06-18T09:00:00Z",
+  "genres": [
+   "Adventure",
+   "Action",
+   "Horror",
+   "Mystery",
+   "Stealth",
+   "Epic"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10005194,
@@ -26138,7 +28543,9 @@
    "PPSA08651"
   ],
   "name": "The Bat D",
-  "region": "UP"
+  "region": "UP",
+  "enriched": true,
+  "noStore": true
  },
  {
   "conceptId": 10005195,
@@ -26150,7 +28557,9 @@
    "PPSA08653"
   ],
   "name": "The Dog K",
-  "region": "UP"
+  "region": "UP",
+  "enriched": true,
+  "noStore": true
  },
  {
   "conceptId": 235045,
@@ -26159,8 +28568,18 @@
    "PPSA07916",
    "PPSA07917"
   ],
-  "name": "Ganbare Super Strikers",
-  "region": "UP"
+  "name": "Ganbare! Super Strikers",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202205/3017/juZ23wRmqluQIeRMi9Vwq8fo.png",
+  "publisher": "Ratalaika Games SL",
+  "releaseDate": "2020-02-26T00:00:00Z",
+  "genres": [
+   "Action",
+   "Sport",
+   "Tactical",
+   "Soccer"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10005197,
@@ -26169,8 +28588,16 @@
    "PPSA07919",
    "PPSA07920"
   ],
-  "name": "Oddworld: Abe's Oddysee",
-  "region": "UP"
+  "name": "Oddworld: Abe's Oddysee (PS1 emulation)",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202205/1916/b0xUgOBDtgM8WJVYp1N0Ihxl.png",
+  "publisher": "Oddworld Inhabitants. Inc",
+  "releaseDate": "2022-06-23T02:00:00Z",
+  "genres": [
+   "Puzzle",
+   "Platformer"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10005198,
@@ -26178,8 +28605,16 @@
   "allTitleIds": [
    "PPSA07921"
   ],
-  "name": "Oddworld: Abe's Exoddus",
-  "region": "UP"
+  "name": "Oddworld: Abe's Exoddus (PS1 emulation)",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202211/2910/PoG20wPtLAD4wGhvGPomUBzY.png",
+  "publisher": "Oddworld Inhabitants. Inc",
+  "releaseDate": "2022-12-20T09:00:00Z",
+  "genres": [
+   "Puzzle",
+   "Platformer"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 232708,
@@ -61193,6 +63628,15 @@
   "region": "EP"
  },
  {
+  "conceptId": 10011344,
+  "titleId": "PPSA23730",
+  "allTitleIds": [
+   "PPSA23730"
+  ],
+  "name": "Far Lands",
+  "region": "UB"
+ },
+ {
   "conceptId": 10011346,
   "titleId": "PPSA23732",
   "allTitleIds": [
@@ -67813,7 +70257,7 @@
    "PPSA26049"
   ],
   "name": "Gothic Classic",
-  "region": null
+  "region": "EP"
  },
  {
   "conceptId": 10012559,
@@ -73240,7 +75684,8 @@
   "conceptId": 10013637,
   "titleId": "PPSA27752",
   "allTitleIds": [
-   "PPSA27752"
+   "PPSA27752",
+   "PPSA35311"
   ],
   "name": "Brigandine Abyss",
   "region": "JP"
@@ -76531,6 +78976,15 @@
   "region": "EP"
  },
  {
+  "conceptId": 10014311,
+  "titleId": "PPSA28676",
+  "allTitleIds": [
+   "PPSA28676"
+  ],
+  "name": "PAW Patrol™: Dino World",
+  "region": "HP"
+ },
+ {
   "conceptId": 10014182,
   "titleId": "PPSA28677",
   "allTitleIds": [
@@ -77865,6 +80319,16 @@
   ],
   "name": "Discolored 2",
   "region": "UP"
+ },
+ {
+  "conceptId": 10014568,
+  "titleId": "PPSA29104",
+  "allTitleIds": [
+   "PPSA29104",
+   "PPSA37322"
+  ],
+  "name": "TRUXTON EXTREME",
+  "region": "JP"
  },
  {
   "conceptId": 10014569,
@@ -83313,6 +85777,15 @@
   "region": "UB"
  },
  {
+  "conceptId": 10015591,
+  "titleId": "PPSA30872",
+  "allTitleIds": [
+   "PPSA30872"
+  ],
+  "name": "System Critical 3",
+  "region": "UP"
+ },
+ {
   "conceptId": 10010009,
   "titleId": "PPSA30873",
   "allTitleIds": [
@@ -84123,6 +86596,16 @@
   ],
   "name": "Console Archives NOBUNAGA'S AMBITION",
   "region": "JP"
+ },
+ {
+  "conceptId": 10015645,
+  "titleId": "PPSA31138",
+  "allTitleIds": [
+   "PPSA31138",
+   "PPSA31139"
+  ],
+  "name": "The Perplexing Orb Touch!",
+  "region": "UP"
  },
  {
   "conceptId": 10015716,
@@ -85599,6 +88082,18 @@
   "region": "JP"
  },
  {
+  "conceptId": 10015979,
+  "titleId": "PPSA31590",
+  "allTitleIds": [
+   "PPSA31590",
+   "PPSA35669",
+   "PPSA38275",
+   "PPSA38493"
+  ],
+  "name": "ほの暮しの庭",
+  "region": "JP"
+ },
+ {
   "conceptId": 10015998,
   "titleId": "PPSA31592",
   "allTitleIds": [
@@ -86045,6 +88540,15 @@
    "PPSA31738"
   ],
   "name": "Console Archives Master of Monsters: Disciples of Gaia",
+  "region": "JP"
+ },
+ {
+  "conceptId": 10016061,
+  "titleId": "PPSA31739",
+  "allTitleIds": [
+   "PPSA31739"
+  ],
+  "name": "Arcade Archives 2 TX-1",
   "region": "JP"
  },
  {
@@ -90921,6 +93425,16 @@
   "region": "UP"
  },
  {
+  "conceptId": 10016977,
+  "titleId": "PPSA33347",
+  "allTitleIds": [
+   "PPSA33347",
+   "PPSA33654"
+  ],
+  "name": "Volcano Princess",
+  "region": "JB"
+ },
+ {
   "conceptId": 10016980,
   "titleId": "PPSA33352",
   "allTitleIds": [
@@ -91139,6 +93653,15 @@
   ],
   "name": "Recipe of Love",
   "region": "UP"
+ },
+ {
+  "conceptId": 10017007,
+  "titleId": "PPSA33446",
+  "allTitleIds": [
+   "PPSA33446"
+  ],
+  "name": "Console Archives Doraemon",
+  "region": "JP"
  },
  {
   "conceptId": 10017002,
@@ -91720,15 +94243,6 @@
   "region": "EP"
  },
  {
-  "conceptId": 10016977,
-  "titleId": "PPSA33654",
-  "allTitleIds": [
-   "PPSA33654"
-  ],
-  "name": "VolcanoPrincess Prologue",
-  "region": "UB"
- },
- {
   "conceptId": 10017140,
   "titleId": "PPSA33655",
   "allTitleIds": [
@@ -92122,7 +94636,7 @@
   "allTitleIds": [
    "PPSA33862"
   ],
-  "name": "Voidtrain",
+  "name": "VoidTrain",
   "region": "EP"
  },
  {
@@ -92223,6 +94737,15 @@
   ],
   "name": "Toad Slide",
   "region": "UP"
+ },
+ {
+  "conceptId": 10017013,
+  "titleId": "PPSA33906",
+  "allTitleIds": [
+   "PPSA33906"
+  ],
+  "name": "Shard Squad",
+  "region": "HB"
  },
  {
   "conceptId": 10017139,
@@ -92471,7 +94994,8 @@
   "conceptId": 10010058,
   "titleId": "PPSA34008",
   "allTitleIds": [
-   "PPSA34008"
+   "PPSA34008",
+   "PPSA38671"
   ],
   "name": "Mortal Shell II",
   "region": "EP"
@@ -93183,6 +95707,18 @@
   "region": "EP"
  },
  {
+  "conceptId": 10017212,
+  "titleId": "PPSA34237",
+  "allTitleIds": [
+   "PPSA34237",
+   "PPSA38056",
+   "PPSA38119",
+   "PPSA38175"
+  ],
+  "name": "Mistfall Hunter",
+  "region": "UP"
+ },
+ {
   "conceptId": 10017490,
   "titleId": "PPSA34238",
   "allTitleIds": [
@@ -93887,6 +96423,15 @@
    "PPSA34476"
   ],
   "name": "My Existential Crisis",
+  "region": "UP"
+ },
+ {
+  "conceptId": 10017631,
+  "titleId": "PPSA34478",
+  "allTitleIds": [
+   "PPSA34478"
+  ],
+  "name": "Wake Up, Lia!",
   "region": "UP"
  },
  {
@@ -95375,6 +97920,15 @@
   "region": "JP"
  },
  {
+  "conceptId": 10017931,
+  "titleId": "PPSA34959",
+  "allTitleIds": [
+   "PPSA34959"
+  ],
+  "name": "The King is Watching",
+  "region": "UP"
+ },
+ {
   "conceptId": 232654,
   "titleId": "PPSA34970",
   "allTitleIds": [
@@ -95695,6 +98249,15 @@
   ],
   "name": "File Destined",
   "region": "UP"
+ },
+ {
+  "conceptId": 10015125,
+  "titleId": "PPSA35081",
+  "allTitleIds": [
+   "PPSA35081"
+  ],
+  "name": "Flamecraft Demo",
+  "region": "EP"
  },
  {
   "conceptId": 10017998,
@@ -96042,6 +98605,15 @@
    "PPSA35191"
   ],
   "name": "Slots & Daggers",
+  "region": "EP"
+ },
+ {
+  "conceptId": 10018079,
+  "titleId": "PPSA35192",
+  "allTitleIds": [
+   "PPSA35192"
+  ],
+  "name": "Sizeable",
   "region": "EP"
  },
  {
@@ -96580,6 +99152,15 @@
   "region": "JP"
  },
  {
+  "conceptId": 10018246,
+  "titleId": "PPSA35470",
+  "allTitleIds": [
+   "PPSA35470"
+  ],
+  "name": "カルドセプト ザ ファースト",
+  "region": "JP"
+ },
+ {
   "conceptId": 10018247,
   "titleId": "PPSA35471",
   "allTitleIds": [
@@ -97090,6 +99671,15 @@
   ],
   "name": "Quest Arrest",
   "region": "EP"
+ },
+ {
+  "conceptId": 10017730,
+  "titleId": "PPSA35707",
+  "allTitleIds": [
+   "PPSA35707"
+  ],
+  "name": "Mechaconda",
+  "region": "UP"
  },
  {
   "conceptId": 10018111,
@@ -97677,7 +100267,9 @@
   "titleId": "PPSA36004",
   "allTitleIds": [
    "PPSA35842",
-   "PPSA36004"
+   "PPSA36004",
+   "PPSA39134",
+   "PPSA39135"
   ],
   "name": "Wrap House Simulator",
   "region": "UP"
@@ -98709,6 +101301,15 @@
   "region": "UP"
  },
  {
+  "conceptId": 10018501,
+  "titleId": "PPSA36470",
+  "allTitleIds": [
+   "PPSA36470"
+  ],
+  "name": "Verho - Curse of Faces",
+  "region": "JB"
+ },
+ {
   "conceptId": 10018086,
   "titleId": "PPSA36475",
   "allTitleIds": [
@@ -98821,6 +101422,16 @@
    "PPSA36518"
   ],
   "name": "Grand Vegas Casino",
+  "region": "UP"
+ },
+ {
+  "conceptId": 10018873,
+  "titleId": "PPSA36523",
+  "allTitleIds": [
+   "PPSA36522",
+   "PPSA36523"
+  ],
+  "name": "Future Knight",
   "region": "UP"
  },
  {
@@ -98950,6 +101561,15 @@
   "region": "UP"
  },
  {
+  "conceptId": 10018905,
+  "titleId": "PPSA36594",
+  "allTitleIds": [
+   "PPSA36594"
+  ],
+  "name": "アレサ ARETHA the SUPER FAMICOM",
+  "region": "UP"
+ },
+ {
   "conceptId": 10018895,
   "titleId": "PPSA36598",
   "allTitleIds": [
@@ -99076,6 +101696,15 @@
   ],
   "name": "Survivor Legion",
   "region": "UB"
+ },
+ {
+  "conceptId": 10018225,
+  "titleId": "PPSA36691",
+  "allTitleIds": [
+   "PPSA36691"
+  ],
+  "name": "Polygon Mayhem",
+  "region": "HB"
  },
  {
   "conceptId": 10018981,
@@ -99213,6 +101842,15 @@
   "region": "UP"
  },
  {
+  "conceptId": 10019009,
+  "titleId": "PPSA36764",
+  "allTitleIds": [
+   "PPSA36764"
+  ],
+  "name": "Cute Animals",
+  "region": "EP"
+ },
+ {
   "conceptId": 10019012,
   "titleId": "PPSA36770",
   "allTitleIds": [
@@ -99244,6 +101882,24 @@
   ],
   "name": "Guts 'n Grunts Sr.",
   "region": "UB"
+ },
+ {
+  "conceptId": 10019016,
+  "titleId": "PPSA36779",
+  "allTitleIds": [
+   "PPSA36779"
+  ],
+  "name": "アレサII ～アリエルの不思議な旅～",
+  "region": "UP"
+ },
+ {
+  "conceptId": 10019017,
+  "titleId": "PPSA36780",
+  "allTitleIds": [
+   "PPSA36780"
+  ],
+  "name": "リジョイス ～アレサ王国の彼方～",
+  "region": "UP"
  },
  {
   "conceptId": 10019018,
@@ -99288,6 +101944,15 @@
    "PPSA36795"
   ],
   "name": "Tiny Archer",
+  "region": "UB"
+ },
+ {
+  "conceptId": 10017040,
+  "titleId": "PPSA36797",
+  "allTitleIds": [
+   "PPSA36797"
+  ],
+  "name": "Waterpark Simulator",
   "region": "UB"
  },
  {
@@ -99748,6 +102413,15 @@
   "region": "UB"
  },
  {
+  "conceptId": 10018058,
+  "titleId": "PPSA37066",
+  "allTitleIds": [
+   "PPSA37066"
+  ],
+  "name": "Angel Engine",
+  "region": "UB"
+ },
+ {
   "conceptId": 10019150,
   "titleId": "PPSA37070",
   "allTitleIds": [
@@ -100016,6 +102690,16 @@
   "region": "UB"
  },
  {
+  "conceptId": 10019285,
+  "titleId": "PPSA37286",
+  "allTitleIds": [
+   "PPSA37286",
+   "PPSA37287"
+  ],
+  "name": "Turnip Mountain",
+  "region": "UP"
+ },
+ {
   "conceptId": 10012337,
   "titleId": "PPSA37290",
   "allTitleIds": [
@@ -100059,15 +102743,6 @@
   ],
   "name": "Dungeon Bricker",
   "region": "UB"
- },
- {
-  "conceptId": 10014568,
-  "titleId": "PPSA37322",
-  "allTitleIds": [
-   "PPSA37322"
-  ],
-  "name": "TRUXTON EXTREME - DEMO",
-  "region": "JP"
  },
  {
   "conceptId": 10019284,
@@ -100148,6 +102823,15 @@
   "region": "UP"
  },
  {
+  "conceptId": 10019343,
+  "titleId": "PPSA37401",
+  "allTitleIds": [
+   "PPSA37401"
+  ],
+  "name": "Dungeon Antiqua",
+  "region": "UP"
+ },
+ {
   "conceptId": 10019347,
   "titleId": "PPSA37406",
   "allTitleIds": [
@@ -100205,12 +102889,30 @@
   "region": "UB"
  },
  {
+  "conceptId": 10018405,
+  "titleId": "PPSA37433",
+  "allTitleIds": [
+   "PPSA37433"
+  ],
+  "name": "NASCAR 26",
+  "region": "UP"
+ },
+ {
   "conceptId": 10019368,
   "titleId": "PPSA37435",
   "allTitleIds": [
    "PPSA37435"
   ],
   "name": "Axel Quest",
+  "region": "EP"
+ },
+ {
+  "conceptId": 10019369,
+  "titleId": "PPSA37436",
+  "allTitleIds": [
+   "PPSA37436"
+  ],
+  "name": "Bee With Gun",
   "region": "EP"
  },
  {
@@ -100251,6 +102953,15 @@
   ],
   "name": "Two Types Pollos",
   "region": "EB"
+ },
+ {
+  "conceptId": 10019387,
+  "titleId": "PPSA37455",
+  "allTitleIds": [
+   "PPSA37455"
+  ],
+  "name": "Case Solved: The London Files",
+  "region": "UP"
  },
  {
   "conceptId": 10019388,
@@ -100380,6 +103091,16 @@
   "region": "UP"
  },
  {
+  "conceptId": 10019436,
+  "titleId": "PPSA37538",
+  "allTitleIds": [
+   "PPSA37537",
+   "PPSA37538"
+  ],
+  "name": "Zombie Graveyard Simulator",
+  "region": "UP"
+ },
+ {
   "conceptId": 10019439,
   "titleId": "PPSA37546",
   "allTitleIds": [
@@ -100444,6 +103165,18 @@
   ],
   "name": "夏の美女:心臓暴走注意報",
   "region": "HB"
+ },
+ {
+  "conceptId": 10019457,
+  "titleId": "PPSA37583",
+  "allTitleIds": [
+   "PPSA37583",
+   "PPSA38010",
+   "PPSA38011",
+   "PPSA38012"
+  ],
+  "name": "スイカゲーム",
+  "region": "UB"
  },
  {
   "conceptId": 10019475,
@@ -100834,6 +103567,15 @@
   "region": "HB"
  },
  {
+  "conceptId": 10019366,
+  "titleId": "PPSA37805",
+  "allTitleIds": [
+   "PPSA37805"
+  ],
+  "name": "BioEden",
+  "region": "EP"
+ },
+ {
   "conceptId": 10019611,
   "titleId": "PPSA37819",
   "allTitleIds": [
@@ -101032,6 +103774,15 @@
   "region": "EB"
  },
  {
+  "conceptId": 10019687,
+  "titleId": "PPSA37943",
+  "allTitleIds": [
+   "PPSA37943"
+  ],
+  "name": "Dating Stories 2",
+  "region": "EP"
+ },
+ {
   "conceptId": 10019695,
   "titleId": "PPSA37957",
   "allTitleIds": [
@@ -101094,13 +103845,13 @@
   "region": "UB"
  },
  {
-  "conceptId": 10019457,
-  "titleId": "PPSA38011",
+  "conceptId": 10018355,
+  "titleId": "PPSA38021",
   "allTitleIds": [
-   "PPSA38011"
+   "PPSA38021"
   ],
-  "name": "Suika Game",
-  "region": "UB"
+  "name": "Leafy Corner",
+  "region": "UP"
  },
  {
   "conceptId": 10019731,
@@ -101113,14 +103864,22 @@
   "region": "UP"
  },
  {
-  "conceptId": 10017212,
-  "titleId": "PPSA38056",
+  "conceptId": 10019734,
+  "titleId": "PPSA38040",
   "allTitleIds": [
-   "PPSA38056",
-   "PPSA38119"
+   "PPSA38040"
   ],
-  "name": "Mistfall Hunter",
-  "region": "HB"
+  "name": "The Green Light",
+  "region": "EP"
+ },
+ {
+  "conceptId": 10019740,
+  "titleId": "PPSA38052",
+  "allTitleIds": [
+   "PPSA38052"
+  ],
+  "name": "SlipVector",
+  "region": "UP"
  },
  {
   "conceptId": 10019749,
@@ -101215,11 +103974,14 @@
  },
  {
   "conceptId": 10019795,
-  "titleId": "PPSA38140",
+  "titleId": "PPSA38139",
   "allTitleIds": [
-   "PPSA38140"
+   "PPSA38139",
+   "PPSA38140",
+   "PPSA38141",
+   "PPSA38142"
   ],
-  "name": "Suika Game Planet",
+  "name": "スイカゲーム ぷらねっと",
   "region": "UB"
  },
  {
@@ -101359,6 +104121,16 @@
    "PPSA38286"
   ],
   "name": "Educational Family Games",
+  "region": "UP"
+ },
+ {
+  "conceptId": 10019897,
+  "titleId": "PPSA38313",
+  "allTitleIds": [
+   "PPSA38313",
+   "PPSA38314"
+  ],
+  "name": "Hyperdrive Inn",
   "region": "UP"
  },
  {
@@ -101545,6 +104317,15 @@
   "region": "UB"
  },
  {
+  "conceptId": 10019842,
+  "titleId": "PPSA38779",
+  "allTitleIds": [
+   "PPSA38779"
+  ],
+  "name": "Arcadia",
+  "region": "UB"
+ },
+ {
   "conceptId": 10020184,
   "titleId": "PPSA38793",
   "allTitleIds": [
@@ -101575,6 +104356,15 @@
   "region": "EP"
  },
  {
+  "conceptId": 10020204,
+  "titleId": "PPSA38843",
+  "allTitleIds": [
+   "PPSA38843"
+  ],
+  "name": "ニューヨーク・ミステリーズ 3：魂のランタン",
+  "region": "UB"
+ },
+ {
   "conceptId": 10020215,
   "titleId": "PPSA38862",
   "allTitleIds": [
@@ -101591,6 +104381,24 @@
   ],
   "name": "Brawl Snakes",
   "region": "UP"
+ },
+ {
+  "conceptId": 10020250,
+  "titleId": "PPSA38925",
+  "allTitleIds": [
+   "PPSA38925"
+  ],
+  "name": "Eden Coil",
+  "region": "UB"
+ },
+ {
+  "conceptId": 10020251,
+  "titleId": "PPSA38926",
+  "allTitleIds": [
+   "PPSA38926"
+  ],
+  "name": "Radiation Caterpillar",
+  "region": "UB"
  },
  {
   "conceptId": 10020261,
@@ -101648,5 +104456,14 @@
   ],
   "name": "Wishbound",
   "region": "HB"
+ },
+ {
+  "conceptId": 10020355,
+  "titleId": "PPSA39115",
+  "allTitleIds": [
+   "PPSA39115"
+  ],
+  "name": "SpotCat vs The Cheddar Mafia In The Americas",
+  "region": "UB"
  }
 ]

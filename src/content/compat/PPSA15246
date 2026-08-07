@@ -1,0 +1,22 @@
+---
+titleId: PPSA15246
+status: nothing        # nothing | boots | menus | ingame | playable
+testedVersion: da0de5c    # SharpEmu release or commit
+testedDate: 2026-08-07
+gameVersion: "01.006"  # optional game update/version
+os: windows           # windows | linux | macos
+hardware: "AMD Ryzen 7 5700X / NVIDIA GeForce RTX 5060"
+score: 1              # optional 1-5 experience rating
+---
+
+The game boots and loads `eboot.bin` and the `libc.prx` module correctly, sets up all
+import stubs (893/893), and starts 12 guest threads. Shortly after, two imports remain
+unresolved:
+
+- `nid=5ikmEzL7Xng`
+- `nid=B3KyDf-Zjh0`
+
+Execution then completely stalls for 20s with no import progress, with most threads
+blocked on `sceKernelWaitSema` / `sceKernelWaitEventFlag`. The process exits with
+code 4 (emulation error). Nothing is ever displayed on screen the crash happens
+before any image or menu

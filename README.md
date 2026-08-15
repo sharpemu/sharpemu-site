@@ -83,11 +83,11 @@ creating pull requests. To activate conversion, either:
 - Have an organization owner enable **Allow GitHub Actions to create and approve
   pull requests**; or
 - Add a fine-grained token as the `COMPAT_BOT_TOKEN` Actions secret, limited to
-  this repository with read/write access to Contents, Issues, and Pull requests.
+  this repository with read/write access to Pull requests.
 
-The workflow prefers `COMPAT_BOT_TOKEN` when present and otherwise uses
-`GITHUB_TOKEN`, so no workflow change is needed if the organization policy is
-enabled later.
+The workflow always uses `GITHUB_TOKEN` for checkout, branch pushes, comments,
+and labels. It uses `COMPAT_BOT_TOKEN` only to create the pull request, falling
+back to `GITHUB_TOKEN` when the organization policy allows that operation.
 
 ## Downloads page
 

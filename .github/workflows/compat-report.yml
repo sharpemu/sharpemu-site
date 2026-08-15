@@ -30,7 +30,7 @@ jobs:
       )
     runs-on: ubuntu-latest
     env:
-      GH_TOKEN: ${{ secrets.COMPAT_BOT_TOKEN || github.token }}
+      GH_TOKEN: ${{ github.token }}
       ISSUE_NUMBER: ${{ github.event.issue.number || inputs.issue_number }}
       BRANCH: compat/issue-${{ github.event.issue.number || inputs.issue_number }}
 
@@ -39,7 +39,7 @@ jobs:
         with:
           ref: main
           fetch-depth: 0
-          token: ${{ secrets.COMPAT_BOT_TOKEN || github.token }}
+          token: ${{ github.token }}
 
       - uses: actions/setup-node@v4
         with:
@@ -95,6 +95,7 @@ jobs:
         if: steps.preflight.outputs.existing_url == ''
         shell: bash
         env:
+          PR_TOKEN: ${{ secrets.COMPAT_BOT_TOKEN || github.token }}
           REPORT_PATH: ${{ steps.convert.outputs.report_path }}
         run: |
           git config user.name "sharpemu-compat-bot"
@@ -118,7 +119,7 @@ jobs:
               "$ISSUE_NUMBER"
           )"
           pr_url="$(
-            gh pr create \
+            GH_TOKEN="$PR_TOKEN" gh pr create \
               --repo "$GITHUB_REPOSITORY" \
               --base main \
               --head "$BRANCH" \

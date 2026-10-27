@@ -54,7 +54,7 @@ const ICONS: Record<Os, string> = {
         id={`${group}-tab-${os}`}
         aria-controls={`${group}-${os}`}
         aria-selected={String(os === selected)}
-        class={`inline-flex items-center gap-1.5 rounded-full sm:gap-2 ${tabCls} text-muted transition-colors hover:text-ink aria-selected:bg-contrast aria-selected:text-contrast-fg aria-selected:shadow-sm`}
+        class={`inline-flex items-center gap-1.5 rounded-full sm:gap-2 ${tabCls} text-muted transition-colors hover:text-ink aria-selected:bg-line aria-selected:text-ink`}
       >
         <Fragment set:html={ICONS[os]} />
         {OS_LABEL[os]}
@@ -84,7 +84,7 @@ const ICONS: Record<Os, string> = {
         id={`${group}-tab-all`}
         aria-controls={`${group}-all`}
         aria-selected="false"
-        class={`rounded-full ${tabCls} text-muted transition-colors hover:text-ink aria-selected:bg-contrast aria-selected:text-contrast-fg aria-selected:shadow-sm`}
+        class={`rounded-full ${tabCls} text-muted transition-colors hover:text-ink aria-selected:bg-line aria-selected:text-ink`}
       >
         All
       </button>

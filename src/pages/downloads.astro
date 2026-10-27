@@ -3,6 +3,7 @@ import Base from '../layouts/Base.astro';
 import OsTabs from '../components/OsTabs.astro';
 import PageHeader from '../components/PageHeader.astro';
 import { OSES, OS_LABEL, type Os } from '../lib/compat';
+import { SITE } from '../config';
 import { fetchMacReleases, fetchReleases, renderDownloads, type Release } from '../lib/releases';
 
 // Rendered at build time — no client-side GitHub calls, so visitors never hit
@@ -33,8 +34,8 @@ const panels: Record<Os, string> = {
 <Base title="Downloads — SharpEmu" description="Download SharpEmu builds or compile from source.">
   <section class="mx-auto max-w-3xl px-5 pt-12" data-pagefind-body>
     <PageHeader title="Downloads">
-      Every archive contains the full desktop app — extract it and run SharpEmu to open your game
-      library. It's experimental, so expect crashes and broken games:{' '}
+      Every download contains the full desktop app with its game library. It's experimental, so
+      expect crashes and broken games:{' '}
       <a href="/compatibility" class="text-accent underline underline-offset-4">check compatibility</a> first.
     </PageHeader>
 
@@ -56,45 +57,124 @@ const panels: Record<Os, string> = {
       }
     </div>
 
+    <!-- The guide follows the OS tabs above. macOS follows the sharpemu-mac README. -->
     <div class="prose prose-slate dark:prose-invert mt-12 max-w-none">
-      <h2 class="font-display tracking-tight">Getting started</h2>
-      <ol>
-        <li>Extract the archive for your platform.</li>
-        <li>
-          Run <code>SharpEmu</code> with no arguments — the desktop app opens. (On Linux, run{' '}
-          <code>chmod +x ./SharpEmu</code> first.)
-        </li>
-        <li>
-          In <strong>Library</strong>, choose <strong>Add folder</strong> and point it at your dumped
-          games, then hit <strong>Launch</strong>.
-        </li>
-      </ol>
-      <p>
-        The app also carries settings (CPU engine, log level), a log console, Discord Rich Presence,
-        a built-in updater, and 15 languages.
-      </p>
+      {
+        OSES.map((os) => (
+          <div data-os-group="downloads" data-os-panel={os} hidden={os !== 'windows'}>
+            {os === 'macos' ? (
+              <>
+                <h2 class="font-display tracking-tight">Getting started on macOS</h2>
+                <ol>
+                  <li>
+                    Download the <code>osx-x64-app.zip</code> file, unzip it and move{' '}
+                    <code>SharpEmu.app</code> wherever you like, for example <code>/Applications</code>.
+                  </li>
+                  <li>
+                    On an Apple Silicon Mac, install Rosetta 2 once: <code>softwareupdate --install-rosetta</code>
+                  </li>
+                  <li>
+                    Open the app. Releases are ad-hoc signed and not notarized, so macOS may refuse the first
+                    launch. Allow it in System Settings → Privacy &amp; Security, or run:
+                    <pre><code>xattr -dr com.apple.quarantine SharpEmu.app</code></pre>
+                  </li>
+                  <li>
+                    Add your game folders in the library settings, select a game and press <strong>Play</strong>.
+                  </li>
+                </ol>
+                <p>
+                  A game's first run compiles its shaders, so it starts slowly; later runs reuse the cache.
+                  The app can't update itself in place: it tells you about new releases and opens the
+                  releases page.
+                </p>
 
-      <h2 class="font-display tracking-tight">Command line</h2>
-      <p>
-        The same binary runs headless when you pass it a game's <code>eboot.bin</code> — useful for
-        capturing a log to attach to a compatibility report.
-      </p>
-      <p>Windows PowerShell:</p>
-      <pre><code>.\SharpEmu.exe "C:\path\to\game\eboot.bin" 2&gt;&amp;1 |
-  Tee-Object -FilePath "SharpEmu.log"</code></pre>
-      <p>Linux and macOS:</p>
-      <pre><code>./SharpEmu "/path/to/game/eboot.bin" 2&gt;&amp;1 | tee SharpEmu.log</code></pre>
+                <h2 class="font-display tracking-tight">Command line</h2>
+                <p>
+                  Pass a game's <code>eboot.bin</code> (or a <code>.zar</code> archive) to the executable inside
+                  the app. <code>--log-file</code> writes a log you can attach to a compatibility report:
+                </p>
+                <pre><code>SharpEmu.app/Contents/MacOS/SharpEmu "/path/to/game/eboot.bin" --log-file</code></pre>
+                <p>
+                  Settings, saves, shader caches and logs live in{' '}
+                  <code>~/Library/Application Support/SharpEmu</code>; logs go under <code>user/logs/</code>.
+                  The <code>.tar.gz</code> download is the same build as a plain folder, for command-line use.
+                </p>
 
-      <h2 class="font-display tracking-tight">What you need</h2>
-      <ul>
-        <li>A 64-bit machine running Windows, Linux or macOS (Windows is the primary target).</li>
-        <li>
-          A Vulkan-capable GPU and an up-to-date graphics driver on Windows and Linux. The macOS
-          build renders with Metal.
-        </li>
-        <li>Dumps of games you own. SharpEmu does not include or link to any game content.</li>
-        <li>Patience — this is a research project in early development.</li>
-      </ul>
+                <h2 class="font-display tracking-tight">What you need</h2>
+                <ul>
+                  <li>macOS 15 or later.</li>
+                  <li>
+                    An Apple Silicon Mac with Rosetta 2, or an Intel Mac. Game code runs natively as x86-64,
+                    so the only build is <code>osx-x64</code>; there is no <code>arm64</code> build.
+                  </li>
+                  <li>
+                    A Metal GPU. SharpEmu for macOS renders with Metal directly, with no MoltenVK or Vulkan.
+                    Games that draw with primitive (NGG) shaders need a Metal 3 device.
+                  </li>
+                  <li>
+                    Dumps of games you own: a game folder with <code>eboot.bin</code>, or a <code>.zar</code>{' '}
+                    archive of one. Games can use a lot of memory, so a Mac with little free memory may page
+                    heavily.
+                  </li>
+                </ul>
+                <p>
+                  The macOS build lives in its own repository,{' '}
+                  <a href={SITE.macRepoUrl}>sharpemu-mac</a>, which tracks the main project. Its{' '}
+                  <a href={`${SITE.macRepoUrl}/blob/main/docs/macos/troubleshooting.md`}>troubleshooting guide</a>{' '}
+                  covers apps that won't start.
+                </p>
+              </>
+            ) : (
+              <>
+                <h2 class="font-display tracking-tight">Getting started</h2>
+                <ol>
+                  <li>Extract the archive.</li>
+                  <li>
+                    {os === 'linux' ? (
+                      <>
+                        Run <code>chmod +x ./SharpEmu</code>, then <code>./SharpEmu</code> with no arguments. The
+                        desktop app opens.
+                      </>
+                    ) : (
+                      <>
+                        Run <code>SharpEmu.exe</code> with no arguments. The desktop app opens.
+                      </>
+                    )}
+                  </li>
+                  <li>
+                    In <strong>Library</strong>, choose <strong>Add folder</strong> and point it at your dumped
+                    games, then hit <strong>Launch</strong>.
+                  </li>
+                </ol>
+                <p>
+                  The app also carries settings (CPU engine, log level), a log console, Discord Rich Presence,
+                  a built-in updater, and 15 languages.
+                </p>
+
+                <h2 class="font-display tracking-tight">Command line</h2>
+                <p>
+                  The same binary runs headless when you pass it a game's <code>eboot.bin</code> — useful for
+                  capturing a log to attach to a compatibility report.
+                </p>
+                {os === 'windows' ? (
+                  <pre><code>{`.\\SharpEmu.exe "C:\\path\\to\\game\\eboot.bin" 2>&1 |
+  Tee-Object -FilePath "SharpEmu.log"`}</code></pre>
+                ) : (
+                  <pre><code>./SharpEmu "/path/to/game/eboot.bin" 2&gt;&amp;1 | tee SharpEmu.log</code></pre>
+                )}
+
+                <h2 class="font-display tracking-tight">What you need</h2>
+                <ul>
+                  <li>A 64-bit {OS_LABEL[os]} machine{os === 'windows' ? ' (Windows is the primary target)' : ''}.</li>
+                  <li>A Vulkan-capable GPU and an up-to-date graphics driver.</li>
+                  <li>Dumps of games you own. SharpEmu does not include or link to any game content.</li>
+                  <li>Patience — this is a research project in early development.</li>
+                </ul>
+              </>
+            )}
+          </div>
+        ))
+      }
     </div>
   </section>
 </Base>

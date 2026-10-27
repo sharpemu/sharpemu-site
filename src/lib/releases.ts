@@ -67,17 +67,29 @@ export const fmtSize = (b: number) =>
 export const fmtDate = (d: string) =>
   new Date(d).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 
-function assetHtml(a: Asset): string {
+// sharpemu-mac publishes an app bundle and a plain directory per release; say which is which.
+function assetNote(name: string, os: Os): string | null {
+  if (os !== 'macos') return null;
+  if (/-app\.zip$/i.test(name)) return 'SharpEmu.app — use this one for the desktop app';
+  if (/\.tar\.gz$/i.test(name)) return 'Plain SharpEmu executable, for command-line use';
+  return null;
+}
+
+function assetHtml(a: Asset, os: Os): string {
+  const note = assetNote(a.name, os);
   return `<li>
     <a href="${esc(a.browser_download_url)}" class="group flex items-center gap-3 rounded-xl border border-line px-5 py-3 transition-colors hover:border-accent/40 hover:bg-accent/[0.06]">
-      <span class="min-w-0 flex-1 truncate font-mono text-[13px] font-medium group-hover:text-accent">${esc(a.name)}</span>
+      <span class="min-w-0 flex-1">
+        <span class="block truncate font-mono text-[13px] font-medium group-hover:text-accent">${esc(a.name)}</span>
+        ${note ? `<span class="mt-0.5 block text-xs text-muted">${note}</span>` : ''}
+      </span>
       <span class="shrink-0 text-xs text-muted">${esc(fmtSize(a.size))}</span>
       <span class="shrink-0 rounded-full bg-accent px-4 py-1.5 text-xs font-semibold text-accent-fg">Download</span>
     </a>
   </li>`;
 }
 
-function releaseHtml(r: Release, isFirst: boolean): string {
+function releaseHtml(r: Release, isFirst: boolean, os: Os): string {
   const badge = r.prerelease
     ? '<span class="rounded-full badge badge-menus px-3 py-0.5 text-xs">Pre-release</span>'
     : isFirst
@@ -85,7 +97,7 @@ function releaseHtml(r: Release, isFirst: boolean): string {
       : '';
   const body =
     r.assets.length > 0
-      ? `<ul class="mt-5 space-y-2.5">${r.assets.map(assetHtml).join('')}</ul>`
+      ? `<ul class="mt-5 space-y-2.5">${r.assets.map((a) => assetHtml(a, os)).join('')}</ul>`
       : `<p class="mt-4 text-sm text-muted">No binaries attached — <a href="${esc(r.html_url)}" class="text-accent underline">view the release on GitHub</a>.</p>`;
   return `<div class="rounded-2xl border border-line bg-surface p-7">
     <div class="flex flex-wrap items-center gap-3">
@@ -102,13 +114,24 @@ function fallbackHtml(os: Os): string {
   const mac = os === 'macos';
   const repoUrl = mac ? SITE.macRepoUrl : SITE.repoUrl;
   const dir = repoUrl.split('/').pop();
+  // macOS steps follow the sharpemu-mac README ("Building from source").
+  const intro = mac
+    ? 'or build it yourself. You need the .NET SDK named in the repo’s <code>global.json</code>, the Xcode command line tools (<code>xcode-select --install</code>) and Python 3:'
+    : 'or build from source with the .NET SDK:';
+  const steps = mac
+    ? `dotnet build SharpEmu.slnx -c Release
+scripts/macos/build-app.sh`
+    : 'dotnet publish';
+  const after = mac
+    ? 'The app lands in <code>artifacts/macos/SharpEmu.app</code>, ad-hoc signed.'
+    : 'Build artifacts land in the <code>artifacts</code> directory.';
   return `<div class="rounded-2xl border border-line bg-surface p-7">
     <h2 class="font-display text-xl font-bold tracking-tight">No packaged builds right now</h2>
-    <p class="mt-3 text-sm leading-relaxed text-muted">Check the <a href="${repoUrl}/releases" class="text-accent underline">releases page on GitHub</a> — or build from source with the .NET SDK:</p>
+    <p class="mt-3 text-sm leading-relaxed text-muted">Check the <a href="${repoUrl}/releases" class="text-accent underline">releases page on GitHub</a>, ${intro}</p>
     <pre class="mt-5 overflow-x-auto rounded-xl bg-code p-5 font-mono text-[13px] leading-relaxed text-code-fg"><code>git clone ${repoUrl}.git
 cd ${dir}
-dotnet publish</code></pre>
-    ${mac ? '' : '<p class="mt-3 text-sm text-muted">Build artifacts land in the <code>artifacts</code> directory.</p>'}
+${steps}</code></pre>
+    <p class="mt-3 text-sm text-muted">${after}</p>
   </div>`;
 }
 
@@ -132,7 +155,7 @@ export function renderDownloads(releases: Release[], os: Os, limit = 3): string 
   if (shown.length === 0) return fallbackHtml(os);
   const repoUrl = os === 'macos' ? SITE.macRepoUrl : SITE.repoUrl;
   return `<div class="space-y-6">
-    ${shown.map((r, i) => releaseHtml(r, i === 0)).join('')}
-    <p class="text-sm text-muted">Want the newest changes? Rolling development builds are published for every commit — <a href="${repoUrl}/releases" class="text-accent underline">all releases on GitHub →</a></p>
+    ${shown.map((r, i) => releaseHtml(r, i === 0, os)).join('')}
+    <p class="text-sm text-muted">${os === 'macos' ? '' : 'Want the newest changes? Rolling development builds are published for every commit — '}<a href="${repoUrl}/releases" class="text-accent underline">All releases on GitHub →</a></p>
   </div>`;
 }

@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { compatSchema, computeStats, STATUS_META, STATUSES } from './compat';
+import { compatSchema, computeStats, platformOf, reportEntryId, STATUS_META, STATUSES } from './compat';
 
 const valid = {
   titleId: 'PPSA03061',
@@ -18,7 +18,9 @@ describe('compatSchema', () => {
   it('rejects unknown status', () =>
     expect(() => compatSchema.parse({ ...valid, status: 'perfect' })).toThrow());
   it('rejects malformed titleId', () =>
-    expect(() => compatSchema.parse({ ...valid, titleId: 'CUSA00001' })).toThrow());
+    expect(() => compatSchema.parse({ ...valid, titleId: 'PCSA00001' })).toThrow());
+  it('accepts PS4 title IDs', () =>
+    expect(compatSchema.parse({ ...valid, titleId: 'CUSA00001' }).titleId).toBe('CUSA00001'));
   it('rejects score out of range', () =>
     expect(() => compatSchema.parse({ ...valid, score: 6 })).toThrow());
   it('accepts a manual comments override', () => {
@@ -42,5 +44,19 @@ describe('STATUS_META', () => {
       expect(STATUS_META[s].label).toBeTruthy();
       expect(STATUS_META[s].badgeClass).toBeTruthy();
     }
+  });
+});
+
+describe('reportEntryId', () => {
+  it('matches the lowercased <os>/<titleId> id the glob loader produces', () =>
+    expect(reportEntryId('macos', 'PPSA03061')).toBe('macos/ppsa03061'));
+  it('accepts the legacy macOS build flag', () =>
+    expect(compatSchema.parse({ ...valid, legacyBuild: true }).legacyBuild).toBe(true));
+});
+
+describe('platformOf', () => {
+  it('reads the console from the title ID prefix', () => {
+    expect(platformOf('PPSA01284')).toBe('ps5');
+    expect(platformOf('CUSA00001')).toBe('ps4');
   });
 });

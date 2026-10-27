@@ -2,41 +2,98 @@
 import { Image } from 'astro:assets';
 import logo from '../assets/logo.png';
 import { SITE } from '../config';
+
+const path = Astro.url.pathname;
+// Game pages live under Compatibility, so they keep that item lit.
+const NAV = [
+  { href: '/compatibility', label: 'Compatibility', match: ['/compatibility', '/game'] },
+  { href: '/downloads', label: 'Downloads', match: ['/downloads'] },
+  { href: '/news', label: 'News', match: ['/news'] },
+  { href: '/faq', label: 'FAQ', match: ['/faq'] },
+  { href: '/search', label: 'Search', match: ['/search'] },
+].map((item) => ({
+  ...item,
+  current: item.match.some((m) => path === m || path.startsWith(`${m}/`)),
+}));
 ---
 
+<a
+  href="#main"
+  class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:rounded-full focus:bg-accent focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-accent-fg"
+  >Skip to content</a
+>
 <header class="sticky top-0 z-40 border-b border-line bg-surface backdrop-blur-xl">
-  <nav class="mx-auto flex h-14 max-w-6xl items-center gap-7 px-5">
-    <a href="/" class="flex items-center gap-2.5 font-display text-[15px] font-bold tracking-tight">
-      <Image src={logo} alt={SITE.name} width={28} height={28} />
-      <span class="hidden sm:inline">{SITE.name}</span>
+  <nav class="mx-auto flex h-14 max-w-6xl items-center gap-4 px-5" aria-label="Main">
+    <a href="/" class="flex items-center gap-2.5 rounded-lg font-display text-[15px] font-bold tracking-tight">
+      <Image src={logo} alt="" width={28} height={28} class="rounded-md" />
+      <span>{SITE.name}</span>
     </a>
-    <div class="ml-auto flex items-center gap-4 text-sm font-medium text-muted sm:gap-6">
-      <a href="/compatibility" class="transition-colors hover:text-ink">Compatibility</a>
-      <a href="/downloads" class="transition-colors hover:text-ink">Downloads</a>
-      <a href="/news" class="hidden transition-colors hover:text-ink sm:inline">News</a>
-      <a href="/faq" class="hidden transition-colors hover:text-ink sm:inline">FAQ</a>
-      <a href="/search" class="hidden transition-colors hover:text-ink sm:inline">Search</a>
+
+    <div class="ml-auto hidden items-center gap-1 text-sm font-medium md:flex">
+      {
+        NAV.map((item) => (
+          <a
+            href={item.href}
+            aria-current={item.current ? 'page' : undefined}
+            class="relative rounded-full px-3.5 py-1.5 text-muted transition-colors hover:text-ink aria-[current=page]:bg-line aria-[current=page]:text-ink"
+          >
+            {item.label}
+          </a>
+        ))
+      }
+    </div>
+
+    <div class="ml-auto flex items-center gap-1.5 md:ml-2">
       <button
         id="theme-toggle"
         type="button"
         aria-label="Switch theme"
-        class="grid h-8 w-8 place-items-center rounded-full transition-colors hover:bg-line hover:text-ink"
+        class="grid h-9 w-9 place-items-center rounded-full text-muted transition-colors hover:bg-line hover:text-ink"
       >
-        <svg class="icon-moon h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <svg class="icon-moon h-[18px] w-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
         </svg>
-        <svg class="icon-sun h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <svg class="icon-sun h-[18px] w-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <circle cx="12" cy="12" r="4"></circle>
           <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
         </svg>
       </button>
-      <a
-        href={SITE.repoUrl}
-        class="rounded-full bg-accent px-4 py-1.5 text-accent-fg transition-opacity hover:opacity-85"
-        >GitHub</a
+      <a href={SITE.repoUrl} class="btn btn-primary hidden !px-4 !py-1.5 md:inline-flex">GitHub</a>
+      <button
+        id="nav-toggle"
+        type="button"
+        aria-label="Menu"
+        aria-expanded="false"
+        aria-controls="mobile-nav"
+        class="grid h-9 w-9 place-items-center rounded-full text-muted transition-colors hover:bg-line hover:text-ink md:hidden"
       >
+        <svg class="nav-open h-[18px] w-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16"></path>
+        </svg>
+        <svg class="nav-close hidden h-[18px] w-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <path d="M6 6l12 12M18 6L6 18"></path>
+        </svg>
+      </button>
     </div>
   </nav>
+
+  <!-- Mobile menu -->
+  <div id="mobile-nav" hidden class="border-t border-line bg-paper/95 backdrop-blur-xl md:hidden">
+    <div class="mx-auto flex max-w-6xl flex-col gap-1 px-5 py-3 text-[15px] font-medium">
+      {
+        NAV.map((item) => (
+          <a
+            href={item.href}
+            aria-current={item.current ? 'page' : undefined}
+            class="rounded-xl px-3 py-2.5 text-muted transition-colors hover:text-ink aria-[current=page]:bg-line aria-[current=page]:text-ink"
+          >
+            {item.label}
+          </a>
+        ))
+      }
+      <a href={SITE.repoUrl} class="btn btn-primary mt-2">GitHub</a>
+    </div>
+  </div>
 </header>
 
 <script is:inline>
@@ -50,5 +107,21 @@ import { SITE } from '../config';
         { giscus: { setConfig: { theme: dark ? 'dark' : 'light' } } },
         'https://giscus.app',
       );
+  });
+
+  const navBtn = document.getElementById('nav-toggle');
+  const navPanel = document.getElementById('mobile-nav');
+  function setNav(open) {
+    navBtn.setAttribute('aria-expanded', String(open));
+    navPanel.hidden = !open;
+    navBtn.querySelector('.nav-open').classList.toggle('hidden', open);
+    navBtn.querySelector('.nav-close').classList.toggle('hidden', !open);
+  }
+  navBtn?.addEventListener('click', () => setNav(navBtn.getAttribute('aria-expanded') !== 'true'));
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navBtn.getAttribute('aria-expanded') === 'true') {
+      setNav(false);
+      navBtn.focus();
+    }
   });
 </script>

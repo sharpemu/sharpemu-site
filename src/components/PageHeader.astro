@@ -1,0 +1,13 @@
+---
+// Shared page opener: title and a short lead (default slot).
+interface Props {
+  title: string;
+}
+const { title } = Astro.props;
+const hasLead = Astro.slots.has('default');
+---
+
+<header>
+  <h1 class="font-display text-4xl font-extrabold tracking-tight text-balance md:text-5xl">{title}</h1>
+  {hasLead && <div class="mt-4 max-w-2xl text-base leading-relaxed text-muted md:text-lg"><slot /></div>}
+</header>

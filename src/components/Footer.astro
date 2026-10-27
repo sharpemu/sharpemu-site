@@ -1,28 +1,73 @@
 ---
+import { Image } from 'astro:assets';
+import logo from '../assets/logo.png';
 import { SITE } from '../config';
+
+const groups = [
+  {
+    title: 'Explore',
+    links: [
+      { href: '/compatibility', label: 'PS5 compatibility' },
+      { href: '/compatibility/ps4', label: 'PS4 compatibility' },
+      { href: '/compatibility/report', label: 'Submit a report' },
+      { href: '/search', label: 'Search' },
+    ],
+  },
+  {
+    title: 'Project',
+    links: [
+      { href: '/downloads', label: 'Downloads' },
+      { href: '/news', label: 'News' },
+      { href: '/faq', label: 'FAQ' },
+      { href: SITE.repoUrl, label: 'GitHub' },
+    ],
+  },
+];
 ---
 
-<footer class="mt-28 border-t border-line py-12 text-center text-xs leading-relaxed text-muted">
-  <nav class="mb-8 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm font-medium">
-    <a href="/compatibility" class="transition-colors hover:text-ink">Compatibility</a>
-    <a href="/downloads" class="transition-colors hover:text-ink">Downloads</a>
-    <a href="/news" class="transition-colors hover:text-ink">News</a>
-    <a href="/faq" class="transition-colors hover:text-ink">FAQ</a>
-    <a href="/search" class="transition-colors hover:text-ink">Search</a>
-    <a href="/compatibility/report" class="transition-colors hover:text-ink">Submit a report</a>
-  </nav>
-  <div class="mx-auto max-w-3xl space-y-2 px-5">
-    <p>
-      {SITE.name} is an experimental, open-source research project. It is not affiliated with,
-      endorsed by, or associated with Sony Interactive Entertainment. "PlayStation" and "PS5" are
-      trademarks of Sony Interactive Entertainment Inc.
-    </p>
-    <p>
-      Game titles, cover art and trademarks belong to their respective owners. Cover images are
-      served from the PlayStation Store. Takedown requests:{' '}
-      <a href={`${SITE.siteRepoUrl}/issues`} class="underline transition-colors hover:text-ink"
-        >open an issue</a
-      >.
-    </p>
+<footer class="mt-28 border-t border-line">
+  <div class="mx-auto max-w-6xl px-5 py-12">
+    <div class="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
+      <div>
+        <a href="/" class="inline-flex items-center gap-2.5 rounded-lg font-display text-[15px] font-bold tracking-tight">
+          <Image src={logo} alt="" width={28} height={28} class="rounded-md" />
+          {SITE.name}
+        </a>
+        <p class="mt-3 max-w-xs text-sm leading-relaxed text-muted">
+          An experimental, open-source PlayStation emulator written in C#.
+        </p>
+      </div>
+      {
+        groups.map((g) => (
+          <nav aria-label={g.title}>
+            <p class="text-sm font-semibold">{g.title}</p>
+            <ul class="mt-4 space-y-2.5 text-sm font-medium">
+              {g.links.map((l) => (
+                <li>
+                  <a href={l.href} class="text-muted transition-colors hover:text-ink">
+                    {l.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        ))
+      }
+    </div>
+
+    <div class="mt-12 max-w-3xl space-y-2 border-t border-line pt-6 text-xs leading-relaxed text-muted">
+      <p>
+        {SITE.name} is an experimental, open-source research project. It is not affiliated with,
+        endorsed by, or associated with Sony Interactive Entertainment. "PlayStation", "PS5" and
+        "PS4" are trademarks of Sony Interactive Entertainment Inc.
+      </p>
+      <p>
+        Game titles, cover art and trademarks belong to their respective owners. Cover images are
+        served from the PlayStation Store. Takedown requests:{' '}
+        <a href={`${SITE.siteRepoUrl}/issues`} class="underline transition-colors hover:text-ink"
+          >open an issue</a
+        >.
+      </p>
+    </div>
   </div>
 </footer>

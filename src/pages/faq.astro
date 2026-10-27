@@ -1,16 +1,18 @@
 ---
 import Base from '../layouts/Base.astro';
+import PageHeader from '../components/PageHeader.astro';
 import { SITE } from '../config';
 ---
 
-<Base title="FAQ — SharpEmu" description="Frequently asked questions about the SharpEmu PS5 emulator.">
-  <section class="prose prose-slate dark:prose-invert mx-auto max-w-3xl px-5 pt-12" data-pagefind-body>
-    <h1 class="font-display tracking-tight">Frequently asked questions</h1>
+<Base title="FAQ — SharpEmu" description="Frequently asked questions about SharpEmu, the experimental open-source PS5 and PS4 emulator.">
+  <section class="mx-auto max-w-3xl px-5 pt-12" data-pagefind-body>
+    <PageHeader title="Frequently asked questions" />
+    <div class="prose prose-slate dark:prose-invert mt-10 max-w-none">
 
     <h2>What is SharpEmu?</h2>
     <p>
-      An experimental PlayStation 5 emulator written from scratch in C#, developed purely for
-      research and educational purposes. We enjoy learning about system architecture and reverse
+      An experimental PlayStation 5 emulator written from scratch in C#, with PlayStation 4
+      support now in development, developed purely for research and educational purposes. We enjoy learning about system architecture and reverse
       engineering; there are no commercial goals.
     </p>
 
@@ -27,7 +29,7 @@ import { SITE } from '../config';
       Both, in one binary. Running SharpEmu with no arguments opens the desktop app: a game library
       you point at your dump folders, plus settings, a log console, Discord Rich Presence, a
       built-in updater and 15 languages. Passing a game's <code>eboot.bin</code> as an argument runs
-      it from the terminal instead — handy for capturing logs.
+      it from the terminal instead — handy for capturing logs.{' '}
       <a href="/downloads">Get it here</a>.
     </p>
 
@@ -41,7 +43,7 @@ import { SITE } from '../config';
 
     <h2>Where do I get games?</h2>
     <p>
-      From your own PlayStation 5 — you dump the games you legally own. We do not provide games,
+      From your own PlayStation 5 or PlayStation 4 — you dump the games you legally own. We do not provide games,
       firmware, keys, or instructions for obtaining copyrighted content, and we won't help with
       pirated copies.
     </p>
@@ -61,8 +63,11 @@ import { SITE } from '../config';
 
     <h2>Isn't there already shadPS4?</h2>
     <p>
-      <a href="https://shadps4.net">shadPS4</a> is an excellent PS4 emulator — that's exactly why
-      SharpEmu focuses exclusively on the PlayStation 5 and will not add PS4 support.
+      <a href="https://shadps4.net">shadPS4</a> remains the dedicated, mature PS4 emulator, and
+      it's the project to look at if PS4 is what you're after. SharpEmu started as a PS5-only
+      project; PS4 support is now in development, and PS4 games are tracked in their own{' '}
+      <a href="/compatibility/ps4/">compatibility list</a>. It's early, experimental work and not
+      a replacement for shadPS4.
     </p>
 
     <h2>How can I help?</h2>
@@ -76,5 +81,6 @@ import { SITE } from '../config';
       </li>
       <li>Spread honest expectations: it's a research project, not a product.</li>
     </ul>
+    </div>
   </section>
 </Base>

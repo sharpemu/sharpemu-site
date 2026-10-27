@@ -94,7 +94,7 @@ export function normalizeReport(issue, games) {
   const notes = sanitizeIssueMarkdown(sectionValue(sections, 'What works / what breaks'));
   const ownership = sectionValue(sections, 'Testing confirmation');
 
-  if (!/^PPSA\d{5}$/.test(titleId)) {
+  if (!/^(PPSA|CUSA)\d{5}$/.test(titleId)) {
     throw new Error(`Issue #${issue.number}: invalid Title ID "${titleId}".`);
   }
   if (!STATUSES.has(status)) {
@@ -235,11 +235,17 @@ async function main() {
   }
 
   const root = process.cwd();
-  const games = JSON.parse(
-    await readFile(path.join(root, 'src/data/games.json'), 'utf8'),
-  );
+  // PS5 (PPSA) and PS4 (CUSA) games live in separate catalogs.
+  const games = (
+    await Promise.all(
+      ['games.json', 'ps4-games.json'].map(async (file) =>
+        JSON.parse(await readFile(path.join(root, 'src/data', file), 'utf8')),
+      ),
+    )
+  ).flat();
   const report = normalizeReport(issue, games);
-  const compatibilityDirectory = path.join(root, 'src/content/compat');
+  // One report per game per OS: a Linux report never replaces the Windows one.
+  const compatibilityDirectory = path.join(root, 'src/content/compat', report.os);
   await mkdir(compatibilityDirectory, { recursive: true });
   const existingFileNames = await readdir(compatibilityDirectory);
   const target = chooseReportTarget(report, existingFileNames);

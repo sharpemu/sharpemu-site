@@ -1,0 +1,42 @@
+---
+// Stacked distribution of report statuses, with a legend that always lists every
+// status so empty ones read as zero rather than disappearing.
+import { STATUS_META, STATUSES } from '../lib/compat';
+
+interface Props {
+  counts: Record<string, number>;
+  label: string;
+}
+const { counts, label } = Astro.props;
+const total = STATUSES.reduce((n, s) => n + counts[s], 0);
+const segments = STATUSES.filter((s) => counts[s] > 0);
+---
+
+<div>
+  <div class="flex h-3.5 gap-[2px] overflow-hidden rounded-full bg-line" role="img" aria-label={label}>
+    {
+      segments.map((s) => (
+        <div
+          style={`flex: ${counts[s]}; background: ${STATUS_META[s].barColor};`}
+          title={`${STATUS_META[s].label}: ${counts[s]}`}
+        />
+      ))
+    }
+  </div>
+  <ul class="mt-4 grid grid-cols-2 gap-x-6 gap-y-2.5 text-xs sm:grid-cols-5">
+    {
+      STATUSES.map((s) => (
+        <li class={`flex items-center gap-2 ${counts[s] === 0 ? 'opacity-50' : ''}`}>
+          <span class="h-2.5 w-2.5 shrink-0 rounded-full" style={`background: ${STATUS_META[s].barColor};`} />
+          <span class="text-muted">{STATUS_META[s].label}</span>
+          <span class="ml-auto font-mono font-semibold text-ink tabular-nums sm:ml-0">{counts[s]}</span>
+          {total > 0 && counts[s] > 0 && (
+            <span class="hidden font-mono text-[10px] text-muted tabular-nums lg:inline">
+              {Math.round((counts[s] / total) * 100)}%
+            </span>
+          )}
+        </li>
+      ))
+    }
+  </ul>
+</div>

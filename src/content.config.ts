@@ -4,7 +4,8 @@ import { z } from 'astro/zod';
 import { compatSchema } from './lib/compat';
 
 const compat = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/compat' }),
+  // One folder per OS: compat/windows/PPSA01234.md, compat/linux/…, compat/macos/…
+  loader: glob({ pattern: '*/*.md', base: './src/content/compat' }),
   schema: compatSchema,
 });
 

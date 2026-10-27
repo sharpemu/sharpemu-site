@@ -1,13 +1,14 @@
 name: Compatibility report
 description: Report how a game runs on SharpEmu
-title: 'PPSAxxxxx - Game Name'
+title: 'PPSAxxxxx / CUSAxxxxx - Game Name'
 labels: [compat-report]
 body:
   - type: input
     id: title_id
     attributes:
       label: Title ID
-      placeholder: PPSA01284
+      description: PPSA… for PS5 games, CUSA… for PS4 games.
+      placeholder: PPSA01284 or CUSA00001
     validations:
       required: true
   - type: dropdown
@@ -21,7 +22,10 @@ body:
     id: version
     attributes:
       label: SharpEmu build (commit or release, not the game version)
-      description: Use the SharpEmu commit SHA or release shown in the emulator.
+      description: >-
+        Use the commit SHA or release shown in the emulator. On macOS, give the
+        sharpemu-mac build (github.com/sharpemu/sharpemu-mac); on Windows and Linux,
+        the sharpemu build.
       placeholder: 24b82a7 or v0.1.0
     validations:
       required: true

@@ -1,5 +1,5 @@
 import { getCollection } from 'astro:content';
-import { gamesByPlatform, gameByAnyTitleId } from '../../lib/games';
+import { gamesByPlatform, gameByAnyTitleId, hasGamePage } from '../../lib/games';
 import { OSES, PLATFORMS, reportEntryId, type Platform } from '../../lib/compat';
 
 // One index per console (/games-index/ps5.json, /games-index/ps4.json), so the PS5
@@ -34,13 +34,17 @@ export async function GET({ params }: { params: { platform: Platform } }) {
     const g = gameByAnyTitleId.get(e.data.titleId)!;
     statusByGame.set(`${e.data.os}/${g.titleId}`, e.data.status);
   }
-  // s: one status per OS, in OSES order (windows, linux, macos).
-  const index = gamesByPlatform[params.platform].map((g) => ({
-    t: g.titleId,
-    a: g.allTitleIds.join(' '),
-    n: g.name,
-    s: OSES.map((os) => statusByGame.get(`${os}/${g.titleId}`) ?? 'untested'),
-  }));
+  // s: one status per OS, in OSES order (windows, linux, macos); p: the game has its own page.
+  const index = gamesByPlatform[params.platform].map((g) => {
+    const s = OSES.map((os) => statusByGame.get(`${os}/${g.titleId}`) ?? 'untested');
+    return {
+      t: g.titleId,
+      a: g.allTitleIds.join(' '),
+      n: g.name,
+      s,
+      p: hasGamePage(g, s.some((x) => x !== 'untested')) ? 1 : 0,
+    };
+  });
   return new Response(JSON.stringify(index), {
     headers: { 'content-type': 'application/json' },
   });

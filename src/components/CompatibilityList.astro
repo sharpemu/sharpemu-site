@@ -276,7 +276,7 @@ const panelProps = (os: (typeof OSES)[number]) => ({
         .map((g) => {
           const m = clientMeta[g.s[osIdx]] ?? clientMeta.untested;
           return `<tr class="group border-b border-line transition-colors last:border-0 hover:bg-accent/[0.07]">
-            <td class="px-5 py-3 sm:px-6"><a class="font-medium transition-colors group-hover:text-accent" href="/game/${g.t}/?os=${osIds[osIdx]}">${esc(g.n)}</a><span class="mt-0.5 block font-mono text-[11px] text-muted sm:hidden">${g.t}</span></td>
+            <td class="px-5 py-3 sm:px-6">${g.p ? `<a class="font-medium transition-colors group-hover:text-accent" href="/game/${g.t}/?os=${osIds[osIdx]}">${esc(g.n)}</a>` : `<span class="font-medium">${esc(g.n)}</span>`}<span class="mt-0.5 block font-mono text-[11px] text-muted sm:hidden">${g.t}</span></td>
             <td class="hidden px-6 py-3 font-mono text-xs sm:table-cell"><span class="text-muted/60">${g.t.slice(0, 4)}</span><span class="text-muted">${g.t.slice(4)}</span></td>
             <td class="px-5 py-3 text-right sm:px-6 sm:text-left"><span class="status-pill rounded-full px-2.5 py-0.5 text-[11px] font-semibold ${m.cls}">${m.label}</span></td>
           </tr>`;

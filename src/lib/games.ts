@@ -37,3 +37,7 @@ export const gameByTitleId = new Map(games.map((g) => [g.titleId, g]));
 export const gameByAnyTitleId = new Map(
   games.flatMap((g) => g.allTitleIds.map((id) => [id, g] as const)),
 );
+
+// Cloudflare Pages caps a deployment at 20,000 files, so a PS4 game gets its own page
+// once it has a report; every PS5 game keeps one. The PS4 list still shows them all.
+export const hasGamePage = (game: Game, reported: boolean) => game.platform === 'ps5' || reported;

@@ -5,12 +5,17 @@ import StatusBadge from '../../components/StatusBadge.astro';
 import Giscus from '../../components/Giscus.astro';
 import OsTabs from '../../components/OsTabs.astro';
 import GameCover from '../../components/GameCover.astro';
-import { games, gameByTitleId } from '../../lib/games';
+import { games, gameByAnyTitleId, gameByTitleId, hasGamePage } from '../../lib/games';
 import { DEFAULT_OS, OSES, OS_LABEL, PLATFORM_LABEL, type DisplayStatus, type Os } from '../../lib/compat';
 import { SITE } from '../../config';
 
 export async function getStaticPaths() {
-  return games.map((g) => ({ params: { titleId: g.titleId } }));
+  const reported = new Set(
+    (await getCollection('compat')).map((e) => gameByAnyTitleId.get(e.data.titleId)?.titleId),
+  );
+  return games
+    .filter((g) => hasGamePage(g, reported.has(g.titleId)))
+    .map((g) => ({ params: { titleId: g.titleId } }));
 }
 
 const { titleId } = Astro.params;

@@ -21,7 +21,9 @@ npm run preview    # serve dist/
 `src/data/games.json` (PS5, `PPSA…`) and `src/data/ps4-games.json` (PS4, `CUSA…`)
 are generated — do not edit imported game metadata by hand. A PS4 game and its PS5
 version are separate games with their own pages and reports; PS4 games reuse the
-store metadata of an enriched PS5 game in the same concept.
+store metadata of an enriched PS5 game in the same concept. Every PS5 game has a
+page; a PS4 game gets one once it has a report, which keeps the build under
+Cloudflare Pages' 20,000-file limit (the PS4 list still shows every PS4 game).
 The supported exception is the optional `"commentsDisabled": true` per-game
 override; imports preserve this setting across database refreshes.
 

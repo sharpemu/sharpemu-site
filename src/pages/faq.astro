@@ -50,9 +50,12 @@ import { SITE } from '../config';
 
     <h2>Which platforms are supported?</h2>
     <p>
-      Windows is the primary development target — cross-platform Linux and macOS support is
-      planned, and archives for all three platforms are already published with each release.
-      Development focuses on Windows for now to simplify early-stage debugging.
+      Windows, Linux and macOS. Windows is the primary development target, and Windows and Linux
+      builds render through Vulkan. macOS has its own edition,{' '}
+      <a href={SITE.macRepoUrl}>sharpemu-mac</a>, which tracks the main
+      project and renders natively with Metal (no MoltenVK). It needs macOS 15 or later and runs
+      under Rosetta 2 on Apple Silicon. Grab builds for each on the{' '}
+      <a href="/downloads">downloads page</a>.
     </p>
 
     <h2>Why C#?</h2>

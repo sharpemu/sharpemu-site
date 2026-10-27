@@ -90,7 +90,20 @@ describe('renderDownloads', () => {
     const html = renderDownloads([], 'macos');
     expect(html).toContain('git clone https://github.com/sharpemu/sharpemu-mac.git');
     expect(html).toContain('cd sharpemu-mac');
-    expect(html).toContain('dotnet publish');
+    expect(html).toContain('scripts/macos/build-app.sh');
+    expect(html).not.toContain('dotnet publish');
+  });
+  it('says which sharpemu-mac asset is the app bundle', () => {
+    const mac = rel({
+      tag_name: 'v0.1.0',
+      assets: [
+        { name: 'sharpemu-0.1.0-osx-x64-app.zip', size: 50_000_000, browser_download_url: 'https://x/a.zip' },
+        { name: 'sharpemu-0.1.0-osx-x64.tar.gz', size: 50_000_000, browser_download_url: 'https://x/b.tar.gz' },
+      ],
+    });
+    const html = renderDownloads(selectReleases([mac], 3, false), 'macos');
+    expect(html).toContain('SharpEmu.app — use this one');
+    expect(html).toContain('for command-line use');
   });
   it('lists only the Windows archive in the Windows view', () => {
     const html = renderDownloads(selectReleases([multi()]), 'windows');

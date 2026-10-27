@@ -14,8 +14,18 @@ interface Props {
   label?: string;
   /** `sm` for a secondary control that sits beside a bigger primary one. */
   size?: 'sm' | 'md';
+  /** Add an "All" tab (data-os="all") after the OSes. */
+  all?: boolean;
 }
-const { group, dots, selected = DEFAULT_OS, detect = false, label = 'Operating system', size = 'md' } = Astro.props;
+const {
+  group,
+  dots,
+  selected = DEFAULT_OS,
+  detect = false,
+  label = 'Operating system',
+  size = 'md',
+  all = false,
+} = Astro.props;
 const tabCls = size === 'sm' ? 'px-3 py-1.5 text-[13px] sm:px-3.5' : 'px-2.5 py-2 text-[13px] sm:px-4 sm:text-sm';
 
 const ICONS: Record<Os, string> = {
@@ -44,7 +54,7 @@ const ICONS: Record<Os, string> = {
         id={`${group}-tab-${os}`}
         aria-controls={`${group}-${os}`}
         aria-selected={String(os === selected)}
-        class={`inline-flex items-center gap-1.5 rounded-full sm:gap-2 ${tabCls} text-muted transition-colors hover:text-ink aria-selected:bg-contrast aria-selected:text-contrast-fg aria-selected:shadow-sm`}
+        class={`inline-flex items-center gap-1.5 rounded-full sm:gap-2 ${tabCls} text-muted transition-colors hover:text-ink aria-selected:bg-line aria-selected:text-ink`}
       >
         <Fragment set:html={ICONS[os]} />
         {OS_LABEL[os]}
@@ -65,11 +75,25 @@ const ICONS: Record<Os, string> = {
       </button>
     ))
   }
+  {
+    all && (
+      <button
+        type="button"
+        role="tab"
+        data-os="all"
+        id={`${group}-tab-all`}
+        aria-controls={`${group}-all`}
+        aria-selected="false"
+        class={`rounded-full ${tabCls} text-muted transition-colors hover:text-ink aria-selected:bg-line aria-selected:text-ink`}
+      >
+        All
+      </button>
+    )
+  }
 </div>
 
 <script>
-  type Os = 'windows' | 'linux' | 'macos';
-  const OS_IDS: Os[] = ['windows', 'linux', 'macos'];
+  type Os = 'windows' | 'linux' | 'macos' | 'all';
 
   function detectOs(): Os {
     const nav = navigator as Navigator & { userAgentData?: { platform?: string } };
@@ -108,7 +132,9 @@ const ICONS: Record<Os, string> = {
       url.searchParams.set('os', b.dataset.os!);
       history.replaceState(null, '', url);
     });
-    const initial = fromUrl && OS_IDS.includes(fromUrl) ? fromUrl : detect ? detected : null;
+    // Only accept ?os= values this group has a tab for ("all" is optional).
+    const valid = fromUrl && tabs.querySelector(`[data-os="${CSS.escape(fromUrl)}"]`);
+    const initial = valid ? fromUrl : detect ? detected : null;
     if (initial) select(tabs, initial);
   });
 </script>

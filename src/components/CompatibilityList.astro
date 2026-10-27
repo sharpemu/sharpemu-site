@@ -16,6 +16,7 @@ import {
   STATUS_META,
   STATUSES,
   platformOf,
+  type Os,
   type Platform,
 } from '../lib/compat';
 
@@ -33,10 +34,12 @@ const gameCount = platforms.reduce((n, p) => n + gamesByPlatform[p].length, 0).t
 const consoleName = platform === 'all' ? 'PS5 and PS4' : PLATFORM_LABEL[platform];
 // Only this view's reports; the other console has its own list.
 const compat = (await getCollection('compat')).filter((e) => platforms.includes(platformOf(e.data.titleId)));
-// Stats, report cards and the Tested count are per OS; every OS renders as a tab panel.
+// Stats, report cards and the Tested count are per OS tab; 'all' covers every OS.
+type OsView = Os | 'all';
+const OS_VIEWS: OsView[] = [...OSES, 'all'];
 const byOs = Object.fromEntries(
-  OSES.map((os) => {
-    const entries = compat.filter((e) => e.data.os === os);
+  OS_VIEWS.map((os) => {
+    const entries = os === 'all' ? compat : compat.filter((e) => e.data.os === os);
     return [
       os,
       {
@@ -52,7 +55,7 @@ const byOs = Object.fromEntries(
 const clientMeta = Object.fromEntries(
   Object.entries(STATUS_META).map(([k, v]) => [k, { label: v.label, cls: v.badgeClass }]),
 );
-const panelProps = (os: (typeof OSES)[number]) => ({
+const panelProps = (os: OsView) => ({
   'data-os-group': 'compat',
   'data-os-panel': os,
   hidden: os !== DEFAULT_OS,
@@ -64,8 +67,10 @@ const panelProps = (os: (typeof OSES)[number]) => ({
     <PageHeader title={`${consoleName} game compatibility`}>
       {gameCount}{' '}{consoleName} games tracked ·{' '}
       {
-        OSES.map((os) => (
-          <span {...panelProps(os)}>{byOs[os].stats.tested} tested on {OS_LABEL[os]}</span>
+        OS_VIEWS.map((os) => (
+          <span {...panelProps(os)}>
+            {os === 'all' ? `${byOs.all.stats.tested} reports` : `${byOs[os].stats.tested} tested on ${OS_LABEL[os]}`}
+          </span>
         ))
       }{' '}
       · <a href="/compatibility/report" class="text-accent underline underline-offset-4">submit a report</a>
@@ -93,27 +98,27 @@ const panelProps = (os: (typeof OSES)[number]) => ({
         </nav>
       </div>
       <div>
-        <OsTabs group="compat" size="sm" />
+        <OsTabs group="compat" size="sm" all />
       </div>
     </div>
 
     <!-- Status distribution, per OS (only once that OS has reports) -->
     {
-      OSES.map(
-        (os) =>
-          byOs[os].stats.tested > 0 && (
+      OS_VIEWS.map((os) => {
+        const n = byOs[os].stats.tested;
+        const title =
+          os === 'all'
+            ? `${n} ${consoleName} ${n === 1 ? 'report' : 'reports'} across Windows, Linux and macOS`
+            : `${n} ${consoleName} ${n === 1 ? 'game' : 'games'} tested on ${OS_LABEL[os]}`;
+        return (
+          n > 0 && (
             <div class="card mt-7 p-5 sm:p-6" {...panelProps(os)}>
-              <h2 class="mb-4 font-display text-base font-bold tracking-tight">
-                {byOs[os].stats.tested} {consoleName} {byOs[os].stats.tested === 1 ? 'game' : 'games'} tested on{' '}
-                {OS_LABEL[os]}
-              </h2>
-              <StatusBar
-                counts={byOs[os].stats.counts}
-                label={`Status distribution across ${byOs[os].stats.tested} ${consoleName} games tested on ${OS_LABEL[os]}`}
-              />
+              <h2 class="mb-4 font-display text-base font-bold tracking-tight">{title}</h2>
+              <StatusBar counts={byOs[os].stats.counts} label={`Status distribution: ${title}`} />
             </div>
-          ),
-      )
+          )
+        );
+      })
     }
 
     <!-- Search and status filter apply to both tabs -->
@@ -152,7 +157,7 @@ const panelProps = (os: (typeof OSES)[number]) => ({
         aria-selected="true"
         aria-controls="panel-tested"
         class="tab-underline"
-        >Tested <span class="count">{OSES.map((os) => <span {...panelProps(os)}>{byOs[os].stats.tested}</span>)}</span></button
+        >Tested <span class="count">{OS_VIEWS.map((os) => <span {...panelProps(os)}>{byOs[os].stats.tested}</span>)}</span></button
       >
       <button
         id="tab-all"
@@ -167,7 +172,7 @@ const panelProps = (os: (typeof OSES)[number]) => ({
     <!-- Tested panel -->
     <div id="panel-tested" role="tabpanel" aria-labelledby="tab-tested" class="mt-8">
       {
-        OSES.map((os) => (
+        OS_VIEWS.map((os) => (
           <div {...panelProps(os)}>
             {byOs[os].tested.length > 0 ? (
               <>
@@ -193,7 +198,7 @@ const panelProps = (os: (typeof OSES)[number]) => ({
               </>
             ) : (
               <p class="text-muted">
-                No {consoleName} reports on {OS_LABEL[os]} yet{platform === 'ps4' ? ' (PS4 support is still in development)' : ''}.{' '}
+                No {consoleName} reports{os === 'all' ? '' : ` on ${OS_LABEL[os]}`} yet{platform === 'ps4' ? ' (PS4 support is still in development)' : ''}.{' '}
                 <a href="/compatibility/report" class="text-accent underline underline-offset-4">Submit one</a> or{' '}
                 <button type="button" data-show-all class="text-accent underline underline-offset-4">
                   browse all {gameCount} games
@@ -251,8 +256,13 @@ const panelProps = (os: (typeof OSES)[number]) => ({
       all: [document.getElementById('tab-all'), document.getElementById('panel-all')],
     };
     let all = [];
-    // Index into each game's `s` array; kept in sync with the OS tabs (see OsTabs.astro).
+    // The selected OS tab ('all' or an OS id) and its index into each game's `s` array;
+    // kept in sync with the OS tabs (see OsTabs.astro).
+    let os = osIds[0];
     let osIdx = 0;
+    // The statuses that count for the selected tab: one OS, or every OS.
+    const statusesOf = (g) => (os === 'all' ? g.s : [g.s[osIdx]]);
+    const rank = (g) => Math.min(...statusesOf(g).map((s) => STATUS_ORDER[s]));
 
     function selectTab(name) {
       for (const [key, [tab, panel]] of Object.entries(tabs)) {
@@ -267,15 +277,32 @@ const panelProps = (os: (typeof OSES)[number]) => ({
     tabs.all[0].addEventListener('click', () => selectTab('all'));
 
     function sortAll() {
-      all.sort((a, b) => STATUS_ORDER[a.s[osIdx]] - STATUS_ORDER[b.s[osIdx]] || a.n.localeCompare(b.n));
+      all.sort((a, b) => rank(a) - rank(b) || a.n.localeCompare(b.n));
     }
 
-    // `text` is the lowercased title plus every title ID.
-    function matches(text, s) {
+    // `text` is the lowercased title plus every title ID; `statuses` has one entry per OS
+    // in view, and the status filter matches if any of them does.
+    function matches(text, statuses) {
       const q = $q.value.trim().toLowerCase();
       const st = $status.value;
-      if (st === 'tested' ? s === 'untested' : st && s !== st) return false;
+      const tested = statuses.filter((s) => s !== 'untested');
+      if (st === 'tested' && tested.length === 0) return false;
+      if (st === 'untested' && tested.length > 0) return false;
+      if (st && st !== 'tested' && st !== 'untested' && !statuses.includes(st)) return false;
       return !q || text.includes(q);
+    }
+    const pill = (s) => {
+      const m = clientMeta[s] ?? clientMeta.untested;
+      return `<span class="status-pill rounded-full px-2.5 py-0.5 text-[11px] font-semibold ${m.cls}">${m.label}</span>`;
+    };
+    // One pill for a single OS; with "All", one labelled pill per tested OS.
+    function statusCell(g) {
+      if (os !== 'all') return pill(g.s[osIdx]);
+      const tested = g.s.map((s, i) => [osLabels[osIds[i]], s]).filter(([, s]) => s !== 'untested');
+      if (tested.length === 0) return pill('untested');
+      return `<span class="inline-flex flex-wrap justify-end gap-x-3 gap-y-1 sm:justify-start">${tested
+        .map(([label, s]) => `<span class="inline-flex items-center gap-1.5"><span class="text-[11px] text-muted">${label}</span>${pill(s)}</span>`)
+        .join('')}</span>`;
     }
 
     // Tested report cards are server-rendered; hide the ones that don't match.
@@ -284,7 +311,7 @@ const panelProps = (os: (typeof OSES)[number]) => ({
         const cards = panel.querySelectorAll('[data-card]');
         let shown = 0;
         cards.forEach((c) => {
-          c.hidden = !matches(c.dataset.search, c.dataset.status);
+          c.hidden = !matches(c.dataset.search, [c.dataset.status]);
           if (!c.hidden) shown++;
         });
         const none = panel.querySelector('[data-no-match]');
@@ -294,7 +321,7 @@ const panelProps = (os: (typeof OSES)[number]) => ({
 
     function renderList() {
       const q = $q.value.trim().toLowerCase();
-      const hits = all.filter((g) => matches(g.k, g.s[osIdx]));
+      const hits = all.filter((g) => matches(g.k, statusesOf(g)));
       $count.textContent =
         `${hits.length.toLocaleString('en-US')} ${hits.length === 1 ? 'game' : 'games'}` +
         (hits.length > MAX_ROWS ? ` — showing the first ${MAX_ROWS}; keep typing to narrow down` : '');
@@ -308,11 +335,11 @@ const panelProps = (os: (typeof OSES)[number]) => ({
       $rows.innerHTML = hits
         .slice(0, MAX_ROWS)
         .map((g) => {
-          const m = clientMeta[g.s[osIdx]] ?? clientMeta.untested;
+          const href = os === 'all' ? `/game/${g.t}/` : `/game/${g.t}/?os=${os}`;
           return `<tr class="group border-b border-line transition-colors last:border-0 hover:bg-accent/[0.07]">
-            <td class="px-5 py-3 sm:px-6">${g.p ? `<a class="font-medium transition-colors group-hover:text-accent" href="/game/${g.t}/?os=${osIds[osIdx]}">${esc(g.n)}</a>` : `<span class="font-medium">${esc(g.n)}</span>`}${showConsole ? `<span class="ml-2 rounded bg-line px-1.5 py-px align-[1px] font-mono text-[10px] font-semibold text-muted">${g.t.startsWith('CUSA') ? 'PS4' : 'PS5'}</span>` : ''}<span class="mt-0.5 block font-mono text-[11px] text-muted sm:hidden">${g.t}</span></td>
+            <td class="px-5 py-3 sm:px-6">${g.p ? `<a class="font-medium transition-colors group-hover:text-accent" href="${href}">${esc(g.n)}</a>` : `<span class="font-medium">${esc(g.n)}</span>`}${showConsole ? `<span class="ml-2 rounded bg-line px-1.5 py-px align-[1px] font-mono text-[10px] font-semibold text-muted">${g.t.startsWith('CUSA') ? 'PS4' : 'PS5'}</span>` : ''}<span class="mt-0.5 block font-mono text-[11px] text-muted sm:hidden">${g.t}</span></td>
             <td class="hidden px-6 py-3 font-mono text-xs sm:table-cell"><span class="text-muted/60">${g.t.slice(0, 4)}</span><span class="text-muted">${g.t.slice(4)}</span></td>
-            <td class="px-5 py-3 text-right sm:px-6 sm:text-left"><span class="status-pill rounded-full px-2.5 py-0.5 text-[11px] font-semibold ${m.cls}">${m.label}</span></td>
+            <td class="px-5 py-3 text-right sm:px-6 sm:text-left">${statusCell(g)}</td>
           </tr>`;
         })
         .join('');
@@ -320,18 +347,18 @@ const panelProps = (os: (typeof OSES)[number]) => ({
 
     // The console switch carries the OS pick, the search term and the open tab across.
     function syncConsoleLinks() {
-      const params = new URLSearchParams({ os: osIds[osIdx] });
+      const params = new URLSearchParams({ os });
       const q = $q.value.trim();
       if (q) params.set('q', q);
       const hash = tabs.all[1].hidden ? '' : '#all';
       $consoleLinks.forEach((a) => (a.href = `${a.pathname}?${params}${hash}`));
     }
 
-    function setOs(os) {
-      const i = osIds.indexOf(os);
-      if (i < 0) return;
-      osIdx = i;
-      $statusOs.textContent = `(${osLabels[os]})`;
+    function setOs(next) {
+      if (next !== 'all' && !osIds.includes(next)) return;
+      os = next;
+      osIdx = Math.max(osIds.indexOf(next), 0);
+      $statusOs.textContent = `(${next === 'all' ? 'all systems' : osLabels[next]})`;
       syncConsoleLinks();
       sortAll();
       renderList();

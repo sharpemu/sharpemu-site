@@ -10,9 +10,6 @@ const meta = STATUS_META[status];
 const sizeCls = size === 'lg' ? 'px-4 py-1.5 text-sm' : 'px-2.5 py-0.5 text-[11px]';
 ---
 
-<span
-  class={`inline-block rounded-full font-semibold ${meta.badgeClass} ${sizeCls}`}
-  title={meta.description}
->
+<span class={`status-pill rounded-full font-semibold ${meta.badgeClass} ${sizeCls}`} title={meta.description}>
   {meta.label}
 </span>

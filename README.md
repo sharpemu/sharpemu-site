@@ -18,19 +18,24 @@ npm run preview    # serve dist/
 
 ## Games database
 
-`src/data/games.json` is generated — do not edit imported game metadata by hand.
+`src/data/games.json` (PS5, `PPSA…`) and `src/data/ps4-games.json` (PS4, `CUSA…`)
+are generated — do not edit imported game metadata by hand. A PS4 game and its PS5
+version are separate games with their own pages and reports; PS4 games reuse the
+store metadata of an enriched PS5 game in the same concept. Every PS5 game has a
+page; a PS4 game gets one once it has a report, which keeps the build under
+Cloudflare Pages' 20,000-file limit (the PS4 list still shows every PS4 game).
 The supported exception is the optional `"commentsDisabled": true` per-game
 override; imports preserve this setting across database refreshes.
 
 ```bash
 npm run import                          # refresh title list (no enrichment)
 npm run import -- --enrich 300          # + enrich 300 concepts with covers/metadata
-npm run import -- --only PPSA01284      # enrich specific title IDs (comma-separated)
+npm run import -- --only PPSA01284,CUSA00001  # enrich specific title IDs (comma-separated)
 npm run import -- --force               # accept a >5% shrink of the list
 ```
 
 To hide the comments section for a game, add `"commentsDisabled": true` to its
-entry in `src/data/games.json`. Omitting the property (or setting it to `false`)
+entry in `src/data/games.json` or `src/data/ps4-games.json`. Omitting the property (or setting it to `false`)
 keeps comments enabled.
 
 Sources: [andshrew/PlayStation-Titles](https://github.com/andshrew/PlayStation-Titles)
@@ -69,7 +74,7 @@ ownership confirmation, notes, and evidence. When it is ready, add the
 `compat-approved` label. The `Convert compatibility report` workflow then:
 
 1. Parses and sanitizes the issue form without evaluating issue content.
-2. Validates the title ID against `src/data/games.json`.
+2. Validates the title ID against `src/data/games.json` and `src/data/ps4-games.json`.
 3. Creates a new report or updates the existing regional report for that game.
 4. Runs `npm test` and the full Astro build.
 5. Opens `compat/issue-<number>` as a draft PR with `Closes #<number>`.

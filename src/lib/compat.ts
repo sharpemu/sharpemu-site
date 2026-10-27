@@ -4,17 +4,40 @@ export const STATUSES = ['nothing', 'boots', 'menus', 'ingame', 'playable'] as c
 export type Status = (typeof STATUSES)[number];
 export type DisplayStatus = Status | 'untested';
 
+// Each game keeps one report per OS, stored at src/content/compat/<os>/<TITLEID>.md.
+// Windows is listed first because it's the default view everywhere.
+export const OSES = ['windows', 'linux', 'macos'] as const;
+export type Os = (typeof OSES)[number];
+export const DEFAULT_OS: Os = 'windows';
+export const OS_LABEL: Record<Os, string> = { windows: 'Windows', linux: 'Linux', macos: 'macOS' };
+
+// The console a game was released for, read from its title ID prefix. A PS4 game and its
+// PS5 version are separate games with separate pages and reports, even when the store
+// groups them under one concept.
+export const PLATFORMS = ['ps5', 'ps4'] as const;
+export type Platform = (typeof PLATFORMS)[number];
+export const DEFAULT_PLATFORM: Platform = 'ps5';
+export const PLATFORM_LABEL: Record<Platform, string> = { ps5: 'PS5', ps4: 'PS4' };
+export const TITLE_ID_PREFIX: Record<Platform, string> = { ps5: 'PPSA', ps4: 'CUSA' };
+export const TITLE_ID_RE = /^(PPSA|CUSA)\d{5}$/;
+export const platformOf = (titleId: string): Platform => (titleId.startsWith('CUSA') ? 'ps4' : 'ps5');
+
 export const compatSchema = z.object({
-  titleId: z.string().regex(/^PPSA\d{5}$/),
+  titleId: z.string().regex(TITLE_ID_RE),
   status: z.enum(STATUSES),
   testedVersion: z.string().min(1),
   testedDate: z.coerce.date(),
   gameVersion: z.string().min(1).optional(),
-  os: z.enum(['windows', 'linux', 'macos']),
+  os: z.enum(OSES),
+  // macOS reports made on the old main-repo Mac build, before macOS moved to sharpemu-mac.
+  legacyBuild: z.boolean().optional(),
   hardware: z.string().optional(),
   score: z.number().int().min(1).max(5).optional(),
   commentsDisabled: z.boolean().optional(),
 });
+
+/** Expected entry id for a report — the glob loader lowercases ids. */
+export const reportEntryId = (os: Os, titleId: string) => `${os}/${titleId}`.toLowerCase();
 
 // badgeClass and barColor both resolve through CSS custom properties defined in
 // global.css, so a status keeps one identity and each theme supplies its own

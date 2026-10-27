@@ -1,0 +1,54 @@
+---
+// Cover art, or an intentional placeholder when the store has none: a tinted tile
+// (hue derived from the title ID, kept inside the brand's blue-violet range) with
+// the game's initials.
+import type { Game } from '../lib/games';
+
+interface Props {
+  game: Game;
+  /** Pixel size of the square. */
+  size: number;
+  eager?: boolean;
+  class?: string;
+}
+const { game, size, eager = false, class: cls = '' } = Astro.props;
+
+let hash = 0;
+for (const ch of game.titleId) hash = (hash * 31 + ch.charCodeAt(0)) >>> 0;
+const hue = 205 + (hash % 95);
+const words = game.name.replace(/[^\p{L}\p{N}\s]/gu, ' ').split(/\s+/).filter(Boolean);
+const initials =
+  words.length > 1 ? (words[0][0] + words[1][0]).toUpperCase() : (words[0] ?? '?').slice(0, 2).toUpperCase();
+const px = `${size}px`;
+---
+
+{
+  game.cover ? (
+    <img
+      src={game.cover}
+      alt={size >= 160 ? `${game.name} cover art` : ''}
+      width={size * 2}
+      height={size * 2}
+      loading={eager ? 'eager' : 'lazy'}
+      referrerpolicy="no-referrer"
+      style={`width:${px};height:${px};`}
+      class={`shrink-0 bg-line object-cover ${cls}`}
+    />
+  ) : (
+    <div
+      role={size >= 160 ? 'img' : undefined}
+      aria-label={size >= 160 ? `${game.name} (no cover art)` : undefined}
+      aria-hidden={size >= 160 ? undefined : 'true'}
+      style={`width:${px};height:${px};background:linear-gradient(145deg, hsl(${hue} 55% 34%), hsl(${(hue + 40) % 360} 50% 16%));`}
+      class={`relative flex shrink-0 select-none items-center justify-center overflow-hidden text-white/85 ${cls}`}
+    >
+      <div
+        class="absolute inset-0 opacity-25"
+        style="background-image: linear-gradient(rgba(255,255,255,.35) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.35) 1px, transparent 1px); background-size: 14px 14px; mask-image: radial-gradient(circle at 30% 20%, #000, transparent 75%);"
+      />
+      <span class="relative font-display font-extrabold tracking-tight" style={`font-size:${Math.round(size * 0.32)}px`}>
+        {initials}
+      </span>
+    </div>
+  )
+}

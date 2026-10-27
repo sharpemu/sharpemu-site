@@ -38,6 +38,19 @@ export function dedupeByConcept(rows) {
   return games.sort((a, b) => a.titleId.localeCompare(b.titleId));
 }
 
+const ENRICHED_FIELDS = ['name', 'cover', 'publisher', 'releaseDate', 'genres', 'enriched', 'noStore'];
+
+// Store metadata belongs to the concept, so a PS4 game can take covers and details from
+// the already-enriched PS5 game in the same concept instead of fetching them again.
+export function reuseEnrichment(games, donors) {
+  const byConcept = new Map(donors.filter((d) => d.enriched).map((d) => [d.conceptId, d]));
+  return games.map((g) => {
+    const donor = byConcept.get(g.conceptId);
+    if (g.enriched || !donor) return g;
+    return { ...g, ...Object.fromEntries(ENRICHED_FIELDS.map((k) => [k, donor[k]])) };
+  });
+}
+
 export function mergeExisting(fresh, existing) {
   const prev = new Map(existing.map((g) => [g.conceptId, g]));
   return fresh.map((g) => {

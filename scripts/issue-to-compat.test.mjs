@@ -14,6 +14,11 @@ const games = [
     titleId: 'PPSA01339',
     allTitleIds: ['PPSA01339', 'PPSA01342'],
   },
+  {
+    name: 'Bloodborne',
+    titleId: 'CUSA00900',
+    allTitleIds: ['CUSA00207', 'CUSA00900'],
+  },
 ];
 
 const currentIssue = {
@@ -154,6 +159,17 @@ commentsDisabled: true
     const markdown = renderReport(report, report.titleId, manualReportOptions(existing));
 
     expect(markdown).toContain('commentsDisabled: true');
+  });
+
+  it('accepts PS4 title IDs from the PS4 catalog', () => {
+    const issue = {
+      ...currentIssue,
+      body: currentIssue.body.replace('PPSA01342', 'CUSA00207'),
+    };
+
+    const report = normalizeReport(issue, games);
+    expect(report.titleId).toBe('CUSA00207');
+    expect(report.game.name).toBe('Bloodborne');
   });
 
   it('rejects title IDs that are not in the catalog', () => {

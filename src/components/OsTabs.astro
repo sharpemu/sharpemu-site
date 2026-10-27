@@ -1,0 +1,114 @@
+---
+// Segmented Windows / Linux / macOS switch. Panels belong to a tab group when they
+// carry data-os-group={group} and data-os-panel={os}; the script below shows the
+// selected one and hides the rest. Without JS the server-selected panel stays visible.
+import { DEFAULT_OS, OSES, OS_LABEL, STATUS_META, type DisplayStatus, type Os } from '../lib/compat';
+
+interface Props {
+  group: string;
+  /** Optional status dot per tab, so other OSes' results show without clicking. */
+  dots?: Partial<Record<Os, DisplayStatus>>;
+  selected?: Os;
+  /** Preselect the visitor's OS (downloads page) instead of the default. */
+  detect?: boolean;
+  label?: string;
+  /** `sm` for a secondary control that sits beside a bigger primary one. */
+  size?: 'sm' | 'md';
+}
+const { group, dots, selected = DEFAULT_OS, detect = false, label = 'Operating system', size = 'md' } = Astro.props;
+const tabCls = size === 'sm' ? 'px-3 py-1.5 text-[13px] sm:px-3.5' : 'px-2.5 py-2 text-[13px] sm:px-4 sm:text-sm';
+
+const ICONS: Record<Os, string> = {
+  windows:
+    '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 5.5 10.5 4.4v7.1H3zM11.5 4.3 21 3v8.5h-9.5zM3 12.6h7.5v7.1L3 18.6zM11.5 12.6H21V21l-9.5-1.3z"/></svg>',
+  linux:
+    '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M7 9l3 3-3 3M13 15h4"/></svg>',
+  macos:
+    '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>',
+};
+---
+
+<div
+  role="tablist"
+  aria-label={label}
+  data-os-tabs={group}
+  data-os-detect={detect ? '' : undefined}
+  class="inline-flex max-w-full flex-wrap gap-1 rounded-full border border-line bg-field p-1 font-semibold"
+>
+  {
+    OSES.map((os) => (
+      <button
+        type="button"
+        role="tab"
+        data-os={os}
+        id={`${group}-tab-${os}`}
+        aria-controls={`${group}-${os}`}
+        aria-selected={String(os === selected)}
+        class={`inline-flex items-center gap-1.5 rounded-full sm:gap-2 ${tabCls} text-muted transition-colors hover:text-ink aria-selected:bg-contrast aria-selected:text-contrast-fg aria-selected:shadow-sm`}
+      >
+        <Fragment set:html={ICONS[os]} />
+        {OS_LABEL[os]}
+        {dots && (
+          <span
+            class="h-2 w-2 rounded-full"
+            style={
+              dots[os] && dots[os] !== 'untested'
+                ? `background: ${STATUS_META[dots[os]!].barColor};`
+                : 'box-shadow: inset 0 0 0 1.5px var(--color-muted);'
+            }
+            title={STATUS_META[dots[os] ?? 'untested'].label}
+          />
+        )}
+        <span data-your-os hidden class="rounded-full border border-current px-1.5 text-[10px] tracking-wide uppercase opacity-75">
+          Your OS
+        </span>
+      </button>
+    ))
+  }
+</div>
+
+<script>
+  type Os = 'windows' | 'linux' | 'macos';
+  const OS_IDS: Os[] = ['windows', 'linux', 'macos'];
+
+  function detectOs(): Os {
+    const nav = navigator as Navigator & { userAgentData?: { platform?: string } };
+    const p = nav.userAgentData?.platform || navigator.platform || navigator.userAgent;
+    if (/mac/i.test(p)) return 'macos';
+    if (/linux|x11/i.test(p) && !/android/i.test(navigator.userAgent)) return 'linux';
+    return 'windows';
+  }
+
+  // Pages listen for this to re-render client-side views (e.g. the all-games table).
+  function select(tabs: HTMLElement, os: Os) {
+    const group = tabs.dataset.osTabs!;
+    tabs.querySelectorAll<HTMLButtonElement>('[data-os]').forEach((b) => {
+      b.setAttribute('aria-selected', String(b.dataset.os === os));
+    });
+    document
+      .querySelectorAll<HTMLElement>(`[data-os-group="${group}"][data-os-panel]`)
+      .forEach((panel) => (panel.hidden = panel.dataset.osPanel !== os));
+    tabs.dispatchEvent(new CustomEvent('os-change', { detail: { group, os }, bubbles: true }));
+  }
+
+  // ?os=linux deep-links any tab group on the page.
+  const fromUrl = new URLSearchParams(location.search).get('os') as Os | null;
+  const detected = detectOs();
+
+  document.querySelectorAll<HTMLElement>('[data-os-tabs]').forEach((tabs) => {
+    const detect = tabs.hasAttribute('data-os-detect');
+    if (detect) {
+      tabs.querySelector<HTMLElement>(`[data-os="${detected}"] [data-your-os]`)?.removeAttribute('hidden');
+    }
+    tabs.addEventListener('click', (e) => {
+      const b = (e.target as HTMLElement).closest<HTMLButtonElement>('[data-os]');
+      if (!b || b.getAttribute('aria-selected') === 'true') return;
+      select(tabs, b.dataset.os as Os);
+      const url = new URL(location.href);
+      url.searchParams.set('os', b.dataset.os!);
+      history.replaceState(null, '', url);
+    });
+    const initial = fromUrl && OS_IDS.includes(fromUrl) ? fromUrl : detect ? detected : null;
+    if (initial) select(tabs, initial);
+  });
+</script>

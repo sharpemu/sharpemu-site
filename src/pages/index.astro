@@ -4,13 +4,20 @@ import { Image } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 import ReportCard from '../components/ReportCard.astro';
 import StatusBadge from '../components/StatusBadge.astro';
+import StatusBar from '../components/StatusBar.astro';
 import logo from '../assets/logo.png';
 import { SITE } from '../config';
-import { games, gameByAnyTitleId } from '../lib/games';
-import { computeStats, STATUS_META, STATUSES } from '../lib/compat';
+import { gamesByPlatform, gameByAnyTitleId } from '../lib/games';
+import { computeStats, platformOf, STATUS_META, STATUSES } from '../lib/compat';
 
 const compat = await getCollection('compat');
-const stats = computeStats(compat.map((e) => e.data.status));
+// The stats bar tracks PS5 on Windows, the defaults; the latest-reports grid spans all consoles and OSes.
+const ps5Count = gamesByPlatform.ps5.length.toLocaleString('en-US');
+const ps4Count = gamesByPlatform.ps4.length.toLocaleString('en-US');
+const totalCount = (gamesByPlatform.ps5.length + gamesByPlatform.ps4.length).toLocaleString('en-US');
+const stats = computeStats(
+  compat.filter((e) => e.data.os === 'windows' && platformOf(e.data.titleId) === 'ps5').map((e) => e.data.status),
+);
 
 const latest = compat
   .map((entry) => ({ entry, game: gameByAnyTitleId.get(entry.data.titleId)! }))
@@ -19,10 +26,10 @@ const latest = compat
   .slice(0, 6);
 
 const reachGameplay = stats.counts.ingame + stats.counts.playable;
-const barSegments = STATUSES.filter((s) => stats.counts[s] > 0);
+const reachPct = stats.tested > 0 ? Math.round((reachGameplay / stats.tested) * 100) : 0;
 ---
 
-<Base title={`${SITE.name} — experimental PS5 emulator`}>
+<Base title={`${SITE.name} — experimental PS5 and PS4 emulator`}>
   <!-- Hero -->
   <section class="relative overflow-hidden">
     <div
@@ -31,63 +38,47 @@ const barSegments = STATUSES.filter((s) => stats.counts[s] > 0);
     >
     </div>
     <div
-      class="mx-auto grid max-w-6xl gap-10 px-5 pt-20 pb-4 md:pt-28 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center lg:gap-16"
+      class="mx-auto grid max-w-6xl gap-10 px-5 pt-16 pb-4 md:pt-28 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center lg:gap-16"
     >
       <div>
-        <p class="rise rise-1 font-mono text-[11px] font-medium tracking-[0.22em] text-muted uppercase">
-          Open source · Written in C# · GPL-2.0
-        </p>
+        <p class="rise rise-1 eyebrow">Open source · Written in C# · GPL-2.0</p>
         <h1
-          class="rise rise-2 mt-5 max-w-2xl font-display text-5xl font-extrabold tracking-tight md:text-6xl"
+          class="rise rise-2 mt-5 max-w-2xl font-display text-[2.6rem] leading-[1.05] font-extrabold tracking-tight text-balance sm:text-5xl md:text-6xl"
         >
-          The open <em class="text-accent not-italic">PS5 emulator</em> project.
+          The open <em class="text-accent not-italic">PS5 and PS4 emulator</em> project.
         </h1>
         <p class="rise rise-3 mt-6 max-w-xl text-lg leading-relaxed text-muted">
-          SharpEmu is an experimental PlayStation 5 emulator written from scratch in C# — built in
-          the open, for research and education, on Windows, Linux and macOS.
+          SharpEmu is an experimental PlayStation 5 emulator written from scratch in C#, with
+          PlayStation 4 support now in development — built in the open, for research and
+          education, on Windows, Linux and macOS.
         </p>
-        <div class="rise rise-4 mt-8 flex flex-wrap items-center gap-4">
-        <a
-          href={SITE.repoUrl}
-          class="flex items-center justify-center rounded-full bg-accent px-7 py-[10px] text-sm font-semibold text-accent-fg shadow-[0_8px_24px_color-mix(in_oklab,var(--color-accent)_38%,transparent)] transition-opacity hover:opacity-90"
-          >
-          <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-brand-github"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" /></svg>
-          View on GitHub
-          </a
-        >
-        <a
-          href="https://discord.gg/dYegTwwM8g"
-          class="flex items-center justify-center rounded-full border border-gray-300 bg-white px-7 py-[9px] text-sm font-semibold text-black transition-opacity hover:opacity-90"
-          >
-          <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-brand-discord"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M8 12a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" /><path d="M14 12a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" /><path d="M15.5 17c0 1 1.5 3 2 3c1.5 0 2.833 -1.667 3.5 -3c.667 -1.667 .5 -5.833 -1.5 -11.5c-1.457 -1.015 -3 -1.34 -4.5 -1.5l-.972 1.923a11.913 11.913 0 0 0 -4.053 0l-.975 -1.923c-1.5 .16 -3.043 .485 -4.5 1.5c-2 5.667 -2.167 9.833 -1.5 11.5c.667 1.333 2 3 3.5 3c.5 0 2 -2 2 -3" /><path d="M7 16.5c3.5 1 6.5 1 10 0" /></svg>
-          Join the Community
-        </a
-        >
-        <a
-          href="/downloads"
-          class="rounded-full border border-line bg-surface px-7 py-3 text-sm font-semibold transition-colors hover:border-ink/40"
-          >Download</a
-        >
-          <span class="rounded-full badge badge-menus px-4 py-1.5 text-xs">
-            Early development
-          </span>
+        <div class="rise rise-4 mt-8 flex flex-wrap items-center gap-3">
+          <a href={SITE.repoUrl} class="btn btn-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" /></svg>
+            View on GitHub
+          </a>
+          <a href="/downloads" class="btn btn-secondary">Download</a>
+          <a href="https://discord.gg/dYegTwwM8g" class="btn btn-secondary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 12a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" /><path d="M14 12a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" /><path d="M15.5 17c0 1 1.5 3 2 3c1.5 0 2.833 -1.667 3.5 -3c.667 -1.667 .5 -5.833 -1.5 -11.5c-1.457 -1.015 -3 -1.34 -4.5 -1.5l-.972 1.923a11.913 11.913 0 0 0 -4.053 0l-.975 -1.923c-1.5 .16 -3.043 .485 -4.5 1.5c-2 5.667 -2.167 9.833 -1.5 11.5c.667 1.333 2 3 3.5 3c.5 0 2 -2 2 -3" /><path d="M7 16.5c3.5 1 6.5 1 10 0" /></svg>
+            Community
+          </a>
+          <span class="badge badge-menus status-pill rounded-full px-3.5 py-1.5 text-xs">Early development</span>
         </div>
 
         <!-- Find your game -->
-        <form action="/compatibility" method="get" class="rise rise-4 mt-12 max-w-xl">
-          <label
-            for="home-q"
-            class="font-mono text-[11px] font-medium tracking-[0.22em] text-muted uppercase"
-          >
-            Does your favourite game run?
-          </label>
+        <form action="/compatibility" method="get" role="search" class="rise rise-4 mt-12 max-w-xl">
+          <label for="home-q" class="eyebrow">Does your favourite game run?</label>
           <div class="relative mt-3">
+            <svg class="pointer-events-none absolute top-1/2 left-5 h-4 w-4 -translate-y-1/2 text-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="7" />
+              <path d="m20 20-3.5-3.5" />
+            </svg>
             <input
               id="home-q"
               name="q"
               type="search"
-              placeholder={`Search ${games.length.toLocaleString('en-US')} PS5 titles…`}
-              class="w-full rounded-full border border-line bg-field py-3.5 pr-32 pl-6 text-sm shadow-[0_10px_30px_rgba(14,30,60,0.08)] placeholder:text-muted/70 focus:border-accent focus:ring-2 focus:ring-accent/30 focus:outline-none"
+              placeholder="Search PS5 & PS4 titles…"
+              class="field w-full py-3.5 pr-24 pl-12 shadow-[0_10px_30px_rgba(14,30,60,0.08)]"
             />
             <button
               type="submit"
@@ -95,6 +86,9 @@ const barSegments = STATUSES.filter((s) => stats.counts[s] > 0);
               >Search</button
             >
           </div>
+          <p class="mt-2.5 px-2 text-xs text-muted">
+            {totalCount} titles tracked — {ps5Count} on PS5, {ps4Count} on PS4.
+          </p>
         </form>
       </div>
 
@@ -119,87 +113,65 @@ const barSegments = STATUSES.filter((s) => stats.counts[s] > 0);
 
   <!-- Compatibility right now -->
   <section class="mx-auto mt-24 max-w-6xl px-5">
-    <div class="flex flex-wrap items-end justify-between gap-4">
+    <div class="flex flex-wrap items-end justify-between gap-x-6 gap-y-3">
       <div>
         <h2 class="font-display text-2xl font-bold tracking-tight">Compatibility right now</h2>
-        {
-          stats.tested > 0 ? (
-            <p class="mt-2 text-sm text-muted">
-              <span class="font-semibold text-ink">{stats.tested}</span> of {games.length.toLocaleString('en-US')} tracked titles tested · <span class="font-semibold text-ink">{reachGameplay}</span> reaching gameplay — every report names the exact build.
-            </p>
-          ) : (
-            <p class="mt-2 text-sm text-muted">
-              {games.length.toLocaleString('en-US')} PS5 titles tracked, ready for their first reports.
-            </p>
-          )
-        }
+        {stats.tested > 0 && (
+          <p class="mt-2 text-sm text-muted">
+            <span class="font-semibold text-ink">{stats.tested}</span> of {ps5Count} PS5 titles tested on Windows ·{' '}
+            <span class="font-semibold text-ink">{reachGameplay}</span> reaching gameplay. Every report names the exact build.
+          </p>
+        )}
       </div>
-      <a href="/compatibility" class="text-sm font-semibold text-accent hover:underline"
-        >Browse all games →</a
-      >
+      <a href="/compatibility" class="text-sm font-semibold text-accent hover:underline">Browse all games →</a>
     </div>
 
     {
-      stats.tested > 0 && (
-        <div class="mt-7">
-          <div class="flex h-3 gap-[2px] overflow-hidden rounded-full" role="img" aria-label={`Status distribution across ${stats.tested} tested games`}>
-            {barSegments.map((s) => (
-              <div
-                style={`flex: ${stats.counts[s]}; background: ${STATUS_META[s].barColor};`}
-                title={`${STATUS_META[s].label}: ${stats.counts[s]}`}
-              />
-            ))}
+      stats.tested > 0 ? (
+        <div class="card mt-6 p-6 sm:p-7">
+          <div>
+            <StatusBar
+              counts={stats.counts}
+              label={`Status distribution across ${stats.tested} PS5 games tested on Windows`}
+            />
           </div>
-          <div class="mt-3 flex flex-wrap gap-x-5 gap-y-1.5 text-xs text-muted">
-            {barSegments.map((s) => (
-              <span class="inline-flex items-center gap-1.5">
-                <span class="h-2.5 w-2.5 rounded-full" style={`background: ${STATUS_META[s].barColor};`} />
-                {STATUS_META[s].label} · {stats.counts[s]}
-              </span>
-            ))}
-          </div>
+          <p class="mt-5 text-xs text-muted">
+            Linux, macOS and PS4 results are on the compatibility page.
+          </p>
         </div>
+      ) : (
+        <p class="mt-4 text-sm text-muted">{ps5Count} PS5 titles tracked, ready for their first reports.</p>
       )
     }
 
     {
       latest.length > 0 ? (
         <>
-          <div class="mt-10 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <h3 class="mt-12 font-display text-lg font-bold tracking-tight">Latest reports</h3>
+          <div class="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-5 lg:grid-cols-3">
             {latest.map(({ game, entry }) => (
               <ReportCard game={game} entry={entry} />
             ))}
           </div>
           <p class="mt-6 text-sm text-muted">
             Tested something yourself?{' '}
-            <a href="/compatibility/report" class="text-accent underline">
-              Submit a report
-            </a>{' '}
+            <a href="/compatibility/report" class="text-accent underline underline-offset-4">Submit a report</a>{' '}
             — it takes five minutes.
           </p>
         </>
       ) : (
-        <div class="mt-8 rounded-2xl border border-dashed border-line bg-surface p-10 text-center">
-          <p class="font-display text-lg font-bold">No reports yet — be the first</p>
-          <p class="mx-auto mt-2 max-w-md text-sm text-muted">
-            Every game page is ready to hold a report with the exact build, OS and hardware used.
-            Run a game you own and tell everyone how far it gets.
-          </p>
-          <a
-            href="/compatibility/report"
-            class="mt-6 inline-block rounded-full bg-accent px-6 py-2.5 text-sm font-semibold text-accent-fg transition-opacity hover:opacity-90"
-          >
-            Submit the first report
-          </a>
-        </div>
+        <p class="mt-8 text-sm text-muted">
+          No reports yet.{' '}
+          <a href="/compatibility/report" class="text-accent underline underline-offset-4">Submit the first one</a>.
+        </p>
       )
     }
   </section>
 
   <!-- About + status ladder -->
-  <section class="mx-auto mt-24 grid max-w-6xl gap-14 px-5 md:grid-cols-2">
+  <section class="mx-auto mt-28 grid max-w-6xl gap-12 px-5 md:grid-cols-[1.15fr_1fr] md:gap-16">
     <div class="prose prose-slate dark:prose-invert max-w-none">
-      <h2 class="font-display tracking-tight">About the project</h2>
+      <h2 class="!mt-0 !text-2xl font-display tracking-tight">About the project</h2>
       <p>
         SharpEmu is developed purely for research and educational purposes — we enjoy learning
         about system architecture and reverse engineering. There are no commercial goals.
@@ -215,16 +187,17 @@ const barSegments = STATUSES.filter((s) => stats.counts[s] > 0);
         console and settings alongside. Video output uses Vulkan, and MoltenVK on macOS.
       </p>
       <p>
-        SharpEmu focuses exclusively on the PlayStation 5. For PS4 emulation, check out the
+        SharpEmu started as a PS5-only project, and PS4 support is now in development; PS4 games
+        are tracked in their own list. For a dedicated, mature PS4 emulator, check out the
         excellent <a href="https://shadps4.net">shadPS4</a> project.
       </p>
     </div>
     <div>
       <h2 class="font-display text-2xl font-bold tracking-tight">How games are rated</h2>
-      <ul class="mt-6 space-y-4">
+      <ul class="card mt-6 divide-y divide-line">
         {
           [...STATUSES].reverse().map((s) => (
-            <li class="flex items-center gap-4">
+            <li class="flex items-center gap-4 px-5 py-3.5">
               <span class="w-24 shrink-0">
                 <StatusBadge status={s} />
               </span>
@@ -232,11 +205,11 @@ const barSegments = STATUSES.filter((s) => stats.counts[s] > 0);
             </li>
           ))
         }
-        <li class="flex items-center gap-4">
+        <li class="flex items-center gap-4 px-5 py-3.5">
           <span class="w-24 shrink-0"><StatusBadge status="untested" /></span>
           <span class="text-sm text-muted">
             {STATUS_META.untested.description}{' '}
-            <a href="/compatibility/report" class="text-accent underline">Submit the first report.</a>
+            <a href="/compatibility/report" class="text-accent underline underline-offset-4">Submit the first report.</a>
           </span>
         </li>
       </ul>

@@ -1,0 +1,334 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import ReportCard from './ReportCard.astro';
+import OsTabs from './OsTabs.astro';
+import PageHeader from './PageHeader.astro';
+import StatusBar from './StatusBar.astro';
+import { gamesByPlatform, gameByAnyTitleId } from '../lib/games';
+import {
+  computeStats,
+  DEFAULT_OS,
+  OSES,
+  OS_LABEL,
+  PLATFORMS,
+  PLATFORM_LABEL,
+  STATUS_META,
+  STATUSES,
+  TITLE_ID_PREFIX,
+  platformOf,
+  type Platform,
+} from '../lib/compat';
+
+interface Props {
+  platform: Platform;
+}
+const { platform } = Astro.props;
+
+const gameCount = gamesByPlatform[platform].length.toLocaleString('en-US');
+const consoleName = PLATFORM_LABEL[platform];
+// Only this console's reports; its PS5/PS4 siblings have their own list.
+const compat = (await getCollection('compat')).filter((e) => platformOf(e.data.titleId) === platform);
+// Stats, report cards and the Tested count are per OS; every OS renders as a tab panel.
+const byOs = Object.fromEntries(
+  OSES.map((os) => {
+    const entries = compat.filter((e) => e.data.os === os);
+    return [
+      os,
+      {
+        stats: computeStats(entries.map((e) => e.data.status)),
+        tested: entries
+          .map((entry) => ({ entry, game: gameByAnyTitleId.get(entry.data.titleId)! }))
+          .filter((r) => r.game)
+          .sort((a, b) => b.entry.data.testedDate.getTime() - a.entry.data.testedDate.getTime()),
+      },
+    ];
+  }),
+);
+const clientMeta = Object.fromEntries(
+  Object.entries(STATUS_META).map(([k, v]) => [k, { label: v.label, cls: v.badgeClass }]),
+);
+const panelProps = (os: (typeof OSES)[number]) => ({
+  'data-os-group': 'compat',
+  'data-os-panel': os,
+  hidden: os !== DEFAULT_OS,
+});
+---
+
+<Base title={`${consoleName} game compatibility — SharpEmu`}>
+  <section class="mx-auto max-w-6xl px-5 pt-12">
+    <PageHeader title={`${consoleName} game compatibility`}>
+      {gameCount}{' '}{consoleName} games tracked ·{' '}
+      {
+        OSES.map((os) => (
+          <span {...panelProps(os)}>{byOs[os].stats.tested} tested on {OS_LABEL[os]}</span>
+        ))
+      }{' '}
+      · <a href="/compatibility/report" class="text-accent underline underline-offset-4">submit a report</a>
+    </PageHeader>
+
+    <!-- Controls: console is the primary choice, OS the secondary one. -->
+    <div class="mt-8 flex flex-wrap items-center gap-x-4 gap-y-3">
+      <div>
+        <nav
+          aria-label="Console"
+          data-console-switch
+          class="inline-flex rounded-full border border-line bg-field p-1.5 font-display text-base font-bold"
+        >
+          {
+            PLATFORMS.map((p) => (
+              <a
+                href={p === 'ps5' ? '/compatibility/' : `/compatibility/${p}/`}
+                aria-current={p === platform ? 'page' : undefined}
+                class="rounded-full px-7 py-2 text-muted transition-colors hover:text-ink aria-[current=page]:bg-accent aria-[current=page]:text-accent-fg"
+              >
+                {PLATFORM_LABEL[p]}
+              </a>
+            ))
+          }
+        </nav>
+      </div>
+      <div>
+        <OsTabs group="compat" size="sm" />
+      </div>
+    </div>
+
+    <!-- Status distribution, per OS (only once that OS has reports) -->
+    {
+      OSES.map(
+        (os) =>
+          byOs[os].stats.tested > 0 && (
+            <div class="card mt-7 p-5 sm:p-6" {...panelProps(os)}>
+              <h2 class="mb-4 font-display text-base font-bold tracking-tight">
+                {byOs[os].stats.tested} {consoleName} {byOs[os].stats.tested === 1 ? 'game' : 'games'} tested on{' '}
+                {OS_LABEL[os]}
+              </h2>
+              <StatusBar
+                counts={byOs[os].stats.counts}
+                label={`Status distribution across ${byOs[os].stats.tested} ${consoleName} games tested on ${OS_LABEL[os]}`}
+              />
+            </div>
+          ),
+      )
+    }
+
+    <!-- Tabs -->
+    <div class="mt-10 flex gap-7 border-b border-line" role="tablist" aria-label="Game list">
+      <button
+        id="tab-tested"
+        role="tab"
+        aria-selected="true"
+        aria-controls="panel-tested"
+        class="tab-underline"
+        >Tested <span class="count">{OSES.map((os) => <span {...panelProps(os)}>{byOs[os].stats.tested}</span>)}</span></button
+      >
+      <button
+        id="tab-all"
+        role="tab"
+        aria-selected="false"
+        aria-controls="panel-all"
+        class="tab-underline"
+        >All games <span class="count">{gameCount}</span></button
+      >
+    </div>
+
+    <!-- Tested panel -->
+    <div id="panel-tested" role="tabpanel" aria-labelledby="tab-tested" class="mt-8">
+      {
+        OSES.map((os) => (
+          <div {...panelProps(os)}>
+            {byOs[os].tested.length > 0 ? (
+              <div class="grid gap-4 md:grid-cols-2 md:gap-5">
+                {byOs[os].tested.map(({ game, entry }) => (
+                  <ReportCard game={game} entry={entry} />
+                ))}
+              </div>
+            ) : (
+              <p class="text-muted">
+                No {consoleName} reports on {OS_LABEL[os]} yet{platform === 'ps4' ? ' (PS4 support is still in development)' : ''}.{' '}
+                <a href="/compatibility/report" class="text-accent underline underline-offset-4">Submit one</a> or{' '}
+                <button type="button" data-show-all class="text-accent underline underline-offset-4">
+                  browse all {gameCount} games
+                </button>
+                .
+              </p>
+            )}
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- All games panel -->
+    <div id="panel-all" role="tabpanel" aria-labelledby="tab-all" class="mt-8" hidden>
+      <div class="flex flex-col gap-3 sm:flex-row">
+        <div class="relative flex-1">
+          <svg class="pointer-events-none absolute top-1/2 left-4 h-4 w-4 -translate-y-1/2 text-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="7" />
+            <path d="m20 20-3.5-3.5" />
+          </svg>
+          <input
+            id="q"
+            type="search"
+            aria-label={`Search ${consoleName} games`}
+            placeholder={`Search ${gameCount} games by title or ${TITLE_ID_PREFIX[platform]} id…`}
+            class="field w-full py-3 pr-5 pl-11 shadow-[0_2px_12px_rgba(14,30,60,0.06)]"
+          />
+        </div>
+        <div class="relative">
+          <select id="status" aria-label="Filter by status" class="field w-full appearance-none py-3 pr-11 pl-5 font-medium sm:w-auto">
+            <option value="">All statuses</option>
+            <option value="tested">Any tested</option>
+            {STATUSES.map((s) => <option value={s}>{STATUS_META[s].label}</option>)}
+            <option value="untested">Not tested</option>
+          </select>
+          <svg class="pointer-events-none absolute top-1/2 right-4 h-4 w-4 -translate-y-1/2 text-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m6 9 6 6 6-6" />
+          </svg>
+        </div>
+      </div>
+
+      <p id="count" class="mt-5 text-sm text-muted" aria-live="polite">Loading the game list…</p>
+      <div class="card mt-3 overflow-clip">
+        <table class="w-full text-left text-sm">
+          <thead class="text-xs tracking-wide text-muted uppercase">
+            <tr>
+              <th class="sticky top-14 z-10 border-b border-line bg-paper/90 px-5 py-3 font-semibold backdrop-blur sm:px-6">Title</th>
+              <th class="sticky top-14 z-10 hidden border-b border-line bg-paper/90 px-6 py-3 font-semibold backdrop-blur sm:table-cell">Title ID</th>
+              <th class="sticky top-14 z-10 border-b border-line bg-paper/90 px-5 py-3 text-right font-semibold backdrop-blur sm:px-6 sm:text-left">
+                Status <span id="status-os" class="font-normal normal-case"></span>
+              </th>
+            </tr>
+          </thead>
+          <tbody id="rows">
+            {
+              Array.from({ length: 8 }, (_, i) => (
+                <tr class="border-b border-line last:border-0" aria-hidden="true">
+                  <td class="px-5 py-4 sm:px-6"><div class="skeleton h-4" style={`width:${40 + ((i * 17) % 35)}%`} /></td>
+                  <td class="hidden px-6 py-4 sm:table-cell"><div class="skeleton h-3.5 w-20" /></td>
+                  <td class="px-5 py-4 sm:px-6"><div class="skeleton ml-auto h-5 w-16 !rounded-full sm:ml-0" /></td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <script is:inline define:vars={{ clientMeta, platform, osIds: [...OSES], osLabels: OS_LABEL }}>
+    const MAX_ROWS = 200;
+    const STATUS_ORDER = { playable: 0, ingame: 1, menus: 2, boots: 3, nothing: 4, untested: 5 };
+    const esc = (s) => s.replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
+    const $q = document.getElementById('q');
+    const $status = document.getElementById('status');
+    const $rows = document.getElementById('rows');
+    const $count = document.getElementById('count');
+    const $statusOs = document.getElementById('status-os');
+    const $consoleLinks = document.querySelectorAll('[data-console-switch] a');
+    const tabs = {
+      tested: [document.getElementById('tab-tested'), document.getElementById('panel-tested')],
+      all: [document.getElementById('tab-all'), document.getElementById('panel-all')],
+    };
+    let all = [];
+    // Index into each game's `s` array; kept in sync with the OS tabs (see OsTabs.astro).
+    let osIdx = 0;
+
+    function selectTab(name) {
+      for (const [key, [tab, panel]] of Object.entries(tabs)) {
+        tab.setAttribute('aria-selected', String(key === name));
+        panel.hidden = key !== name;
+      }
+      // Keep ?os= and ?q= so the tab choice survives a reload or a shared link.
+      history.replaceState(null, '', name === 'all' ? '#all' : location.pathname + location.search);
+    }
+    tabs.tested[0].addEventListener('click', () => selectTab('tested'));
+    tabs.all[0].addEventListener('click', () => selectTab('all'));
+
+    function sortAll() {
+      all.sort((a, b) => STATUS_ORDER[a.s[osIdx]] - STATUS_ORDER[b.s[osIdx]] || a.n.localeCompare(b.n));
+    }
+
+    function renderList() {
+      const q = $q.value.trim().toLowerCase();
+      const st = $status.value;
+      const hits = all.filter((g) => {
+        const s = g.s[osIdx];
+        if (st === 'tested' ? s === 'untested' : st && s !== st) return false;
+        return (
+          !q ||
+          g.n.toLowerCase().includes(q) ||
+          g.t.toLowerCase().includes(q) ||
+          g.a.toLowerCase().includes(q)
+        );
+      });
+      $count.textContent =
+        `${hits.length.toLocaleString('en-US')} games` +
+        (hits.length > MAX_ROWS ? ` — showing the first ${MAX_ROWS}; keep typing to narrow down` : '');
+      if (hits.length === 0) {
+        $rows.innerHTML = `<tr><td colspan="3" class="px-6 py-14 text-center">
+          <p class="font-display text-base font-bold">No games match${q ? ` “${esc($q.value.trim())}”` : ''}</p>
+          <p class="mt-1 text-sm text-muted">Try a shorter title, another spelling, or a title ID.</p>
+        </td></tr>`;
+        return;
+      }
+      $rows.innerHTML = hits
+        .slice(0, MAX_ROWS)
+        .map((g) => {
+          const m = clientMeta[g.s[osIdx]] ?? clientMeta.untested;
+          return `<tr class="group border-b border-line transition-colors last:border-0 hover:bg-accent/[0.07]">
+            <td class="px-5 py-3 sm:px-6">${g.p ? `<a class="font-medium transition-colors group-hover:text-accent" href="/game/${g.t}/?os=${osIds[osIdx]}">${esc(g.n)}</a>` : `<span class="font-medium">${esc(g.n)}</span>`}<span class="mt-0.5 block font-mono text-[11px] text-muted sm:hidden">${g.t}</span></td>
+            <td class="hidden px-6 py-3 font-mono text-xs sm:table-cell"><span class="text-muted/60">${g.t.slice(0, 4)}</span><span class="text-muted">${g.t.slice(4)}</span></td>
+            <td class="px-5 py-3 text-right sm:px-6 sm:text-left"><span class="status-pill rounded-full px-2.5 py-0.5 text-[11px] font-semibold ${m.cls}">${m.label}</span></td>
+          </tr>`;
+        })
+        .join('');
+    }
+
+    // The PS5/PS4 switch carries the OS pick and the search term across.
+    function syncConsoleLinks() {
+      const params = new URLSearchParams({ os: osIds[osIdx] });
+      const q = $q.value.trim();
+      if (q) params.set('q', q);
+      $consoleLinks.forEach((a) => (a.href = `${a.pathname}?${params}`));
+    }
+
+    function setOs(os) {
+      const i = osIds.indexOf(os);
+      if (i < 0) return;
+      osIdx = i;
+      $statusOs.textContent = `(${osLabels[os]})`;
+      syncConsoleLinks();
+      sortAll();
+      renderList();
+    }
+    // The OS tabs may already have applied ?os= before this runs, so read the initial pick too.
+    const osTabs = document.querySelector('[data-os-tabs="compat"]');
+    osTabs.addEventListener('os-change', (e) => setOs(e.detail.os));
+    setOs(osTabs.querySelector('[aria-selected="true"]')?.dataset.os ?? osIds[0]);
+
+    fetch(`/games-index/${platform}.json`)
+      .then((r) => r.json())
+      .then((data) => {
+        all = data;
+        sortAll();
+        renderList();
+      })
+      .catch(() => {
+        $count.textContent = 'The game list failed to load — refresh to try again.';
+      });
+    $q.addEventListener('input', () => {
+      syncConsoleLinks();
+      renderList();
+    });
+    document.querySelectorAll('[data-show-all]').forEach((b) => b.addEventListener('click', () => selectTab('all')));
+    $status.addEventListener('change', renderList);
+
+    // Deep links: /compatibility?q=… (from the landing search) and /compatibility#all.
+    const initQ = new URLSearchParams(location.search).get('q');
+    if (initQ) {
+      $q.value = initQ;
+      syncConsoleLinks();
+    }
+    if (initQ || location.hash === '#all') selectTab('all');
+  </script>
+</Base>

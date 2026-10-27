@@ -15,13 +15,13 @@ const fmt = (d: Date) =>
 
 <Base title={`${post.data.title} — SharpEmu`} description={post.data.description}>
   <article class="mx-auto max-w-3xl px-5 pt-12" data-pagefind-body>
-    <p class="font-mono text-xs text-muted">
+    <nav aria-label="Breadcrumb" class="font-mono text-xs text-muted">
       <a href="/news" class="transition-colors hover:text-ink">News</a>
-      <span class="mx-1">/</span>
+      <span class="mx-1.5" aria-hidden="true">/</span>
       {fmt(post.data.date)}
-    </p>
-    <h1 class="mt-4 font-display text-4xl font-extrabold tracking-tight">{post.data.title}</h1>
-    <div class="prose prose-slate dark:prose-invert mt-8 max-w-none">
+    </nav>
+    <h1 class="mt-5 font-display text-4xl font-extrabold tracking-tight text-balance md:text-5xl">{post.data.title}</h1>
+    <div class="prose prose-slate dark:prose-invert mt-8 max-w-none md:prose-lg">
       <Content />
     </div>
   </article>

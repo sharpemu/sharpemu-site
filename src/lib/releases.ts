@@ -1,6 +1,9 @@
-// One renderer for both sides: the build renders this into the page (so the
-// list works without JS and for crawlers), then the browser re-fetches on load
-// so a new GitHub release shows up without waiting for a redeploy.
+// Releases are fetched at build time and rendered to HTML strings, one view per
+// OS: Windows and Linux come from the main repo's releases, macOS from the
+// separate sharpemu-mac repo.
+
+import { SITE } from '../config';
+import type { Os } from './compat';
 
 export type Asset = { name: string; size: number; browser_download_url: string };
 export type Release = {
@@ -13,24 +16,47 @@ export type Release = {
   assets: Asset[];
 };
 
-export const RELEASES_API = 'https://api.github.com/repos/sharpemu/sharpemu/releases?per_page=30';
-const REPO_URL = 'https://github.com/sharpemu/sharpemu';
+const apiUrl = (repoUrl: string) =>
+  `${repoUrl.replace('https://github.com/', 'https://api.github.com/repos/')}/releases?per_page=30`;
 
-/** Versioned releases only — rolling win64-main-* CI builds are linked separately. */
-export function selectReleases(all: Release[], limit = 3): Release[] {
+export const RELEASES_API = apiUrl(SITE.repoUrl);
+export const MAC_RELEASES_API = apiUrl(SITE.macRepoUrl);
+
+/**
+ * Versioned releases only — rolling win64-main-* CI builds are linked separately.
+ * sharpemu-mac hasn't settled on the `v\d` tag convention, so its fetch passes
+ * versionedOnly = false rather than risk hiding real releases.
+ */
+export function selectReleases(all: Release[], limit = 3, versionedOnly = true): Release[] {
   return all
-    .filter((r) => !r.draft && /^v\d/.test(r.tag_name))
+    .filter((r) => !r.draft && (!versionedOnly || /^v\d/.test(r.tag_name)))
     .slice(0, limit)
     // Tags like v0.0.2-beta.2 aren't flagged prerelease upstream; label them anyway.
     .map((r) => ({ ...r, prerelease: r.prerelease || /-(beta|alpha|rc)/i.test(r.tag_name) }));
 }
 
-export async function fetchReleases(token?: string): Promise<Release[]> {
+async function fetchFrom(url: string, token: string | undefined, versionedOnly: boolean) {
   const headers: Record<string, string> = { accept: 'application/vnd.github+json' };
   if (token) headers.authorization = `Bearer ${token}`;
-  const res = await fetch(RELEASES_API, { headers });
+  const res = await fetch(url, { headers });
   if (!res.ok) throw new Error(`releases fetch failed: HTTP ${res.status}`);
-  return selectReleases(await res.json());
+  // Not capped here: renderDownloads limits per OS, after dropping releases with no asset for it.
+  return selectReleases(await res.json(), Infinity, versionedOnly);
+}
+
+/** Windows and Linux builds (sharpemu/sharpemu). */
+export const fetchReleases = (token?: string) => fetchFrom(RELEASES_API, token, true);
+
+/** macOS builds (sharpemu/sharpemu-mac) — empty until that repo publishes a release. */
+export const fetchMacReleases = (token?: string) => fetchFrom(MAC_RELEASES_API, token, false);
+
+/** Which OS an archive is for, from tokens in its name (…-win-x64.zip, …-osx-x64.tar.gz). */
+export function classifyAsset(name: string): Os | null {
+  const tokens = name.toLowerCase().split(/[^a-z0-9]+/);
+  if (tokens.some((t) => /^win(dows)?(32|64)?$/.test(t))) return 'windows';
+  if (tokens.includes('linux')) return 'linux';
+  if (tokens.some((t) => ['osx', 'macos', 'mac', 'darwin'].includes(t))) return 'macos';
+  return null;
 }
 
 const esc = (s: string) => String(s).replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
@@ -72,21 +98,41 @@ function releaseHtml(r: Release, isFirst: boolean): string {
 }
 
 /** Build-from-source card, shown when no release is available to list. */
-function fallbackHtml(): string {
+function fallbackHtml(os: Os): string {
+  const mac = os === 'macos';
+  const repoUrl = mac ? SITE.macRepoUrl : SITE.repoUrl;
+  const dir = repoUrl.split('/').pop();
   return `<div class="rounded-2xl border border-line bg-surface p-7">
     <h2 class="font-display text-xl font-bold tracking-tight">No packaged builds right now</h2>
-    <p class="mt-3 text-sm leading-relaxed text-muted">Check the <a href="${REPO_URL}/releases" class="text-accent underline">releases page on GitHub</a> — or build from source with the .NET SDK:</p>
-    <pre class="mt-5 overflow-x-auto rounded-xl bg-code p-5 font-mono text-[13px] leading-relaxed text-code-fg"><code>git clone ${REPO_URL}.git
-cd sharpemu
+    <p class="mt-3 text-sm leading-relaxed text-muted">Check the <a href="${repoUrl}/releases" class="text-accent underline">releases page on GitHub</a> — or build from source with the .NET SDK:</p>
+    <pre class="mt-5 overflow-x-auto rounded-xl bg-code p-5 font-mono text-[13px] leading-relaxed text-code-fg"><code>git clone ${repoUrl}.git
+cd ${dir}
 dotnet publish</code></pre>
-    <p class="mt-3 text-sm text-muted">Build artifacts land in the <code>artifacts</code> directory.</p>
+    ${mac ? '' : '<p class="mt-3 text-sm text-muted">Build artifacts land in the <code>artifacts</code> directory.</p>'}
   </div>`;
 }
 
-export function renderDownloads(releases: Release[]): string {
-  if (releases.length === 0) return fallbackHtml();
+/**
+ * One OS's view. `releases` must come from that OS's repo (fetchMacReleases for
+ * macOS, fetchReleases otherwise). The main repo still attaches old osx archives,
+ * which never show up because the macOS view doesn't read that repo.
+ */
+export function renderDownloads(releases: Release[], os: Os, limit = 3): string {
+  // sharpemu-mac is macOS-only, so its unclassifiable assets (no "osx" in the name) still count.
+  const forOs = (a: Asset) => {
+    const c = classifyAsset(a.name);
+    return c === os || (os === 'macos' && c === null);
+  };
+  const shown = releases
+    // Releases with no binaries at all keep their "view on GitHub" note; ones that
+    // only ship other OSes' archives are skipped.
+    .map((r) => ({ ...r, assets: r.assets.filter(forOs), hadAssets: r.assets.length > 0 }))
+    .filter((r) => r.assets.length > 0 || !r.hadAssets)
+    .slice(0, limit);
+  if (shown.length === 0) return fallbackHtml(os);
+  const repoUrl = os === 'macos' ? SITE.macRepoUrl : SITE.repoUrl;
   return `<div class="space-y-6">
-    ${releases.map((r, i) => releaseHtml(r, i === 0)).join('')}
-    <p class="text-sm text-muted">Want the newest changes? Rolling development builds are published for every commit — <a href="${REPO_URL}/releases" class="text-accent underline">all releases on GitHub →</a></p>
+    ${shown.map((r, i) => releaseHtml(r, i === 0)).join('')}
+    <p class="text-sm text-muted">Want the newest changes? Rolling development builds are published for every commit — <a href="${repoUrl}/releases" class="text-accent underline">all releases on GitHub →</a></p>
   </div>`;
 }

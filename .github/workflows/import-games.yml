@@ -31,5 +31,5 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add src/data/games.json
+          git add src/data/games.json src/data/ps4-games.json
           git diff --cached --quiet || (git commit -m "data: refresh games database" && git push)

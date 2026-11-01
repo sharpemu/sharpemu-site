@@ -7,8 +7,9 @@ import { SITE } from '../config';
 import { fetchMacReleases, fetchReleases, renderDownloads, type Release } from '../lib/releases';
 
 // Rendered at build time — no client-side GitHub calls, so visitors never hit
-// the API's per-IP rate limit. A release in sharpemu/sharpemu dispatches to
-// this repo (notify-site.yml → deploy.yml), which redeploys within a minute.
+// the API's per-IP rate limit. A release in sharpemu/sharpemu or
+// sharpemu/sharpemu-mac dispatches to this repo (notify-site.yml → deploy.yml),
+// which redeploys within a minute; the daily schedule is the fallback.
 // Windows and Linux ship from sharpemu/sharpemu; macOS from sharpemu/sharpemu-mac.
 async function load(fetcher: (token?: string) => Promise<Release[]>, what: string) {
   try {

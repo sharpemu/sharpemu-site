@@ -89,6 +89,9 @@ function assetHtml(a: Asset, os: Os): string {
   </li>`;
 }
 
+// Shown above the macOS release list. Matches the sharpemu-mac README.
+const MAC_INTRO = `<p class="text-sm leading-relaxed text-muted">The macOS build comes from <a href="${SITE.macRepoUrl}" class="text-accent underline">sharpemu-mac</a>. It renders with a native Metal renderer: PS5 shaders are compiled straight to Metal Shading Language, with no Vulkan or MoltenVK. Guest x86-64 code runs on the host CPU, so the build is <code>osx-x64</code> and runs under Rosetta 2 on Apple silicon.</p>`;
+
 function releaseHtml(r: Release, isFirst: boolean, os: Os): string {
   const badge = r.prerelease
     ? '<span class="rounded-full badge badge-menus px-3 py-0.5 text-xs">Pre-release</span>'
@@ -105,6 +108,7 @@ function releaseHtml(r: Release, isFirst: boolean, os: Os): string {
       ${badge}
       <span class="ml-auto font-mono text-xs text-muted">${esc(fmtDate(r.published_at))}</span>
     </div>
+    ${os === 'macos' ? `<p class="mt-2 text-sm text-muted"><a href="${esc(r.html_url)}" class="text-accent underline">Release notes</a></p>` : ''}
     ${body}
   </div>`;
 }
@@ -152,9 +156,11 @@ export function renderDownloads(releases: Release[], os: Os, limit = 3): string 
     .map((r) => ({ ...r, assets: r.assets.filter(forOs), hadAssets: r.assets.length > 0 }))
     .filter((r) => r.assets.length > 0 || !r.hadAssets)
     .slice(0, limit);
-  if (shown.length === 0) return fallbackHtml(os);
+  const intro = os === 'macos' ? MAC_INTRO : '';
+  if (shown.length === 0) return `<div class="space-y-6">${intro}${fallbackHtml(os)}</div>`;
   const repoUrl = os === 'macos' ? SITE.macRepoUrl : SITE.repoUrl;
   return `<div class="space-y-6">
+    ${intro}
     ${shown.map((r, i) => releaseHtml(r, i === 0, os)).join('')}
     <p class="text-sm text-muted">${os === 'macos' ? '' : 'Want the newest changes? Rolling development builds are published for every commit — '}<a href="${repoUrl}/releases" class="text-accent underline">All releases on GitHub →</a></p>
   </div>`;

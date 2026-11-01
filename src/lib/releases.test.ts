@@ -105,6 +105,19 @@ describe('renderDownloads', () => {
     expect(html).toContain('SharpEmu.app — use this one');
     expect(html).toContain('for command-line use');
   });
+  it('describes the Metal build and links release notes in the macOS view only', () => {
+    const mac = rel({
+      tag_name: 'v0.0.7-pulse',
+      html_url: 'https://github.com/sharpemu/sharpemu-mac/releases/tag/v0.0.7-pulse',
+      assets: [{ name: 'sharpemu-0.0.7-pulse-osx-x64-app.zip', size: 50_000_000, browser_download_url: 'https://x/a.zip' }],
+    });
+    const html = renderDownloads(selectReleases([mac], 3, false), 'macos');
+    expect(html).toContain('Metal');
+    expect(html).toContain('Rosetta 2');
+    expect(html).toContain('Release notes');
+    expect(renderDownloads([], 'macos')).toContain('Rosetta 2');
+    expect(renderDownloads(selectReleases([multi()]), 'windows')).not.toContain('Rosetta');
+  });
   it('lists only the Windows archive in the Windows view', () => {
     const html = renderDownloads(selectReleases([multi()]), 'windows');
     expect(html).toContain('win-x64.zip');

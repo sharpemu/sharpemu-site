@@ -2,8 +2,9 @@ name: Deploy
 on:
   push:
     branches: [main]
-  # Fired by sharpemu/sharpemu when a release is published, so the downloads
-  # page picks it up without waiting for the next commit here.
+  # Fired by sharpemu/sharpemu and sharpemu/sharpemu-mac when a release is
+  # published, so the downloads page picks it up without waiting for the next
+  # commit here.
   repository_dispatch:
     types: [release-published]
   # Safety net: rebuild daily in case a dispatch is ever missed.

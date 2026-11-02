@@ -154202,6 +154202,17 @@
   "noStore": true
  },
  {
+  "conceptId": 10005201,
+  "titleId": "CUSA34013",
+  "allTitleIds": [
+   "CUSA34013"
+  ],
+  "name": "Quartet",
+  "region": null,
+  "enriched": true,
+  "noStore": true
+ },
+ {
   "conceptId": 10005202,
   "titleId": "CUSA34015",
   "allTitleIds": [
@@ -211750,6 +211761,17 @@
   "noStore": true
  },
  {
+  "conceptId": 10010758,
+  "titleId": "CUSA48730",
+  "allTitleIds": [
+   "CUSA48730"
+  ],
+  "name": "DPS IDLE",
+  "region": "UP",
+  "enriched": true,
+  "noStore": true
+ },
+ {
   "conceptId": 10010935,
   "titleId": "CUSA48735",
   "allTitleIds": [
@@ -240268,6 +240290,22 @@
   "noStore": true
  },
  {
+  "conceptId": 10014055,
+  "titleId": "CUSA53321",
+  "allTitleIds": [
+   "CUSA53321"
+  ],
+  "name": "a pet shop after dark",
+  "region": null,
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/2220/c3138e6156b8be04021580ac31c19a11eb3e99ce54b73ae8.png",
+  "publisher": "Viridian Software Limited",
+  "genres": [
+   "Horror",
+   "Graphic Adventure"
+  ],
+  "enriched": true
+ },
+ {
   "conceptId": 10014057,
   "titleId": "CUSA53324",
   "allTitleIds": [
@@ -242513,7 +242551,7 @@
    "CUSA53617"
   ],
   "name": "The Cat in the Hat: Rainy Day Mayhem",
-  "region": null,
+  "region": "HP",
   "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202604/0914/579e58ac88d8f23502cd0bed0dc3c321ec851ca6f69ef777.jpg",
   "publisher": "Outright Games LLC",
   "releaseDate": "2026-10-30T00:00:00Z",
@@ -257299,7 +257337,7 @@
  },
  {
   "conceptId": 10007890,
-  "titleId": "CUSA55839",
+  "titleId": "CUSA55838",
   "allTitleIds": [
    "CUSA55838",
    "CUSA55839"
@@ -270952,7 +270990,7 @@
    "CUSA57729"
   ],
   "name": "Mouthwashing",
-  "region": null,
+  "region": "UP",
   "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202609/2911/db451f2b92791901bd6110093c41bd6c2c2f112206f683f1.jpg",
   "publisher": "INPLERON LTD",
   "releaseDate": "2026-10-29T14:00:00Z",
@@ -275110,6 +275148,21 @@
   "enriched": true
  },
  {
+  "conceptId": 10018412,
+  "titleId": "CUSA58302",
+  "allTitleIds": [
+   "CUSA58302"
+  ],
+  "name": "Ski Jumping World Cup",
+  "region": null,
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/2013/39bd73e7560dd2e4b1e1c9adf9f586245f644034706fd71a.png",
+  "publisher": "FOREVER ENTERTAINMENT S. A.",
+  "genres": [
+   "Sport"
+  ],
+  "enriched": true
+ },
+ {
   "conceptId": 10018420,
   "titleId": "CUSA58316",
   "allTitleIds": [
@@ -277316,7 +277369,7 @@
    "CUSA58653"
   ],
   "name": "Beyond The Evil",
-  "region": null,
+  "region": "UP",
   "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202608/1900/ccd8e20ff58c786dbb378bc5dcc139a48ad31ef9b4ba993b.jpg",
   "publisher": "QUBYTE",
   "releaseDate": "2026-10-31T00:00:00Z",
@@ -279112,7 +279165,7 @@
    "CUSA58962"
   ],
   "name": "The Zibbo Show",
-  "region": null,
+  "region": "EP",
   "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/0109/dda54f734d9fff7f6ca6fb031e98e34a5e446eda6448a126.jpg",
   "publisher": "TESSERA STUDIOS SL",
   "releaseDate": "2026-10-29T11:00:00Z",
@@ -279196,7 +279249,7 @@
    "CUSA58969"
   ],
   "name": "Croc 2 Kingdom of the Gobbos",
-  "region": null,
+  "region": "UB",
   "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202607/2102/29b893a75855b50e890baa830f8a86cb67369f01223bb34e.png",
   "publisher": "Argonaut Games, Inc.",
   "releaseDate": "2026-10-29T14:00:00Z",
@@ -279850,7 +279903,8 @@
   "titleId": "CUSA59067",
   "allTitleIds": [
    "CUSA59067",
-   "CUSA59068"
+   "CUSA59068",
+   "CUSA60355"
   ],
   "name": "Turnip Mountain",
   "region": "UP",
@@ -281515,7 +281569,7 @@
    "CUSA59382"
   ],
   "name": "The Night of the Exorcism",
-  "region": null,
+  "region": "EP",
   "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202609/2219/634bdb2fdb17e68ae6370d1604668f9802c5e894a1987cd8.png",
   "publisher": "Ratalaika Games SL",
   "releaseDate": "2026-10-30T00:00:00Z",
@@ -281831,6 +281885,23 @@
   "noStore": true
  },
  {
+  "conceptId": 10019713,
+  "titleId": "CUSA59453",
+  "allTitleIds": [
+   "CUSA59453"
+  ],
+  "name": "Arcade Archives 2 PREHISTORIC ISLE",
+  "region": "JP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/1901/14fc2a15d0b5800a280cd94c5625e5e93a2c23a49c43b7c3.jpg",
+  "publisher": "HAMSTER CORPORATION",
+  "releaseDate": "2026-10-29T00:00:00Z",
+  "genres": [
+   "Shooter",
+   "Fantasy"
+  ],
+  "enriched": true
+ },
+ {
   "conceptId": 10019716,
   "titleId": "CUSA59454",
   "allTitleIds": [
@@ -281906,6 +281977,17 @@
    "Card Game"
   ],
   "enriched": true
+ },
+ {
+  "conceptId": 10019739,
+  "titleId": "CUSA59467",
+  "allTitleIds": [
+   "CUSA59467"
+  ],
+  "name": "Nubby's Number Factory",
+  "region": "UP",
+  "enriched": true,
+  "noStore": true
  },
  {
   "conceptId": 10019741,
@@ -282107,6 +282189,23 @@
   "enriched": true
  },
  {
+  "conceptId": 10019799,
+  "titleId": "CUSA59505",
+  "allTitleIds": [
+   "CUSA59505",
+   "CUSA59506"
+  ],
+  "name": "TANUKI: Pon's Summer",
+  "region": null,
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202609/2310/412410bc22690cb307eaa962845eb88fc49ea85d098fcfdb.jpg",
+  "publisher": "INPLERON LTD",
+  "releaseDate": "2026-11-10T10:00:00Z",
+  "genres": [
+   "Casual"
+  ],
+  "enriched": true
+ },
+ {
   "conceptId": 10019364,
   "titleId": "CUSA59507",
   "allTitleIds": [
@@ -282255,7 +282354,7 @@
    "CUSA59544"
   ],
   "name": "Unicorn Academy: Island of Magic",
-  "region": null,
+  "region": "EP",
   "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/1911/f931fa60d47807e0ddee42ea637a832ce0d3a8e1a4d84167.jpg",
   "publisher": "MINDSCAPE BV",
   "releaseDate": "2026-11-17T00:00:00Z",
@@ -282301,6 +282400,25 @@
   "region": "UB",
   "enriched": true,
   "noStore": true
+ },
+ {
+  "conceptId": 10019845,
+  "titleId": "CUSA59549",
+  "allTitleIds": [
+   "CUSA59549"
+  ],
+  "name": "Police Chief Simulator",
+  "region": null,
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202605/2511/337328c7db080a20926393cdfe84349f2b65d77fa8e576ba.png",
+  "publisher": "Perfect Circle Team S.A.",
+  "genres": [
+   "Action",
+   "Driving/Racing",
+   "Simulator",
+   "First Person Shooter",
+   "Vehicular Combat"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10019848,
@@ -282474,6 +282592,26 @@
   "genres": [
    "Puzzle",
    "Board Game"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10019901,
+  "titleId": "CUSA59599",
+  "allTitleIds": [
+   "CUSA59599"
+  ],
+  "name": "Mr Sticky's Ragdoll Launch",
+  "region": null,
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/2301/d7190973a11e068428d10d4e52afe5d42a81f5b503d38598.png",
+  "publisher": "Ratalaika Games SL",
+  "releaseDate": "2026-11-13T00:00:00Z",
+  "genres": [
+   "Puzzle",
+   "Casual",
+   "Arcade",
+   "Physics Game",
+   "Physics Game"
   ],
   "enriched": true
  },
@@ -282696,7 +282834,7 @@
    "CUSA59648"
   ],
   "name": "Hatsune Miku Connecting Puzzle TAMAGOTORI Deluxe",
-  "region": null,
+  "region": "JP",
   "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/1507/274588fa5962b83556b38e6221d106cb86971b81ffdd3f91.png",
   "publisher": "KOMODO HAWAII LLC",
   "releaseDate": "2026-10-29T02:00:00Z",
@@ -282942,6 +283080,23 @@
   "noStore": true
  },
  {
+  "conceptId": 10020088,
+  "titleId": "CUSA59689",
+  "allTitleIds": [
+   "CUSA59689"
+  ],
+  "name": "Skautfold: Knight's End",
+  "region": null,
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/2810/2d16264612acd0c6dadc98032a4343218375ab2120ba6eef.png",
+  "publisher": "RED ART GAMES",
+  "releaseDate": "2026-12-17T00:00:00Z",
+  "genres": [
+   "Role Playing Games",
+   "Turn Based Strategy"
+  ],
+  "enriched": true
+ },
+ {
   "conceptId": 10020102,
   "titleId": "CUSA59692",
   "allTitleIds": [
@@ -283094,7 +283249,7 @@
    "CUSA59728"
   ],
   "name": "Mombo Combo Legacy",
-  "region": null,
+  "region": "HP",
   "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202608/0615/264ecc4c6a4b0c96c590655230e7d6454c64cefb25928470.jpg",
   "publisher": "Orube Game Studio LTDA",
   "releaseDate": "2026-12-31T00:00:00Z",
@@ -283305,6 +283460,39 @@
    "Horror"
   ],
   "enriched": true
+ },
+ {
+  "conceptId": 10020195,
+  "titleId": "CUSA59764",
+  "allTitleIds": [
+   "CUSA59764"
+  ],
+  "name": "SUPER YANOMAN COLLECTION",
+  "region": null,
+  "enriched": true,
+  "noStore": true
+ },
+ {
+  "conceptId": 10020196,
+  "titleId": "CUSA59765",
+  "allTitleIds": [
+   "CUSA59765"
+  ],
+  "name": "TRINEA",
+  "region": null,
+  "enriched": true,
+  "noStore": true
+ },
+ {
+  "conceptId": 10020197,
+  "titleId": "CUSA59766",
+  "allTitleIds": [
+   "CUSA59766"
+  ],
+  "name": "SONG MASTER",
+  "region": null,
+  "enriched": true,
+  "noStore": true
  },
  {
   "conceptId": 10020205,
@@ -283905,7 +284093,7 @@
    "CUSA59899"
   ],
   "name": "Asylum",
-  "region": null,
+  "region": "EP",
   "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202607/0712/4ef06601a78264abd6285e8ea15aa811866fea27f3c82ad1.png",
   "publisher": "SOEDESCO PUBLISHING B.V.",
   "releaseDate": "2026-10-30T00:00:00Z",
@@ -284124,6 +284312,27 @@
   "enriched": true
  },
  {
+  "conceptId": 10020465,
+  "titleId": "CUSA59948",
+  "allTitleIds": [
+   "CUSA59948"
+  ],
+  "name": "What Do You Meme?® The Video Game",
+  "region": null,
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202608/1112/e210deae4e3a06106fdf9ebe8c92dcfbb6c7f610535b96b7.png",
+  "publisher": "VISION GAMES PUBLISHING LIMITED",
+  "releaseDate": "2026-11-30T00:00:00Z",
+  "genres": [
+   "Party",
+   "Family",
+   "Casual",
+   "Card Game",
+   "Card Game",
+   "Card Game"
+  ],
+  "enriched": true
+ },
+ {
   "conceptId": 10020352,
   "titleId": "CUSA59950",
   "allTitleIds": [
@@ -284288,6 +284497,24 @@
   "enriched": true
  },
  {
+  "conceptId": 10020649,
+  "titleId": "CUSA59982",
+  "allTitleIds": [
+   "CUSA59982"
+  ],
+  "name": "QUTAS67 - Qubic Ultimate Tap Adventure Simulator 2067",
+  "region": null,
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/2613/82b22c18ab3cef76f36223080df01a130c0d1c59f4e21e1f.jpg",
+  "publisher": "QUBICGAMES SP. Z O.O.",
+  "releaseDate": "2026-11-13T00:00:00Z",
+  "genres": [
+   "Simulation",
+   "Casual",
+   "Arcade"
+  ],
+  "enriched": true
+ },
+ {
   "conceptId": 10020648,
   "titleId": "CUSA59984",
   "allTitleIds": [
@@ -284343,7 +284570,8 @@
   "conceptId": 10020684,
   "titleId": "CUSA59991",
   "allTitleIds": [
-   "CUSA59991"
+   "CUSA59991",
+   "CUSA60332"
   ],
   "name": "The Smiling Flesh",
   "region": null,
@@ -284458,6 +284686,23 @@
   "genres": [
    "Action",
    "2D Fighting"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10020634,
+  "titleId": "CUSA60030",
+  "allTitleIds": [
+   "CUSA60030"
+  ],
+  "name": "Raider Kid and the Ruby Chest",
+  "region": null,
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202609/3015/bb4118f5ee3f8beb19ca13646d8090f8b51e23b396fe27ee.png",
+  "publisher": "FINITE REFLECTION STUDIOS, LLC",
+  "releaseDate": "2026-12-08T14:00:00Z",
+  "genres": [
+   "Adventure",
+   "Fantasy"
   ],
   "enriched": true
  },
@@ -284586,7 +284831,7 @@
    "CUSA60047"
   ],
   "name": "Whispers Within - Halloween Terror",
-  "region": null,
+  "region": "JB",
   "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202609/1006/9faa0c9fa2568bedbeb2f1059907444e125588561b1ffa56.png",
   "publisher": "Orca Games Pty Ltd",
   "releaseDate": "2026-09-30T00:00:00Z",
@@ -284620,7 +284865,7 @@
    "CUSA60056"
   ],
   "name": "Deadly Stakes",
-  "region": null,
+  "region": "EB",
   "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202609/0311/461aad519c989b50cd2f0bd5c635ac572e553f46ed5b964f.jpg",
   "publisher": "OWN IT SOLUTIONS SA",
   "releaseDate": "2026-12-31T00:00:00Z",
@@ -285106,6 +285351,23 @@
   "enriched": true
  },
  {
+  "conceptId": 10021070,
+  "titleId": "CUSA60147",
+  "allTitleIds": [
+   "CUSA60147"
+  ],
+  "name": "Spooker",
+  "region": null,
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/2011/17f296fb6a90bc2acdbc617bc50c9549515af3cba66d4d16.png",
+  "publisher": "Untold Tales S.A.",
+  "genres": [
+   "Role Playing Games",
+   "Horror",
+   "Tactical"
+  ],
+  "enriched": true
+ },
+ {
   "conceptId": 10020984,
   "titleId": "CUSA60152",
   "allTitleIds": [
@@ -285138,6 +285400,22 @@
    "Fantasy",
    "Mystery",
    "Mystery"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10021088,
+  "titleId": "CUSA60154",
+  "allTitleIds": [
+   "CUSA60154"
+  ],
+  "name": "Alex the Rabbit",
+  "region": null,
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/0216/5413f24d90f50f4ce7043bdaab1fc07f49b63e989379b98f.png",
+  "publisher": "WENDELL JANIO ANDRADE BEZERRA DESENVOLVIMENTO DE SOFTWARE LTDA",
+  "genres": [
+   "Adventure",
+   "Platformer"
   ],
   "enriched": true
  },
@@ -285198,6 +285476,25 @@
   "genres": [
    "Horror",
    "Action"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10021086,
+  "titleId": "CUSA60172",
+  "allTitleIds": [
+   "CUSA60172",
+   "CUSA60173"
+  ],
+  "name": "Bunker Tidy Up",
+  "region": null,
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/2612/4fbc7a1c0d219f61a0db7ba88d4e177aca417e4b1f2815b7.jpg",
+  "publisher": "PlayWay plc",
+  "releaseDate": "2026-11-27T15:00:00Z",
+  "genres": [
+   "Simulator",
+   "Puzzle",
+   "Casual"
   ],
   "enriched": true
  },
@@ -285392,7 +285689,7 @@
    "CUSA60207"
   ],
   "name": "Needle in a Haystack",
-  "region": null,
+  "region": "UB",
   "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/1410/8ccaf99d4a55ee728a9def8253150cfb17aabe6a62bc0fa1.png",
   "publisher": "Kanuni games oyun YAZILIM VE Pazarlama Ticaret limited Sirketi",
   "releaseDate": "2026-10-29T00:00:00Z",
@@ -285424,6 +285721,22 @@
   "enriched": true
  },
  {
+  "conceptId": 10021234,
+  "titleId": "CUSA60213",
+  "allTitleIds": [
+   "CUSA60213"
+  ],
+  "name": "Super Astro Cat PS4 & PS5",
+  "region": null,
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/2814/0dbae0c67a470a68633a0413993566dee7c96544abd09206.png",
+  "publisher": "Leonardo Prado Cosenza trading as Synnergy Circle Games",
+  "genres": [
+   "Action",
+   "Platformer"
+  ],
+  "enriched": true
+ },
+ {
   "conceptId": 10021237,
   "titleId": "CUSA60215",
   "allTitleIds": [
@@ -285447,7 +285760,7 @@
    "CUSA60221"
   ],
   "name": "Wreck the World",
-  "region": null,
+  "region": "UB",
   "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/1717/843d1c5f5e66e669623b72a251741d75f8e553a4b5f7371d.png",
   "publisher": "Booster Box Ltd",
   "releaseDate": "2026-11-01T00:00:00Z",
@@ -285478,7 +285791,7 @@
    "CUSA60269"
   ],
   "name": "Kitties Solitaire",
-  "region": null,
+  "region": "UP",
   "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/2109/cc07dbc3b5b93a85d0e99649282095fc1351bb9f9fc75bf7.jpg",
   "publisher": "Benoit Varasse trading as Pix Arts",
   "releaseDate": "2026-10-30T00:00:00Z",
@@ -285597,6 +285910,54 @@
   "genres": [
    "Simulator",
    "Puzzle"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10021073,
+  "titleId": "CUSA60309",
+  "allTitleIds": [
+   "CUSA60309"
+  ],
+  "name": "Good President Simulator",
+  "region": null,
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/2812/122a22d4b09d023a9edb1318c0eeff06f31dd6d3a0c554c7.png",
+  "publisher": "Pigeon Games S.L.",
+  "genres": [
+   "Simulator",
+   "Strategy"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10021352,
+  "titleId": "CUSA60311",
+  "allTitleIds": [
+   "CUSA60311"
+  ],
+  "name": "Checkers MASTER",
+  "region": null,
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/2909/d734af81d0598ad5bed182ee36e4e6214ace89d03f5cd525.jpg",
+  "publisher": "Benoit Varasse trading as Pix Arts",
+  "releaseDate": "2026-11-06T00:00:00Z",
+  "genres": [
+   "Brain Training",
+   "Board Game"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10021287,
+  "titleId": "CUSA60314",
+  "allTitleIds": [
+   "CUSA60314"
+  ],
+  "name": "One Button Arcade",
+  "region": null,
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/1820/543945c9949a3924d9645d8888878a056694eeb30ad87567.png",
+  "publisher": "Booster Box Ltd",
+  "genres": [
+   "Arcade"
   ],
   "enriched": true
  }

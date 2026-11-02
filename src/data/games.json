@@ -64030,6 +64030,23 @@
   "enriched": true
  },
  {
+  "conceptId": 10009012,
+  "titleId": "PPSA18023",
+  "allTitleIds": [
+   "PPSA18023"
+  ],
+  "name": "Titan Quest II",
+  "region": "EP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202308/0412/5a825a5d01d67f82329a868e9583f6aa20a8698946e2018a.jpg",
+  "publisher": "THQ NORDIC GMBH",
+  "releaseDate": "2027-01-19T14:00:00Z",
+  "genres": [
+   "Role Playing Games",
+   "Dungeon Crawler"
+  ],
+  "enriched": true
+ },
+ {
   "conceptId": 10009024,
   "titleId": "PPSA18025",
   "allTitleIds": [
@@ -96058,6 +96075,25 @@
   "enriched": true
  },
  {
+  "conceptId": 10007890,
+  "titleId": "PPSA25386",
+  "allTitleIds": [
+   "PPSA25386",
+   "PPSA29658"
+  ],
+  "name": "SULFUR",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202507/0712/4e1552c167fd8b1e92755e5406b388065b74cd49510ea8fe.jpg",
+  "publisher": "Perfect Random AB",
+  "genres": [
+   "Adventure",
+   "Action",
+   "First Person Shooter",
+   "First Person Shooter"
+  ],
+  "enriched": true
+ },
+ {
   "conceptId": 10012171,
   "titleId": "PPSA25387",
   "allTitleIds": [
@@ -107184,6 +107220,23 @@
   "noStore": true
  },
  {
+  "conceptId": 10013468,
+  "titleId": "PPSA27543",
+  "allTitleIds": [
+   "PPSA27543"
+  ],
+  "name": "Hunter's Moon",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202608/1413/9ede1b5ad05ccdc6c6cd3c7360a9e0f0ea0f3078d2c43b76.png",
+  "publisher": "Twin Swans Limited",
+  "releaseDate": "2026-10-26T00:00:00Z",
+  "genres": [
+   "Horror",
+   "Stealth"
+  ],
+  "enriched": true
+ },
+ {
   "conceptId": 10013474,
   "titleId": "PPSA27545",
   "allTitleIds": [
@@ -114194,6 +114247,23 @@
   "noStore": true
  },
  {
+  "conceptId": 10013983,
+  "titleId": "PPSA28673",
+  "allTitleIds": [
+   "PPSA28673"
+  ],
+  "name": "The Cat in the Hat: Rainy Day Mayhem",
+  "region": "HP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202604/0914/579e58ac88d8f23502cd0bed0dc3c321ec851ca6f69ef777.jpg",
+  "publisher": "Outright Games LLC",
+  "releaseDate": "2026-10-30T00:00:00Z",
+  "genres": [
+   "Party",
+   "Children's"
+  ],
+  "enriched": true
+ },
+ {
   "conceptId": 10014310,
   "titleId": "PPSA28674",
   "allTitleIds": [
@@ -115423,7 +115493,8 @@
   "titleId": "PPSA28892",
   "allTitleIds": [
    "PPSA28892",
-   "PPSA37155"
+   "PPSA37155",
+   "PPSA37427"
   ],
   "name": "The Slormancer",
   "region": "EB",
@@ -119285,25 +119356,6 @@
   "enriched": true
  },
  {
-  "conceptId": 10007890,
-  "titleId": "PPSA29658",
-  "allTitleIds": [
-   "PPSA25386",
-   "PPSA29658"
-  ],
-  "name": "SULFUR",
-  "region": "EP",
-  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202507/0712/4e1552c167fd8b1e92755e5406b388065b74cd49510ea8fe.jpg",
-  "publisher": "Perfect Random AB",
-  "genres": [
-   "Adventure",
-   "Action",
-   "First Person Shooter",
-   "First Person Shooter"
-  ],
-  "enriched": true
- },
- {
   "conceptId": 10014858,
   "titleId": "PPSA29661",
   "allTitleIds": [
@@ -120519,6 +120571,25 @@
   "releaseDate": "2025-10-28T16:00:00Z",
   "genres": [
    "Unique"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10015034,
+  "titleId": "PPSA29903",
+  "allTitleIds": [
+   "PPSA29903"
+  ],
+  "name": "White Box Quiz",
+  "region": "EP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/0211/ad84558fe8fec96fd2a5f20e19008e1b7f7d29485daefcc4.png",
+  "publisher": "Joindots GmbH",
+  "releaseDate": "2026-10-29T15:00:00Z",
+  "genres": [
+   "Family",
+   "Casual",
+   "Game Show",
+   "Trivia/Quiz"
   ],
   "enriched": true
  },
@@ -122856,6 +122927,23 @@
   "enriched": true
  },
  {
+  "conceptId": 10015278,
+  "titleId": "PPSA30369",
+  "allTitleIds": [
+   "PPSA30369"
+  ],
+  "name": "Joe & Mac Retro Collection",
+  "region": "EP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202608/2410/f3c243638ed247bbb612489ff95dcd28f0f57121d3bbc37e.png",
+  "publisher": "RED ART GAMES",
+  "releaseDate": "2026-10-29T00:00:00Z",
+  "genres": [
+   "Action",
+   "Platformer"
+  ],
+  "enriched": true
+ },
+ {
   "conceptId": 10015281,
   "titleId": "PPSA30371",
   "allTitleIds": [
@@ -125175,6 +125263,23 @@
    "Simulation",
    "Role Playing Games",
    "Fantasy"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10015518,
+  "titleId": "PPSA30785",
+  "allTitleIds": [
+   "PPSA30785"
+  ],
+  "name": "HYPERVIOLENT",
+  "region": "EP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202609/1112/27c83b5510a3773f544b21ef64c6fc3fd84973dd8e160700.jpg",
+  "publisher": "Fulqrum Publishing Ltd.",
+  "releaseDate": "2026-10-29T09:00:00Z",
+  "genres": [
+   "Action",
+   "First Person Shooter"
   ],
   "enriched": true
  },
@@ -129719,26 +129824,6 @@
   "releaseDate": "2025-11-06T00:00:00Z",
   "genres": [
    "Shooter"
-  ],
-  "enriched": true
- },
- {
-  "conceptId": 10015979,
-  "titleId": "PPSA31590",
-  "allTitleIds": [
-   "PPSA31590",
-   "PPSA35669",
-   "PPSA38275",
-   "PPSA38493"
-  ],
-  "name": "Village in the Shade",
-  "region": "JP",
-  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202603/2513/75a06b05fc345197c29d879260be3c66314723cfd1272ce8.png",
-  "publisher": "NIS America",
-  "releaseDate": "2026-10-27T13:00:00Z",
-  "genres": [
-   "Simulation",
-   "Adventure"
   ],
   "enriched": true
  },
@@ -137309,6 +137394,27 @@
   "enriched": true
  },
  {
+  "conceptId": 10016531,
+  "titleId": "PPSA33101",
+  "allTitleIds": [
+   "PPSA33101"
+  ],
+  "name": "SimsalaGrimm – The Chaos Crystal",
+  "region": "EP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/0514/67f0f321f843ed265ae6049417477d34711ee51c98258535.jpg",
+  "publisher": "Markt+Technik Verlag GmbH",
+  "releaseDate": "2026-10-29T00:00:00Z",
+  "genres": [
+   "Puzzle",
+   "Family",
+   "Casual",
+   "Children's",
+   "Children's",
+   "Children's"
+  ],
+  "enriched": true
+ },
+ {
   "conceptId": 10016850,
   "titleId": "PPSA33102",
   "allTitleIds": [
@@ -143718,6 +143824,23 @@
   "enriched": true
  },
  {
+  "conceptId": 10017585,
+  "titleId": "PPSA34422",
+  "allTitleIds": [
+   "PPSA34422"
+  ],
+  "name": "Train Yard Builder",
+  "region": "EP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202510/3014/5aceb2a0e8c898cbd9dbb222a9b801ce71d925572cb454ff.jpg",
+  "publisher": "ULTIMATE GAMES",
+  "releaseDate": "2026-10-29T15:00:00Z",
+  "genres": [
+   "Simulator",
+   "Casual"
+  ],
+  "enriched": true
+ },
+ {
   "conceptId": 10017596,
   "titleId": "PPSA34436",
   "allTitleIds": [
@@ -144677,24 +144800,6 @@
   "enriched": true
  },
  {
-  "conceptId": 10017620,
-  "titleId": "PPSA34579",
-  "allTitleIds": [
-   "PPSA34579",
-   "PPSA39223"
-  ],
-  "name": "Phantom Blade Zero",
-  "region": "UB",
-  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202607/2810/2153ee57f7955802d94a6722418315637e8fba8f69eaf064.png",
-  "publisher": "S-GAME Publishing",
-  "releaseDate": "2026-10-29T02:00:00Z",
-  "genres": [
-   "Action",
-   "Combat"
-  ],
-  "enriched": true
- },
- {
   "conceptId": 10017710,
   "titleId": "PPSA34581",
   "allTitleIds": [
@@ -144788,6 +144893,24 @@
   "publisher": "Samustai LTD",
   "genres": [
    "Real Time Strategy"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10015959,
+  "titleId": "PPSA34597",
+  "allTitleIds": [
+   "PPSA34597"
+  ],
+  "name": "Love: Fall in Death",
+  "region": "UB",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202608/1009/0880e3df4f87137f3b8860bcc4551274ee82f7e081c502e1.png",
+  "publisher": "SNR INTERACTIVE OYUN FILM YAPIMCILIK A.S",
+  "releaseDate": "2026-10-29T14:00:00Z",
+  "genres": [
+   "Adventure",
+   "Casual",
+   "Fantasy"
   ],
   "enriched": true
  },
@@ -146004,6 +146127,23 @@
   "noStore": true
  },
  {
+  "conceptId": 10014081,
+  "titleId": "PPSA34836",
+  "allTitleIds": [
+   "PPSA34836"
+  ],
+  "name": "Mouthwashing",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202609/2911/db451f2b92791901bd6110093c41bd6c2c2f112206f683f1.jpg",
+  "publisher": "INPLERON LTD",
+  "releaseDate": "2026-10-29T14:00:00Z",
+  "genres": [
+   "Horror",
+   "Mystery"
+  ],
+  "enriched": true
+ },
+ {
   "conceptId": 10017851,
   "titleId": "PPSA34841",
   "allTitleIds": [
@@ -146355,7 +146495,9 @@
   "titleId": "PPSA34905",
   "allTitleIds": [
    "PPSA34905",
-   "PPSA36992"
+   "PPSA36992",
+   "PPSA39923",
+   "PPSA40017"
   ],
   "name": "亰都ザナドゥ -桜花幻舞-",
   "region": "JP",
@@ -147609,6 +147751,23 @@
   "enriched": true
  },
  {
+  "conceptId": 10018028,
+  "titleId": "PPSA35132",
+  "allTitleIds": [
+   "PPSA35132",
+   "PPSA39615"
+  ],
+  "name": "The Séance of Blake Manor",
+  "region": "EP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202608/1907/2c6841eef889ad17e2417cb46d93d3d50ca58fdfe0386c31.jpg",
+  "publisher": "Raw Fury AB",
+  "releaseDate": "2026-10-27T15:00:00Z",
+  "genres": [
+   "Puzzle"
+  ],
+  "enriched": true
+ },
+ {
   "conceptId": 10018029,
   "titleId": "PPSA35133",
   "allTitleIds": [
@@ -147949,6 +148108,23 @@
    "Strategy",
    "Simulation",
    "Development"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10018073,
+  "titleId": "PPSA35183",
+  "allTitleIds": [
+   "PPSA35183"
+  ],
+  "name": "RV There Yet?",
+  "region": "JB",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/1210/ea990ac68a235a259ff5a4d9861be852c87deb2c38e346e0.png",
+  "publisher": "Nuggets Entertainment AB",
+  "releaseDate": "2026-10-29T14:00:00Z",
+  "genres": [
+   "Casual",
+   "Physics Game"
   ],
   "enriched": true
  },
@@ -148483,6 +148659,25 @@
   "enriched": true
  },
  {
+  "conceptId": 10017913,
+  "titleId": "PPSA35338",
+  "allTitleIds": [
+   "PPSA35338"
+  ],
+  "name": "Croc 2 Kingdom of the Gobbos",
+  "region": "UB",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202607/2102/29b893a75855b50e890baa830f8a86cb67369f01223bb34e.png",
+  "publisher": "Argonaut Games, Inc.",
+  "releaseDate": "2026-10-29T14:00:00Z",
+  "genres": [
+   "Family",
+   "Adventure",
+   "Platformer",
+   "Platformer"
+  ],
+  "enriched": true
+ },
+ {
   "conceptId": 10018151,
   "titleId": "PPSA35339",
   "allTitleIds": [
@@ -148694,6 +148889,26 @@
   "releaseDate": "2022-10-28T00:00:00Z",
   "genres": [
    "Action"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10018080,
+  "titleId": "PPSA35385",
+  "allTitleIds": [
+   "PPSA35385"
+  ],
+  "name": "Ayasa: Shadows of Silence",
+  "region": "UB",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202512/2914/e04817b6a2f0f8877db29a5cfd3b971627e30af01cf32ffb.jpg",
+  "publisher": "Aya Games Inc.",
+  "genres": [
+   "Puzzle",
+   "Horror",
+   "Adventure",
+   "Platformer",
+   "Platformer",
+   "Platformer"
   ],
   "enriched": true
  },
@@ -151496,6 +151711,38 @@
   "enriched": true
  },
  {
+  "conceptId": 10018438,
+  "titleId": "PPSA35949",
+  "allTitleIds": [
+   "PPSA35949"
+  ],
+  "name": "Paths of Fight: Samurai",
+  "region": "EB",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202607/1320/76583a80d9950db37997487edfbd40475efe343f55fc4e2b.png",
+  "publisher": "CAVYLABS LTDA",
+  "genres": [
+   "Puzzle"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10018536,
+  "titleId": "PPSA35951",
+  "allTitleIds": [
+   "PPSA35951"
+  ],
+  "name": "Dominoes Colors",
+  "region": "UB",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202604/0620/b824feace6f407f30986ed8e49fb3c9fe86964328f5ffe89.png",
+  "publisher": "CAVYLABS LTDA",
+  "releaseDate": "2026-12-31T00:00:00Z",
+  "genres": [
+   "Puzzle",
+   "Board Game"
+  ],
+  "enriched": true
+ },
+ {
   "conceptId": 10018516,
   "titleId": "PPSA35953",
   "allTitleIds": [
@@ -151807,6 +152054,25 @@
   "region": "UP",
   "enriched": true,
   "noStore": true
+ },
+ {
+  "conceptId": 10018448,
+  "titleId": "PPSA36015",
+  "allTitleIds": [
+   "PPSA36015",
+   "PPSA39425",
+   "PPSA39736"
+  ],
+  "name": "Remothered: Red Nun's Legacy",
+  "region": "EP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202602/2414/de2e5641fda9680d459dd86adac160820d02d2f2268c2d85.png",
+  "publisher": "STORMIND GAMES",
+  "releaseDate": "2026-10-27T14:00:00Z",
+  "genres": [
+   "Horror",
+   "Stealth"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10018565,
@@ -153557,6 +153823,23 @@
   "noStore": true
  },
  {
+  "conceptId": 10014312,
+  "titleId": "PPSA36419",
+  "allTitleIds": [
+   "PPSA36419"
+  ],
+  "name": "Beyond The Evil",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202608/1900/ccd8e20ff58c786dbb378bc5dcc139a48ad31ef9b4ba993b.jpg",
+  "publisher": "QUBYTE",
+  "releaseDate": "2026-10-31T00:00:00Z",
+  "genres": [
+   "Horror",
+   "Graphic Adventure"
+  ],
+  "enriched": true
+ },
+ {
   "conceptId": 10018815,
   "titleId": "PPSA36424",
   "allTitleIds": [
@@ -154362,7 +154645,12 @@
   "titleId": "PPSA36591",
   "allTitleIds": [
    "PPSA36591",
-   "PPSA38858"
+   "PPSA38230",
+   "PPSA38231",
+   "PPSA38858",
+   "PPSA39001",
+   "PPSA39003",
+   "PPSA39005"
   ],
   "name": "STEINS;GATE RE:BOOT",
   "region": "UP",
@@ -154600,6 +154888,24 @@
    "Brain Training",
    "Trivia/Quiz",
    "Trivia/Quiz"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10018955,
+  "titleId": "PPSA36665",
+  "allTitleIds": [
+   "PPSA36665"
+  ],
+  "name": "Fangtopia",
+  "region": "EP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202607/0811/d2283fb29aa5e1dd2f589b5a936ec7e55e970fd5ce39a758.png",
+  "publisher": "Secret Mode Limited",
+  "releaseDate": "2026-10-26T18:00:00Z",
+  "genres": [
+   "Strategy",
+   "Puzzle",
+   "Casual"
   ],
   "enriched": true
  },
@@ -155304,6 +155610,28 @@
   "enriched": true
  },
  {
+  "conceptId": 10015979,
+  "titleId": "PPSA36841",
+  "allTitleIds": [
+   "PPSA31590",
+   "PPSA35669",
+   "PPSA36841",
+   "PPSA38275",
+   "PPSA38493",
+   "PPSA38934"
+  ],
+  "name": "Village in the Shade",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202603/2513/75a06b05fc345197c29d879260be3c66314723cfd1272ce8.png",
+  "publisher": "NIS America",
+  "releaseDate": "2026-10-27T13:00:00Z",
+  "genres": [
+   "Simulation",
+   "Adventure"
+  ],
+  "enriched": true
+ },
+ {
   "conceptId": 10019043,
   "titleId": "PPSA36842",
   "allTitleIds": [
@@ -155543,6 +155871,22 @@
   "enriched": true
  },
  {
+  "conceptId": 10019065,
+  "titleId": "PPSA36899",
+  "allTitleIds": [
+   "PPSA36899"
+  ],
+  "name": "Curse of Resthaven",
+  "region": "HB",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202606/0519/94d2636b3cc26cbc674db130ae838aba50a0945c2c55aea0.png",
+  "publisher": "Digital Bandidos LLC",
+  "genres": [
+   "Adventure",
+   "Mystery"
+  ],
+  "enriched": true
+ },
+ {
   "conceptId": 10019067,
   "titleId": "PPSA36900",
   "allTitleIds": [
@@ -155755,7 +156099,11 @@
    "PPSA36936",
    "PPSA36937",
    "PPSA36938",
+   "PPSA36979",
+   "PPSA36980",
+   "PPSA36981",
    "PPSA37954",
+   "PPSA37955",
    "PPSA38737",
    "PPSA38848",
    "PPSA38849"
@@ -156052,6 +156400,26 @@
   "region": "UB",
   "enriched": true,
   "noStore": true
+ },
+ {
+  "conceptId": 10019122,
+  "titleId": "PPSA37023",
+  "allTitleIds": [
+   "PPSA37023",
+   "PPSA38476"
+  ],
+  "name": "The Zibbo Show",
+  "region": "EP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/0109/dda54f734d9fff7f6ca6fb031e98e34a5e446eda6448a126.jpg",
+  "publisher": "TESSERA STUDIOS SL",
+  "releaseDate": "2026-10-29T11:00:00Z",
+  "genres": [
+   "Casual",
+   "Unique",
+   "Card Game",
+   "Turn Based Strategy"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10019129,
@@ -156663,6 +157031,23 @@
   "enriched": true
  },
  {
+  "conceptId": 10019212,
+  "titleId": "PPSA37162",
+  "allTitleIds": [
+   "PPSA37162"
+  ],
+  "name": "Planted!",
+  "region": "UB",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202604/0815/0fcc82232a2a974b23780e020f0a315619e5e87e4b508c53.png",
+  "publisher": "Curveball Leisure Ltd",
+  "releaseDate": "2026-10-29T00:00:00Z",
+  "genres": [
+   "Arcade",
+   "Action"
+  ],
+  "enriched": true
+ },
+ {
   "conceptId": 10019193,
   "titleId": "PPSA37174",
   "allTitleIds": [
@@ -157014,6 +157399,25 @@
   "genres": [
    "Action",
    "Beat 'Em Up"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10018232,
+  "titleId": "PPSA37266",
+  "allTitleIds": [
+   "PPSA37266"
+  ],
+  "name": "The Wolf Among Us Remastered",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202605/2713/bec1ed88b804fec9887f9d15a853d8c2bf2628d84c3819b2.png",
+  "publisher": "Telltale",
+  "releaseDate": "2026-10-31T00:00:00Z",
+  "genres": [
+   "Role Playing Games",
+   "Graphic Adventure",
+   "Text Adventure",
+   "Text Adventure"
   ],
   "enriched": true
  },
@@ -157537,6 +157941,23 @@
   "noStore": true
  },
  {
+  "conceptId": 10016738,
+  "titleId": "PPSA37431",
+  "allTitleIds": [
+   "PPSA37431"
+  ],
+  "name": "Quite My Tempo",
+  "region": "HB",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202608/2904/25f3ae8522909035eda0c24d6e018c0d17190f55aae20571.png",
+  "publisher": "Marek Stoj trading as ImmSoft Marek Stoj",
+  "genres": [
+   "Music/Rhythm",
+   "Fitness",
+   "Casual"
+  ],
+  "enriched": true
+ },
+ {
   "conceptId": 10018405,
   "titleId": "PPSA37433",
   "allTitleIds": [
@@ -157834,6 +158255,22 @@
   "noStore": true
  },
  {
+  "conceptId": 10018482,
+  "titleId": "PPSA37485",
+  "allTitleIds": [
+   "PPSA37485"
+  ],
+  "name": "RACCOIN: Chaos Max Edition",
+  "region": "JP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202609/0314/9db3bfedd829aab78413d65e3eaa4b7cca407ed7cd016743.jpg",
+  "publisher": "Playstack Limited",
+  "releaseDate": "2026-11-10T14:00:00Z",
+  "genres": [
+   "Strategy"
+  ],
+  "enriched": true
+ },
+ {
   "conceptId": 10011815,
   "titleId": "PPSA37486",
   "allTitleIds": [
@@ -157935,6 +158372,25 @@
   "releaseDate": "2020-11-18T00:00:00Z",
   "genres": [
    "Role Playing Games"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10019427,
+  "titleId": "PPSA37524",
+  "allTitleIds": [
+   "PPSA37524"
+  ],
+  "name": "Asylum",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202607/0712/4ef06601a78264abd6285e8ea15aa811866fea27f3c82ad1.png",
+  "publisher": "SOEDESCO PUBLISHING B.V.",
+  "releaseDate": "2026-10-30T00:00:00Z",
+  "genres": [
+   "Horror",
+   "Adventure",
+   "Mystery",
+   "Mystery"
   ],
   "enriched": true
  },
@@ -158574,6 +159030,22 @@
    "Horror",
    "Adventure",
    "Action"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10019531,
+  "titleId": "PPSA37687",
+  "allTitleIds": [
+   "PPSA37687"
+  ],
+  "name": "Coloratura",
+  "region": "JB",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/2909/b34ca63e0c59d3166704d3a4789407cfe1c7f05dfea9ea7f.jpg",
+  "publisher": "PdPartid@games",
+  "genres": [
+   "Educational",
+   "Art Experimental"
   ],
   "enriched": true
  },
@@ -159315,6 +159787,24 @@
   "enriched": true
  },
  {
+  "conceptId": 10019648,
+  "titleId": "PPSA37876",
+  "allTitleIds": [
+   "PPSA37876"
+  ],
+  "name": "The Night of the Exorcism",
+  "region": "EP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202609/2219/634bdb2fdb17e68ae6370d1604668f9802c5e894a1987cd8.png",
+  "publisher": "Ratalaika Games SL",
+  "releaseDate": "2026-10-30T00:00:00Z",
+  "genres": [
+   "Horror",
+   "Graphic Adventure",
+   "Text Adventure"
+  ],
+  "enriched": true
+ },
+ {
   "conceptId": 10019651,
   "titleId": "PPSA37878",
   "allTitleIds": [
@@ -159329,6 +159819,22 @@
    "Adult",
    "Graphic Adventure",
    "Text Adventure"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10019633,
+  "titleId": "PPSA37885",
+  "allTitleIds": [
+   "PPSA37885"
+  ],
+  "name": "Body Kounts",
+  "region": "EB",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202605/0712/6b4fc6ed87a6788d1d4c229df20800f6209cc98aacfd8002.png",
+  "publisher": "Voeult SAS",
+  "genres": [
+   "Arcade",
+   "Fantasy"
   ],
   "enriched": true
  },
@@ -159683,6 +160189,23 @@
   "noStore": true
  },
  {
+  "conceptId": 10019713,
+  "titleId": "PPSA37993",
+  "allTitleIds": [
+   "PPSA37993"
+  ],
+  "name": "Arcade Archives 2 PREHISTORIC ISLE",
+  "region": "JP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/1901/14fc2a15d0b5800a280cd94c5625e5e93a2c23a49c43b7c3.jpg",
+  "publisher": "HAMSTER CORPORATION",
+  "releaseDate": "2026-10-29T00:00:00Z",
+  "genres": [
+   "Shooter",
+   "Fantasy"
+  ],
+  "enriched": true
+ },
+ {
   "conceptId": 10019715,
   "titleId": "PPSA37997",
   "allTitleIds": [
@@ -159700,6 +160223,25 @@
    "Graphic Adventure",
    "Tactical",
    "Epic"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10019716,
+  "titleId": "PPSA37999",
+  "allTitleIds": [
+   "PPSA37999",
+   "PPSA38000"
+  ],
+  "name": "Love Love Mystery Club",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/0813/0d42e8d868a95ef3e72ab0d3004da06aea1e58d4b1cd5f3d.jpg",
+  "publisher": "Dolores Entertainment S.L.",
+  "releaseDate": "2026-10-30T00:00:00Z",
+  "genres": [
+   "Horror",
+   "Simulator",
+   "Mystery"
   ],
   "enriched": true
  },
@@ -159962,6 +160504,22 @@
   "enriched": true
  },
  {
+  "conceptId": 10019773,
+  "titleId": "PPSA38097",
+  "allTitleIds": [
+   "PPSA38097"
+  ],
+  "name": "Console Archives MARL JONG",
+  "region": "JP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/1308/2a46f1e1871c8eac367634c35f99b96dba3990dfc3cf45f6.jpg",
+  "publisher": "HAMSTER CORPORATION",
+  "releaseDate": "2026-10-29T00:00:00Z",
+  "genres": [
+   "Puzzle"
+  ],
+  "enriched": true
+ },
+ {
   "conceptId": 10019783,
   "titleId": "PPSA38108",
   "allTitleIds": [
@@ -160122,6 +160680,22 @@
   "region": "UB",
   "enriched": true,
   "noStore": true
+ },
+ {
+  "conceptId": 10019782,
+  "titleId": "PPSA38171",
+  "allTitleIds": [
+   "PPSA38171"
+  ],
+  "name": "Frog Sqwad",
+  "region": "HB",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202608/1215/4c97be22b4749f11ffbd129c3b5c08fa5ba3e872236ac16b.png",
+  "publisher": "Panic Stations LTD",
+  "genres": [
+   "Adventure",
+   "Platformer"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10019788,
@@ -160369,6 +160943,41 @@
   "enriched": true
  },
  {
+  "conceptId": 10019847,
+  "titleId": "PPSA38239",
+  "allTitleIds": [
+   "PPSA38239"
+  ],
+  "name": "Queen's Domain",
+  "region": "EP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/0113/0e877856a6da8220fc13d5bc57e100138a9f4e0a8cfec784.png",
+  "publisher": "Future Friends Games Limited",
+  "releaseDate": "2026-10-30T17:00:00Z",
+  "genres": [
+   "Action",
+   "Fantasy"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 226459,
+  "titleId": "PPSA38240",
+  "allTitleIds": [
+   "PPSA38240"
+  ],
+  "name": "METRO Last Light Redux",
+  "region": "EP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/0908/54c22dcc698bd92c1555d54c808480a3c70afe1fbd6ba960.jpg",
+  "publisher": "Deep Silver",
+  "releaseDate": "2015-06-01T00:00:00Z",
+  "genres": [
+   "Action",
+   "First Person Shooter",
+   "First Person Shooter"
+  ],
+  "enriched": true
+ },
+ {
   "conceptId": 10019848,
   "titleId": "PPSA38241",
   "allTitleIds": [
@@ -160504,6 +161113,24 @@
   "genres": [
    "Party",
    "Trivia/Quiz"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 202807,
+  "titleId": "PPSA38292",
+  "allTitleIds": [
+   "PPSA38292"
+  ],
+  "name": "METRO 2033 Redux",
+  "region": "EP",
+  "cover": "https://image.api.playstation.com/vulcan/img/rnd/202010/1520/3hKli7WYjbiJEj5wQDxQXq4v.png",
+  "publisher": "Deep Silver",
+  "releaseDate": "2015-06-01T00:00:00Z",
+  "genres": [
+   "Action",
+   "First Person Shooter",
+   "First Person Shooter"
   ],
   "enriched": true
  },
@@ -160918,6 +161545,23 @@
   "enriched": true
  },
  {
+  "conceptId": 10019975,
+  "titleId": "PPSA38452",
+  "allTitleIds": [
+   "PPSA38452"
+  ],
+  "name": "Hatsune Miku Connecting Puzzle TAMAGOTORI Deluxe",
+  "region": "JP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/1507/274588fa5962b83556b38e6221d106cb86971b81ffdd3f91.png",
+  "publisher": "KOMODO HAWAII LLC",
+  "releaseDate": "2026-10-29T02:00:00Z",
+  "genres": [
+   "Puzzle",
+   "Board Game"
+  ],
+  "enriched": true
+ },
+ {
   "conceptId": 10019857,
   "titleId": "PPSA38464",
   "allTitleIds": [
@@ -161016,25 +161660,6 @@
   "publisher": "Giovanni Brunetti",
   "genres": [
    "Arcade"
-  ],
-  "enriched": true
- },
- {
-  "conceptId": 10019122,
-  "titleId": "PPSA38476",
-  "allTitleIds": [
-   "PPSA38476"
-  ],
-  "name": "The Zibbo Show",
-  "region": "EP",
-  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/0109/dda54f734d9fff7f6ca6fb031e98e34a5e446eda6448a126.jpg",
-  "publisher": "TESSERA STUDIOS SL",
-  "releaseDate": "2026-10-29T11:00:00Z",
-  "genres": [
-   "Casual",
-   "Unique",
-   "Card Game",
-   "Turn Based Strategy"
   ],
   "enriched": true
  },
@@ -161203,6 +161828,22 @@
    "Puzzle",
    "Family",
    "Casual"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10020036,
+  "titleId": "PPSA38554",
+  "allTitleIds": [
+   "PPSA38554"
+  ],
+  "name": "SNØ: Ultimate Freeriding",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202608/2508/59326124dad98dd2ef62efca7113bbfe9c980df5035ef351.png",
+  "publisher": "AMATA K.K.",
+  "releaseDate": "2026-10-28T15:00:00Z",
+  "genres": [
+   "Action"
   ],
   "enriched": true
  },
@@ -161499,6 +162140,25 @@
   "enriched": true
  },
  {
+  "conceptId": 10019203,
+  "titleId": "PPSA38723",
+  "allTitleIds": [
+   "PPSA38723"
+  ],
+  "name": "Terrible Lizards",
+  "region": "UB",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202606/0623/3b7c958d6d2cc2d61e624a48e97d290a3642137c46fa4532.png",
+  "publisher": "Digital Pajamas LLC",
+  "releaseDate": "2026-10-29T17:00:00Z",
+  "genres": [
+   "Horror",
+   "Action",
+   "Platformer",
+   "Platformer"
+  ],
+  "enriched": true
+ },
+ {
   "conceptId": 10020160,
   "titleId": "PPSA38745",
   "allTitleIds": [
@@ -161532,6 +162192,57 @@
   "enriched": true
  },
  {
+  "conceptId": 10020172,
+  "titleId": "PPSA38765",
+  "allTitleIds": [
+   "PPSA38765"
+  ],
+  "name": "VOiD: Reshaped",
+  "region": "HB",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202608/0512/785025e838b5702d6206cc184e7505a2233709c54f81e3bf.png",
+  "publisher": "Enter Games Publishing",
+  "releaseDate": "2026-10-31T00:00:00Z",
+  "genres": [
+   "Puzzle",
+   "Platformer"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10020159,
+  "titleId": "PPSA38767",
+  "allTitleIds": [
+   "PPSA38767"
+  ],
+  "name": "Titanium Court",
+  "region": "EP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/0801/10fabf4fec407477d3ee04bfb955f09b5c52c95189f8c945.png",
+  "publisher": "SURPRISE ATTACK PTY LTD T/A FELLOW TRAVELLER GAMES",
+  "releaseDate": "2026-10-29T05:00:00Z",
+  "genres": [
+   "Strategy",
+   "Tower Defence"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10020175,
+  "titleId": "PPSA38775",
+  "allTitleIds": [
+   "PPSA38775"
+  ],
+  "name": "HorrorVale: Deadluxe Edition",
+  "region": "EP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/1621/91784fa0b7bbe95c0f1d55070637afe98319eee1deee8316.png",
+  "publisher": "Electric Airship",
+  "releaseDate": "2026-10-31T00:00:00Z",
+  "genres": [
+   "Role Playing Games",
+   "Fantasy"
+  ],
+  "enriched": true
+ },
+ {
   "conceptId": 10013882,
   "titleId": "PPSA38776",
   "allTitleIds": [
@@ -161560,6 +162271,7 @@
    "PPSA38777",
    "PPSA38860",
    "PPSA38989",
+   "PPSA39006",
    "PPSA39195"
   ],
   "name": "Tailbreak",
@@ -161726,6 +162438,23 @@
   "enriched": true
  },
  {
+  "conceptId": 10020191,
+  "titleId": "PPSA38812",
+  "allTitleIds": [
+   "PPSA38811",
+   "PPSA38812"
+  ],
+  "name": "Corner Shop: NightShift",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202607/1308/43942422614004fc061476e51f126fc5d910c076d68c49d6.jpg",
+  "publisher": "PlayWay plc",
+  "releaseDate": "2026-10-30T15:00:00Z",
+  "genres": [
+   "Horror"
+  ],
+  "enriched": true
+ },
+ {
   "conceptId": 10020192,
   "titleId": "PPSA38814",
   "allTitleIds": [
@@ -161739,6 +162468,23 @@
   "genres": [
    "Adventure",
    "Platformer"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10020193,
+  "titleId": "PPSA38815",
+  "allTitleIds": [
+   "PPSA38815"
+  ],
+  "name": "Look Outside",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/1322/d381a0743cba04674d8ef169b4980be5896be8e1c0ef9ea8.png",
+  "publisher": "Devolver Digital",
+  "releaseDate": "2026-10-30T16:00:00Z",
+  "genres": [
+   "Role Playing Games",
+   "Horror"
   ],
   "enriched": true
  },
@@ -161952,6 +162698,22 @@
   "enriched": true
  },
  {
+  "conceptId": 10020225,
+  "titleId": "PPSA38876",
+  "allTitleIds": [
+   "PPSA38876"
+  ],
+  "name": "Arcade Archives 2 SWIMMER",
+  "region": "JP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/1902/45d2d8a0efe412223c441741af4a765e2c9c0ef4a7ee0ec4.jpg",
+  "publisher": "HAMSTER CORPORATION",
+  "releaseDate": "2026-10-29T00:00:00Z",
+  "genres": [
+   "Action"
+  ],
+  "enriched": true
+ },
+ {
   "conceptId": 10020233,
   "titleId": "PPSA38888",
   "allTitleIds": [
@@ -161964,6 +162726,21 @@
   "releaseDate": "2026-07-16T23:00:00Z",
   "genres": [
    "Casual"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10020243,
+  "titleId": "PPSA38914",
+  "allTitleIds": [
+   "PPSA38914"
+  ],
+  "name": "Space Rock Breaker",
+  "region": "EB",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/1115/2acefdc5e358bd84d7711e1f329c7e767cc5e274c9f93d92.jpg",
+  "publisher": "Games Harbor LTD",
+  "genres": [
+   "Arcade"
   ],
   "enriched": true
  },
@@ -162170,6 +162947,23 @@
    "Simulation",
    "Party",
    "Casual"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10020273,
+  "titleId": "PPSA38960",
+  "allTitleIds": [
+   "PPSA38960"
+  ],
+  "name": "Phantom Floor",
+  "region": "EP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/1015/ca69d79bc4ef336e3dd0a0e53822f43040043fef05e1f340.png",
+  "publisher": "subSilico",
+  "releaseDate": "2026-11-01T00:00:00Z",
+  "genres": [
+   "Horror",
+   "Stealth"
   ],
   "enriched": true
  },
@@ -162436,6 +163230,24 @@
   "enriched": true
  },
  {
+  "conceptId": 10020240,
+  "titleId": "PPSA39095",
+  "allTitleIds": [
+   "PPSA39095"
+  ],
+  "name": "Candy Shop Simulator",
+  "region": "UB",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202607/1012/db529e22bcc8cb68a6acc80bd336a3f25c28c69a9613fced.png",
+  "publisher": "GAMES INCUBATOR S.A.",
+  "releaseDate": "2026-10-29T15:00:00Z",
+  "genres": [
+   "Simulation",
+   "Family",
+   "Casual"
+  ],
+  "enriched": true
+ },
+ {
   "conceptId": 10020348,
   "titleId": "PPSA39096",
   "allTitleIds": [
@@ -162467,6 +163279,22 @@
    "Simulation",
    "Family",
    "Casual"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10020353,
+  "titleId": "PPSA39111",
+  "allTitleIds": [
+   "PPSA39111"
+  ],
+  "name": "The Adventures Of Captain J",
+  "region": "EB",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/2722/45ddb2a2f9a8dc566d8ae3a4099ba0a4a9f2f71ee06f4755.jpg",
+  "publisher": "World Of Games LLC",
+  "genres": [
+   "Arcade",
+   "Shoot 'Em Up"
   ],
   "enriched": true
  },
@@ -162519,6 +163347,21 @@
   "genres": [
    "Adventure",
    "Fantasy"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10020365,
+  "titleId": "PPSA39130",
+  "allTitleIds": [
+   "PPSA39130"
+  ],
+  "name": "Choice of Life: Samosbor",
+  "region": "JB",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202608/2616/ffc7eb5379ad88d3a4881d24ab95478a28a6dc6fd7b451bf.png",
+  "publisher": "Sobaka Studio LLP",
+  "genres": [
+   "Graphic Adventure"
   ],
   "enriched": true
  },
@@ -162630,6 +163473,23 @@
   "enriched": true
  },
  {
+  "conceptId": 10019233,
+  "titleId": "PPSA39196",
+  "allTitleIds": [
+   "PPSA39196"
+  ],
+  "name": "Deadly Days: Roadtrip",
+  "region": "HB",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/1509/78e0c33ca7a15b1eceadc6269fcfab76547c51b331d60e32.png",
+  "publisher": "Sidekick Publishing GmbH",
+  "releaseDate": "2026-10-29T13:00:00Z",
+  "genres": [
+   "Action",
+   "Shoot 'Em Up"
+  ],
+  "enriched": true
+ },
+ {
   "conceptId": 10020406,
   "titleId": "PPSA39199",
   "allTitleIds": [
@@ -162648,8 +163508,9 @@
  },
  {
   "conceptId": 10020300,
-  "titleId": "PPSA39208",
+  "titleId": "PPSA39205",
   "allTitleIds": [
+   "PPSA39205",
    "PPSA39208"
   ],
   "name": "Curse of Baghdad",
@@ -162675,6 +163536,24 @@
   "genres": [
    "Adventure",
    "Mystery"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10017620,
+  "titleId": "PPSA39223",
+  "allTitleIds": [
+   "PPSA34579",
+   "PPSA39223"
+  ],
+  "name": "Phantom Blade Zero",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202607/2810/2153ee57f7955802d94a6722418315637e8fba8f69eaf064.png",
+  "publisher": "S-GAME Publishing",
+  "releaseDate": "2026-10-29T02:00:00Z",
+  "genres": [
+   "Action",
+   "Combat"
   ],
   "enriched": true
  },
@@ -162901,6 +163780,25 @@
   "enriched": true
  },
  {
+  "conceptId": 232879,
+  "titleId": "PPSA39354",
+  "allTitleIds": [
+   "PPSA39354"
+  ],
+  "name": "Resonance of Fate™ 4K/HD Edition",
+  "region": "JP",
+  "cover": "https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA13826_00/2/i_2941625ae7ad68644e589c7dce55606554eeb3516defab95843a73655e1fd1e9/i/pic0.png",
+  "publisher": "tri-Ace Inc.",
+  "releaseDate": "2018-10-24T00:00:00Z",
+  "genres": [
+   "Role Playing Games",
+   "Role Playing Games",
+   "Fantasy",
+   "Epic"
+  ],
+  "enriched": true
+ },
+ {
   "conceptId": 224881,
   "titleId": "PPSA39372",
   "allTitleIds": [
@@ -163065,25 +163963,6 @@
   "enriched": true
  },
  {
-  "conceptId": 10018448,
-  "titleId": "PPSA39425",
-  "allTitleIds": [
-   "PPSA36015",
-   "PPSA39425",
-   "PPSA39736"
-  ],
-  "name": "Remothered: Red Nun's Legacy",
-  "region": "EP",
-  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202602/2414/de2e5641fda9680d459dd86adac160820d02d2f2268c2d85.png",
-  "publisher": "STORMIND GAMES",
-  "releaseDate": "2026-10-27T14:00:00Z",
-  "genres": [
-   "Horror",
-   "Stealth"
-  ],
-  "enriched": true
- },
- {
   "conceptId": 10020565,
   "titleId": "PPSA39428",
   "allTitleIds": [
@@ -163113,6 +163992,23 @@
   "genres": [
    "Arcade",
    "Pinball"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10020580,
+  "titleId": "PPSA39454",
+  "allTitleIds": [
+   "PPSA39454"
+  ],
+  "name": "The Transference",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202608/0315/78f78daf47900ee12950608361c8ce2228c5c6de33afcd1e.jpg",
+  "publisher": "JANDUSOFT S.L.",
+  "releaseDate": "2026-10-29T11:00:00Z",
+  "genres": [
+   "Adventure",
+   "Mystery"
   ],
   "enriched": true
  },
@@ -163189,6 +164085,21 @@
    "Board Game",
    "Board Game",
    "Board Game"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10020596,
+  "titleId": "PPSA39480",
+  "allTitleIds": [
+   "PPSA39480"
+  ],
+  "name": "Choice of Life: Floors",
+  "region": "JB",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202608/2617/e74de7e185adffa13ab00c820110cd0743de74ed7f40f12b.png",
+  "publisher": "Sobaka Studio LLP",
+  "genres": [
+   "Graphic Adventure"
   ],
   "enriched": true
  },
@@ -163283,6 +164194,23 @@
   "enriched": true
  },
  {
+  "conceptId": 10019609,
+  "titleId": "PPSA39590",
+  "allTitleIds": [
+   "PPSA39590"
+  ],
+  "name": "Waltz and Jam",
+  "region": "UB",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202609/1404/daefca07a256b0f16375ead925ed68bdbce253e0951579cb.png",
+  "publisher": "Flyway Games, Inc.",
+  "releaseDate": "2026-12-03T08:00:00Z",
+  "genres": [
+   "Adventure",
+   "Platformer"
+  ],
+  "enriched": true
+ },
+ {
   "conceptId": 10020648,
   "titleId": "PPSA39614",
   "allTitleIds": [
@@ -163295,6 +164223,26 @@
   "genres": [
    "Simulation",
    "Mystery"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10020665,
+  "titleId": "PPSA39644",
+  "allTitleIds": [
+   "PPSA39644"
+  ],
+  "name": "Ultimate Wobble Run",
+  "region": "UB",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/2112/cce8bbdfcaadc0f9f8fa4028b3c2bf66426bf7bdb48097f2.png",
+  "publisher": "LUCKY RACCOON GAMES DESENVOLVIMENTO DE JOGOS ELETRONICOS LTDA",
+  "releaseDate": "2026-10-30T00:00:00Z",
+  "genres": [
+   "Arcade",
+   "Simulation",
+   "Party",
+   "Platformer",
+   "Physics Game"
   ],
   "enriched": true
  },
@@ -163380,6 +164328,40 @@
   "enriched": true
  },
  {
+  "conceptId": 10020718,
+  "titleId": "PPSA39760",
+  "allTitleIds": [
+   "PPSA39760"
+  ],
+  "name": "HELLBOUND INC",
+  "region": "JP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202608/2421/58269d88809d66612acc10e83928c70c54d991289eccd20e.png",
+  "publisher": "SEASHELL STUDIO C.V.",
+  "genres": [
+   "Action",
+   "Puzzle",
+   "Platformer",
+   "Maze"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10020713,
+  "titleId": "PPSA39773",
+  "allTitleIds": [
+   "PPSA39773"
+  ],
+  "name": "Mystery Detective Adventure 1",
+  "region": "UB",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202608/2510/755c38fce1e06f208e915d0dc117940369b02f2b0f4ec8f2.png",
+  "publisher": "FIVE-BN STUDIO LLC",
+  "genres": [
+   "Adventure",
+   "Mystery"
+  ],
+  "enriched": true
+ },
+ {
   "conceptId": 10020745,
   "titleId": "PPSA39793",
   "allTitleIds": [
@@ -163393,6 +164375,38 @@
   "genres": [
    "Adventure",
    "Platformer"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10020751,
+  "titleId": "PPSA39804",
+  "allTitleIds": [
+   "PPSA39804"
+  ],
+  "name": "Mystery Detective Adventure 2",
+  "region": "UB",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202608/2813/754ae21c642b950ec18ed3eebec4e1e68270f8c44dad24c6.png",
+  "publisher": "FIVE-BN STUDIO LLC",
+  "genres": [
+   "Adventure",
+   "Mystery"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10016118,
+  "titleId": "PPSA39815",
+  "allTitleIds": [
+   "PPSA39815"
+  ],
+  "name": "Primal Planet",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202507/1118/15a171ca86e33d001ecffd6c79623a77f6f9405f5d223b37.jpg",
+  "publisher": "Pretty Soon S.A.",
+  "releaseDate": "2026-12-31T00:00:00Z",
+  "genres": [
+   "Action"
   ],
   "enriched": true
  },
@@ -163627,6 +164641,40 @@
   "enriched": true
  },
  {
+  "conceptId": 10020818,
+  "titleId": "PPSA39893",
+  "allTitleIds": [
+   "PPSA39893",
+   "PPSA39894"
+  ],
+  "name": "Whispers Within - Halloween Terror",
+  "region": "JB",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202609/1006/9faa0c9fa2568bedbeb2f1059907444e125588561b1ffa56.png",
+  "publisher": "Orca Games Pty Ltd",
+  "releaseDate": "2026-09-30T00:00:00Z",
+  "genres": [
+   "Horror",
+   "Mystery"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10020821,
+  "titleId": "PPSA39895",
+  "allTitleIds": [
+   "PPSA39895"
+  ],
+  "name": "Mercenary Corps",
+  "region": "EP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/0207/fea0e3da1ac9ecf6b4e12a5937f441b600dc7f16e5af7713.jpg",
+  "publisher": "DANIEL WENGENROTH",
+  "releaseDate": "2026-10-30T00:00:00Z",
+  "genres": [
+   "First Person Shooter"
+  ],
+  "enriched": true
+ },
+ {
   "conceptId": 10020837,
   "titleId": "PPSA39916",
   "allTitleIds": [
@@ -163681,6 +164729,24 @@
   "enriched": true
  },
  {
+  "conceptId": 10020853,
+  "titleId": "PPSA39938",
+  "allTitleIds": [
+   "PPSA39938",
+   "PPSA39939",
+   "PPSA39940",
+   "PPSA39941"
+  ],
+  "name": "Innocent Memory",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/1618/67c330c334ec0cf8ae12d0d76ee5fce144c248688348623f.png",
+  "publisher": "Moesoft Limited",
+  "genres": [
+   "Text Adventure"
+  ],
+  "enriched": true
+ },
+ {
   "conceptId": 10020859,
   "titleId": "PPSA39948",
   "allTitleIds": [
@@ -163693,6 +164759,39 @@
   "releaseDate": "2026-09-25T00:00:00Z",
   "genres": [
    "Simulation"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10020862,
+  "titleId": "PPSA39950",
+  "allTitleIds": [
+   "PPSA39950"
+  ],
+  "name": "Darkness and Flame 1: Born of Fire",
+  "region": "UB",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202609/1008/db19697c5433fdd791625d19c14ac22161f6fa51a7b16044.png",
+  "publisher": "FIVE-BN STUDIO LLC",
+  "releaseDate": "2026-10-28T00:00:00Z",
+  "genres": [
+   "Adventure",
+   "Fantasy"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10020868,
+  "titleId": "PPSA39957",
+  "allTitleIds": [
+   "PPSA39957"
+  ],
+  "name": "Fakin It XL",
+  "region": null,
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/0918/6794bc20cbc11a42ad00af09c657e3e8ae53a5cfb0837dca.png",
+  "publisher": "Jack Box Games, Inc.",
+  "genres": [
+   "Party",
+   "Game Show"
   ],
   "enriched": true
  },
@@ -163714,6 +164813,23 @@
   "enriched": true
  },
  {
+  "conceptId": 10020869,
+  "titleId": "PPSA39974",
+  "allTitleIds": [
+   "PPSA39974"
+  ],
+  "name": "An Eggcelent Sorting Game",
+  "region": "UB",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/2211/19dbc875c3a1713350f395a609c124827d498155ed20e5c5.png",
+  "publisher": "Indie Games Starter Sp. z o.o.",
+  "releaseDate": "2026-10-29T15:00:00Z",
+  "genres": [
+   "Simulator",
+   "Puzzle"
+  ],
+  "enriched": true
+ },
+ {
   "conceptId": 10020880,
   "titleId": "PPSA39975",
   "allTitleIds": [
@@ -163729,6 +164845,30 @@
    "Action",
    "First Person Shooter",
    "First Person Shooter"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 232518,
+  "titleId": "PPSA39980",
+  "allTitleIds": [
+   "PPSA39980",
+   "PPSA39981",
+   "PPSA39982",
+   "PPSA39983"
+  ],
+  "name": "Sigi - A Fart for Melusina",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/2020/1be672ba3717d5f28ccad2189e791d485cdfafebaf8cacac.png",
+  "publisher": "Sometimes You",
+  "releaseDate": "2018-09-06T00:00:00Z",
+  "genres": [
+   "Arcade",
+   "Adventure",
+   "Action",
+   "Platformer",
+   "Platformer",
+   "Platformer"
   ],
   "enriched": true
  },
@@ -163781,6 +164921,24 @@
   "releaseDate": "2026-10-01T23:00:00Z",
   "genres": [
    "Driving/Racing"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10020876,
+  "titleId": "PPSA40030",
+  "allTitleIds": [
+   "PPSA40030"
+  ],
+  "name": "Hidden Objects",
+  "region": "HB",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/2219/e59f82a46ab19613a3888067bd0f09a1bea7ff80d3b3340d.jpg",
+  "publisher": "Q&A Sp. z o.o.",
+  "releaseDate": "2026-10-30T10:00:00Z",
+  "genres": [
+   "Puzzle",
+   "Casual",
+   "Adventure"
   ],
   "enriched": true
  },
@@ -163845,6 +165003,23 @@
   "enriched": true
  },
  {
+  "conceptId": 10020960,
+  "titleId": "PPSA40098",
+  "allTitleIds": [
+   "PPSA40098"
+  ],
+  "name": "Ex-Master, Zombie",
+  "region": "UB",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/0712/4cfb04d55aac9c02cecdb4cda65efd4647cad54de6f36ad4.jpg",
+  "publisher": "Brainium Games LLC",
+  "releaseDate": "2026-10-30T00:00:00Z",
+  "genres": [
+   "Adventure",
+   "Fantasy"
+  ],
+  "enriched": true
+ },
+ {
   "conceptId": 10020962,
   "titleId": "PPSA40100",
   "allTitleIds": [
@@ -163899,6 +165074,27 @@
   "enriched": true
  },
  {
+  "conceptId": 10021012,
+  "titleId": "PPSA40171",
+  "allTitleIds": [
+   "PPSA40171"
+  ],
+  "name": "Death Park",
+  "region": "EP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/0808/8206f9f2ca946d40c9e7ee3110bb9ef9a4935eda4f2e57a9.jpg",
+  "publisher": "ONEVISION GAMES",
+  "releaseDate": "2026-10-30T00:00:00Z",
+  "genres": [
+   "Horror",
+   "Action",
+   "Horror",
+   "Mystery",
+   "Mystery",
+   "Stealth"
+  ],
+  "enriched": true
+ },
+ {
   "conceptId": 10021023,
   "titleId": "PPSA40196",
   "allTitleIds": [
@@ -163932,6 +165128,39 @@
   "genres": [
    "Casual",
    "Board Game"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10021033,
+  "titleId": "PPSA40214",
+  "allTitleIds": [
+   "PPSA40214"
+  ],
+  "name": "Pictaku: Halloween",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/1507/606810577f3c6fdcdf5df2083b2d85c73935d3773f3a1a72.png",
+  "publisher": "JetDogs Oy",
+  "genres": [
+   "Puzzle",
+   "Casual"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10021037,
+  "titleId": "PPSA40220",
+  "allTitleIds": [
+   "PPSA40220"
+  ],
+  "name": "The Abjuration Stand",
+  "region": "UB",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/1419/ea803088ec34ce1bc89df017b5baa42f3e96f0c9111f0c03.jpg",
+  "publisher": "Brainium Games LLC",
+  "releaseDate": "2026-10-30T00:00:00Z",
+  "genres": [
+   "Action",
+   "Fantasy"
   ],
   "enriched": true
  },
@@ -163982,6 +165211,59 @@
   "enriched": true
  },
  {
+  "conceptId": 10021070,
+  "titleId": "PPSA40331",
+  "allTitleIds": [
+   "PPSA40331"
+  ],
+  "name": "Spooker",
+  "region": "HP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/2011/17f296fb6a90bc2acdbc617bc50c9549515af3cba66d4d16.png",
+  "publisher": "Untold Tales S.A.",
+  "genres": [
+   "Role Playing Games",
+   "Horror",
+   "Tactical"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10021120,
+  "titleId": "PPSA40332",
+  "allTitleIds": [
+   "PPSA40332"
+  ],
+  "name": "eXcise",
+  "region": "EP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/1314/94098822dfe0df93aa988c582dbf01e3df090a37ce08e6f8.jpg",
+  "publisher": "Wild Sphere S.L.",
+  "releaseDate": "2026-10-28T07:00:00Z",
+  "genres": [
+   "Action",
+   "First Person Shooter",
+   "First Person Shooter",
+   "Shoot 'Em Up"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10021125,
+  "titleId": "PPSA40342",
+  "allTitleIds": [
+   "PPSA40342"
+  ],
+  "name": "Lordcraft",
+  "region": "JP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/1414/199ed658fd258617a600f368a92a72f222ad63f1e58a8245.png",
+  "publisher": "SEASHELL STUDIO C.V.",
+  "genres": [
+   "Simulation",
+   "Strategy Role Playing Game",
+   "Development"
+  ],
+  "enriched": true
+ },
+ {
   "conceptId": 10021127,
   "titleId": "PPSA40343",
   "allTitleIds": [
@@ -163994,6 +165276,161 @@
   "releaseDate": "2026-10-23T00:00:00Z",
   "genres": [
    "Driving/Racing"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10021126,
+  "titleId": "PPSA40353",
+  "allTitleIds": [
+   "PPSA40353"
+  ],
+  "name": "Tidebreak",
+  "region": "HP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/0900/cd0c41dc643a09b8ca97556c8f04170ec438b17417390827.png",
+  "publisher": "A-Z COMPUTERS",
+  "releaseDate": "2026-10-30T00:00:00Z",
+  "genres": [
+   "Shoot 'Em Up"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10021156,
+  "titleId": "PPSA40383",
+  "allTitleIds": [
+   "PPSA40383",
+   "PPSA40384",
+   "PPSA40385",
+   "PPSA40386"
+  ],
+  "name": "Train Merge Tycoon",
+  "region": "UB",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/1211/e02f604bc8b7ed7891c2032f242597f9b230f050ccbfb17f.png",
+  "publisher": "Oiven Games GmbH",
+  "releaseDate": "2026-10-29T01:00:00Z",
+  "genres": [
+   "Simulator"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10021154,
+  "titleId": "PPSA40393",
+  "allTitleIds": [
+   "PPSA40393"
+  ],
+  "name": "New York Mysteries 6: The Undying",
+  "region": "UB",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/0910/74732ef02a3216658ff8a31e7bae6c5cd381153ab491048c.png",
+  "publisher": "FIVE-BN STUDIO LLC",
+  "releaseDate": "2026-10-29T00:00:00Z",
+  "genres": [
+   "Adventure",
+   "Mystery"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10021194,
+  "titleId": "PPSA40436",
+  "allTitleIds": [
+   "PPSA40436"
+  ],
+  "name": "Mystery Suspect",
+  "region": "HP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/2309/7bae0a2f0db3fe28ffd3aa742bf17935a5027663cc8e115e.jpg",
+  "publisher": "A-Z COMPUTERS",
+  "releaseDate": "2026-11-02T00:00:00Z",
+  "genres": [
+   "Puzzle",
+   "Board Game"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10021208,
+  "titleId": "PPSA40469",
+  "allTitleIds": [
+   "PPSA40469"
+  ],
+  "name": "Needle in a Haystack",
+  "region": "UB",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/1410/8ccaf99d4a55ee728a9def8253150cfb17aabe6a62bc0fa1.png",
+  "publisher": "Kanuni games oyun YAZILIM VE Pazarlama Ticaret limited Sirketi",
+  "releaseDate": "2026-10-29T00:00:00Z",
+  "genres": [
+   "Simulation",
+   "Development"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10021237,
+  "titleId": "PPSA40510",
+  "allTitleIds": [
+   "PPSA40510"
+  ],
+  "name": "Catch To Fish",
+  "region": "UB",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/1617/4b21504fda7618faa2af0beb8c5c8e2ed8f29fda51d22036.png",
+  "publisher": "Kanuni games oyun YAZILIM VE Pazarlama Ticaret limited Sirketi",
+  "releaseDate": "2026-10-28T00:00:00Z",
+  "genres": [
+   "Adventure",
+   "Combat"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10010658,
+  "titleId": "PPSA40557",
+  "allTitleIds": [
+   "PPSA40557"
+  ],
+  "name": "Wreck the World",
+  "region": "UB",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/1717/843d1c5f5e66e669623b72a251741d75f8e553a4b5f7371d.png",
+  "publisher": "Booster Box Ltd",
+  "releaseDate": "2026-11-01T00:00:00Z",
+  "genres": [
+   "Arcade"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10021296,
+  "titleId": "PPSA40613",
+  "allTitleIds": [
+   "PPSA40613"
+  ],
+  "name": "Kitties Solitaire",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/2109/cc07dbc3b5b93a85d0e99649282095fc1351bb9f9fc75bf7.jpg",
+  "publisher": "Benoit Varasse trading as Pix Arts",
+  "releaseDate": "2026-10-30T00:00:00Z",
+  "genres": [
+   "Casual",
+   "Card Game"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 202806,
+  "titleId": "PPSA40653",
+  "allTitleIds": [
+   "PPSA40653",
+   "PPSA40654"
+  ],
+  "name": "METRO Redux",
+  "region": null,
+  "cover": "https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA00593_00/3/i_e5ecd74383d8fb25ee5ead93cf46df56400a8c687cbc8d1608bec1711b52d7ab/i/pic0.png",
+  "publisher": "Deep Silver",
+  "releaseDate": "2014-08-28T00:00:00Z",
+  "genres": [
+   "Action",
+   "First Person Shooter",
+   "First Person Shooter"
   ],
   "enriched": true
  }

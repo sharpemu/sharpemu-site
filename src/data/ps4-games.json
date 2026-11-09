@@ -5323,7 +5323,9 @@
   "titleId": "CUSA00856",
   "allTitleIds": [
    "CUSA00849",
-   "CUSA00856"
+   "CUSA00856",
+   "CUSA60364",
+   "CUSA60365"
   ],
   "name": "#KILLALLZOMBIES",
   "region": "UP",
@@ -179704,6 +179706,24 @@
   "enriched": true
  },
  {
+  "conceptId": 10007678,
+  "titleId": "CUSA41470",
+  "allTitleIds": [
+   "CUSA41470",
+   "CUSA41471",
+   "CUSA60353"
+  ],
+  "name": "Sweet Sugar Candy",
+  "region": null,
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202611/0404/387a4c143dec231aa41855993031b56aef4d638fd9a26334.jpg",
+  "publisher": "Benoit Varasse trading as Pix Arts",
+  "releaseDate": "2026-11-13T00:00:00Z",
+  "genres": [
+   "Casual"
+  ],
+  "enriched": true
+ },
+ {
   "conceptId": 10007679,
   "titleId": "CUSA41473",
   "allTitleIds": [
@@ -211764,7 +211784,11 @@
   "conceptId": 10010758,
   "titleId": "CUSA48730",
   "allTitleIds": [
-   "CUSA48730"
+   "CUSA48730",
+   "CUSA48731",
+   "CUSA48732",
+   "CUSA48733",
+   "CUSA60186"
   ],
   "name": "DPS IDLE",
   "region": "UP",
@@ -232270,7 +232294,9 @@
   "titleId": "CUSA52050",
   "allTitleIds": [
    "CUSA52050",
-   "CUSA52051"
+   "CUSA52051",
+   "CUSA60360",
+   "CUSA60361"
   ],
   "name": "Sword of the Necromancer: Resurrection",
   "region": "UP",
@@ -240296,7 +240322,7 @@
    "CUSA53321"
   ],
   "name": "a pet shop after dark",
-  "region": null,
+  "region": "EP",
   "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/2220/c3138e6156b8be04021580ac31c19a11eb3e99ce54b73ae8.png",
   "publisher": "Viridian Software Limited",
   "genres": [
@@ -248653,6 +248679,23 @@
   "enriched": true
  },
  {
+  "conceptId": 10015031,
+  "titleId": "CUSA54489",
+  "allTitleIds": [
+   "CUSA54489"
+  ],
+  "name": "Jaden Industries: Cozy Automation Puzzler",
+  "region": null,
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202608/1708/26a5c68b71be28d6a5c71444d6dfca2e1687b5f162dacdfa.jpg",
+  "publisher": "PUSHKA INTERACTIVE SOFTWARE LTD",
+  "genres": [
+   "Simulation",
+   "Puzzle",
+   "Development"
+  ],
+  "enriched": true
+ },
+ {
   "conceptId": 10015033,
   "titleId": "CUSA54490",
   "allTitleIds": [
@@ -249645,7 +249688,8 @@
   "conceptId": 10015166,
   "titleId": "CUSA54667",
   "allTitleIds": [
-   "CUSA54667"
+   "CUSA54667",
+   "CUSA60382"
   ],
   "name": "ハッピールートを終わらせて",
   "region": "JP",
@@ -256398,6 +256442,23 @@
    "Driving/Racing",
    "Epic",
    "Physics Game"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10016007,
+  "titleId": "CUSA55678",
+  "allTitleIds": [
+   "CUSA55678",
+   "CUSA55679"
+  ],
+  "name": "Phantom Cell",
+  "region": null,
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/2611/e32cd70ff5158b43b635e9e380d600e9805d6d6486f190ac.jpg",
+  "publisher": "DANIEL WENGENROTH",
+  "genres": [
+   "Tactical",
+   "Real Time Strategy"
   ],
   "enriched": true
  },
@@ -264845,25 +264906,6 @@
   "enriched": true
  },
  {
-  "conceptId": 10012744,
-  "titleId": "CUSA56873",
-  "allTitleIds": [
-   "CUSA56873",
-   "CUSA57767",
-   "CUSA58359"
-  ],
-  "name": "God of War Sons of Sparta",
-  "region": null,
-  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202602/0618/2fee30cf3febc58730657a23d3899823cb4d62e966b1f827.jpg",
-  "publisher": "Sony Interactive Entertainment",
-  "releaseDate": "2026-02-12T23:15:00Z",
-  "genres": [
-   "Action",
-   "Fantasy"
-  ],
-  "enriched": true
- },
- {
   "conceptId": 10017041,
   "titleId": "CUSA56874",
   "allTitleIds": [
@@ -271340,6 +271382,25 @@
   "enriched": true
  },
  {
+  "conceptId": 10012744,
+  "titleId": "CUSA57767",
+  "allTitleIds": [
+   "CUSA56873",
+   "CUSA57767",
+   "CUSA58359"
+  ],
+  "name": "God of War Sons of Sparta",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202602/0618/2fee30cf3febc58730657a23d3899823cb4d62e966b1f827.jpg",
+  "publisher": "Sony Interactive Entertainment",
+  "releaseDate": "2026-02-12T23:15:00Z",
+  "genres": [
+   "Action",
+   "Fantasy"
+  ],
+  "enriched": true
+ },
+ {
   "conceptId": 10017898,
   "titleId": "CUSA57771",
   "allTitleIds": [
@@ -274741,6 +274802,23 @@
   "noStore": true
  },
  {
+  "conceptId": 10018353,
+  "titleId": "CUSA58248",
+  "allTitleIds": [
+   "CUSA58248"
+  ],
+  "name": "Final Kick Football Legends",
+  "region": null,
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202611/0212/c1a37f179884b9462d22eda4d6dc6a3b0710f4d987a4cfc0.png",
+  "publisher": "FUNBOX MEDIA LIMITED",
+  "releaseDate": "2026-11-26T00:00:00Z",
+  "genres": [
+   "Sport",
+   "American Football"
+  ],
+  "enriched": true
+ },
+ {
   "conceptId": 10018354,
   "titleId": "CUSA58249",
   "allTitleIds": [
@@ -276404,7 +276482,7 @@
    "CUSA58503"
   ],
   "name": "Hasbro Games™ Junior Collection",
-  "region": null,
+  "region": "HP",
   "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202606/0811/7c5cf689e334a518b19f001c729a8e15a6af47950a572183.jpg",
   "publisher": "Outright Games LLC",
   "releaseDate": "2026-11-06T00:00:00Z",
@@ -276468,6 +276546,24 @@
    "Action",
    "Casual",
    "Stealth"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10017950,
+  "titleId": "CUSA58511",
+  "allTitleIds": [
+   "CUSA58511"
+  ],
+  "name": "Buy The Game, I Have a Gun 2: Online Open World",
+  "region": null,
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/2018/018d67ed8981a9c639d51dfdb2e9c869dd98028279049c18.jpg",
+  "publisher": "Kimulator's Films inc.",
+  "releaseDate": "2027-01-22T14:00:00Z",
+  "genres": [
+   "Action",
+   "Graphic Adventure",
+   "Platformer"
   ],
   "enriched": true
  },
@@ -278479,6 +278575,21 @@
   "releaseDate": "2026-03-20T00:00:00Z",
   "genres": [
    "Driving/Racing"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10018848,
+  "titleId": "CUSA58827",
+  "allTitleIds": [
+   "CUSA58827"
+  ],
+  "name": "Japanese Rural Life Adventure",
+  "region": "JP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/1405/3cd61f13655e1e6f97d7234abd28fb93970f0e4cf3570068.png",
+  "publisher": "G-MODE CORPORATION",
+  "genres": [
+   "Simulation"
   ],
   "enriched": true
  },
@@ -282304,7 +282415,7 @@
    "CUSA59538"
   ],
   "name": "Thief: The Dark Project Remastered",
-  "region": null,
+  "region": "UP",
   "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202606/0315/0a63fbd2e1be3a11692adda751cbc3606f9ce34256f4c98e.png",
   "publisher": "NIGHT DIVE STUDIOS",
   "genres": [
@@ -282995,7 +283106,7 @@
    "CUSA59671"
   ],
   "name": "Shelterra the Skyworld",
-  "region": null,
+  "region": "JP",
   "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202609/0706/759dba97bdf80a45bd7ce87c981f0a2a822a5948c6e8a39e.png",
   "publisher": "KEMCO",
   "genres": [
@@ -283222,6 +283333,23 @@
   "genres": [
    "Adventure",
    "Action",
+   "Platformer"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10020156,
+  "titleId": "CUSA59725",
+  "allTitleIds": [
+   "CUSA59725"
+  ],
+  "name": "Arcade Archives 2 EXZISUS",
+  "region": "JP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/2206/0c87469b3b25388fce69730359c0399cea6c05d798a6e259.jpg",
+  "publisher": "HAMSTER CORPORATION",
+  "releaseDate": "2026-11-05T00:00:00Z",
+  "genres": [
+   "Shooter",
    "Platformer"
   ],
   "enriched": true
@@ -283761,7 +283889,8 @@
    "CUSA59811",
    "CUSA59812",
    "CUSA59813",
-   "CUSA59814"
+   "CUSA59814",
+   "CUSA60359"
   ],
   "name": "Cat Over Here!",
   "region": null,
@@ -284128,7 +284257,7 @@
    "CUSA59907"
   ],
   "name": "Cat President 2: Purrlitical Revolution",
-  "region": null,
+  "region": "EP",
   "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202608/1007/ebb48f3712eae28202019b13ee14c8b003a3aa9a59153425.png",
   "publisher": "Penguin Pop Games LLC",
   "releaseDate": "2026-11-03T00:00:00Z",
@@ -284187,6 +284316,22 @@
   "genres": [
    "Role Playing Games",
    "Tactical"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10007948,
+  "titleId": "CUSA59922",
+  "allTitleIds": [
+   "CUSA59922"
+  ],
+  "name": "Grapple Force Rena",
+  "region": null,
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202611/0219/21fb91b3c99a4767d308a34ed716452410b90330d9c9aa10.jpg",
+  "publisher": "QUBYTE",
+  "genres": [
+   "Adventure",
+   "Platformer"
   ],
   "enriched": true
  },
@@ -284312,6 +284457,24 @@
   "enriched": true
  },
  {
+  "conceptId": 10007251,
+  "titleId": "CUSA59942",
+  "allTitleIds": [
+   "CUSA59942",
+   "CUSA59943",
+   "CUSA59944",
+   "CUSA59945"
+  ],
+  "name": "Napoleon Maiden ~Moon, Night and Dreaming Rondo~",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202611/0815/d36e510037ba03ccfe2810894da9f8283442dbf434182da0.png",
+  "publisher": "Moesoft Limited",
+  "genres": [
+   "Text Adventure"
+  ],
+  "enriched": true
+ },
+ {
   "conceptId": 10020465,
   "titleId": "CUSA59948",
   "allTitleIds": [
@@ -284329,6 +284492,24 @@
    "Card Game",
    "Card Game",
    "Card Game"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10020582,
+  "titleId": "CUSA59949",
+  "allTitleIds": [
+   "CUSA59949"
+  ],
+  "name": "Geo Book",
+  "region": null,
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202611/0215/f63b25d52904f81e2e0f98dcf56cb9a8eb4a514ac92e1fd3.jpg",
+  "publisher": "QUBICGAMES SP. Z O.O.",
+  "releaseDate": "2026-11-20T00:00:00Z",
+  "genres": [
+   "Brain Training",
+   "Educational",
+   "Trivia/Quiz"
   ],
   "enriched": true
  },
@@ -284355,7 +284536,7 @@
    "CUSA59954"
   ],
   "name": "Don Bradman Cricket JR",
-  "region": null,
+  "region": "UP",
   "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/0203/587b5e6a13bc4ef2168cd255d8754e382bd2446618c98033.png",
   "publisher": "Home Ent Suppliers",
   "genres": [
@@ -284779,7 +284960,7 @@
    "CUSA60037"
   ],
   "name": "Winx Club - Moonlight Quest",
-  "region": null,
+  "region": "EP",
   "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202609/0212/18f45f30ed1e1113c1c0983f1024e7d2d8b9866abafa8ce1.png",
   "publisher": "BALIO STUDIO SRL",
   "releaseDate": "2026-11-30T00:00:00Z",
@@ -284979,6 +285160,25 @@
   "enriched": true
  },
  {
+  "conceptId": 10020895,
+  "titleId": "CUSA60081",
+  "allTitleIds": [
+   "CUSA60081"
+  ],
+  "name": "Hidden Doodles: Medieval Town",
+  "region": null,
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202611/0618/c99f43a46bdf5aac2e5bd549bfa03868bea557f733a17fbb.png",
+  "publisher": "Dinomore Games Yazilim Oyun Teknolojileri Limited Sirketi",
+  "releaseDate": "2027-02-28T00:00:00Z",
+  "genres": [
+   "Family",
+   "Casual",
+   "Brain Training",
+   "Fantasy"
+  ],
+  "enriched": true
+ },
+ {
   "conceptId": 10020898,
   "titleId": "CUSA60082",
   "allTitleIds": [
@@ -285001,7 +285201,7 @@
    "CUSA60084"
   ],
   "name": "Skygrid Courier",
-  "region": null,
+  "region": "UP",
   "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/1507/ec80970c84121af5c973f7c8c080b3436359495dfa2c9ce2.png",
   "publisher": "eastasiasoft",
   "releaseDate": "2026-11-11T00:00:00Z",
@@ -285140,6 +285340,23 @@
   "enriched": true
  },
  {
+  "conceptId": 10020959,
+  "titleId": "CUSA60110",
+  "allTitleIds": [
+   "CUSA60110"
+  ],
+  "name": "Calculus of Rot",
+  "region": "UB",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/1715/f274d3ae0b688b2e7ec0f32f92ceddde27f1bdfa9f3856c0.jpg",
+  "publisher": "Brainium Games LLC",
+  "releaseDate": "2026-11-26T00:00:00Z",
+  "genres": [
+   "Strategy",
+   "Maze"
+  ],
+  "enriched": true
+ },
+ {
   "conceptId": 10020960,
   "titleId": "CUSA60111",
   "allTitleIds": [
@@ -285153,6 +285370,22 @@
   "genres": [
    "Adventure",
    "Fantasy"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10020961,
+  "titleId": "CUSA60112",
+  "allTitleIds": [
+   "CUSA60112"
+  ],
+  "name": "Ritebound",
+  "region": "UB",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/1814/d6c7f844ed025c9f410f5c52af53d420741911acfda0d1b8.jpg",
+  "publisher": "Brainium Games LLC",
+  "releaseDate": "2026-11-20T00:00:00Z",
+  "genres": [
+   "Real Time Strategy"
   ],
   "enriched": true
  },
@@ -285197,7 +285430,7 @@
    "CUSA60116"
   ],
   "name": "The Canon Keeper PS4 & PS5",
-  "region": null,
+  "region": "HB",
   "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/0402/245cb08578f01695d49c30c60f61a5d1ffd0012e6665c9ab.png",
   "publisher": "Or Games",
   "releaseDate": "2026-11-30T00:00:00Z",
@@ -285410,7 +285643,7 @@
    "CUSA60154"
   ],
   "name": "Alex the Rabbit",
-  "region": null,
+  "region": "HB",
   "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/0216/5413f24d90f50f4ce7043bdaab1fc07f49b63e989379b98f.png",
   "publisher": "WENDELL JANIO ANDRADE BEZERRA DESENVOLVIMENTO DE SOFTWARE LTDA",
   "genres": [
@@ -285429,6 +285662,27 @@
   "region": null,
   "enriched": true,
   "noStore": true
+ },
+ {
+  "conceptId": 10021113,
+  "titleId": "CUSA60160",
+  "allTitleIds": [
+   "CUSA60160"
+  ],
+  "name": "LarsGadiel",
+  "region": "EP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/1517/7fe61df36b4e5792a0ec7a282564930067e8aaa039502d2f.png",
+  "publisher": "COWCAT",
+  "releaseDate": "2026-12-31T00:00:00Z",
+  "genres": [
+   "Action",
+   "Action",
+   "Adventure",
+   "Fantasy",
+   "Hack and Slash",
+   "Platformer"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10021125,
@@ -285645,6 +285899,24 @@
   "enriched": true
  },
  {
+  "conceptId": 10021201,
+  "titleId": "CUSA60202",
+  "allTitleIds": [
+   "CUSA60202"
+  ],
+  "name": "Cat Simulator",
+  "region": null,
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202611/0516/3f75725f7190c3664dff44b2cf145a225da9819e9dcaccc2.jpg",
+  "publisher": "Q&A Sp. z o.o.",
+  "releaseDate": "2026-11-14T10:00:00Z",
+  "genres": [
+   "Simulation",
+   "Casual",
+   "Action"
+  ],
+  "enriched": true
+ },
+ {
   "conceptId": 10021202,
   "titleId": "CUSA60203",
   "allTitleIds": [
@@ -285743,7 +286015,7 @@
    "CUSA60215"
   ],
   "name": "Catch To Fish",
-  "region": null,
+  "region": "UB",
   "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/1617/4b21504fda7618faa2af0beb8c5c8e2ed8f29fda51d22036.png",
   "publisher": "Kanuni games oyun YAZILIM VE Pazarlama Ticaret limited Sirketi",
   "releaseDate": "2026-10-28T00:00:00Z",
@@ -285781,6 +286053,60 @@
   "publisher": "Kanuni games oyun YAZILIM VE Pazarlama Ticaret limited Sirketi",
   "genres": [
    "Driving/Racing"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10021274,
+  "titleId": "CUSA60224",
+  "allTitleIds": [
+   "CUSA60223",
+   "CUSA60224",
+   "CUSA60225",
+   "CUSA60226"
+  ],
+  "name": "Beacon Keeper",
+  "region": "EP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/1816/7a966ca397fb6356e07752eaac485cc4b395381e7af1a244.png",
+  "publisher": "Game Achievements Ltd",
+  "genres": [
+   "Casual"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10021275,
+  "titleId": "CUSA60227",
+  "allTitleIds": [
+   "CUSA60227",
+   "CUSA60228",
+   "CUSA60229",
+   "CUSA60230"
+  ],
+  "name": "Echo Flight",
+  "region": null,
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/1817/58a9885d195ba20add1ada0ac3105a778f0c0c25bb0d6d7d.png",
+  "publisher": "Game Achievements Ltd",
+  "genres": [
+   "Casual"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10021278,
+  "titleId": "CUSA60239",
+  "allTitleIds": [
+   "CUSA60239",
+   "CUSA60240",
+   "CUSA60241",
+   "CUSA60242"
+  ],
+  "name": "Snowball Sumo",
+  "region": null,
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/1817/70f724fb05bc547d34c0931b0a4dbb46f6229aa301c39851.png",
+  "publisher": "Game Achievements Ltd",
+  "genres": [
+   "Casual"
   ],
   "enriched": true
  },
@@ -285877,6 +286203,23 @@
   "enriched": true
  },
  {
+  "conceptId": 10021345,
+  "titleId": "CUSA60306",
+  "allTitleIds": [
+   "CUSA60306"
+  ],
+  "name": "ELO 1100 Chess",
+  "region": null,
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202611/0411/9504455a8812b4a58b159d5c85d72bb757b02a5622d1a647.jpg",
+  "publisher": "Benoit Varasse trading as Pix Arts",
+  "releaseDate": "2026-11-20T00:00:00Z",
+  "genres": [
+   "Brain Training",
+   "Board Game"
+  ],
+  "enriched": true
+ },
+ {
   "conceptId": 10021248,
   "titleId": "CUSA60307",
   "allTitleIds": [
@@ -285936,7 +286279,7 @@
    "CUSA60311"
   ],
   "name": "Checkers MASTER",
-  "region": null,
+  "region": "UP",
   "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/2909/d734af81d0598ad5bed182ee36e4e6214ace89d03f5cd525.jpg",
   "publisher": "Benoit Varasse trading as Pix Arts",
   "releaseDate": "2026-11-06T00:00:00Z",
@@ -285958,6 +286301,140 @@
   "publisher": "Booster Box Ltd",
   "genres": [
    "Arcade"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10021370,
+  "titleId": "CUSA60324",
+  "allTitleIds": [
+   "CUSA60324"
+  ],
+  "name": "Zomblox",
+  "region": null,
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/2814/154fca43a4ab2bb11b4aa407acde9ebb63113800c5b4f125.png",
+  "publisher": "SEASHELL STUDIO C.V.",
+  "genres": [
+   "Action",
+   "Adventure",
+   "Combat",
+   "First Person Shooter",
+   "Epic"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10021395,
+  "titleId": "CUSA60333",
+  "allTitleIds": [
+   "CUSA60333"
+  ],
+  "name": "Relaywardens",
+  "region": "UB",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202611/0511/1f8e45e464148acf72e12f7dd40d303cdb7ca8032c7ea340.jpg",
+  "publisher": "Brainium Games LLC",
+  "releaseDate": "2026-11-26T00:00:00Z",
+  "genres": [
+   "Strategy",
+   "Fantasy"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10021397,
+  "titleId": "CUSA60335",
+  "allTitleIds": [
+   "CUSA60335"
+  ],
+  "name": "Nefiriya and the Sands of Eternity",
+  "region": null,
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202611/0520/c98997c5b76db0dfee8a91a088abd070103ae0c258f7a3b3.png",
+  "publisher": "Leonardo Prado Cosenza trading as Synnergy Circle Games",
+  "genres": [
+   "Adventure",
+   "Platformer"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10021402,
+  "titleId": "CUSA60339",
+  "allTitleIds": [
+   "CUSA60339"
+  ],
+  "name": "Silent Loot",
+  "region": null,
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/2914/131dac10517c938657fe92de9d129296205fd145d6f93c06.png",
+  "publisher": "Double Dater Inc.",
+  "genres": [
+   "Action",
+   "Simulator",
+   "Stealth"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10021427,
+  "titleId": "CUSA60349",
+  "allTitleIds": [
+   "CUSA60349"
+  ],
+  "name": "Breakworld",
+  "region": null,
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202611/0220/9b6f4046fc45d68b82c2a2da33e43d7ba141de7b3d63626e.png",
+  "publisher": "Booster Box Ltd",
+  "genres": [
+   "Arcade"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10021438,
+  "titleId": "CUSA60356",
+  "allTitleIds": [
+   "CUSA60356"
+  ],
+  "name": "Chaos Mini Racer",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202611/0411/7b82c53e9f3bc3eb286882f9b76a78b293d79aaec666d2b3.jpg",
+  "publisher": "Benoit Varasse trading as Pix Arts",
+  "releaseDate": "2026-11-27T00:00:00Z",
+  "genres": [
+   "Driving/Racing"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10021506,
+  "titleId": "CUSA60383",
+  "allTitleIds": [
+   "CUSA60383"
+  ],
+  "name": "Prizma Puzzle Classic 3",
+  "region": null,
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202611/0611/c710aaaaecc46d14d31528e458f5c1783d6950736d8416bc.png",
+  "publisher": "SilenGames",
+  "releaseDate": "2026-11-24T00:00:00Z",
+  "genres": [
+   "Puzzle",
+   "Maze"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10021194,
+  "titleId": "CUSA60390",
+  "allTitleIds": [
+   "CUSA60390"
+  ],
+  "name": "Mystery Suspect",
+  "region": null,
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/2309/7bae0a2f0db3fe28ffd3aa742bf17935a5027663cc8e115e.jpg",
+  "publisher": "A-Z COMPUTERS",
+  "releaseDate": "2026-11-02T00:00:00Z",
+  "genres": [
+   "Puzzle",
+   "Board Game"
   ],
   "enriched": true
  }

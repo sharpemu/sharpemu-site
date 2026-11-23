@@ -238717,7 +238717,7 @@
    "CUSA53133"
   ],
   "name": "Soul Reaver 2",
-  "region": null,
+  "region": "UP",
   "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/0906/4d165cbd844db204adb4294f060b75378b0d1c5c6e77289d.png",
   "publisher": "CRYSTAL DYNAMICS",
   "releaseDate": "2026-11-17T09:00:00Z",
@@ -247653,6 +247653,26 @@
   "region": null,
   "enriched": true,
   "noStore": true
+ },
+ {
+  "conceptId": 10014743,
+  "titleId": "CUSA54342",
+  "allTitleIds": [
+   "CUSA54342",
+   "CUSA60389"
+  ],
+  "name": "Arrowstorm Ascendant",
+  "region": null,
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202611/2002/3dbdcd2b4faa625626cd27487eb4e5e55fab511163aacf25.png",
+  "publisher": "Leonardo Prado Cosenza trading as Synnergy Circle Games",
+  "releaseDate": "2026-12-01T03:00:00Z",
+  "genres": [
+   "Strategy",
+   "Action",
+   "Fantasy",
+   "Shoot 'Em Up"
+  ],
+  "enriched": true
  },
  {
   "conceptId": 10011005,
@@ -269122,6 +269142,22 @@
   "noStore": true
  },
  {
+  "conceptId": 10017577,
+  "titleId": "CUSA57478",
+  "allTitleIds": [
+   "CUSA57478"
+  ],
+  "name": "MELON PARKER -We are Whatever Club!-",
+  "region": null,
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/1307/832d83123d0fbdeb4b29d4864931d8ad921dc42e93e59c0f.png",
+  "publisher": "CYBERSTEP, INC.",
+  "releaseDate": "2026-11-26T00:00:00Z",
+  "genres": [
+   "Text Adventure"
+  ],
+  "enriched": true
+ },
+ {
   "conceptId": 10017578,
   "titleId": "CUSA57479",
   "allTitleIds": [
@@ -270306,7 +270342,7 @@
    "CUSA57611"
   ],
   "name": "Agent Skunk: Stink Ops",
-  "region": null,
+  "region": "UB",
   "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/0813/39e0d9d539fc22d11a0447e169c62cba547b6adeb26eac22.jpg",
   "publisher": "Witenovastudio OÜ",
   "releaseDate": "2027-12-31T00:00:00Z",
@@ -276655,7 +276691,7 @@
    "CUSA58511"
   ],
   "name": "Buy The Game, I Have a Gun 2: Online Open World",
-  "region": null,
+  "region": "UP",
   "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/2018/018d67ed8981a9c639d51dfdb2e9c869dd98028279049c18.jpg",
   "publisher": "Kimulator's Films inc.",
   "releaseDate": "2027-01-22T14:00:00Z",
@@ -277315,7 +277351,7 @@
    "CUSA58618"
   ],
   "name": "The House of Tesla: Definitive Edition",
-  "region": null,
+  "region": "EP",
   "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202609/1606/5aa61d763578031ea8ba05d7432d1b9999430a8ad8b00694.jpg",
   "publisher": "Blue Brain Games s.r.o.",
   "releaseDate": "2026-11-19T00:00:00Z",
@@ -278960,7 +278996,9 @@
   "titleId": "CUSA58869",
   "allTitleIds": [
    "CUSA58869",
-   "CUSA58870"
+   "CUSA58870",
+   "CUSA60454",
+   "CUSA60455"
   ],
   "name": "Altered Alma",
   "region": null,
@@ -279402,22 +279440,6 @@
    "Unique",
    "Card Game",
    "Turn Based Strategy"
-  ],
-  "enriched": true
- },
- {
-  "conceptId": 10019123,
-  "titleId": "CUSA58963",
-  "allTitleIds": [
-   "CUSA58963",
-   "CUSA60196"
-  ],
-  "name": "Eyes Of The ElderWood",
-  "region": null,
-  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202605/2707/d5f7cd741728201dc46d95acec993b59f4843325516f16cf.png",
-  "publisher": "FOREVER ENTERTAINMENT S. A.",
-  "genres": [
-   "Horror"
   ],
   "enriched": true
  },
@@ -280213,6 +280235,17 @@
   ],
   "name": "Lofi Mahjong",
   "region": null,
+  "enriched": true,
+  "noStore": true
+ },
+ {
+  "conceptId": 10019304,
+  "titleId": "CUSA59078",
+  "allTitleIds": [
+   "CUSA59078"
+  ],
+  "name": "Hockey Beasts",
+  "region": "UP",
   "enriched": true,
   "noStore": true
  },
@@ -283423,6 +283456,22 @@
   "enriched": true
  },
  {
+  "conceptId": 10020048,
+  "titleId": "CUSA59703",
+  "allTitleIds": [
+   "CUSA59703"
+  ],
+  "name": "THYSIASTERY",
+  "region": "EB",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202608/1911/7bce53264b1914b9f1e1b19e30466cf179430b77ffad1a9b.jpg",
+  "publisher": "DIRGA Games Oy",
+  "genres": [
+   "Role Playing Games",
+   "Dungeon Crawler"
+  ],
+  "enriched": true
+ },
+ {
   "conceptId": 10020132,
   "titleId": "CUSA59707",
   "allTitleIds": [
@@ -283583,6 +283632,24 @@
   "genres": [
    "Adventure",
    "Flight Combat"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10020173,
+  "titleId": "CUSA59734",
+  "allTitleIds": [
+   "CUSA59734"
+  ],
+  "name": "Kitsune Zero",
+  "region": "EB",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/1417/c9d3bcd3064af377727d66ec641e5632ff3026c1a247d2a6.png",
+  "publisher": "Spoiled Cat, Unipessoal Lda",
+  "releaseDate": "2026-11-19T00:00:00Z",
+  "genres": [
+   "Action",
+   "Adventure",
+   "Platformer"
   ],
   "enriched": true
  },
@@ -283796,6 +283863,17 @@
    "Platformer"
   ],
   "enriched": true
+ },
+ {
+  "conceptId": 10020206,
+  "titleId": "CUSA59769",
+  "allTitleIds": [
+   "CUSA59769"
+  ],
+  "name": "Aetherfall",
+  "region": "UP",
+  "enriched": true,
+  "noStore": true
  },
  {
   "conceptId": 10020207,
@@ -284367,6 +284445,26 @@
   "enriched": true
  },
  {
+  "conceptId": 10020436,
+  "titleId": "CUSA59888",
+  "allTitleIds": [
+   "CUSA59888"
+  ],
+  "name": "Merge Match March",
+  "region": null,
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/2609/856a746c04c94bdbbdc5dfcc9dbcabac978aecb445909dd8.png",
+  "publisher": "eastasiasoft",
+  "releaseDate": "2026-12-23T00:00:00Z",
+  "genres": [
+   "Action",
+   "Puzzle",
+   "Hack and Slash",
+   "Strategy Role Playing Game",
+   "Tower Defence"
+  ],
+  "enriched": true
+ },
+ {
   "conceptId": 10020440,
   "titleId": "CUSA59891",
   "allTitleIds": [
@@ -284597,6 +284695,23 @@
   "enriched": true
  },
  {
+  "conceptId": 10020557,
+  "titleId": "CUSA59935",
+  "allTitleIds": [
+   "CUSA59935"
+  ],
+  "name": "Arcade Archives 2 TX-1 V.8",
+  "region": "JP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202611/0609/d8c19d73b33a6ecb3d894ce58ad8c92ce97c56fccfe68e2d.jpg",
+  "publisher": "HAMSTER CORPORATION",
+  "releaseDate": "2026-11-19T00:00:00Z",
+  "genres": [
+   "Driving/Racing",
+   "Vehicular Combat"
+  ],
+  "enriched": true
+ },
+ {
   "conceptId": 10020559,
   "titleId": "CUSA59937",
   "allTitleIds": [
@@ -284693,7 +284808,7 @@
    "CUSA59949"
   ],
   "name": "Geo Book",
-  "region": null,
+  "region": "UP",
   "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202611/0215/f63b25d52904f81e2e0f98dcf56cb9a8eb4a514ac92e1fd3.jpg",
   "publisher": "QUBICGAMES SP. Z O.O.",
   "releaseDate": "2026-11-20T00:00:00Z",
@@ -285861,6 +285976,26 @@
   "enriched": true
  },
  {
+  "conceptId": 10021096,
+  "titleId": "CUSA60155",
+  "allTitleIds": [
+   "CUSA60155",
+   "CUSA60156",
+   "CUSA60183",
+   "CUSA60184"
+  ],
+  "name": "Quiet Remains Slide Puzzle",
+  "region": null,
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202611/2002/8e3aaa13010d0153ff951b4475353299cfcf520a04c3a885.png",
+  "publisher": "Orca Games Pty Ltd",
+  "releaseDate": "2026-11-29T00:00:00Z",
+  "genres": [
+   "Puzzle",
+   "Card Game"
+  ],
+  "enriched": true
+ },
+ {
   "conceptId": 10021097,
   "titleId": "CUSA60157",
   "allTitleIds": [
@@ -286054,6 +286189,23 @@
   "enriched": true
  },
  {
+  "conceptId": 10020917,
+  "titleId": "CUSA60185",
+  "allTitleIds": [
+   "CUSA60185"
+  ],
+  "name": "A Fold Apart: Recrafted",
+  "region": null,
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/1701/da3845dfc06fb638b461119e9eccb98b6f9015da22e9c59a.png",
+  "publisher": "Lightning Rod Games Inc.",
+  "releaseDate": "2026-11-24T00:00:00Z",
+  "genres": [
+   "Puzzle",
+   "Art Experimental"
+  ],
+  "enriched": true
+ },
+ {
   "conceptId": 10021181,
   "titleId": "CUSA60187",
   "allTitleIds": [
@@ -286111,7 +286263,7 @@
    "CUSA60194"
   ],
   "name": "Tingus Goose",
-  "region": null,
+  "region": "HB",
   "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/0102/71b175bd127b8c5b714ec58bc30dbbc65ba8bba38ec6dbcd.png",
   "publisher": "Dark Product",
   "releaseDate": "2026-10-07T23:00:00Z",
@@ -286120,6 +286272,22 @@
    "Casual",
    "Fantasy",
    "Platformer"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10019123,
+  "titleId": "CUSA60196",
+  "allTitleIds": [
+   "CUSA58963",
+   "CUSA60196"
+  ],
+  "name": "Eyes Of The ElderWood",
+  "region": "EP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202605/2707/d5f7cd741728201dc46d95acec993b59f4843325516f16cf.png",
+  "publisher": "FOREVER ENTERTAINMENT S. A.",
+  "genres": [
+   "Horror"
   ],
   "enriched": true
  },
@@ -286270,6 +286438,22 @@
   "enriched": true
  },
  {
+  "conceptId": 10021185,
+  "titleId": "CUSA60214",
+  "allTitleIds": [
+   "CUSA60214"
+  ],
+  "name": "Yolk & Yonder",
+  "region": null,
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/1300/d71d6ea3c592dbb7605c64fdea0e734940c864b4889d66c5.png",
+  "publisher": "FaGames Studio",
+  "genres": [
+   "Puzzle",
+   "Maze"
+  ],
+  "enriched": true
+ },
+ {
   "conceptId": 10021237,
   "titleId": "CUSA60215",
   "allTitleIds": [
@@ -286319,7 +286503,7 @@
  },
  {
   "conceptId": 10021274,
-  "titleId": "CUSA60224",
+  "titleId": "CUSA60223",
   "allTitleIds": [
    "CUSA60223",
    "CUSA60224",
@@ -286327,7 +286511,7 @@
    "CUSA60226"
   ],
   "name": "Beacon Keeper",
-  "region": "EP",
+  "region": "UP",
   "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/1816/7a966ca397fb6356e07752eaac485cc4b395381e7af1a244.png",
   "publisher": "Game Achievements Ltd",
   "genres": [
@@ -286347,6 +286531,24 @@
   "name": "Echo Flight",
   "region": null,
   "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/1817/58a9885d195ba20add1ada0ac3105a778f0c0c25bb0d6d7d.png",
+  "publisher": "Game Achievements Ltd",
+  "genres": [
+   "Casual"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10021277,
+  "titleId": "CUSA60235",
+  "allTitleIds": [
+   "CUSA60235",
+   "CUSA60236",
+   "CUSA60237",
+   "CUSA60238"
+  ],
+  "name": "Skipper",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/1817/c4c8fefc6124bf6550cc1461a5be9d7bfc780a769c9b93f5.png",
   "publisher": "Game Achievements Ltd",
   "genres": [
    "Casual"
@@ -286379,7 +286581,7 @@
    "CUSA60264"
   ],
   "name": "Savoury Cascade",
-  "region": null,
+  "region": "JB",
   "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202611/0901/559eae8c935da7c48376374c64305fce37d89c072fc37960.png",
   "publisher": "Orca Games Pty Ltd",
   "releaseDate": "2026-11-18T00:00:00Z",
@@ -286403,6 +286605,22 @@
   "genres": [
    "Casual",
    "Card Game"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10021300,
+  "titleId": "CUSA60270",
+  "allTitleIds": [
+   "CUSA60270"
+  ],
+  "name": "Rock, Paper, Rumble",
+  "region": null,
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202611/1822/f13e3af3a550a7fd1f4734a01bc4c25ff151683d5af318ab.png",
+  "publisher": "A-Z COMPUTERS",
+  "releaseDate": "2026-12-15T00:00:00Z",
+  "genres": [
+   "Turn Based Strategy"
   ],
   "enriched": true
  },
@@ -286542,7 +286760,7 @@
    "CUSA60308"
   ],
   "name": "BOARDING DENIED",
-  "region": null,
+  "region": "UB",
   "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/0616/fdac7a64be5957473a44c52cdccaf0043666f36527be35be.png",
   "publisher": "Pigeon Games S.L.",
   "genres": [
@@ -286585,6 +286803,22 @@
   "enriched": true
  },
  {
+  "conceptId": 10020094,
+  "titleId": "CUSA60313",
+  "allTitleIds": [
+   "CUSA60313"
+  ],
+  "name": "Chained Wheels",
+  "region": null,
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202611/1613/7ce3e8855f365240f48e225d43632cd2ebac8d39ffcfbcce.jpg",
+  "publisher": "KARGA OYUN YAZILIM TEKNOLOJILERI ANONIM SIRKETI",
+  "genres": [
+   "Driving/Racing",
+   "Adventure"
+  ],
+  "enriched": true
+ },
+ {
   "conceptId": 10021287,
   "titleId": "CUSA60314",
   "allTitleIds": [
@@ -286619,6 +286853,24 @@
   "enriched": true
  },
  {
+  "conceptId": 10021273,
+  "titleId": "CUSA60325",
+  "allTitleIds": [
+   "CUSA60325"
+  ],
+  "name": "Troll Slayer",
+  "region": null,
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/2700/fe0ec10614d36e136e5656c3cd5ed9ae3dafd29b02330a37.png",
+  "publisher": "SOUZA E COSTA DESENVOLVIMENTO DE SISTEMAS LTDA",
+  "genres": [
+   "Adventure",
+   "Action",
+   "Fantasy",
+   "Platformer"
+  ],
+  "enriched": true
+ },
+ {
   "conceptId": 10021395,
   "titleId": "CUSA60333",
   "allTitleIds": [
@@ -286632,6 +286884,22 @@
   "genres": [
    "Strategy",
    "Fantasy"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10021396,
+  "titleId": "CUSA60334",
+  "allTitleIds": [
+   "CUSA60334"
+  ],
+  "name": "Paliside Provisions",
+  "region": "UB",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202611/0511/0505f7651bdff685c10baf5ad742814b3832be9d01c417ef.jpg",
+  "publisher": "Brainium Games LLC",
+  "releaseDate": "2027-01-07T00:00:00Z",
+  "genres": [
+   "Strategy Role Playing Game"
   ],
   "enriched": true
  },
@@ -286690,7 +286958,7 @@
    "CUSA60351"
   ],
   "name": "Not to Spec: A Dystopian Factory Inspection Game",
-  "region": null,
+  "region": "UB",
   "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202610/3114/e6130bf085d23ebf77d8e29ee313fe8a760467b685902d96.png",
   "publisher": "Pigeon Games S.L.",
   "genres": [
@@ -286748,6 +287016,17 @@
    "Third Person Shooter"
   ],
   "enriched": true
+ },
+ {
+  "conceptId": 10021439,
+  "titleId": "CUSA60378",
+  "allTitleIds": [
+   "CUSA60378"
+  ],
+  "name": "Santa Claus vs Aliens",
+  "region": "HB",
+  "enriched": true,
+  "noStore": true
  },
  {
   "conceptId": 10021506,
@@ -286832,6 +287111,22 @@
   "enriched": true
  },
  {
+  "conceptId": 10021546,
+  "titleId": "CUSA60402",
+  "allTitleIds": [
+   "CUSA60402"
+  ],
+  "name": "Full Court Chile",
+  "region": null,
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202611/1613/44b667759aa6bb3305af7a87650235856b19ff4f1c0ac007.png",
+  "publisher": "KROWGAMES SPA",
+  "genres": [
+   "Sport",
+   "Basketball"
+  ],
+  "enriched": true
+ },
+ {
   "conceptId": 10018501,
   "titleId": "CUSA60403",
   "allTitleIds": [
@@ -286863,6 +287158,221 @@
   "genres": [
    "Graphic Adventure",
    "Mystery"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10021620,
+  "titleId": "CUSA60428",
+  "allTitleIds": [
+   "CUSA60428"
+  ],
+  "name": "Air Gun Shooter",
+  "region": "UP",
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202611/2101/9df92b7852a22e423bb1d56e7e1f0c2db23ab7a805db45c6.jpg",
+  "publisher": "Benoit Varasse trading as Pix Arts",
+  "releaseDate": "2026-12-04T00:00:00Z",
+  "genres": [
+   "Shooter",
+   "Flight Combat"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10021621,
+  "titleId": "CUSA60430",
+  "allTitleIds": [
+   "CUSA60430"
+  ],
+  "name": "Cozy Home Unpacking",
+  "region": null,
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202611/1518/9671690b9569dfd10d8da603da2690b295186ad8ce728793.jpg",
+  "publisher": "FaGames Studio",
+  "genres": [
+   "Simulation"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10021635,
+  "titleId": "CUSA60434",
+  "allTitleIds": [
+   "CUSA60434"
+  ],
+  "name": "Tidy Up The Christmas Shop",
+  "region": null,
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202611/1614/62e2ba3886315ff2ae0b1ff90cd59712cb7b8782f2370a3f.png",
+  "publisher": "Dinomore Games Yazilim Oyun Teknolojileri Limited Sirketi",
+  "releaseDate": "2026-12-25T00:00:00Z",
+  "genres": [
+   "Simulation",
+   "Family",
+   "Casual",
+   "Children's",
+   "Children's"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10019833,
+  "titleId": "CUSA60442",
+  "allTitleIds": [
+   "CUSA60442"
+  ],
+  "name": "We Die Standing",
+  "region": null,
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202611/1718/4e696ce8fce21cc8396771c566cc304bb3d49f65643691da.jpg",
+  "publisher": "MR SAQLAIN PRODUCTIONS (SMC-PRIVATE) LIMITED",
+  "genres": [
+   "Action",
+   "Third Person Shooter"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10021663,
+  "titleId": "CUSA60443",
+  "allTitleIds": [
+   "CUSA60443"
+  ],
+  "name": "CleanPlay Paid App",
+  "region": null,
+  "enriched": true,
+  "noStore": true
+ },
+ {
+  "conceptId": 10021667,
+  "titleId": "CUSA60445",
+  "allTitleIds": [
+   "CUSA60445"
+  ],
+  "name": "The Ghost of Solaris",
+  "region": null,
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202611/1719/b2dc96b5da02828569dbe336343b2d11c10611f70c0a8449.jpg",
+  "publisher": "MR SAQLAIN PRODUCTIONS (SMC-PRIVATE) LIMITED",
+  "genres": [
+   "Action",
+   "Adventure",
+   "Third Person Shooter"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10020784,
+  "titleId": "CUSA60446",
+  "allTitleIds": [
+   "CUSA60446"
+  ],
+  "name": "Tintle's Great Colorful Adventure",
+  "region": null,
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202609/1922/627299b7ed65694fac3213bbd915b497eaab6c14b8232558.png",
+  "publisher": "Midnight Pounce Studios, LLC",
+  "releaseDate": "2026-10-12T23:00:00Z",
+  "genres": [
+   "Adventure",
+   "Platformer"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10021622,
+  "titleId": "CUSA60450",
+  "allTitleIds": [
+   "CUSA60450"
+  ],
+  "name": "Fast Food Frog PS4 & PS5",
+  "region": null,
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202611/1817/cf7aeacb1128be59de0eac7d725c376cfe0657d2e029d4a6.png",
+  "publisher": "Or Games",
+  "genres": [
+   "Family",
+   "Action",
+   "Adventure",
+   "Children's",
+   "Fantasy",
+   "Platformer"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10021688,
+  "titleId": "CUSA60451",
+  "allTitleIds": [
+   "CUSA60451"
+  ],
+  "name": "Geek Game Shop Simulator",
+  "region": null,
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202611/1904/f7115e00d1178dca4acc1d5b3b38d7b8ebe4e938be031fce.png",
+  "publisher": "FaGames Studio",
+  "releaseDate": "2027-12-31T00:00:00Z",
+  "genres": [
+   "Simulator"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10021699,
+  "titleId": "CUSA60457",
+  "allTitleIds": [
+   "CUSA60457"
+  ],
+  "name": "Mothergraft",
+  "region": null,
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202611/2019/7ea2485ce2ee6b745fe99e7d2a3c7a38dec928e7aa95952a.png",
+  "publisher": "Kanuni games oyun YAZILIM VE Pazarlama Ticaret limited Sirketi",
+  "genres": [
+   "Turn Based Strategy"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10021711,
+  "titleId": "CUSA60458",
+  "allTitleIds": [
+   "CUSA60458"
+  ],
+  "name": "Ducks in Disguise 2: Mythology",
+  "region": null,
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202611/2221/9daad9e12184bc08de821dc938fb9e0eafabbe84a18d825e.png",
+  "publisher": "Dinomore Games Yazilim Oyun Teknolojileri Limited Sirketi",
+  "genres": [
+   "Puzzle",
+   "Casual",
+   "Brain Training",
+   "Children's",
+   "Children's",
+   "Children's"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10021715,
+  "titleId": "CUSA60461",
+  "allTitleIds": [
+   "CUSA60461"
+  ],
+  "name": "Shapes to Hell",
+  "region": null,
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202611/2021/f8921e89f95fc15ee34b8d2f2e642bd9e87851df126fd582.png",
+  "publisher": "SOUZA E COSTA DESENVOLVIMENTO DE SISTEMAS LTDA",
+  "genres": [
+   "Shoot 'Em Up"
+  ],
+  "enriched": true
+ },
+ {
+  "conceptId": 10021727,
+  "titleId": "CUSA60466",
+  "allTitleIds": [
+   "CUSA60466"
+  ],
+  "name": "Toru",
+  "region": null,
+  "cover": "https://image.api.playstation.com/vulcan/ap/rnd/202611/2211/1d28b7d99984e7faf98b1a9604f73c1fe622655e833a2c31.png",
+  "publisher": "FaGames Studio",
+  "genres": [
+   "Action",
+   "Platformer"
   ],
   "enriched": true
  }
